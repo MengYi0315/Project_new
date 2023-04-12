@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./css/Test.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>小專</title>
+</head>
+<!-- 新增考試 -->
+<body>
+    <header class="header flex">
+        <div class="header-left flex">
+            <img src="./img/logo1.png" class="logo">
+            
+        </div>
+        <div class="header-right flex"> 
+            <ul class="flex"style="align-items:flex-end;"> 
+                <a href="/小專/首頁/Login_Index.html"  class="nav-a">
+                    <li>首頁</li>
+                </a>
+                <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
+                    <li>教授介紹</li>
+                </a>
+                <a href="/小專/專題/topic-login.html"  class="nav-a">
+                    <li>研究室成果</li>
+                </a>    
+                <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
+                    <li>活動紀錄</li>
+                </a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html"  class="nav-a-current">
+                    <li style="font-size:18px;">學習專區</li>
+                </a>    
+                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
+                    <li>使用者專區</li>
+                </a>    
+                <a href="/小專/登入/Login.html"  class="nav-a">
+                    <li>登出</li> 
+                </a>    
+            </ul>
+        </div>
+    </header>
+
+    <div class="content flex">
+        <div class="left-content flex">
+            <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">考試專區</div>
+            </div>
+            <ul id="menu-1" class="ul-win menu-list">
+                <a href="./Senior-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <a href="./Senior-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a>
+                <a href="./Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+
+                <a href="./Senior-Test-ReserveTest.html" class="a-win"><li class="li-win">考試預約</li></a>
+                <a href="./Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+                <a href="./Senior-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a>
+            </ul>
+            <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">作業專區</div>
+            </div>
+            <ul id="menu-2" class="ul-win menu-list">
+                <a href="" class="a-win"><li class="li-win">xxx</li></a>
+                <a href="" class="a-win"><li class="li-win">xxx</li></a>
+                <a href="" class="a-win"><li class="li-win">xxx</li></a>
+                <!-- <a href="" class="a-win"><li class="li-win"></li></a>
+                <a href="" class="a-win"><li class="li-win"></li></a> -->
+            </ul>
+        </div>
+        <div class="right-content">
+            <div class="right-content-div flex">
+                <div class="title">
+                    新增考試
+                </div>
+                <br>
+                <table>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            考試名稱：
+                        </td>
+                        <td class="text-top field">
+                            <input class="text">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            考試內容：
+                        </td>
+                        <td class="text-top field-textarea">
+                            <textarea class="textarea"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            考試期限：
+                        </td>
+                        <td class="text-top field">
+                            <input type="date" class="text-date">
+                            <span>&nbsp;~&nbsp;</span>
+                            <input type="date" class="text-date">
+                        </td>
+                        
+                    </tr>
+                    
+                </table>
+
+                <div class="flex">
+                    <input type="button" value="發布考試" class="reserve-botton" onclick="location.href='./Senior-Test-TestList.html';">
+                    <input type="button" value="取消" class="reserve-botton" onclick="location.href='./Senior-Test-TestList.html';">
+                </div>
+                <!-- <div>
+                    <div class="flex reserve-test-row">
+                        <div>
+                            預約考試：
+                        </div>
+                        <div>
+                            <select>
+                                <option>一</option>
+                                <option>二</option>
+                                <option>三</option>
+                                <option>四</option>
+                                <option>五</option>
+                                <option>六</option>
+                                <option>七</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="flex reserve-test-row">
+                        <div>
+                            考核者：
+                        </div>
+                        <div>
+                            <select>
+                                <option>一</option>
+                                <option>二</option>
+                                <option>三</option>
+                                <option>四</option>
+                                <option>五</option>
+                                <option>六</option>
+                                <option>七</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="flex reserve-test-row">
+                        <div>
+                            預約日期：
+                        </div>
+                        <div>
+                            <input>
+                        </div>
+                    </div>
+                    <div class="flex reserve-test-row">
+                        <div>
+                            預約時段：
+                        </div>
+                        <div>
+                            <select>
+                                <option>一</option>
+                                <option>二</option>
+                                <option>三</option>
+                                <option>四</option>
+                                <option>五</option>
+                                <option>六</option>
+                                <option>七</option>
+                            </select>
+                        </div>
+
+                        
+
+                    </div>
+                    <div class="flex">
+                        <input type="button" value="提交預約">
+                        <input type="button" value="取消預約">
+                    </div>
+                    
+                    
+                </div> -->
+
+
+
+
+            </div>
+            
+            <!-- <table>
+                <tr>
+                    <td class="table-title">
+                        考試範圍
+                    </td>
+                    <td class="table-title">
+                        考試期限
+                    </td>
+                    <td class="table-title">
+                        狀態    
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="row">
+                        第八章口試
+                    </td>
+                    <td class="row">
+                        4/1 - 4/8
+                    </td>
+                    <td class="row">
+                        <span>已預約</span>
+                        
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="row">
+                        第八章筆試
+                    </td>
+                    <td class="row">
+                        4/9 - 4/16
+                    </td>
+                    <td class="row">
+                        <span>未考試，還未預約</span>
+                        <br>
+                        <input type="button" value="前往預約">
+                    </td>
+
+                </tr>
+
+            </table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+<script src="./js/Test.js"></script>
+</html>

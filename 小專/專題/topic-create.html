@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./css/topic.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小專</title>
+</head>
+<body>
+    <header>
+        <div class="header-content flex">
+            <div class="header-left">
+                <img src="./img/logo1.png" class="logo">
+            </div>
+            <div class="header-right flex">
+                <ul class="flex">
+                    <a href="/小專/首頁/Login_Index.html"  class="nav-a">
+                        <li>首頁</li>
+                    </a>
+                    <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
+                        <li>教授介紹</li>
+                    </a>
+                    <a href="/小專/專題/Admin_topic-login.html"  class="nav-a-current">
+                        <li style="font-size:18px;">研究室成果</li>
+                    </a>
+                    <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
+                        <li>活動紀錄</li>
+                    </a>
+                    <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
+                        <li>學習專區</li>
+                    </a>        
+                    <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
+                        <li>使用者專區</li> 
+                    </a> 
+                    <a href="#" class="nav-a">
+                        <li>登出</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="header-content flex">
+
+            <div class="header-left flex">
+            <img src="./img/logo.png" class="logo">
+            
+            </div>
+            <div class="header-right flex"> 
+                <ul class="flex " style="align-items: flex-end;"> 
+                    <a href="#"  class="nav-a">
+                        <li>教授介紹</li>
+                    </a>
+                    <a href="#"  class="nav-a-current">
+                        <li>研究室成果</li>
+                    </a>    
+                    <a href="#"  class="nav-a">
+                        <li>活動紀錄</li>
+                    </a>    
+                    <a href="#"  class="nav-a">
+                        <li>登入</li> 
+                    </a>    
+                </ul>
+            
+            </div>
+        </div> -->
+        
+    </header>
+
+    <div class="content flex">
+        <!-- 左側選單 -->
+        <div class="left-content flex">
+            <ul class="ul-win">
+                <a href="/小專/論文/admin-thesis.html" class="a-win"><li class="li-win">研究生畢業論文</li></a>
+                <a href="/小專/專題/Admin_topic-login.html" class="a-win"><li class="li-win">專題作品</li></a>
+                <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html" class="a-win"><li class="li-win">歷屆得獎紀錄</li></a>
+            </ul>
+        </div>
+        <!-- <div class="left-content flex"> 
+            
+            <a href="#">
+                <div class="sidebar">
+                    研究生畢業論文
+                </div>
+            </a>
+            <a href="#">
+                <div class="sidebar-current">
+                    專題作品
+                </div>
+            </a>
+            <a href="#">
+                <div class="sidebar">
+                    歷屆得獎紀錄
+                </div>
+            </a>      
+        </div> -->
+        <!-- 右側 -->
+        <div class="right-content">
+            <div class="title">
+                新增專題作品
+            </div>
+            <br>
+            <div>
+                <div class="topic-1">
+                    <div class="flex" style="width: 100%;">
+                        <div class="topic-photo flex">
+                            <div class="photo flex">
+                                <!-- <input type="button" value="IMG" class="select-photo">     -->
+                            </div>   
+                        </div>
+                        
+                        
+                        <div class="topic-content">
+                            <div style="padding-top: 72px;">
+                                專題名稱：
+                                <input class="topic-text">
+                            </div>
+                            <div class="member">
+                                選擇年份：
+                                <select class="year-select">
+                                    <option>請選擇年份</option>
+                                    <option>111年</option>
+                                    <option>110年</option>
+                                    <option>109年</option>
+                                    <option>108年</option>
+                                    <option>107年</option>
+                                </select>
+                            </div>
+                            <div class="member">
+                                專題組員：
+                                <input type="button" value="選擇人員" class="select-member">
+                            
+                            </div>
+                            <div  class="member">
+                                圖片檔案：
+                                <input type="file" value="IMG" class="select-photo">
+                            </div>
+                            <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
+                                專題簡介：
+                                <textarea class="topic-content-text"></textarea>
+                                <!-- <input class="topic-content-text"> -->
+                            </div>
+
+                        </div>
+
+                            
+                    </div>
+                    
+                    <div class="button-div flex">
+                        <div class="button-padding">
+                            <input type="button" value="保存" class="button">
+                        </div>
+                        <div class="button-padding">
+                            <input type="button" value="返回" class="button" onclick="location.href='./Admin_topic-login.html'">
+                        </div>
+                        
+                    </div>
+                    
+                    
+
+                </div>
+
+
+            </div>
+            
+
+            
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+
+
+
+
+
+    
+    
+</body>
+</html>

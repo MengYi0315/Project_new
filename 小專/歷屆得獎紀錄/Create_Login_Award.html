@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./css/Award.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小專</title>
+</head>
+<body>
+    <header class="header flex">
+        <div class="header-left flex">
+            <img src="./img/logo1.png" class="logo">
+            
+        </div>
+        <div class="header-right flex"> 
+            <ul class="flex " style="align-items: flex-end;"> 
+                <a href="/小專/首頁/Admin_Login_Index.html" class="nav-a">
+                    <li>首頁</li>
+                </a>
+                <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
+                    <li>教授介紹</li>
+                </a>
+                <a href="/小專/專題/Admin_topic-login.html"  class="nav-a-current">
+                    <li style="font-size: 18px;">研究室成果</li>
+                </a>    
+                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
+                    <li>活動紀錄</li>
+                </a>
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
+                    <li>學習專區</li>
+                </a>        
+                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
+                    <li>使用者專區</li> 
+                </a> 
+                <a href="/小專/登入/Login.html"  class="nav-a">
+                    <li>登出</li>
+                </a> 
+            </ul>
+        </div>
+    </header>
+
+    <div class="content flex">
+        <div class="left-content flex">
+            <ul class="ul-win">
+                <a href="/小專/論文/admin-thesis.html" class="a-win"><li class="li-win">研究生畢業論文</li></a>
+                <a href="/小專/專題/Admin_topic-login.html" class="a-win"><li class="li-win">專題作品</li></a>
+                <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html" class="a-win"><li class="li-win">歷屆得獎紀錄</li></a>
+            </ul>
+        </div>
+        <div class="right-content">
+            <div class="title-win flex">
+                新增歷屆得獎紀錄
+            </div>
+            <div class="area flex">
+                <div class="item">
+                    作品年份：
+                    <select name="year" style="height:30px;width:200px;font-size: 20px;">
+                        <option>請選擇得獎年份</option>
+                        <option value="111">111年</option>
+                        <option value="110">110年</option>
+                        <option value="109">109年</option>
+                        <option value="108">108年</option>
+                        <option value="107">107年</option>
+                    </select>
+                </div>
+                <div class="item">
+                    競賽名稱：
+                    <input type="text" class="item_detail">
+                </div>
+                <div class="item">
+                    作品名稱：
+                    <input type="text" class="item_detail">
+                </div>
+                <div class="item">
+                    得獎名次：
+                    <input type="text" class="item_detail">
+                </div>
+                <div class="item">
+                    參與人員：
+                    <input type="button" value="選擇人員" class="select-person">
+                </div>
+                <div class="right flex" style="padding-top:20px;">
+                    <div>
+                        <input type="submit" value="保存" class="check-button">
+                        <a href="./Admin_Login_Award.html"><input type="reset" value="返回" class="check-button"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>

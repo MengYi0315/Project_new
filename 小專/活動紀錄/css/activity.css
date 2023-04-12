@@ -1,0 +1,322 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:"Microsoft JhengHei";
+}
+header{
+    height: 80px;
+    background-color: #2B8282;
+    position: fixed;
+    z-index: 3;
+}
+
+body{
+    background-color:#FFF8F2;
+}
+
+.header{
+    padding: 0 30px;
+    width:100%;
+    background-color: #2B8282;
+    justify-content: space-between;
+}
+ul
+{
+    text-decoration: none;
+    width: 100%;
+}
+
+li{
+    list-style-type: none;
+}
+a
+{
+    text-decoration: none;
+    color:#000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.flex{
+    display: flex;
+}
+.flex-justify-center{
+    justify-content: center;
+}
+.flex-align-center{
+    align-items: center;
+}
+
+.header-left{
+    justify-content: center;
+    align-items: center;
+    background-color: #2B8282;
+}
+.header-right{
+    align-items: flex-end;
+    background-color: #2B8282;
+    padding-right: 60px;
+}
+.header-left ul{
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-a{
+    margin: 0 8px;
+
+    background-color: #61AFB3;
+    border-radius: 5px 5px 0 0 ;
+
+    text-align: center;
+    line-height: 50px;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow:2px 3px 5px #4d4d4d;
+    
+    width: 110px;
+    height: 50px;
+}
+.logo{
+    border-radius: 50px;
+    background-color: #D9D9D9;
+    text-align: center;
+    line-height: 60px;
+    height: 50px;
+    width: 180px;
+}
+
+.nav-a :hover{
+    background-color:  #75E9BF;
+    border-radius: 5px 5px 0 0 ;
+    
+}
+
+.nav-a :visited{
+    background-color:  #fff;
+    border-radius: 5px 5px 0 0 ;
+    
+}
+
+.nav-a-current{     /* 目前頁面樣式 */
+    margin: 0 8px;
+
+    background-color:#69E3E3;
+    border-radius: 5px 5px 0 0 ;
+
+    text-align: center;
+    line-height: 50px;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow:2px 3px 5px #4d4d4d;
+    
+    width: 110px;
+    height: 55px;
+}
+
+.content
+{
+    background-color: antiquewhite;
+    width:100%;
+}
+
+/*最新公告區塊*/
+
+.content-body
+{
+    width:100%;
+    margin: 200px 300px 50px 60px;
+}
+.content-margin
+{
+    margin:10px 20px;
+}
+
+/*最新公告*/
+
+
+
+/*最新公告新增*/
+
+.a-add
+{
+    position: fixed;
+    right:20px;
+    bottom:20px;
+    
+}
+.fa-regular
+{
+    background-color: #000;
+    border-radius: 100%;
+    color:antiquewhite;
+    border:5px solid #000;
+    font-weight: bold;
+    font-size:70px;
+}
+.fa-regular:hover
+{
+    background-color: #FFF;
+    border-radius: 50px;
+    color:#61AFB3;
+    border:5px solid #79e2e7;
+    font-size:70px;
+}
+
+/*活動紀錄*/
+
+.title
+{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.activity-body
+{
+    width:100%;
+    margin:150px 100px 50px 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-wrap
+{
+    flex-wrap: wrap;
+    
+}
+.w-25
+{
+    width:25%;
+    
+    color:#000;
+    margin-bottom:20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.b-25
+{
+    height:200px;
+    display: flex;
+}
+
+.center
+{
+    width:100%;
+    line-height: 30px;
+    font-size: 22px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.relative
+{
+    
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.absolute
+{
+    position:relative;
+    bottom:90px;
+    right:30px;
+    padding:3px 5px;
+    background-color:#FFF;
+    font-weight: bold;
+}
+
+
+/*活動紀錄詳細內容*/
+
+.reveal
+{
+    width:50%;
+    margin:0% 20%;
+    height:400px;
+    background-color: #ffd388;
+
+}
+.reveal-left
+{
+    width:40%;
+    padding:20px;
+    justify-content: center;
+    align-items: center;
+}
+.reveal-right
+{
+    width:60%;
+    justify-content: left;
+    flex-direction: column;
+    margin-top:100px;
+    margin-right:60px;
+}
+.absolute-img
+{
+    position:absolute;
+    top:35%;
+    bottom:30%;
+    background-color:#FFF;
+    font-weight: bold;
+    z-index: 2;
+}
+.absolute-x
+{
+    position:absolute;
+    top:8px;
+    right:10px;
+    padding:3px 5px;
+    font-size: 24px;
+    background-color:#FFF;
+    font-weight: bold;
+}
+.title-detail
+{
+    font-size: 26px;
+    color:#000000;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+.activity-detail
+{
+    font-size: 18px;
+    font-weight: bold;
+
+    text-align: justify;
+    line-height: 40px;
+}
+
+/*新增活動*/
+.create-text
+{
+    justify-content: flex-start;
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom:20px;
+    line-height: 30px;
+}
+.create-input
+{
+    width:500px;
+    height:30px;
+    font-size: 20px;
+    border: 1px solid #000;
+    background-color: #FFF;
+}
+textarea
+{
+    width:500px;
+    height:120px;
+}
