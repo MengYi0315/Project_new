@@ -334,3 +334,11 @@ button{
     align-items: center;
     background-color: #D9D9D9;
 }
+
+.a-add
+{
+    position: fixed;
+    right:10px;
+    bottom:10px;
+    
+}

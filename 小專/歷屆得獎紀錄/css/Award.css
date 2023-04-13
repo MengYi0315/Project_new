@@ -273,8 +273,8 @@ a{
 }
 .button-right
 {
-    padding-top:20px;
-    padding-right:10px;
+    padding-top:15px;
+    padding-right:15px;
     justify-content: right;
 }
 .right
@@ -293,4 +293,81 @@ a{
 
 td{
     text-align: center;
+}
+
+.edit-row-button{
+    cursor: pointer;
+
+    height: 35px;
+    width: 50px;
+    background-color:#2B8282;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 0 5px;
+}
+.delete-row-button{
+    cursor: pointer;
+
+    height: 35px;
+    width: 50px;
+    background-color:crimson;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 0 5px;
+}
+
+.create-button{
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    margin: 0 5px;
+    background-color: #61AFB3;
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.create-button:hover
+{
+    background-color: #2B8282;
+    font-weight: bold;
+}
+
+.delete-button{
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    margin: 0 5px;
+    background-color: rgb(236, 72, 105);
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.delete-button:hover
+{
+    background-color: crimson;
+}
+
+.a-add
+{
+    position: fixed;
+    right:10px;
+    bottom:10px;
+    
 }

@@ -226,7 +226,12 @@ a{
 
     font-weight: bold;
 }
-
+.title-win
+{
+    font-size:36px;
+    justify-content: left;
+    font-weight: bold;
+}
 .topic{
     background-color: #D9D9D9;   
     width: 100%;
