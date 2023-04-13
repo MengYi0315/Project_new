@@ -372,3 +372,15 @@ cursor: pointer;
     
 } */
 
+
+.nav-bar{
+    display: none;
+    position: fixed;
+
+
+    flex-direction: column;
+
+    background-color: #f9d853;
+    border: 1px #000;
+}
+
