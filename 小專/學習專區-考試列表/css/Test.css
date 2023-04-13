@@ -119,7 +119,7 @@ a{
 .left-content
 {
     width:20%;
-    height:auto;
+    height: 1000px;
     margin:250px 0px 50px 20px;
     
     align-items: center;
@@ -128,7 +128,7 @@ a{
 .right-content
 {
     width:80%;
-    height:auto;
+    height:1000px;
     margin:180px 80px 100px 30px;
 
     /* position: relative; */
@@ -294,7 +294,7 @@ cursor: pointer;
 .reject-text{
     color: red;
     font-weight: bold;
-    -webkit-text-stroke: 0.5px #fff;
+    
 }
 /* 新增考試 */
 .text-date{
@@ -349,9 +349,11 @@ cursor: pointer;
 }
 
 .add-icon{
-    padding-top:5px;
-    width: 45px;
-    height:40px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height:65px;
 
     
 }
