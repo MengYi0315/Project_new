@@ -170,7 +170,7 @@ a{
 }
 .ul-year-win
 {
-    width:1200px;
+    width:100%;
     text-align: center;
     align-items: center;
     border-color:  #FFF;
@@ -275,14 +275,8 @@ a{
 }
 .button-right
 {
-    padding-top:15px;
-    padding-right:15px;
     justify-content: right;
-}
-.right
-{
-    justify-content: right;
-    padding:10px 30px;
+    padding:10px 30px 10px 0px;;
 }
 
 .win-table
