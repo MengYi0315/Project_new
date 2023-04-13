@@ -162,7 +162,27 @@ a{
     width: 100%;
     padding: 0px 1px 1px 0px;
 }
-
+.ul-year-win
+{
+    width:1200px;
+    text-align: center;
+    align-items: center;
+    border-color:  #FFF;
+    border-top: 1px;
+    border-bottom:1px;
+    overflow: scroll;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.li-year-win
+{
+    width:200px;
+    line-height: 55px;
+    background-color: #ae2323;
+    border:1px solid #FFF;
+    justify-content: center;
+}
 .li-win:hover
 {
     background-color: #fb8947;
