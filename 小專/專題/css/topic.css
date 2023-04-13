@@ -235,15 +235,34 @@ a{
 .topic{
     background-color: #D9D9D9;   
     width: 100%;
-    height: auto;
 
-    
-
-    
 }
+
+.ul-year-win
+{
+    width:100%;
+    text-align: center;
+    align-items: center;
+    border-color:  #FFF;
+    border-top: 1px;
+    border-bottom:1px;
+    overflow: scroll;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.li-year-win
+{
+    width:200px;
+    line-height: 55px;
+    background-color: #ae2323;
+    border:1px solid #FFF;
+    justify-content: center;
+}
+
 .ul-win
 {
-    width:70%;
+    width:80%;
     text-align: center;
     align-items: center;
 }
