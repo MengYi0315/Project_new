@@ -241,7 +241,6 @@ a{
 .ul-year-win
 {
     width:100%;
-    height:100%;
     text-align: center;
     align-items: center;
     border-color:  #FFF;
@@ -263,7 +262,7 @@ a{
 
 .ul-win
 {
-    width:70%;
+    width:80%;
     text-align: center;
     align-items: center;
 }
