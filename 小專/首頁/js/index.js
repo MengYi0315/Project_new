@@ -124,3 +124,27 @@ function removeItem(delNode){
     }
     return false;
 }
+
+const imageInput = document.getElementById('image-input');
+const previewContainer = document.getElementById('preview-container');
+
+imageInput.addEventListener('change', function() {
+  previewContainer.innerHTML = '';
+  
+  for (let i = 0; i < imageInput.files.length; i++) {
+    const file = imageInput.files[i];
+    const reader = new FileReader();
+    
+    reader.addEventListener("load", function () {
+      const img = document.createElement('img');
+      img.src = reader.result;
+      previewContainer.appendChild(img);
+    }, false);
+    
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+});
+
+

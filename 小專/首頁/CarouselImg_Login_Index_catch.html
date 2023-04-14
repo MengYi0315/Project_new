@@ -58,6 +58,9 @@
                     <div class="group-coms-pic" id="groupTu">
 
                     </div>
+
+                    <input type="file" id="image-input" multiple>
+            <div id="preview-container"></div>
                     <input type="submit" value="新增" class="create-button">新增</input>
                 </div>  
                 
@@ -67,7 +70,10 @@
     </div>
 
     <footer>
-
+        <div>
+            
+        </div>
+        
     </footer>
 
 </body>
@@ -161,5 +167,28 @@
         return false;
     }
 
+</script>
+<script>
+    const imageInput = document.getElementById('image-input');
+const previewContainer = document.getElementById('preview-container');
+
+imageInput.addEventListener('change', function() {
+  previewContainer.innerHTML = '';
+  
+  for (let i = 0; i < imageInput.files.length; i++) {
+    const file = imageInput.files[i];
+    const reader = new FileReader();
+    
+    reader.addEventListener("load", function () {
+      const img = document.createElement('img');
+      img.src = reader.result;
+      previewContainer.appendChild(img);
+    }, false);
+    
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+});
 </script>
 </html>
