@@ -52,9 +52,21 @@
                 <div class="create-content">
                     <div class="upload-pic flex">
                         <label class="up-lab" for="add-pic-btn">上傳圖片</label>
-                        <div class="div-button flex" ><input  id="title"type="file" accept="image/*" multiple class="up-file" id="add-pic-btn"></div>
+                        <div class="div-button flex" >
+                            <!-- <input onchange="previewFile()" type="file" id="uploadfile"accept="image/*" multiple>
+                            <div class="preview"></div> -->
+                            <input type="file" id="fileInput" multiple>
+                            
+
+
+                        </div>
+                        
                     </div>
+                    <div id="preview"></div>
                     
+                    <!-- <div>
+                        <img class="img" src="" height="auto" alt="Image preview...">
+                    </div> -->
                     <div class="group-coms-pic" id="groupTu">
 
                     </div>
