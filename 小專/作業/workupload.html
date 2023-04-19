@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/work.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,65 +68,64 @@
         </div>
         <div class="right-content">
             
-            <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">已上傳作業</span>
-                <a href="workupload-create.html"><img style="padding-left: 50px;" class="plus" src="./img/plus.PNG"></a>
+            <div class="title" style="display: flex;align-items: center; justify-content: center;">
+                已上傳作業
             </div>
             <br>
-            <div class="workcontent">
-                <div class="four-tit" style="width: 100%;">
-                    <a style="color: black;">檢核人</a>
-                    <a style="color: black;">作業內容</a>
-                    <a style="color: black;">作業檔案</a>
-                    <a style="color: black;">繳交日期</a>
-                </div>
-                <a style="padding:5px; color: black; width:45px;">修改</a>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; background-color: #A9A9A9;">
-                <div class="four-tit" style="width: 100%;">
-                    <a style="color: black;">林韓平</a>
-                    <a style="color: black;">基本程式語法練習</a>
-                    <a style="color: black;">作業檔案</a>
-                    <a style="color: black;">2023/3/17</a>
-                </div>
-                <a href="./workupload-edit.html"><img style="padding: 5px; width: 30px;height: 30px;" src="./img/edit.png" alt=""></a>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; background-color: #D9D9D9;">
-                <div class="four-tit" style="width: 100%;">
-                    <a style="color: black;">林洨帥</a>
-                    <a style="color: black;">資料庫語法基礎</a>
-                    <a style="color: black;">作業檔案</a>
-                    <a style="color: black;">2023/3/15</a>
-                </div>
-                <a href="./workupload-edit.html"><img style="padding: 5px; width: 30px;height: 30px;" src="./img/edit.png" alt=""></a>
-            </div>
+            <table class="table-row">
+                <tr style="background-color: orange;" class="row-sty">
+                    <td>檢核人</td>
+                    <td>作業內容</td>
+                    <td>作業檔案</td>
+                    <td>繳交日期</td>
+                    <td>修改</td>
+                </tr>
 
-            <div style="display: flex; justify-content: space-between; background-color: #A9A9A9;">
-                <div class="four-tit" style="width: 100%;">
-                    <a style="color: black;">郭金提</a>
-                    <a style="color: black;">第九章預習筆記</a>
-                    <a style="color: black;">作業檔案</a>
-                    <a style="color: black;">2023/3/12</a>
-                </div>
-                <a href="./workupload-edit.html"><img style="padding: 5px; width: 30px;height: 30px;" src="./img/edit.png" alt=""></a>
+                <tr class="row-sty">
+                    <td>林韓平</td>
+                    <td>基本程式語法練習</td>
+                    <td>作業檔案</td>
+                    <td>2023/3/17</td>
+                    <td>
+                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    </td>
+                    
+                </tr>
+                <tr class="row-sty">
+                    <td>林洨帥</td>
+                    <td>資料庫語法基礎</td>
+                    <td>作業檔案</td>
+                    <td>2023/3/15</td>
+                    <td>
+                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr class="row-sty">
+                    <td>郭金提</td>
+                    <td>第九章預習筆記</td>
+                    <td>作業檔案</td>
+                    <td>2023/3/12</td>
+                    <td>
+                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    </td>
+                </tr>
+                <tr class="row-sty">
+                    <td>詹龍諧</td>
+                    <td>第八章預習筆記</td>
+                    <td>作業檔案</td>
+                    <td>2023/3/10</td>
+                    <td>
+                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    </td>
+                </tr>
+            </table>
+            <div class="flex">
+                <input type="button" value="新增" class="reserve-botton" onclick="location.href=''">
+                <input type="button" value="取消" class="reserve-botton" onclick="location.href='./workrelease-list'">
             </div>
-
-            <div style="display: flex; justify-content: space-between; background-color: #D9D9D9;">
-                <div class="four-tit" style="width: 100%;">
-                    <a style="color: black;">詹龍諧</a>
-                    <a style="color: black;">第八章預習筆記</a>
-                    <a style="color: black;">作業檔案</a>
-                    <a style="color: black;">2023/3/10</a>
-                </div>
-                <a href="./workupload-edit.html"><img style="padding: 5px; width: 30px;height: 30px;" src="./img/edit.png" alt=""></a>
-            </div>
-
         </div>
     </div>
     <footer>
-        
     </footer>
 </body>
 <script src="./js/Test.js"></script>

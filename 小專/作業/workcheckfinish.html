@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/work.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,25 +75,26 @@
             <div class="boardarea">
                 <div class="padar">
                     <div class="unpad">
-                        <label style="width: 12%;">繳交作業人：林小帥</label>
+                        <label class="labelsty unpad">繳交作業人：林小帥</label>
                         <br>
-                        <label style="width: 12%;">作業檔案：</label>
-                        <input type="button" value="下載">
+                        <br>
+                        <label class="labelsty">作業檔案：</label>
+                        <input class="reserve-botton" type="button" value="下載">
                     </div>
                     
                     <div class="unpad" style="justify-content:left; align-items: center;">
-                        <label style="width: 12%;">評語及建議：</label>
+                        <label class="labelsty unpad">評語及建議：</label>
                         <textarea type="text" style="height: 300px;width: 100%;" id="enterblock"></textarea>
                     </div>
-                    <label style="width: 12%;">附加檔案：</label>
+                    <label class="labelsty unpad">附加檔案：</label>
                     <div class="imgblock">
                         <input type="file" value="FileUpload" name="FileUpload">
                     </div>
                 </div>
             </div>
             <div style="display: flex; justify-content: end;">
-                <a href="./workcheck.html"><button type="button">取消</button></a>
-                <button type="submit">確認</button>
+                <a href="./workcheck.html"><button class="reserve-botton" type="button">取消</button></a>
+                <button class="reserve-botton" type="submit">確認</button>
             </div>
         </div>
     </div>

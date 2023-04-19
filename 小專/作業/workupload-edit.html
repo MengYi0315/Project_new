@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="./css/style1.css" rel="stylesheet">
+    <link href="./css/work.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,37 +72,40 @@
                 <span id="bang">編輯已上傳作業</span>
             </div>
             <br>
-            <div style="background-color: #d9d9d9; padding: 20px; border-radius: 20px;">
+            <div style="background-color: #379ac4; padding: 20px; border-radius: 20px;">
                 <div class="unpad">
-                <label for="work">選擇作業：</label>
-                <select id="selarrow" name="work">
-                    <option value="work2">作業1</option>
-                    <option value="work2">作業2</option>
-                    <option value="work3">作業3</option>
-                    <option value="work4">作業4</option>
-                    <option value="work5">作業5</option>
-                </select>
-            </div>
+                    <div style="display: flex; align-items:flex-start;">
+                        <label for="work">繳交作業內容：</label>
+                        <textarea style="height: 50px;">hi</textarea>
+                    </div>
+                </div>
             <br>
                 <div class="unpad">
                     <label for="name">選擇檢核者：</label>
-                    <select id="selarrow" name="name">
-                        <option value="name1">林小帥</option>
-                        <option value="name2">林大坪</option>
-                        <option value="name3">郭金提</option>
-                        <option value="name4">詹龍諧</option>
-                        <option value="name5">湯俊璋</option>
+                    <select id="selarrow">
+                        <option >請選擇檢核者</option>
+                        <option >林小帥</option>
+                        <option >林大坪</option>
+                        <option >郭金提</option>
+                        <option >詹龍諧</option>
+                        <option >湯俊璋</option>
                     </select>
                 </div>
                 <br>
                 <div class="unpad">
                     <label for="file">選擇繳交檔案：</label>
-                    <input type="file">
+                    <input type="file" value="" class="file-c">
                 </div>
-                <div style="display: flex; justify-content: end;">
-                    <button style="background-color: red;" type="button">刪除</button>
-                    <a href="./workupload.html"><button type="button">取消</button></a>
-                    <button type="submit">確認</button>
+                <div class="button-div flex">
+                    <div class="button-padding">
+                        <input type="button" value="保存" class="button">
+                    </div>
+                    <div class="button-padding">
+                        <input type="button" value="返回" class="button" onclick="location.href='./Admin_topic-login.html'">
+                    </div>
+                    <div class="button-padding">
+                        <input type="button" value="刪除" class="button-delete">
+                    </div>
                 </div>
             
             </div>
