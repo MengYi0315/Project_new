@@ -1,44 +1,49 @@
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function postData(url,data){
+    return fetch(url, {
+        body: JSON.stringify(data),
+        cache:'no-cache',
+        credentials:'same-origin',
+        headers:{
+            'user-agent':'Example',
+            'content-type':'application/json'
+        },
+        method:'POST',
+        mode:'cors',
+        redirect:'follow',
+        referrer:'no-referrer',
+    })
+        .then(response => response.json()) //輸出成json
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function resultvalue(result){
+    if(result==0)
+        return '0';
+    else if(result==1)
+        return '1';
 }
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+function submit(){
+    const title=document.getElementById('title').value;
+
+    const data={
+        title
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += "active";
+
+    postData('http://localhost:5229/api/Carousel/CreateData',data)
+    .then(data=>{
+        const result =data.result;
+        console.log(data);
+        console.log(result);
+    })
 }
 
 
-// var loadFile = function(event) {
-//   var reader = new FileReader();
-//   reader.onload = function(){
-//     var output = document.getElementById('output');
-//     output.src = reader.result;
-//   };
-//   reader.readAsDataURL(event.target.files[0]);
-// };
 
-//上傳多個文件方法
-//input file已增加multiple属性，按住ctrl可選擇多圖
+
+
+
+// //上傳多個文件方法
+// //input file已增加multiple属性，按住ctrl可選擇多圖
 // document.getElementById("add-pic-btn").addEventListener("change",function(){
 //     var obj = this,
 //         length = obj.files.length,
