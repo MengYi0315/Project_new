@@ -180,7 +180,7 @@ a
 .activity-body
 {
     width:100%;
-    margin:150px 100px 50px 100px;
+    margin:150px 100px 100% 100px;
     justify-content: center;
     align-items: center;
 }
