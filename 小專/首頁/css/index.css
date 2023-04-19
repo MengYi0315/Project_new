@@ -311,7 +311,8 @@ a
 {
     justify-content: flex-end;
     padding:5px 40px;
-    margin-top:130px;
+    margin-top:20px;
+    margin-left: 50px;
     margin-bottom:50px;
     border-width: thin;
     border-radius: 30px;

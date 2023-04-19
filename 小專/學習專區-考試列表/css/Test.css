@@ -252,6 +252,21 @@ cursor: pointer;
 
     margin: 0 5px;
 }
+.d-4-row-button{
+    cursor: pointer;
+    
+        height: 35px;
+        width: 80px;
+        background-color:crimson;
+        color: #fff;
+        border-width: thin;
+        border-radius: 5px;
+    
+        font-size: 16px;
+        font-weight: bold;
+    
+        margin: 0 5px;
+    }
 
 .normal-word{
     font-size: 20px;
@@ -290,6 +305,11 @@ cursor: pointer;
     font-size: 16px;
     font-weight: bold;
 }
+.reserve-botton:hover{
+    background-color: #2B8282;
+    font-weight: bold;
+}
+
 
 .reject-text{
     color: red;
