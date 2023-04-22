@@ -1,20 +1,18 @@
-function postData(url,data){
+function postData(url, data, headers) {
+    const formData = new FormData();
+    formData.append('activity_title', data.title);
+    formData.append('activity_content', data.content);
+    formData.append('FormImage', data.image);
 
     return fetch(url, {
-        body: JSON.stringify(data),
-        cache:'no-cache',
-        credentials:'same-origin',
-        headers:{
-            'user-agent':'Example',
-            'content-type':'application/json'
-        },
-        method:'POST',
-        mode:'cors',
-        redirect:'follow',
-        referrer:'no-referrer',
+        method: 'POST',
+        mode: 'cors',
+        body: formData,
+        headers: headers
     })
-        .then(response => response.json()) //輸出成json
+      .then(response => response.formData) //輸出成json
 }
+
 
 function resultvalue(result){
     if(result==0)
@@ -24,24 +22,31 @@ function resultvalue(result){
 }
 
 
-function submit(){
-    const activity_title=document.getElementById('title').value;
-    const activity_content=document.getElementById('content').value;
-   const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODE5MDA0OTV9.glbxmGgSy3mhWGh_jeS5cOqSh_iOXALVFKRGRUyQqnU';
+function submit() {
+    const title = document.getElementById('title').value;
+    const content = document.getElementById('content').value;
+    const image = document.getElementById('image').files[0];
+    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODE5MDA0OTV9.glbxmGgSy3mhWGh_jeS5cOqSh_iOXALVFKRGRUyQqnU';
 
-    const data={
-        activity_title,
-        activity_content,
-        token
-    }
-    postData('http://localhost:5229/api/Activity/CreateData',data)
-    .then(data=>{
-        const result =data.result;
+    const data = {
+        title: title,
+        content: content,
+        image: image,
+    };
+
+    const headers = {
+        'Authorization': `Bearer ${token}`
+    };
+    
+
+    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+        .then(data => {
+        const result = data.result;
         console.log(data);
         console.log(result);
-        
-    })
+        });
 }
+
 
 // function previewFile() {
 //     var preview = document.querySelector('#img');

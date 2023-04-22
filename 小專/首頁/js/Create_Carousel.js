@@ -1,40 +1,93 @@
-function postData(url,data){
+// function postData(url,data){
+//     return fetch(url, {
+//         body: JSON.stringify(data),
+//         cache:'no-cache',
+//         credentials:'same-origin',
+//         headers:{
+//             'user-agent':'Example',
+//             'content-type':'multipart/form-data'
+//         },
+//         method:'POST',
+//         mode:'cors',
+//         redirect:'follow',
+//         referrer:'no-referrer',
+//     })
+//         .then(response => response.json()) //輸出成json
+// }
+
+// function resultvalue(result){
+//     if(result==0)
+//         return '0';
+//     else if(result==1)
+//         return '1';
+// }
+
+// function submit(){
+//     const title=document.getElementById('title').value;
+
+//     const data={
+//         title
+//     }
+
+//     postData('http://localhost:5229/api/Carousel/CreateData',data)
+//     .then(data=>{
+//         const result =data.result;
+//         console.log(data);
+//         console.log(result);
+//     })
+// }
+function postData(url, data, headers) {
+    const formData = new FormData();
+    formData.append('FormImage', data.image);
+
     return fetch(url, {
-        body: JSON.stringify(data),
-        cache:'no-cache',
-        credentials:'same-origin',
-        headers:{
-            'user-agent':'Example',
-            'content-type':'multipart/form-data'
-        },
-        method:'POST',
-        mode:'cors',
-        redirect:'follow',
-        referrer:'no-referrer',
+        method: 'POST',
+        mode: 'cors',
+        body: formData,
+        headers: headers
     })
-        .then(response => response.json()) //輸出成json
+      .then(response => response.json()) //輸出成json
 }
 
-function resultvalue(result){
-    if(result==0)
-        return '0';
-    else if(result==1)
-        return '1';
-}
 
-function submit(){
-    const title=document.getElementById('title').value;
+function submit() {
+    const imageInput = document.getElementById('image');
+    if (imageInput.files.length === 0) {
+        console.log('No image selected!');
+        return;
+    }
+    const images = imageInput.files[0];
+    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODE5MDA0OTV9.glbxmGgSy3mhWGh_jeS5cOqSh_iOXALVFKRGRUyQqnU';
 
-    const data={
-        title
+    const data = {
+        images: images
+    };
+
+    const headers = {
+        'Authorization': `Bearer ${token}`
+    };
+    
+    const requests = []; // 用來存儲所有的請求
+    for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+        const formData = new FormData();
+        formData.append('FormImage', image);
+
+        requests.push(
+            fetch('http://localhost:5229/api/Carousel/CreateData', {
+                method: 'POST',
+                mode: 'cors',
+                body: formData,
+                headers: headers
+            })
+            .then(response => response.json())
+        );
     }
 
-    postData('http://localhost:5229/api/Carousel/CreateData',data)
-    .then(data=>{
-        const result =data.result;
+    // 等待所有請求完成後，輸出結果
+    Promise.all(requests).then(data => {
         console.log(data);
-        console.log(result);
-    })
+    });
 }
 
 
