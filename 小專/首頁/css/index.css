@@ -358,12 +358,12 @@ a
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
+.prev,.next
+{
     cursor: pointer;
     position: absolute;
-    bottom:40%;
     width: auto;
+    top:275px;
     padding: 60px 30px ;
     color: #000;
     font-weight: bold;
@@ -372,6 +372,7 @@ a
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
+
 
 /* Position the "next button" to the right */
 .next {
