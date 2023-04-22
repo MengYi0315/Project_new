@@ -16,3 +16,35 @@ function ToggleNav(number){
     }
 
 }
+
+
+    let navhover = document.getElementById('nav-a-hover');
+    let downbar = document.getElementById('down-bar');
+    let t = document.getElementById('t');
+
+    //滑鼠移入時改變背景顏色（藍）
+    navhover.addEventListener('mouseover', function () {
+      downbar.style.display = 'block';
+    })
+
+    //滑鼠移出時恢復背景顏色
+    navhover.addEventListener('mouseout', function () {
+        downbar.style.display = 'none';
+    })
+
+    // navhover.onmouseover = function(){
+    //     downbar.style.display = "block";
+    // }
+    // function Moveoutsover(){
+    //     downbar.style.display = "block";
+    // }
+    
+
+    // navhover.onmouseout = function(){
+    //     downbar.style.display = "none";
+    // }
+
+    // function Moveoutsout(){
+    //     downbar.style.display = "none";
+    // }
+
