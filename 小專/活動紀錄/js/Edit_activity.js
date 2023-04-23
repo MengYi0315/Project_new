@@ -39,7 +39,7 @@ function submit() {
     };
     
 
-    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+    postData('http://localhost:5229/api/Activity/UpdateData?id=8dcf3a38-6c64-46d6-a72e-dd5d0538fc6d', data, headers)
         .then(data => {
         const result = data.result;
         console.log(data);
