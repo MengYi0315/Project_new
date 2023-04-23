@@ -320,3 +320,15 @@ textarea
     width:500px;
     height:120px;
 }
+.create-button{
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    margin: 0 5px;
+    background-color: #61AFB3;
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
