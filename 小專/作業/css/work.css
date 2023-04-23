@@ -350,7 +350,7 @@ select option {
 
 .row-sty{
 
-    background-color: #379ac4;
+    background-color: #9e9e9e;
     text-align: center;
     
     color: black;
@@ -441,3 +441,22 @@ select option {
         font-weight: bold;
         color: white;
     }
+
+
+.flip{
+    margin:0px;
+    padding:5px;
+    text-align:center;
+    cursor:pointer;
+    font-family:'Arial';
+}
+
+.panel{
+    margin:0px;
+    padding:5px;
+    text-align:center;
+    background:#e5eecc;
+    border:solid 1px #c3c3c3;
+    display:none;
+    font-family:'Arial';
+}

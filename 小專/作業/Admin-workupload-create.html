@@ -13,8 +13,9 @@
     <header class="header flex">
         <div class="header-left flex">
             <img src="./img/logo1.png" class="logo">
+            
         </div>
-        <div class="header-right flex">
+        <div class="header-right flex"> 
             <ul class="flex"style="align-items:flex-end;"> 
                 <a href="/小專/首頁/Login_Index.html"  class="nav-a">
                     <li>首頁</li>
@@ -34,7 +35,7 @@
                 <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a-current">
                     <li>使用者專區</li> 
                 </a> 
-                <a href="./logout-thesis.html"  class="nav-a">
+                <a href="logout-thesis.html"  class="nav-a">
                     <li>登出</li> 
                 </a>    
             </ul>
@@ -66,42 +67,49 @@
             </ul>
         </div>
         <div class="right-content">
-            <div class="title">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="display: flex; align-items: center;">
-                        <span style="padding-right:30px ;" id="bang">發布作業</span>
-                    </div>
-                </div>
+            
+            <div class="title" style="display: flex;align-items: center;">
+                <span id="bang">上傳作業</span>
             </div>
             <br>
-            <div class="unpad">
-                <label for="work">選擇發布的作業：</label>
+            <div style="background-color: #d9d9d9; padding: 20px; border-radius: 20px;">
+                <div class="unpad">
+                <label for="work">選擇作業：</label>
                 <select id="selarrow" name="work">
-                    <option value="8">章節八</option>
-                    <option value="9">章節九</option>
-                    <option value="10">章節十</option>
-                    <option value="11">章節十一</option>
-                    <option value="12">章節十二</option>
-                    <option value="n">自訂作業</option>
+                    <option value="work2">作業1</option>
+                    <option value="work2">作業2</option>
+                    <option value="work3">作業3</option>
+                    <option value="work4">作業4</option>
+                    <option value="work5">作業5</option>
                 </select>
             </div>
+            <br>
+                <div class="unpad">
+                    <label for="name">選擇檢核者：</label>
+                    <select id="selarrow" name="name">
+                        <option value="name1">林小帥</option>
+                        <option value="name2">林大坪</option>
+                        <option value="name3">郭金提</option>
+                        <option value="name4">詹龍諧</option>
+                        <option value="name5">湯俊璋</option>
+                    </select>
+                </div>
                 <br>
-            <div class="unpad">
-                <label for="topic">輸入作業要求及內容：</label>
-                <textarea type="text" id="enterblock" name="topic"></textarea>
+                <div class="unpad">
+                    <label for="file">選擇繳交檔案：</label>
+                    <input type="file">
+                </div>
+                <div style="display: flex; justify-content: end;">
+                    <a href="workupload.html"><button type="button">取消</button></a>
+                    <button type="submit">確認</button>
+                </div>
+            
             </div>
-            <label for="topic">附加檔案：</label>
-            <div class="imgblock" style="margin-bottom: 10px;">
-                <input type="file" value="FileUpload" name="FileUpload">
-            </div>
-            <div style="display: flex; justify-content: end;">
-                <a href="workrelease-list.html"><button class="reserve-botton" type="button">取消</button></a>
-                <button class="reserve-botton" type="submit">確認</button>
-            </div>
+            
         </div>
     </div>
     <footer>
     </footer>
 </body>
-<script src="./js/Test.js"></script>
+<script src="./js/work.js"></script>
 </html>
