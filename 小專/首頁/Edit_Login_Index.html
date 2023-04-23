@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="./css/activity.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,13 @@
 <body>
     <header class="header flex">
         <div class="header-left flex">
-            <a href=""><img src="./img/logo1.png" class="logo"></a>
+            <a href="./Login_Index.html"><img src="./img/logo1.png" class="logo"></a>
             
         </div>
         <div class="header-right flex"> 
             <ul class="flex " style="align-items: flex-end;"> 
-                <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
-                    <li>首頁</li>
+                <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a-current">
+                    <li style="font-size:18px;">首頁</li>
                 </a>
                 <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
@@ -29,35 +29,36 @@
                 <a href="/小專/專題/Admin_topic-login.html"  class="nav-a">
                     <li>研究室成果</li>
                 </a>    
-                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a-current">
-                    <li style="font-size:18px;">活動紀錄</li>
+                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
+                    <li>活動紀錄</li>
                 </a>
                 <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
                     <li>學習專區</li>
-                </a>        
+                </a>    
                 <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
-                    <li>使用者專區</li> 
-                </a>  
+                    <li>使用者專區</li>
+                </a>    
                 <a href="/小專/登入/Login.html"  class="nav-a">
                     <li>登出</li> 
-                </a>
+                </a>  
             </ul>
         </div>
     </header>
 
-    <div class="content flex">
-        <div class="activity-body">
-            <div>
-                <div class="title">修改活動</div>
-                <div class="create-text">名稱：<input type="text" id="title"class="create-input"></div>
-                <div class="create-text flex"><div class="flex"style="justify-content: flex-start;">描述：</div><textarea id="content" style="font-size: 20px;"></textarea></div>
-                <div class="create-text">圖片：<input type="file" id="image"onchange="previewFile()"style="justify-content: right;"class="create-input"></div>
-                <div style="margin-left:10px;">
-                    <img class="img">
-                    <p class="file-name" style="font-size:20px;font-weight: bold;"></p>
+    <div class="content column flex" style="padding-bottom: 100%;">
+        <div style="width:100%;"class="flex">
+            <div class="create">
+                <div class="title">修改公告</div>
+                <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value=""></div>
+                <div class="create-content flex">
+                    內容：<textarea name="" id="" cols="74" rows="9"></textarea>
+                    
                 </div>
-                <input type="submit" onclick="submit()" accept="image/*" value="新增活動" style="margin:30px 0px;font-size:20px;padding:3px 15px;">
+                <div style="margin-left:20px;">
+                    <input type="button" value="發布" class="submit">
+                </div>
             </div>
+            <div style="width:100%;" class="back"><a href="/小專/首頁/Admin_Login_Index.html" class="a2"><i style="font-size:20px;margin-right:5px;"class="fa-solid fa-house"></i>回首頁</a></div>
         </div>
     </div>
 
@@ -66,6 +67,4 @@
     </footer>
 
 </body>
-
-<script src="/小專/活動紀錄/js/Create_activity.js"></script>
 </html>
