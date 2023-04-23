@@ -1,26 +1,17 @@
-function postData(url, data, headers) {
+function updateData(id, data, headers) {
     const formData = new FormData();
     formData.append('activity_title', data.title);
     formData.append('activity_content', data.content);
     formData.append('FormImage', data.image);
 
-    return fetch(url, {
+    return fetch(`http://localhost:5229/api/Activity/UpdateData?id=${id}`, {
         method: 'POST',
         mode: 'cors',
         body: formData,
         headers: headers
     })
-      .then(response => response.formData) //輸出成json
+    .then(response => response.json()) // 轉成 JSON 格式
 }
-
-
-function resultvalue(result){
-    if(result==0)
-        return '0';
-    else if(result==1)
-        return '1';
-}
-
 
 function submit() {
     const title = document.getElementById('title').value;
@@ -39,13 +30,24 @@ function submit() {
     };
     
 
-    postData('http://localhost:5229/api/Activity/UpdateData?id=8dcf3a38-6c64-46d6-a72e-dd5d0538fc6d', data, headers)
+    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+        .then(response => response.json()) // 轉成 JSON 格式
         .then(data => {
-        const result = data.result;
-        console.log(data);
-        console.log(result);
+            const result = data.result;
+            console.log(data);
+            console.log(result);
+
+            const id = data.id; // 取得新增資料的 ID
+            updateData(id, data, headers)
+                .then(response => response.json())
+                .then(data => {
+                    const result = data.result;
+                    console.log(data);
+                    console.log(result);
+                });
         });
 }
+
 
 
 // function previewFile() {
