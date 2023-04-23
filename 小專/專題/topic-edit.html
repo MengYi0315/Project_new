@@ -66,8 +66,9 @@
                     <div class="flex" style="width: 100%;">
                         <div class="topic-photo flex">
                             <div class="photo flex">
+                                <img  class="img">
                                 <!-- <input type="button" value="IMG" class="select-photo">     -->
-                            </div>   
+                            </div>     
                         </div>
                         
                         
@@ -94,7 +95,7 @@
                             </div>
                             <div  class="member">
                                 圖片檔案：
-                                <input type="file" value="IMG" class="select-photo">
+                                <input type="file" value="IMG" onchange="previewFile()" class="select-photo">
                             </div>
                             <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                 專題簡介：
@@ -113,31 +114,14 @@
                         <div class="button-padding">
                             <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
                         </div>
-                       
                     </div>
-                    
-                    
-
                 </div>
-
-
-            </div>
-            
-
-            
+            </div>  
         </div>
     </div>
-
     <footer>
 
     </footer>
-
-
-
-
-
-
-    
-    
 </body>
+<script src="./js/topic.js"></script>
 </html>

@@ -105,7 +105,8 @@
                 <div class="topic-1">
                     <div class="flex" style="width: 100%;">
                         <div class="topic-photo flex">
-                            <div class="photo flex">
+                            <div class="photo">
+                                <img  class="img">
                                 <!-- <input type="button" value="IMG" class="select-photo">     -->
                             </div>   
                         </div>
@@ -130,11 +131,10 @@
                             <div class="member">
                                 專題組員：
                                 <input type="button" value="選擇人員" class="select-member">
-                            
                             </div>
                             <div  class="member">
                                 圖片檔案：
-                                <input type="file" value="IMG" class="select-photo">
+                                <input type="file" value="IMG" onchange="previewFile()" class="select-photo">
                             </div>
                             <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                 專題簡介：
@@ -149,23 +149,14 @@
                     
                     <div class="button-div flex">
                         <div class="button-padding">
-                            <input type="button" value="保存" class="button">
+                            <input type="button" value="保存" class="create-button">
                         </div>
                         <div class="button-padding">
-                            <input type="button" value="返回" class="button" onclick="location.href='./Admin_topic-login.html'">
+                            <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
                         </div>
-                        
                     </div>
-                    
-                    
-
                 </div>
-
-
             </div>
-            
-
-            
         </div>
     </div>
 
@@ -173,12 +164,6 @@
 
     </footer>
 
-
-
-
-
-
-    
-    
 </body>
+<script src="./js/topic.js"></script>
 </html>
