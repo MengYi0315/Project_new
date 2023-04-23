@@ -23,7 +23,7 @@
                 <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
                 </a>
-                <a href="/小專/專題/topic-login.html"  class="nav-a">
+                <a href="/論文/"  class="nav-a">
                     <li>研究室成果</li>
                 </a>
                 <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
@@ -65,61 +65,54 @@
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <!-- <ul class="ul-win">
-                <a href="./workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="./workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="./workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
-                <a href="" class="a-win"><li class="li-win">考試預約</li></a>
-                <a href="" class="a-win"><li class="li-win">被預約時段</li></a>
-            </ul> -->
         </div>
         <div class="right-content">
             
             <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">檢查作業</span>
+                <span id="bang">已發布的作業</span>
+                <a href="./workrelease.html"><img style="padding-left: 50px;" class="plus" src="./img/plus.PNG"></a>
             </div>
             <br>
             <table class="table-row">
                 <tr style="background-color: orange;" class="row-sty">
-                    <td>上傳作業者</td>
-                    <td>作業內容</td>
-                    <td>繳交日期</td>
-                    <td>作業批改</td>
+                    <td>發布人</td>
+                    <td>發布作業</td>
+                    <td>說明檔案</td>
+                    <td>發布日期</td>
                 </tr>
 
                 <tr class="row-sty">
                     <td>林韓平</td>
                     <td>基本程式語法練習</td>
-                    <td>2023/3/17</td>
                     <td>
-                        <a href="./workcheckfinish.html"><img class="edit-size" src="./img/check.png" alt=""></a>
+                        <div class="flip"><span class="1">說明欄展開</span></div>
+                        <div class="panel">開出來</div>
                     </td>
+                    <td>2023/3/17</td>
+                    
                 </tr>
                 <tr class="row-sty">
                     <td>林洨帥</td>
                     <td>資料庫語法基礎</td>
+                    <td><button class="reserve-botton">下載</button></td>
                     <td>2023/3/15</td>
-                    <td>
-                        <a href="./workcheckfinish.html"><img class="edit-size" src="./img/check.png" alt=""></a>
-                    </td>
                 </tr>
                 <tr class="row-sty">
                     <td>郭金提</td>
                     <td>第九章預習筆記</td>
+                    <td><button class="reserve-botton">下載</button></td>
                     <td>2023/3/12</td>
-                    <td>
-                        <a href="./workcheckfinish.html"><img class="edit-size" src="./img/check.png" alt=""></a>
-                    </td>
+                    
                 </tr>
                 <tr class="row-sty">
                     <td>詹龍諧</td>
                     <td>第八章預習筆記</td>
+                    <td><button class="reserve-botton">下載</button></td>
                     <td>2023/3/10</td>
-                    <td>
-                        <a href="./workcheckfinish.html"><img class="edit-size" src="./img/check.png" alt=""></a>
-                    </td>
+                    
                 </tr>
             </table>
+
             
 
         </div>
@@ -127,5 +120,6 @@
     <footer>
     </footer>
 </body>
-<script src="./js/Test.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="./js/work.js"></script>
 </html>

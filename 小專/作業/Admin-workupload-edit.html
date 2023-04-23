@@ -69,37 +69,51 @@
         <div class="right-content">
             
             <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">作業批改</span>
+                <span id="bang">編輯已上傳作業</span>
             </div>
             <br>
-            <div class="boardarea">
-                <div class="padar">
-                    <div class="unpad">
-                        <label class="labelsty unpad">繳交作業人：林小帥</label>
-                        <br>
-                        <br>
-                        <label class="labelsty">作業檔案：</label>
-                        <input class="reserve-botton" type="button" value="下載">
-                    </div>
-                    
-                    <div class="unpad" style="justify-content:left; align-items: center;">
-                        <label class="labelsty unpad">評語及建議：</label>
-                        <textarea type="text" style="height: 300px;width: 100%;" id="enterblock"></textarea>
-                    </div>
-                    <label class="labelsty unpad">附加檔案：</label>
-                    <div class="imgblock">
-                        <input type="file" value="FileUpload" name="FileUpload">
+            <div style="background-color: #379ac4; padding: 20px; border-radius: 20px;">
+                <div class="unpad">
+                    <div style="display: flex; align-items:flex-start;">
+                        <label for="work">繳交作業內容：</label>
+                        <textarea style="height: 50px;">hi</textarea>
                     </div>
                 </div>
+            <br>
+                <div class="unpad">
+                    <label for="name">選擇檢核者：</label>
+                    <select id="selarrow">
+                        <option >請選擇檢核者</option>
+                        <option >林小帥</option>
+                        <option >林大坪</option>
+                        <option >郭金提</option>
+                        <option >詹龍諧</option>
+                        <option >湯俊璋</option>
+                    </select>
+                </div>
+                <br>
+                <div class="unpad">
+                    <label for="file">選擇繳交檔案：</label>
+                    <input type="file" value="" class="file-c">
+                </div>
+                <div class="flex button-flex">
+                    <div class="button-padding">
+                        <input type="button" value="保存" class="reserve-botton">
+                    </div>
+                    <div class="button-padding">
+                        <input type="button" value="返回" class="reserve-botton" onclick="location.href='./Admin_topic-login.html'">
+                    </div>
+                    <div class="button-padding">
+                        <input type="button" value="刪除" class="reserve-botton">
+                    </div>
+                </div>
+            
             </div>
-            <div style="display: flex; justify-content: end;">
-                <a href="./workcheck.html"><button class="reserve-botton" type="button">取消</button></a>
-                <button class="reserve-botton" type="submit">確認</button>
-            </div>
+            
         </div>
     </div>
     <footer>
     </footer>
 </body>
-<script src="./js/Test.js"></script>
+<script src="./js/work.js"></script>
 </html>
