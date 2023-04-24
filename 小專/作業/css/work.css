@@ -103,7 +103,7 @@ a{
     line-height: 50px;
 
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     text-shadow:2px 3px 5px #4d4d4d;
     
@@ -114,7 +114,7 @@ a{
 .content
 {
     background-color: antiquewhite;
-    width:100%;
+    width: 100%;
 }
 .left-content
 {
@@ -174,10 +174,13 @@ a{
 
 
 .title{
-
     font-size: 36px;
+    
+    text-align: center;
     font-weight: bold;
-    justify-content: left;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .yearbar{
@@ -251,11 +254,11 @@ a{
 }
 
 .unpad{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .uppad{
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .border1px{
@@ -406,41 +409,58 @@ select option {
 .row-button{
     cursor: pointer;
     
-        height: 35px;
-        width: 80px;
-        background-color:#2B8282;
-        color: #fff;
-        border-width: thin;
-        border-radius: 5px;
-    
-        font-size: 16px;
-        font-weight: bold;
-    
-        margin: 0 5px;
-    }
+    height: 35px;
+    width: 80px;
+    background-color:#2B8282;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
 
-    .reserve-botton{
-        cursor: pointer;
-    
-    
-        width: 80px;
-        height: 35px;
-    
-        margin: 0 5px;
-    
-        background-color: #61AFB3;
-    
-        border-radius: 5px;
-        border-width: 0;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-    }
+    font-size: 16px;
+    font-weight: bold;
 
-    .labelsty{
-        font-weight: bold;
-        color: white;
-    }
+    margin: 0 5px;
+}
+
+.reserve-botton{
+    cursor: pointer;
+
+
+    width: 80px;
+    height: 35px;
+
+    margin: 0 5px;
+
+    background-color: #61AFB3;
+
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.d-4-row-button{
+    cursor: pointer;
+    
+    height: 35px;
+    width: 80px;
+    background-color:crimson;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 0 5px;
+}
+
+
+.labelsty{
+    font-weight: bold;
+    color: white;
+}
 
 
 .flip{
@@ -459,4 +479,79 @@ select option {
     border:solid 1px #c3c3c3;
     display:none;
     font-family:'Arial';
+}
+
+.right-content-div{
+    width: 100%;
+    height: auto;
+
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.text-top{
+    vertical-align: top;
+}
+
+.field{
+    height: 60px;
+}
+
+.text{
+    width: 320px;
+    height: 30px;
+    background-color: #D9D9D9;
+
+    border-width: 0;
+}
+
+.normal-word{
+    font-size: 20px;
+
+    text-align: right;
+}
+
+.textarea{
+    padding: 10px;
+    width: 300px;
+    height: 100px;
+    background-color: #D9D9D9;
+
+    border-width: 0;
+}
+
+.textarea-topic{
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: #D9D9D9;
+
+    border-width: 0;
+}
+
+.btn{
+    background-color: #ccc;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px; 
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+
+.none-white{
+    user-select: none;
+}
+
+.add-icon{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height:65px;
+
+    
 }
