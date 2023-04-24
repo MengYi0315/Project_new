@@ -10,9 +10,3 @@ function ToggleNav(number){
 
 }
 
-
-$(function(){
-    $(".flip").click(function(){
-    $(".panel").slideToggle("fast");
-    });
-});

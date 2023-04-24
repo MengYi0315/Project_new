@@ -29,13 +29,13 @@
                 <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a-current">
                     <li>學習專區</li>
                 </a>        
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a-current">
+                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
                     <li>使用者專區</li> 
                 </a> 
-                <a href="logout-thesis.html"  class="nav-a">
+                <a href="./logout-thesis.html"  class="nav-a">
                     <li>登出</li> 
                 </a>    
             </ul>
@@ -59,14 +59,19 @@
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業/Admin-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/Admin-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/Admin-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
         </div>
         <div class="right-content">
+            <div>
+                <a href="./Admin-workupload-create.html">
+                    <img src="./img/plus.PNG" class="add-icon">
+                </a>
+            </div>
             
             <div class="title" style="display: flex;align-items: center; justify-content: center;">
                 已上傳作業
@@ -76,7 +81,7 @@
                 <tr style="background-color: #f9d853;" class="row-sty">
                     <td>檢核人</td>
                     <td>作業內容</td>
-                    <td>作業檔案</td>
+                    
                     <td>繳交日期</td>
                     <td>修改</td>
                 </tr>
@@ -84,39 +89,40 @@
                 <tr class="row-sty">
                     <td>林韓平</td>
                     <td>基本程式語法練習</td>
-                    <td>作業檔案</td>
                     <td>2023/3/17</td>
-                    <td>
-                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
                     </td>
                     
                 </tr>
                 <tr class="row-sty">
                     <td>林洨帥</td>
                     <td>資料庫語法基礎</td>
-                    <td>作業檔案</td>
                     <td>2023/3/15</td>
-                    <td>
-                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
                     </td>
                 </tr>
                 <tr class="row-sty">
                     <td>郭金提</td>
                     <td>第九章預習筆記</td>
-                    <td>作業檔案</td>
                     <td>2023/3/12</td>
-                    <td>
-                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
                     </td>
                 </tr>
                 <tr class="row-sty">
                     <td>詹龍諧</td>
                     <td>第八章預習筆記</td>
-                    <td>作業檔案</td>
                     <td>2023/3/10</td>
-                    <td>
-                        <a href="./workupload-edit.html"><img class="edit-size" src="./img/edit.png" alt=""></a>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
                     </td>
+                    
                 </tr>
             </table>
         </div>

@@ -29,13 +29,13 @@
                 <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a-current">
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
                     <li>學習專區</li>
                 </a>        
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
+                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a-current">
                     <li>使用者專區</li> 
                 </a> 
-                <a href="./logout-thesis.html"  class="nav-a">
+                <a href="logout-thesis.html"  class="nav-a">
                     <li>登出</li> 
                 </a>    
             </ul>
@@ -44,7 +44,7 @@
 
     <div class="content flex">
         <div class="left-content flex">
-            <div onclick="ToggleMenu(1);" class="ul-win none-white" style="cursor: pointer;">
+            <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
@@ -55,13 +55,13 @@
                 <a href="/小專/學習專區-考試列表/Admin-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
                 <a href="/小專/學習專區-考試列表/Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a>
             </ul>
-            <div onclick="ToggleMenu(2);" class="ul-win none-white" style="cursor: pointer;">
+            <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/Admin-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/Admin-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/Admin-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
@@ -69,61 +69,33 @@
         <div class="right-content">
             
             <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">已發布的作業</span>
-                <a href="./workrelease.html"><img style="padding-left: 50px;" class="plus" src="./img/plus.PNG"></a>
+                <span id="bang">作業批改</span>
             </div>
             <br>
-            <table class="table-row">
-                <tr style="background-color: #f9d853;" class="row-sty">
-                    <td>發布人</td>
-                    <td>發布作業</td>
-                    <td>說明檔案</td>
-                    <td>發布日期</td>
-                </tr>
-
-                <tr class="row-sty">
-                    <td>林韓平</td>
-                    <td>基本程式語法練習</td>
-                    <td>
-                        <div class="flip"><span class="1">說明欄展開</span></div>
-                        <div class="panel">開出來</div>
-                    </td>
-                    <td>2023/3/17</td>
+            <div class="boardarea">
+                <div class="padar">
+                    <div class="unpad">
+                        <label class="labelsty unpad">繳交作業人：林小帥</label>
+                        <br>
+                        <br>
+                        <label class="labelsty">作業檔案：</label>
+                        <input class="reserve-botton" type="button" value="下載">
+                    </div>
                     
-                </tr>
-                <tr class="row-sty">
-                    <td>林洨帥</td>
-                    <td>資料庫語法基礎</td>
-                    <td>
-                        <div class="flip"><span class="1">說明欄展開</span></div>
-                        <div class="panel">開出來</div>
-                    </td>
-                    <td>2023/3/15</td>
-                </tr>
-                <tr class="row-sty">
-                    <td>郭金提</td>
-                    <td>第九章預習筆記</td>
-                    <td>
-                        <div class="flip"><span class="1">說明欄展開</span></div>
-                        <div class="panel">開出來</div>
-                    </td>                    
-                    <td>2023/3/12</td>
-                    
-                </tr>
-                <tr class="row-sty">
-                    <td>詹龍諧</td>
-                    <td>第八章預習筆記</td>
-                    <td>
-                        <div class="flip"><span class="1">說明欄展開</span></div>
-                        <div class="panel">開出來</div>
-                    </td>                    
-                    <td>2023/3/10</td>
-                    
-                </tr>
-            </table>
-
-            
-
+                    <div class="unpad" style="justify-content:left; align-items: center;">
+                        <label class="labelsty unpad">評語及建議：</label>
+                        <textarea type="text" style="height: 300px;width: 100%;" id="enterblock"></textarea>
+                    </div>
+                    <label class="labelsty unpad">附加檔案：</label>
+                    <div class="imgblock">
+                        <input type="file" value="FileUpload" name="FileUpload">
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: end;">
+                <a href="./workcheck.html"><button class="reserve-botton" type="button">取消</button></a>
+                <button class="reserve-botton" type="submit">確認</button>
+            </div>
         </div>
     </div>
     <footer>

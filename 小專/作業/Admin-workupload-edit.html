@@ -29,13 +29,13 @@
                 <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a-current">
                     <li>學習專區</li>
                 </a>        
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a-current">
+                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
                     <li>使用者專區</li> 
                 </a> 
-                <a href="logout-thesis.html"  class="nav-a">
+                <a href="./logout-thesis.html"  class="nav-a">
                     <li>登出</li> 
                 </a>    
             </ul>
@@ -67,49 +67,61 @@
             </ul>
         </div>
         <div class="right-content">
-            
-            <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">編輯已上傳作業</span>
-            </div>
-            <br>
-            <div style="background-color: #379ac4; padding: 20px; border-radius: 20px;">
-                <div class="unpad">
-                    <div style="display: flex; align-items:flex-start;">
-                        <label for="work">繳交作業內容：</label>
-                        <textarea style="height: 50px;">hi</textarea>
-                    </div>
-                </div>
-            <br>
-                <div class="unpad">
-                    <label for="name">選擇檢核者：</label>
-                    <select id="selarrow">
-                        <option >請選擇檢核者</option>
-                        <option >林小帥</option>
-                        <option >林大坪</option>
-                        <option >郭金提</option>
-                        <option >詹龍諧</option>
-                        <option >湯俊璋</option>
-                    </select>
+            <div class="right-content-div flex">
+                <div class="title">
+                    修改已上傳作業
                 </div>
                 <br>
-                <div class="unpad">
-                    <label for="file">選擇繳交檔案：</label>
-                    <input type="file" value="" class="file-c">
+                <table>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            檢核人：
+                        </td>
+                        <td class="text-top field">
+                            <select class="text">
+                                
+                                <option>林韓平</option>
+                                <option>林洨帥</option>
+                                <option>郭金提</option>
+                                <option>詹龍諧</option>
+                                
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            作業主題：
+                        </td>
+                        <td class="text-top field-textarea">
+                            <textarea class="textarea-topic"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-top field">
+                            作業說明：
+                        </td>
+                        <td class="text-top field-textarea">
+                            <textarea class="textarea"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="normal-word text-top field">
+                            上傳檔案：
+                            
+                        </td>
+                        <td class="normal-word text-top field"">
+                            <input type="file">
+                        </td>
+                    </tr>
+                    
+                </table>
+
+                <div class="flex uppad">
+                    <input type="button" value="修改內容" class="reserve-botton" onclick="location.href=''">
+                    <input type="button" value="取消修改" class="reserve-botton"  onclick="location.href='./Admin-workupload.html'">
                 </div>
-                <div class="flex button-flex">
-                    <div class="button-padding">
-                        <input type="button" value="保存" class="reserve-botton">
-                    </div>
-                    <div class="button-padding">
-                        <input type="button" value="返回" class="reserve-botton" onclick="location.href='./Admin_topic-login.html'">
-                    </div>
-                    <div class="button-padding">
-                        <input type="button" value="刪除" class="reserve-botton">
-                    </div>
-                </div>
-            
             </div>
-            
         </div>
     </div>
     <footer>
