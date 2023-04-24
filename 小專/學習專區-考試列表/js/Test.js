@@ -24,12 +24,12 @@ function ToggleNav(number){
 
     //滑鼠移入時改變背景顏色（藍）
     navhover.addEventListener('mouseover', function () {
-      downbar.style.display = 'block';
+    downbar.style.display = 'block';
     })
 
     //滑鼠移出時恢復背景顏色
     navhover.addEventListener('mouseout', function () {
-        downbar.style.display = 'none';
+    downbar.style.display = 'none';
     })
 
     // navhover.onmouseover = function(){
