@@ -3,6 +3,9 @@
     margin: 0;
     font-family:"Microsoft JhengHei";
 }
+html{
+    height: 100%;
+}
 header{
     height: 80px;
     background-color: #2B8282;
@@ -11,6 +14,7 @@ header{
 
 body{
     background-color:#FFF8F2;
+    height: 100%;
 }
 
 .header{
@@ -118,11 +122,20 @@ a{
 {
     background-color: antiquewhite;
     width:100%;
+    height: 100%;
+    padding-bottom: 80px;
+}
+.content-a
+{
+    background-color: antiquewhite;
+    width:100%;
+    height: auto;
+    padding-bottom: 80px;
 }
 .left-content
 {
     width:20%;
-    height: 1000px;
+    
     margin:250px 0px 50px 20px;
     
     align-items: center;
@@ -131,8 +144,8 @@ a{
 .right-content
 {
     width:80%;
-    height:1000px;
-    margin:180px 80px 100px 30px;
+    
+    margin:180px 80px 0 30px;
 
     text-align: center;
 
@@ -141,8 +154,8 @@ a{
 .right-content-t
 {
     width:80%;
-    height:1000px;
-    margin:180px 80px 100px 30px;
+    height:auto;
+    margin:180px 80px 0 30px;
 
     text-align: center;
 
