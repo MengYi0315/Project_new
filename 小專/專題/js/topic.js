@@ -2,7 +2,7 @@ function postData(url, data, headers) {
     const formData = new FormData();
     formData.append('seniorproject_title', data.title);
     formData.append('seniorproject_content', data.content);
-    formData.append('seniorproject_Image', data.image);
+    formData.append('FormImage', data.image);
     formData.append('seniorproject_year', data.year);
 
     return fetch(url, {
@@ -15,15 +15,17 @@ function postData(url, data, headers) {
 }
 
 function submit() {
-    const title = document.getElementById('title').value;
-    const year = document.getElementById('year').value;
-    
-    const image = document.getElementById('image').files[0];
-    const content = document.getElementById('content').value;
+    const senior_title = document.getElementById('title').value;
+    const senior_year = document.getElementById('year').value;
+    const senior_person = document.getElementById('person').value;
+    const senior_image = document.getElementById('image').files[0];
+    const senior_content = document.getElementById('content').value;
     const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODIyMzkxMTJ9.lAlXv_IqkEq0UCtBqMuN9JF8BUS_fHZ6mSmd4ukTlz8';
 
     const data = {
         title: title,
+        year: year,
+        person:person,
         content: content,
         image: image,
     };
