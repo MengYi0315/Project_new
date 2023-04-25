@@ -116,19 +116,32 @@
                                     <option>107年</option>
                                 </select>
                             </div>
-                            <div class="member">
+                            <div class="member flex">
                                 專題組員：
-                                <input type="button" value="選擇人員" class="select-member">
+                                <select class="member-select" multiple>
+                                    
+                                    <option>一</option>
+                                    <option>二</option>
+                                    <option>三</option>
+                                    <option>四</option>
+                                    <option>五</option>
+                                    <option>五</option>
+                                    <option>五</option>
+                                    <option>五</option>
+                                    
+                                </select>
+                            
                             </div>
                             <div  class="member">
                                 圖片檔案：
-                                <input type="file" value="IMG" onchange="previewFile()" class="select-photo">
+                                <input type="file" value="IMG" onchange="previewFile()" class="select-photo" accept="image/*">
                             </div>
                             <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                 專題簡介：
                                 <textarea class="topic-content-text"></textarea>
-                                <!-- <input class="topic-content-text"> -->
+                                
                             </div>
+
                         </div>
                             
                     </div>

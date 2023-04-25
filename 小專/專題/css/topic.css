@@ -233,6 +233,8 @@ a{
     background-color:#D9D9D9;   
     width: 100%;
 
+    padding-bottom: 40px;
+
 }
 
 .ul-year-win
@@ -324,7 +326,7 @@ a{
     background-color:#fff;
     color:#000;
     
-    width: 348px;
+    width: 70%;
     font-size: 16px;
     
 }
@@ -348,13 +350,17 @@ a{
 }
 
 .topic-text{
-    width: 350px;
+    width: 70%;
     height: 25px;
     
 }
 .year-select{
-    width: 354px;
+    width: 70%;
     height: 29px;
+}
+.member-select{
+    width: 70%;
+    height: 100px;
 }
 
 .select-member{
@@ -370,7 +376,7 @@ a{
     border-radius: 30px;
 }
 .topic-content-text{
-    width: 350px;
+    width: 70%;
     height: 150px;
     margin-left: 4px;
 }
@@ -449,6 +455,7 @@ a{
     
     justify-content: right;
     padding: 40px;
+    padding-bottom: 0px;
 
 }
 
