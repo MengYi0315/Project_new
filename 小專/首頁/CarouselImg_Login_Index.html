@@ -64,7 +64,11 @@
             </ul>
         </div>
     </header>
-    
+    <form enctype="multipart/form-data" id="image-form">
+        <input type="file" name="images[]" multiple>
+        <input type="text" name="name">
+        <input type="submit" value="Upload">
+      </form>
     <div class="content column flex">
         <div style="width:100%;margin-bottom:500px;"class="flex">
             <div class="create">
@@ -73,7 +77,7 @@
                     <div class="upload-pic flex">
                         <label class="up-lab" for="add-pic-btn">上傳圖片</label>
                         <div class="div-button flex" >
-                            <input type="file" id="fileInput"  accept="image/*" class="image" name="image" multiple>
+                            <input type="file" id="fileInput"  accept="image/*" class=" file-input" name="image" multiple>
                         </div>   
                     </div>
                     <div style="width:200%;display: flex;flex-direction: row;flex-wrap: wrap;"id="preview"></div>

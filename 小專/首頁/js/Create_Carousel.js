@@ -36,59 +36,56 @@
 //         console.log(result);
 //     })
 // }
-function postData(url, data, headers) {
-    const formData = new FormData();
-    formData.append('FormImage', data.image);
+// function postData(url, data, headers) {
+//     const formData = new FormData();
+//     for (let i = 0; i < files.length; i++) {
+//     formData.append('images', files[i]);
+//     formData.append('FormImage', data.image);
 
+//     return fetch(url, {
+//         method: 'POST',
+//         mode: 'cors',
+//         body: formData,
+//         headers: headers
+//     })
+//       .then(response => response.formData) //輸出成json
+// }
+function postData(url,data,headers){
+    const files = data.MultiImages[0].files; 
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) 
+    {
+        formData.append('MultiImages', files[i]);
+    }
     return fetch(url, {
-        method: 'POST',
-        mode: 'cors',
         body: formData,
-        headers: headers
+        headers:headers,
+        method:'POST',
+        mode:'cors',
     })
-      .then(response => response.formData) //輸出成json
+    .then(response => response.formData)
 }
 
-
 function submit() {
-    const imageInput = document.getElementById('image');
-    if (imageInput.files.length === 0) {
-        console.log('No image selected!');
-        return;
+    const MultiImages = document.getElementsByClassName('file-input');
+    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODI0MzE1NjV9.2ANR_zLr7qah4fALlJuWtVjagM4KfdWh9uh5fzysQgw';
+    
+    const data={
+        MultiImages,
+        token
     }
-    const images = imageInput.files[0];
-    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODIxOTk0ODV9.ErfZa_5krqH0jeDYNnp8LvKpkdWduGktcz_Jecbhb7g';
-
-    const data = {
-        images: images
-    };
-
     const headers = {
         'Authorization': `Bearer ${token}`
     };
-    
-    const requests = []; // 用來存儲所有的請求
-    for (let i = 0; i < images.length; i++) {
-        const image = images[i];
-        const formData = new FormData();
-        formData.append('FormImage', image);
+    postData('http://localhost:5229/api/Carousel/CreateData',data,headers)
 
-        requests.push(
-            fetch('http://localhost:5229/api/Carousel/CreateData', {
-                method: 'POST',
-                mode: 'cors',
-                body: formData,
-                headers: headers
-            })
-            .then(response => response.formData)
-        );
-    }
-
-    // 等待所有請求完成後，輸出結果
-    Promise.all(requests).then(data => {
+    .then(data=>{
         console.log(data);
-    });
+
+    })
+
 }
+
 
 
 
