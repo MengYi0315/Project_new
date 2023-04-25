@@ -55,13 +55,17 @@ window.onload = function() {
             fetch(`http://localhost:5229/api/Announcement/ReadOneData?id='${element.announce_id}`)
             .then((response) => response.json())
             .then((json) => {
+                const date = new Date(element.update_time);
+                const update_time = date.toLocaleString(); // 转换为本地日期和时间字符串
+                console.log(update_time); // "2021/5/5 下午2:29:29" （可能因地区和语言而有所不同）
+
                 post.innerHTML +=
                 `
                 <div>
                     <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
                         <div class="space-between flex">
                             <div> 標題：  ${element.announce_title}</div>
-                            <div> 更新時間： ${element.update_time}</div>
+                            <div> 更新時間： ${update_time}</div>
                         </div>
                     </a>
                 </div>
@@ -70,5 +74,5 @@ window.onload = function() {
             });
         });
     });
-  }
-  
+}
+
