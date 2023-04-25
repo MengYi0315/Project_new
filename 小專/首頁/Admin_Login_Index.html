@@ -106,11 +106,9 @@
                 <div style="margin-top:5px;"><a href="./Create_Login_Index.html"><img src="./img/edit.png" style="width: 45px;height:40px;"/></a></div>
             </div>
             <div class="content-margin">
-                <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
-                    <div id="post" class="space-between flex">
-                        
-                    </div>
-                </a>
+                <div  id="post">
+                    
+                </div>
                 <!-- <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
                     <div class="space-between flex">
                         <div>🔺多益公開考2023年6月11日中科大師生優惠專案｜3/29-5/17 報名</div>
@@ -184,24 +182,6 @@
     </footer>
 
 </body>
-<script src="./js/test.js"></script>
+<script src="./js/Index_Login.js"></script>
 <script src="./js/Carousel.js"></script>
-<script>
-    var post = document.querySelector("#post");
-    var allpost = [];
-    fetch("http://localhost:5229/api/Announcement/GetAllDataList")
-    .then((response) => response.json())
-    .then((json) => {
-        allpost = json.slice(0, 10);
-        post.innerHTML = "";
-        allpost.forEach((element) => {
-        post.innerHTML =
-            post.innerHTML +
-            `
-            <div> 標題是：  ${element.title}</div>
-            <div> 文章內容： ${element.content}</div>
-            `;
-        });
-    });
-</script>
 </html>
