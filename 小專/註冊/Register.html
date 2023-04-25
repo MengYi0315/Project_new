@@ -29,13 +29,13 @@
                 <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <a href="/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
                     <li>學習專區</li>
                 </a>        
-                <a href="/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
+                <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"  class="nav-a-current">
                     <li>使用者專區</li> 
                 </a> 
-                <a href="/小專/登入/Login.html"  class="nav-a-current">
+                <a href="/小專/登入/Login.html"  class="nav-a">
                     <li>登出</li>
                 </a> 
             </ul>
@@ -43,88 +43,110 @@
     </header>
 
     <div class="content flex">
-        
-        
-        <div class="login-div flex">
-            <div class="login-word margin-top-login-content">
-                註冊
+        <div class="left-content flex">
+            <div class="ul-win" style="cursor: pointer;">
+                <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"><div class="menu">個人資訊</div></a>
             </div>
-            <table>
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        姓名：
-                    </td>
-                    <td class="text-bottom field">
-                        <input type="text"  class="text">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        帳號：
-                    </td>
-                    <td class="text-bottom field">
-                        <input type="text"  class="text">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        密碼：
-                    </td>
-                    <td class="text-bottom field">
-                        <input type="text"  class="text">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        確認密碼：
-                    </td>
-                    <td class="text-bottom field">
-                        <input type="text"  class="text">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        Email：
-                    </td>
-                    <td class="text-bottom field">
-                        <input type="text"  class="text">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-                    <td class="normal-word text-bottom field" >
-                        權限：
-                    </td>
-                    <td class="text-bottom field">
-                        <select class="text">
-                            <option>學生</option>
-                            <option>學長姐</option>
-                            <option>管理員</option>
-
-                        </select>
-                        
-                    </td>
-
-                </tr>
-            </table>
+            <div class="ul-win" style="cursor: pointer;">
+                <a href="/小專/使用者專區-權限管理/Admin-permission.html"><div class="menu">權限管理</div></a>
+            </div>
+            <div class="ul-win" style="cursor: pointer;">
+                <a href="/小專/註冊/Register.html"><div class="menu-c">新增使用者</div></a>
+            </div>
             
-            <div class="margin-top-login-content">
-                <input type="button" value="註冊" class="login-button" onclick="location.href='/使用者專區-個人資訊/PersonalInformation.html'">
+        </div>
+
+        <div class="right-content ">
+            <div class="flex" style="justify-content: center;">
+                <div class="title">
+                    註冊
+                </div>
+                
             </div>
-            <a href="/小專/登入/Login.html" style=" margin-top: 10px;" class="forget-password">
-                登入
-            </a>
+            <div class="login-div flex">
+                
+                <table>
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            姓名：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="text"  class="text">
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            帳號：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="text"  class="text">
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            密碼：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="text"  class="text">
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            確認密碼：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="text"  class="text">
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            Email：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="text"  class="text">
+                        </td>
+    
+                    </tr>
+    
+    
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            權限：
+                        </td>
+                        <td class="text-bottom field">
+                            <select class="text">
+                                <option>學生</option>
+                                <option>學長姐</option>
+                                <option>管理員</option>
+    
+                            </select>
+                            
+                        </td>
+    
+                    </tr>
+                </table>
+                
+                <div class="margin-top-login-content">
+                    <input type="button" value="註冊" class="login-button" onclick="location.href='/使用者專區-個人資訊/PersonalInformation.html'">
+                </div>
+                
+    
+    
+    
+    
+            </div>
+            
 
 
 
 
         </div>
+        
+        
             
 
 

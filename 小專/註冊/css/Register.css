@@ -100,7 +100,7 @@ a{
     border-radius: 5px 5px 0 0 ;
 
     text-align: center;
-    line-height: 55px;
+    line-height: 50px;
 
     color: #fff;
     font-size: 18px;
@@ -122,7 +122,8 @@ a{
     width:20%;
     height:auto;
     margin:250px 0px 50px 20px;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .right-content
 {
@@ -163,7 +164,7 @@ a{
 
 /* login */
 .login-div{
-    margin: 180px 0 80px 0;
+    
     height: auto;
     
     
@@ -218,4 +219,33 @@ a{
 }
 .field{
     height: 60px;
+}
+
+
+.menu{
+    background-color: #003247;
+    padding: 20px;
+
+
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin:1px;
+}
+.menu-c{
+    background-color: #fb8947;
+    padding: 20px;
+
+
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin:1px;
+}
+
+.title{
+    font-size: 36px;
+    
+    text-align: center;
+    font-weight: bold;
 }
