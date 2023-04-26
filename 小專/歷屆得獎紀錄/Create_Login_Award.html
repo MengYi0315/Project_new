@@ -73,7 +73,7 @@
             <div class="area flex">
                 <div class="item">
                     作品年份：
-                    <select name="year" style="height:30px;width:200px;font-size: 20px;">
+                    <select name="year" id="year" style="height:30px;width:200px;font-size: 20px;">
                         <option>請選擇得獎年份</option>
                         <option value="111">111年</option>
                         <option value="110">110年</option>
@@ -91,23 +91,24 @@
                 </div>
                 <div class="item">
                     競賽名稱：
-                    <input type="text" class="item_detail">
+                    <input type="text" id="name" class="item_detail">
                 </div>
                 <div class="item">
                     作品名稱：
-                    <input type="text" class="item_detail">
+                    <input type="text" id="work" class="item_detail">
                 </div>
                 <div class="item">
                     得獎名次：
-                    <input type="text" class="item_detail">
+                    <input type="text" id="rank" class="item_detail">
                 </div>
                 <div class="item">
                     參與人員：
                     <input type="button" value="選擇人員" class="select-person">
+
                 </div>
                 <div class="button-right flex">
                     <div>
-                        <a href="#"><input type="button" value="保存" class="create-button"></a>
+                        <a href="#"><input type="submit" onclick="submit()" value="保存" class="create-button"></a>
                         <a href="./Admin_Login_Award.html"><input type="button" value="返回" class="create-button"></a>
                     </div>
                 </div>
@@ -118,6 +119,7 @@
     <footer>
 
     </footer>
+    <script src="./js/Create_Award.js"></script>
     <script src="./js/test.js"></script>
 </body>
 </html>
