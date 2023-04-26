@@ -1,3 +1,40 @@
+let LoginToken=sessionStorage.getItem('LoginToken');
+console.log(LoginToken);
+function postData(url, data, headers) {
+    return fetch(url, {
+        body: JSON.stringify(data),
+        headers: headers,
+        method: 'POST',
+        mode: 'cors',
+    })
+    //.then(response => response.json()) //輸出成json
+}
+
+function submit() {
+    console.log(LoginToken);
+    const announce_title = document.getElementById('title').value;
+    const announce_content = document.getElementById('content').value;
+
+
+    const data = {
+        announce_title,
+        announce_content
+    }
+    const headers = {
+        'Authorization': `Bearer ${LoginToken}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    };
+    postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
+        .then(({data}) => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+}
+
+
 // function postData(url,data,headers){
 
 //     return fetch(url, {
@@ -27,43 +64,7 @@
 //         // sessionStorage.setItem('LoginData', JSON.stringify(data));
 //         console.log(data);
 //     })
-// }
-let LoginToken=sessionStorage.getItem('LoginToken');
-
-function postData(url, data, headers) {
-    return fetch(url, {
-        body: JSON.stringify(data),
-        headers: headers,
-        method: 'POST',
-        mode: 'cors',
-    })
-    //.then(response => response.json()) //輸出成json
-    }
-
-    function submit() {
-       
-    const announce_title = document.getElementById('title').value;
-    const announce_content = document.getElementById('content').value;
-
-
-    const data = {
-        announce_title,
-        announce_content
-    }
-    const headers = {
-        'Authorization': `Bearer ${LoginToken}`,
-        'Content-Type': 'application/json'
-    };
-    postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
-        .then(({data}) => {
-        console.log(data);
-        })
-        .catch(error => {
-            console.error(error);
-            })
-    }
-
-  
+// }  
 
 
 // function getToken() {

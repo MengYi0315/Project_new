@@ -16,8 +16,8 @@ function LoginData(){
         }
     })
             .then(( { data } ) => {
-                console.log(data);
                 sessionStorage.setItem('LoginToken',data);
+                console.log(data);
                 
             })
             .catch(error => {
