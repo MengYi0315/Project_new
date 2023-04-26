@@ -43,7 +43,7 @@
         </div>
     </header>
 
-    <div class="content flex">
+    <div class="content-a flex">
         <!-- <div class="left-content flex">
             <ul class="ul-win">
                 <a href="" class="a-win"><li class="li-win">研究生畢業論文</li></a>
@@ -65,9 +65,12 @@
                 <input type="text"  class="text">
 
             </div>
-            <div class="normal-word margin-top-login-content">
+            <div class="normal-word margin-top-login-content" style="position: relative;">
                 密碼：
-                <input type="password" class="text">
+                <!-- <input type="password" class="text"> -->
+                <img id="demo_img" onclick="hideShowPsw()" src="./img/visible.png" class="pw-icon">
+                <input type="password" id="demo_input" class="text"/>
+        
             </div>
             <div class="margin-top-login-content">
                 <input type="button" value="登入" class="login-button">
@@ -75,9 +78,10 @@
             <a href="./ForgetPassword.html" style=" margin-top: 10px;" class="forget-password">
                 忘記密碼?
             </a>
+            <br>
             <div class="flex">
                 <a href="/小專/首頁/Login_Index.html" style="color: #000; margin-left: 10px;">學生</a>
-                <a href="/小專/首頁/Senior-Login_Index.html" style="color: #000; margin-left: 10px;">學長</a>
+                <a href="/小專/首頁/Senior-Login_Index.html" style="color: #000; margin-left: 10px;">學長姐</a>
                 <a href="/小專/首頁/Admin_Login_Index.html" style="color: #000; margin-left: 10px;">admin</a>
     
             </div>
@@ -100,6 +104,7 @@
 <script src="./js/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="./js/login.js"></script>
+<script src="./js/password.js"  type="text/javascript"></script>
 
 
 </html>

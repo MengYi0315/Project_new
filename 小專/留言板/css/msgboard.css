@@ -119,9 +119,11 @@ a{
 .left-content
 {
     width:20%;
-    height:auto;
+    
     margin:250px 0px 50px 20px;
-    justify-content: center;
+    
+    align-items: center;
+    flex-direction: column;
 }
 .right-content
 {
@@ -323,27 +325,4 @@ select option {
     justify-content: space-between;
     align-items: center;
     background-color: #D9D9D9;
-}
-
-.reserve-botton{
-    cursor: pointer;
-
-
-    width: 80px;
-    height: 35px;
-
-    margin: 0 5px;
-
-    background-color: #61AFB3;
-
-    border-radius: 5px;
-    border-width: 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.reserve-botton:hover{
-    background-color: #2B8282;
-    font-weight: bold;
 }

@@ -122,6 +122,13 @@ a{
     justify-content: center;
     height: 100%;
 }
+.content-a
+{
+    background-color: antiquewhite;
+    width:100%;
+    justify-content: center;
+    height: auto;
+}
 .left-content
 {
     width:20%;
@@ -284,3 +291,14 @@ a{
 }
 
 
+
+
+.pw-icon{
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    
+    top: 6px;
+    right: 5px; 
+    
+}

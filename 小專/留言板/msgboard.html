@@ -22,32 +22,64 @@
                 </a>
                 <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
-                </a>
-                <a href="/小專/專題/topic-login.html"  class="nav-a">
-                    <li>研究室成果</li>
-                </a>    
+                </a> 
+
+
+                <li class="nav-a-t" id="nav-a-hover">
+                    <a href="#" class="down-bar-title">研究室成果</a>
+                    <ul class="down-bar " id="down-bar">
+                        <a href="/小專/論文/thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a> 
+                        <a href="/小專/專題/topic-login.html"  class="down-bar-text"><li>專題作品</li></a>
+                        <a href="/小專/歷屆得獎紀錄/Login_Award.html"  class="down-bar-text"><li>歷屆得獎紀錄</li></a>
+                    </ul>
+
+
+                </li>
+
                 <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a">
-                    <li>學習專區</li>
+
+                <a href="/小專/學習專區-考試列表/Test-TestList.html"  class="nav-a-current">
+                    <li style="font-size:18px;">學習專區</li>
                 </a>    
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
-                    <li>使用者專區</li>
-                </a>    
+                <li class="nav-a-t" id="nav-a-hover-2">
+                    <a href="#" class="down-bar-title">使用者專區</a>
+                    <ul class="down-bar " id="down-bar-2">
+                        <a href="/小專/使用者專區-個人資訊/PersonalInformation.html" class="down-bar-text"><li>個人資訊</li></a> 
+                        <a href="/小專/個人作品/profolio.html"  class="down-bar-text"><li>個人作品</li></a>
+                    </ul>
+
+
+                </li>            
                 <a href="/小專/登入/Login.html"  class="nav-a">
                     <li>登出</li> 
-                </a> 
+                </a>    
             </ul>
         </div>
     </header>
 
     <div class="content flex">
         <div class="left-content flex">
-            <ul class="ul-win">
-                <a href="" class="a-win"><li class="li-win">個人資料</li></a>
-                <a href="" class="a-win"><li class="li-win">個人作品</li></a>
+            <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">考試專區</div>
+            </div>
+            <ul id="menu-1" class="ul-win menu-list">
+                <a href="./Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <a href="./Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
             </ul>
+            <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">作業專區</div>
+            </div>
+            <ul id="menu-2" class="ul-win menu-list">
+                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <!-- <a href="" class="a-win"><li class="li-win"></li></a>
+                <a href="" class="a-win"><li class="li-win"></li></a> -->
+            </ul>
+            <a href="/小專/留言板/msgboard.html" class="ul-win" >
+                <div class="menu">討論留言板</div>
+            </a>
         </div>
         <div class="right-content">
             
@@ -141,5 +173,5 @@
 
     </footer>
 </body>
-
+<script src="./js/Test.js"></script>
 </html>
