@@ -253,11 +253,11 @@ a{
 }
 
 .unpad{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .uppad{
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .border1px{
@@ -343,7 +343,7 @@ button{
 
 width: 100%;
 height: 200px;
-background-color: black;
+background-color: green;
 color: white;
 display: none;
 border-radius: 10px;
@@ -352,9 +352,9 @@ padding: 10px;
 
 /* 按鈕樣式 */
 .info-btn {
-background-color: yellow;
+background-color: green;
 border: none;
-color: black;
+color: white;
 padding: 0px;
 text-align: center;
 text-decoration: none;
@@ -362,4 +362,29 @@ display: inline-block;
 font-size: 16px;
 margin-bottom: 10px;
 cursor: pointer;
+}
+
+.tablewidth{
+    width: 100%;
+}
+
+.td-A{
+    height: 55px;
+}
+
+.td-to{
+    text-align: left;
+}
+
+.td-wr{
+    text-align: right;
+}
+
+.td-co{
+    text-align: left;
+    vertical-align: top;
+}
+
+.td-li{
+    vertical-align: bottom;
 }
