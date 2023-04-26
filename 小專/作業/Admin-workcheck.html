@@ -17,27 +17,45 @@
         </div>
         <div class="header-right flex"> 
             <ul class="flex"style="align-items:flex-end;"> 
-                <a href="/小專/首頁/Login_Index.html"  class="nav-a">
+                <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
                     <li>首頁</li>
                 </a>
-                <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
+                <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
                 </a>
-                <a href="/論文/"  class="nav-a">
-                    <li>研究室成果</li>
-                </a>
-                <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
+                
+                    <li class="nav-a-t" id="nav-a-hover">
+                        <a href="#" class="nav-a-t">研究室成果</a>
+                        <ul class="down-bar" id="down-bar">
+                            <a href="/小專/論文/admin-thesis.html"><li>研究生畢業論文</li></a> 
+                            <a href="/小專/專題/Admin_topic-login.html"><li>專題作品</li></a>
+                            <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html"><li>歷屆得獎紀錄</li></a>
+                        </ul>
+
+
+                    </li>
+
+
+                
+                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
                 <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a-current">
-                    <li>學習專區</li>
-                </a>        
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
-                    <li>使用者專區</li> 
-                </a> 
-                <a href="./logout-thesis.html"  class="nav-a">
-                    <li>登出</li> 
+                    <li style="font-size:18px;">學習專區</li>
                 </a>    
+                <li class="nav-a-t" id="nav-a-hover-2">
+                    <a href="#" class="down-bar-title">使用者專區</a>
+                    <ul class="down-bar " id="down-bar-2">
+                        <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html" class="down-bar-text"><li>個人資訊</li></a> 
+                        <a href="/小專/使用者專區-權限管理/Admin-permission.html"  class="down-bar-text"><li>權限管理</li></a>
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>註冊會員</li></a>
+                    </ul>
+
+
+                </li>        
+                <a href="/小專/登入/Login.html"  class="nav-a">
+                    <li>登出</li> 
+                </a> 
             </ul>
         </div>
     </header>
@@ -48,20 +66,20 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="a-win"><li class="li-win"   >考試預約列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
                 <a href="/小專/學習專區-考試列表/Admin-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-ReserveTest.html" class="a-win"><li class="li-win">考試預約</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a>
-            </ul>
+
+                <a href="/小專/學習專區-考試列表/Admin-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
+            </ul>   
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業/Admin-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/Admin-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/Admin-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
@@ -72,17 +90,22 @@
                 <a href="" class="a-win"><li class="li-win">考試預約</li></a>
                 <a href="" class="a-win"><li class="li-win">被預約時段</li></a>
             </ul> -->
+            <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
+                <div class="menu">討論留言板</div>
+            </a>
+
         </div>
         <div class="right-content">
             
             <div class="title">
-                <span id="bang">檢查作業</span>
+                <span id="bang">作業檢查</span>
             </div>
             <br>
             <table class="table-row">
                 <tr style="background-color: #f9d853;" class="row-sty">
                     <td>上傳作業者</td>
                     <td>作業內容</td>
+                    <td>作業期限<br>發布時間~繳交期限</td>
                     <td>繳交日期</td>
                     <td>作業批改</td>
                 </tr>
@@ -90,6 +113,7 @@
                 <tr class="row-sty">
                     <td>林韓平</td>
                     <td>基本程式語法練習</td>
+                    <td>2023/02/01~2023/05/01</td>
                     <td>2023/3/17</td>
                     <td>
                         <input type="button" value="批改內容" class="reserve-botton" onclick="location.href='./Admin-workcheckfinish.html'">
@@ -98,6 +122,7 @@
                 <tr class="row-sty">
                     <td>林洨帥</td>
                     <td>資料庫語法基礎</td>
+                    <td>2023/02/01~2023/05/01</td>
                     <td>2023/3/15</td>
                     <td>
                         <input type="button" value="批改內容" class="reserve-botton" onclick="location.href='./Admin-workcheckfinish.html'">
@@ -106,6 +131,7 @@
                 <tr class="row-sty">
                     <td>郭金提</td>
                     <td>第九章預習筆記</td>
+                    <td>2023/02/01~2023/05/01</td>
                     <td>2023/3/12</td>
                     <td>
                         <input type="button" value="批改內容" class="reserve-botton" onclick="location.href='./Admin-workcheckfinish.html'">
@@ -114,6 +140,7 @@
                 <tr class="row-sty">
                     <td>詹龍諧</td>
                     <td>第八章預習筆記</td>
+                    <td>2023/02/01~2023/05/01</td>
                     <td>2023/3/10</td>
                     <td>
                         <input type="button" value="批改內容" class="reserve-botton" onclick="location.href='./Admin-workcheckfinish.html'">
@@ -128,4 +155,6 @@
     </footer>
 </body>
 <script src="./js/work.js"></script>
+<script src="./js/test.js"></script>
+
 </html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./css/work.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>小專</title>
+</head>
+<body>
+    <header class="header flex">
+        <div class="header-left flex">
+            <img src="./img/logo1.png" class="logo">
+            
+        </div>
+        <div class="header-right flex"> 
+            <ul class="flex"style="align-items:flex-end;"> 
+                <a href="/小專/首頁/Senior-Login_Index.html"  class="nav-a">
+                    <li>首頁</li>
+                </a>
+                <a href="/小專/教授介紹/Senior-Login_Introduce_detail.html"  class="nav-a">
+                    <li>教授介紹</li>
+                </a> 
+
+
+                <li class="nav-a-t" id="nav-a-hover">
+                    <a href="#" class="down-bar-title">研究室成果</a>
+                    <ul class="down-bar " id="down-bar">
+                        <a href="/小專/論文/Senior-thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a> 
+                        <a href="/小專/專題/Senior_topic-login.html"  class="down-bar-text"><li>專題作品</li></a>
+                        <a href="/小專/歷屆得獎紀錄/Senior-Login_Award.html"  class="down-bar-text"><li>歷屆得獎紀錄</li></a>
+                    </ul>
+
+
+                </li>
+
+                <a href="/小專/活動紀錄/Senior-Login_activity.html"  class="nav-a">
+                    <li>活動紀錄</li>
+                </a>
+
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html"  class="nav-a-current">
+                    <li style="font-size:18px;">學習專區</li>
+                </a>    
+                <li class="nav-a-t" id="nav-a-hover-2">
+                    <a href="#" class="down-bar-title">使用者專區</a>
+                    <ul class="down-bar " id="down-bar-2">
+                        <a href="/小專/使用者專區-個人資訊/Senior-PersonalInformation.html" class="down-bar-text"><li>個人資訊</li></a> 
+                        <a href="/小專/個人作品/Senior-profolio.html"  class="down-bar-text"><li>個人作品</li></a>
+                    </ul>
+
+
+                </li>            
+                <a href="/小專/登入/Login.html"  class="nav-a">
+                    <li>登出</li> 
+                </a>    
+            </ul>
+        </div>
+    </header>
+
+    <div class="content-a flex">
+        <div class="left-content flex">
+            <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">考試專區</div>
+            </div>
+            <ul id="menu-1" class="ul-win menu-list">
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+
+                <a href="/小專/學習專區-考試列表/Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+            </ul>
+            <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
+                <div class="menu">作業專區</div>
+            </div>
+            <ul id="menu-2" class="ul-win menu-list">
+                <a href="/小專/作業/Senior-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/Senior-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/Senior-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <!-- <a href="" class="a-win"><li class="li-win"></li></a>
+                <a href="" class="a-win"><li class="li-win"></li></a> -->
+            </ul>
+        </div>
+        <div class="right-content-t">
+           
+            
+            <div class="flex" style="justify-content: center;">
+            <div class="title">
+                作業繳交
+            </div>
+            <div>
+                <input type="button" value="作業上傳" class="reserve-botton add-icon" onclick="location.href='./Senior-workupload-create.html'">
+            </div>
+
+            
+            
+        </div>            <br>
+            <table class="table-row">
+                <tr style="background-color: #f9d853;" class="row-sty">
+                    <td>檢核人</td>
+                    <td>作業內容</td>
+                    <td>作業期限<br>發布時間~繳交期限</td>
+                    <td>上傳日期</td>
+                    <td>修改</td>
+                </tr>
+
+                <tr class="row-sty">
+                    <td>林韓平</td>
+                    <td>基本程式語法練習</td>
+                    <td>2023/02/01~2023/05/01</td>
+                    <td>2023/3/17</td>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Senior-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
+                    </td>
+                    
+                </tr>
+                <tr class="row-sty">
+                    <td>林洨帥</td>
+                    <td>資料庫語法基礎</td>
+                    <td>2023/02/01~2023/05/01</td>
+                    <td>2023/03/15</td>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Senior-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
+                    </td>
+                </tr>
+                <tr class="row-sty">
+                    <td>郭金提</td>
+                    <td>第九章預習筆記</td>
+                    <td>2023/02/01~2023/05/01</td>
+                    <td>2023/03/12</td>
+                    <td class="row">
+                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Senior-workupload-edit.html'">
+                        <input type="button" value="取消上傳" class="d-4-row-button">
+                    </td>
+                </tr>
+            </table>
+<br>
+            <div class="title" style="display: flex;align-items: center; justify-content: center;">
+                作業訂正
+            </div>
+            <br>
+            <table class="table-row">
+                <tr style="background-color: #f9d853;" class="row-sty">
+                    <td>檢核人</td>
+                    <td>作業內容</td>
+                    
+                    <td>批改日期</td>
+                    <td>查看評語</td>
+                </tr>
+
+                <tr class="row-sty">
+                    <td>詹龍諧</td>
+                    <td>第八章預習筆記</td>
+                    <td>2023/3/17</td>
+                    <td>
+                        <a href="/小專/作業/Senior-workupload-re.html"><button class="reserve-botton" type="button">查看</button></a>
+                    </td>
+                    
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+<script src="./js/work.js"></script>
+<script src="./js/test.js"></script>
+
+</html>

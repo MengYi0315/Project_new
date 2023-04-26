@@ -17,88 +17,104 @@
         </div>
         <div class="header-right flex"> 
             <ul class="flex"style="align-items:flex-end;"> 
-                <a href="/小專/首頁/Login_Index.html"  class="nav-a">
+                <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
                     <li>首頁</li>
                 </a>
-                <a href="/小專/教授介紹/Login_Introduce_detail.html"  class="nav-a">
+                <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
                 </a>
-                <a href="/論文/"  class="nav-a">
-                    <li>研究室成果</li>
-                </a>
-                <a href="/小專/活動紀錄/Login_activity.html"  class="nav-a">
+                
+                    <li class="nav-a-t" id="nav-a-hover">
+                        <a href="#" class="nav-a-t">研究室成果</a>
+                        <ul class="down-bar" id="down-bar">
+                            <a href="/小專/論文/admin-thesis.html"><li>研究生畢業論文</li></a> 
+                            <a href="/小專/專題/Admin_topic-login.html"><li>專題作品</li></a>
+                            <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html"><li>歷屆得獎紀錄</li></a>
+                        </ul>
+
+
+                    </li>
+
+
+                
+                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
                 <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html"  class="nav-a-current">
-                    <li>學習專區</li>
-                </a>        
-                <a href="/小專/使用者專區-個人資訊/PersonalInformation.html"  class="nav-a">
-                    <li>使用者專區</li> 
-                </a> 
-                <a href="./logout-thesis.html"  class="nav-a">
-                    <li>登出</li> 
+                    <li style="font-size:18px;">學習專區</li>
                 </a>    
+                <li class="nav-a-t" id="nav-a-hover-2">
+                    <a href="#" class="down-bar-title">使用者專區</a>
+                    <ul class="down-bar " id="down-bar-2">
+                        <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html" class="down-bar-text"><li>個人資訊</li></a> 
+                        <a href="/小專/使用者專區-權限管理/Admin-permission.html"  class="down-bar-text"><li>權限管理</li></a>
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>註冊會員</li></a>
+                    </ul>
+
+
+                </li>        
+                <a href="/小專/登入/Login.html"  class="nav-a">
+                    <li>登出</li> 
+                </a> 
             </ul>
         </div>
     </header>
-
-    <div class="content flex">
+    <div class="content-a flex">
         <div class="left-content flex">
             <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="a-win"><li class="li-win"   >考試預約列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
                 <a href="/小專/學習專區-考試列表/Admin-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-ReserveTest.html" class="a-win"><li class="li-win">考試預約</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
-                <a href="/小專/學習專區-考試列表/Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a>
-            </ul>
+
+                <a href="/小專/學習專區-考試列表/Admin-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
+            </ul>   
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業/Admin-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/Admin-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/Admin-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
+            <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
+                <div class="menu">討論留言板</div>
+            </a>
+
         </div>
         <div class="right-content">
             <div class="right-content-div flex">
                 <div class="title">
-                    修改已上傳作業
+                    上傳作業
                 </div>
                 <br>
                 <table>
                     <tr>
                         <td class="normal-word text-top field">
-                            選擇作業：
+                            檢核人：
                         </td>
                         <td class="text-top field">
                             <select class="text">
                                 
-                                <option>作業1</option>
-                                <option>作業1</option>
-                                <option>作業1</option>
-                                <option>作業1</option>
+                                <option>林韓平</option>
+                                <option>林洨帥</option>
+                                <option>郭金提</option>
+                                <option>詹龍諧</option>
                                 
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td class="normal-word text-top field">
-                            作業內容：
+                            作業主題：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
-                                <option>基本程式語法練習</option>
-                                <option>資料庫語法基礎</option>
-                                <option>第九章預習筆記</option>
-                                <option>第八章預習筆記</option>
-                            </select>
+                            <textarea class="textarea-topic"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -123,55 +139,16 @@
                 </table>
 
                 <div class="flex uppad">
-                    <input type="button" value="修改內容" class="reserve-botton" onclick="location.href=''">
-                    <input type="button" value="取消修改" class="reserve-botton"  onclick="location.href='./Admin-workupload.html'">
+                    <input type="button" value="上傳內容" class="reserve-botton" onclick="location.href=''">
+                    <input type="button" value="取消上傳" class="reserve-botton"  onclick="location.href='./Admin-workupload.html'">
                 </div>
             </div>
-        </div>
-        <div class="right-content">
-            
-            <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">上傳作業</span>
-            </div>
-            <br>
-            <div style="background-color: #d9d9d9; padding: 20px; border-radius: 20px;">
-                <div class="unpad">
-                <label for="work">選擇作業：</label>
-                <select id="selarrow" name="work">
-                    <option value="work2">作業1</option>
-                    <option value="work2">作業2</option>
-                    <option value="work3">作業3</option>
-                    <option value="work4">作業4</option>
-                    <option value="work5">作業5</option>
-                </select>
-            </div>
-            <br>
-                <div class="unpad">
-                    <label for="name">選擇檢核者：</label>
-                    <select id="selarrow" name="name">
-                        <option value="name1">林小帥</option>
-                        <option value="name2">林大坪</option>
-                        <option value="name3">郭金提</option>
-                        <option value="name4">詹龍諧</option>
-                        <option value="name5">湯俊璋</option>
-                    </select>
-                </div>
-                <br>
-                <div class="unpad">
-                    <label for="file">選擇繳交檔案：</label>
-                    <input type="file">
-                </div>
-                <div style="display: flex; justify-content: end;">
-                    <a href="workupload.html"><button type="button">取消</button></a>
-                    <button type="submit">確認</button>
-                </div>
-            
-            </div>
-            
         </div>
     </div>
     <footer>
     </footer>
 </body>
 <script src="./js/work.js"></script>
+<script src="./js/test.js"></script>
+
 </html>
