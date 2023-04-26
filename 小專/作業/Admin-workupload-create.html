@@ -41,7 +41,6 @@
             </ul>
         </div>
     </header>
-
     <div class="content flex">
         <div class="left-content flex">
             <div onclick="ToggleMenu(1);" class="ul-win" style="cursor: pointer;">
@@ -59,9 +58,9 @@
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業/Admin-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業/Admin-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                <a href="/小專/作業/Admin-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
@@ -69,36 +68,31 @@
         <div class="right-content">
             <div class="right-content-div flex">
                 <div class="title">
-                    修改已上傳作業
+                    上傳作業
                 </div>
                 <br>
                 <table>
                     <tr>
                         <td class="normal-word text-top field">
-                            選擇作業：
+                            檢核人：
                         </td>
                         <td class="text-top field">
                             <select class="text">
                                 
-                                <option>作業1</option>
-                                <option>作業1</option>
-                                <option>作業1</option>
-                                <option>作業1</option>
+                                <option>林韓平</option>
+                                <option>林洨帥</option>
+                                <option>郭金提</option>
+                                <option>詹龍諧</option>
                                 
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td class="normal-word text-top field">
-                            作業內容：
+                            作業主題：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
-                                <option>基本程式語法練習</option>
-                                <option>資料庫語法基礎</option>
-                                <option>第九章預習筆記</option>
-                                <option>第八章預習筆記</option>
-                            </select>
+                            <textarea class="textarea-topic"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -123,51 +117,10 @@
                 </table>
 
                 <div class="flex uppad">
-                    <input type="button" value="修改內容" class="reserve-botton" onclick="location.href=''">
+                    <input type="button" value="上傳內容" class="reserve-botton" onclick="location.href=''">
                     <input type="button" value="取消修改" class="reserve-botton"  onclick="location.href='./Admin-workupload.html'">
                 </div>
             </div>
-        </div>
-        <div class="right-content">
-            
-            <div class="title" style="display: flex;align-items: center;">
-                <span id="bang">上傳作業</span>
-            </div>
-            <br>
-            <div style="background-color: #d9d9d9; padding: 20px; border-radius: 20px;">
-                <div class="unpad">
-                <label for="work">選擇作業：</label>
-                <select id="selarrow" name="work">
-                    <option value="work2">作業1</option>
-                    <option value="work2">作業2</option>
-                    <option value="work3">作業3</option>
-                    <option value="work4">作業4</option>
-                    <option value="work5">作業5</option>
-                </select>
-            </div>
-            <br>
-                <div class="unpad">
-                    <label for="name">選擇檢核者：</label>
-                    <select id="selarrow" name="name">
-                        <option value="name1">林小帥</option>
-                        <option value="name2">林大坪</option>
-                        <option value="name3">郭金提</option>
-                        <option value="name4">詹龍諧</option>
-                        <option value="name5">湯俊璋</option>
-                    </select>
-                </div>
-                <br>
-                <div class="unpad">
-                    <label for="file">選擇繳交檔案：</label>
-                    <input type="file">
-                </div>
-                <div style="display: flex; justify-content: end;">
-                    <a href="workupload.html"><button type="button">取消</button></a>
-                    <button type="submit">確認</button>
-                </div>
-            
-            </div>
-            
         </div>
     </div>
     <footer>

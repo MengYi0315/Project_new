@@ -74,21 +74,22 @@
             </div>
             
             <div class="title" style="display: flex;align-items: center; justify-content: center;">
-                已上傳作業
+                作業繳交
             </div>
             <br>
             <table class="table-row">
                 <tr style="background-color: #f9d853;" class="row-sty">
                     <td>檢核人</td>
                     <td>作業內容</td>
-                    
-                    <td>繳交日期</td>
+                    <td>作業期限<br>發布時間~繳交期限</td>
+                    <td>上傳日期</td>
                     <td>修改</td>
                 </tr>
 
                 <tr class="row-sty">
                     <td>林韓平</td>
                     <td>基本程式語法練習</td>
+                    <td>2023/02/01~2023/05/01</td>
                     <td>2023/3/17</td>
                     <td class="row">
                         <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
@@ -99,7 +100,8 @@
                 <tr class="row-sty">
                     <td>林洨帥</td>
                     <td>資料庫語法基礎</td>
-                    <td>2023/3/15</td>
+                    <td>2023/02/01~2023/05/01</td>
+                    <td>2023/03/15</td>
                     <td class="row">
                         <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
                         <input type="button" value="取消上傳" class="d-4-row-button">
@@ -108,22 +110,38 @@
                 <tr class="row-sty">
                     <td>郭金提</td>
                     <td>第九章預習筆記</td>
-                    <td>2023/3/12</td>
+                    <td>2023/02/01~2023/05/01</td>
+                    <td>2023/03/12</td>
                     <td class="row">
                         <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
                         <input type="button" value="取消上傳" class="d-4-row-button">
                     </td>
                 </tr>
+            </table>
+
+            <div class="title" style="display: flex;align-items: center; justify-content: center;">
+                作業訂正
+            </div>
+            <br>
+            <table class="table-row">
+                <tr style="background-color: #f9d853;" class="row-sty">
+                    <td>檢核人</td>
+                    <td>作業內容</td>
+                    
+                    <td>批改日期</td>
+                    <td>查看評語</td>
+                </tr>
+
                 <tr class="row-sty">
                     <td>詹龍諧</td>
                     <td>第八章預習筆記</td>
-                    <td>2023/3/10</td>
-                    <td class="row">
-                        <input type="button" value="修改內容" class="row-button" onclick="location.href='./Admin-workupload-edit.html'">
-                        <input type="button" value="取消上傳" class="d-4-row-button">
+                    <td>2023/3/17</td>
+                    <td>
+                        <a href="/小專/作業/Admin-workupload-re.html"><button class="reserve-botton" type="button">查看</button></a>
                     </td>
                     
                 </tr>
+                
             </table>
         </div>
     </div>

@@ -67,60 +67,41 @@
             </ul>
         </div>
         <div class="right-content">
-            <div class="right-content-div flex">
-                <div class="title">
-                    修改已上傳作業
-                </div>
-                <br>
-                <table>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            檢核人：
-                        </td>
-                        <td class="text-top field">
-                            <select class="text">
-                                
-                                <option>林韓平</option>
-                                <option>林洨帥</option>
-                                <option>郭金提</option>
-                                <option>詹龍諧</option>
-                                
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            作業主題：
-                        </td>
-                        <td class="text-top field">
-                            <textarea class="textarea-topic"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            作業說明：
-                        </td>
-                        <td class="text-top field-textarea">
-                            <textarea class="textarea"></textarea>
-                        </td>
-                    </tr>
+            
+            <div class="title" style="display: flex;align-items: center;">
+                <span id="bang">作業說明</span>
+            </div>
+            <br>
+            <div class="boardarea">
+                <div class="padar">
+                    <table>
 
-                    <tr>
-                        <td class="normal-word text-top field">
-                            上傳檔案：
+                        <tr>
+                            <td class="labelsty text-top field">
+                                考試期限：
+                            </td>
+                            <td class="text-top field">
+                                2023/2/1
+                                <span>&nbsp;~&nbsp;</span>
+                                2023/5/1
+                            </td>
                             
-                        </td>
-                        <td class="normal-word text-top field"">
-                            <input type="file">
-                        </td>
-                    </tr>
+                        </tr>
+                    </table>
+                    <div class="unpad" style="justify-content:left; align-items: center;">
+                        <label class="labelsty unpad">作業主題：</label>
+                        <div id="enterblock" style="height: 18px;width: 100%;">主題</div>
+                    </div>
+                    <div class="unpad" style="justify-content:left; align-items: center;">
+                        <label class="labelsty unpad">作業內容說明：</label>
+                        <div id="enterblock" style="height: 150px;width: 100%;">作業內容說明</div>
+                    </div>
                     
-                </table>
-
-                <div class="flex uppad">
-                    <input type="button" value="修改內容" class="reserve-botton" onclick="location.href=''">
-                    <input type="button" value="取消修改" class="reserve-botton"  onclick="location.href='./Admin-workupload.html'">
+                    
                 </div>
+            </div>
+            <div style="display: flex; justify-content: end;">
+                <a href="/小專/作業/Admin-workrelease-list.html"><button class="reserve-botton" type="button">返回</button></a>
             </div>
         </div>
     </div>
