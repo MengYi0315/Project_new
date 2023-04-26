@@ -189,11 +189,9 @@ a{
     color:#fff;
 }
 
-#bang{
-    font-weight: bold;
-}
 
 .title{
+    font-weight: bold;
     font-size: 36px;
     font-weight: 200;
     justify-content: left;
@@ -232,16 +230,16 @@ a{
 
 .thesis-content{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: top;
     color: white;
     background-color: #53b7b7;
-    border-width: 1px;
+    border-width: bold;
     margin-top: 3px;
     height: 30px;
-    padding: 0px 30px 0px 30px;
-    font-size: 16px;
-    height: 70px;
+    padding: 15px;
+    font-size: 20px;
+    height: 200px;
+    
 }
 
 .ul-year
@@ -270,11 +268,11 @@ a{
 }
 
 .unpad{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .uppad{
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .border1px{
@@ -291,9 +289,6 @@ a{
     appearance: none;
 }
 
-select option {
-    font-size: 60px;
-    }
 
 #enterblock{
     width: 100%;
@@ -327,12 +322,9 @@ button{
 }
 
 .imgblock{
-    width: auto;
     height: 150px;
-    background-color: #636363;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 150px;
+    padding-right: 20px;
 }
 
 .replyblock{
@@ -419,4 +411,124 @@ button{
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+}
+
+
+.tablewidth{
+    width: 100%;
+}
+
+.td-A{
+    height: 55px;
+}
+
+.td-to{
+    text-align: left;
+}
+
+.td-wr{
+    text-align: right;
+}
+
+.td-co{
+    text-align: left;
+    vertical-align: top;
+}
+
+.td-li{
+    vertical-align: bottom;
+}
+
+.add-icon{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height:65px;
+    user-select: none;
+}
+
+.normal-word{
+    font-size: 20px;
+
+    text-align: right;
+}
+
+.text-top{
+    vertical-align: top;
+}
+
+.field{
+    height: 60px;
+}
+
+.text{
+    width: 320px;
+    height: 30px;
+    background-color: #D9D9D9;
+
+    border-width: 0;
+}
+
+.textarea{
+    padding: 10px;
+    width: 300px;
+    height: 100px;
+    background-color: #D9D9D9;
+
+    border-width: 0;
+}
+
+.reserve-botton{
+    cursor: pointer;
+
+
+    width: 80px;
+    height: 35px;
+
+    margin: 0 5px;
+
+    background-color: #61AFB3;
+
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reserve-botton:hover{
+    background-color: #2B8282;
+    font-weight: bold;
+}
+
+.textarea-topic{
+    padding: 10px;
+    width: 300px;
+    height: 18px;
+    background-color: #D9D9D9;
+    resize: none;
+
+    border-width: 0;
+}
+
+.title-crea{
+    font-size: 36px;
+    
+    text-align: center;
+    font-weight: bold;
+
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+}
+
+.right-content-div{
+    width: 100%;
+    height: auto;
+
+    flex-direction: column;
+    align-items: center;
+    
 }
