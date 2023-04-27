@@ -35,6 +35,7 @@ function submit() {
     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
+            window.onload();
         });
 }
 

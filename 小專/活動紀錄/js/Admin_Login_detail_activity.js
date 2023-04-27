@@ -1,37 +1,4 @@
-window.onload = function() {
-    var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Activity/GetAllDataList")
-    .then(response => response.json())
-    .then(data => {
-        
-        post.innerHTML = "";
-        data.forEach((item) => {
-            readone('http://localhost:5229/api/Activity/ReadOneData?id=',item);
-            post.innerHTML +=
-            `
-            <div class="flex">
-                <div class="relSative w-25 flex">
-                    <a href="/小專/活動紀錄/Admin_Login_activity.html" class="a1">
-                        <img src="${item.first_image}" onclick="readone('http://localhost:5229/api/Activity/ReadOneData?id=',${item})" class="b-25">
-                        <div class="center">${item.activity_title}</div>
-                    </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
-                </div>
-                
-            </div>
-
-            
-            `;
-            
-        });
-    })
-    .catch(error => console.error(error));
-};
-//http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html/id=${item.activity_id}
-
 let LoginToken = sessionStorage.getItem('LoginToken');
-
-
-
 
 function readone(url, item) {
     console.log(item);
@@ -50,7 +17,7 @@ function readone(url, item) {
         `
             <div class="absolute-x "><a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>
             <div class="reveal-left flex">
-                <img src="${item.first_image}" class="b-25">
+                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html"><img src="${item.first_image}" class="b-25"></a>
             </div>
             <div class="reveal-right flex">
                 <div class="title-detail">${item.activity_title}</div>
@@ -59,28 +26,58 @@ function readone(url, item) {
             <div class="absolute-edit"><a href="./Edit_Login_activity"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
             
         `;
+        window.onload();
 
-        // 显示弹出窗口
-        popup.style.display = 'flex';
+        // // 显示弹出窗口
+        // popup.style.display = 'flex';
 
       })
-      .then(data => {
-        console.log(data); // 刪除成功後的回應
-    })
-    .catch(error => {
-        console.error('There was a problem deleting data:', error);
-    });
+    //   .then(data => {
+    //     console.log(data); // 刪除成功後的回應
+    //     window.onload();
+    // })
+    // .catch(error => {
+    //     console.error('There was a problem deleting data:', error);
+    // });
   }
+  
+  window.onload = function() {
+    var post = document.querySelector("#post");
+    fetch("http://localhost:5229/api/Activity/GetAllDataList")
+    .then(response => response.json())
+    .then(data => {
+        
+        post.innerHTML = "";
+        data.forEach((item) => {
+            post.innerHTML +=
+            `
+            <div class="flex">
+                <div class="relative w-25 flex">
+                    <a href="/小專/活動紀錄/Admin_Login_activity.html" class="a1">
+                        <img src="${item.first_image}" onclick="readone('http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=','${item}')" class="b-25">
+                        <div class="center">${item.activity_title}</div>
+                    </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+                </div>
+            </div>
+            `;
+            
+        });
+    })
+    .catch(error => console.error(error));
+};
+//http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html/id=${item.activity_id}
+
+
   
 
 
-// 點擊彈出視窗外的區域，隱藏彈出視窗
-    document.addEventListener('click', (event) => {
-    const popup = document.getElementById('popup');
-    if (event.target !== popup && !popup.contains(event.target)) {
-        popup.style.display = 'none';
-    }
-});
+// // 點擊彈出視窗外的區域，隱藏彈出視窗
+//     document.addEventListener('click', (event) => {
+//     const popup = document.getElementById('popup');
+//     if (event.target !== popup && !popup.contains(event.target)) {
+//         popup.style.display = 'none';
+//     }
+// });
 
 
 
