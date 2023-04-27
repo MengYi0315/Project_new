@@ -1,5 +1,5 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
-console.log("token1=>",LoginToken);
+console.log(LoginToken);
 function postData(url, data, headers) {
     return fetch(url, {
         body: JSON.stringify(data),
@@ -28,6 +28,7 @@ function submit() {
     postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
+            window.onload();
         })
         .catch(error => {
             console.error(error);
@@ -43,6 +44,7 @@ function deleteData(url, id) {
     })
     .then(data => {
         console.log(data); // 刪除成功後的回應
+        window.onload();
     })
     .catch(error => {
         console.error('There was a problem deleting data:', error);

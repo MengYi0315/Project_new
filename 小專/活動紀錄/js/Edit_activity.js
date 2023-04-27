@@ -35,6 +35,7 @@ function submit() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            window.onload();
         });
 }
 
