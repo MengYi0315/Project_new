@@ -15,10 +15,10 @@ function postData(url, data, headers) {
 
 function submit() {
     console.log(LoginToken);
-   
 
 
 
+    
 
 
     const announce_title = document.getElementById('title').value;
@@ -67,7 +67,7 @@ function deleteData(url, id) {
 
 
 
-//取的資料 
+//取的資料 ok
 
 window.onload = function() {
     //
@@ -76,7 +76,7 @@ window.onload = function() {
 
 
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
+    fetch("http://localhost:5229/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
         console.log("data",data);
@@ -89,22 +89,7 @@ window.onload = function() {
             post.innerHTML +=
             `
 
-              <div class="topic-photo flex">
-                  
-                  <img src="${item.senior_image}" class="photo"> 
-              </div>
-              
-              <div class="topic-content flex" >
-                  <div class="topic-name">
-                      <p>${item.senior_title}</p>
-                  </div>
-                  <div class="member" id="member">
-                      ${item.name}
-                  </div>
-                  <div class="article" id="article">
-                      ${item.senior_content}
-                  </div>
-              </div>
+            <option>${item.name}</option>
             `;
         });
     })
