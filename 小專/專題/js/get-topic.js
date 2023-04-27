@@ -88,23 +88,41 @@ window.onload = function() {
 
             post.innerHTML +=
             `
+            <div class="flex">
+            <div class="topic-photo flex">
+                <div class="photo" id="photo"></div>
+                <img src="" class="photo"> 
+            </div>
+            
+            <div class="topic-content flex" >
+                <div class="topic-name">
+                    <p>${item.senior_title}</p>
+                </div>
+                <div class="member" id="member">
+                ${item.name}
+                </div>
+                <div class="article" id="article">
+                ${item.senior_content}
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="edit flex">
+                <button type="button" class="edit-row-button">
+                    <a href="./topic-edit.html">
+                        修改
+                    </a>
+                </button>
+                <button type="button" class="delete-row-button">
+                    刪除
+                </button>
+                
+            </div>
+        </div>
 
-              <div class="topic-photo flex">
-                  
-                  <img src="${item.senior_image}" class="photo"> 
-              </div>
-              
-              <div class="topic-content flex" >
-                  <div class="topic-name">
-                      <p>${item.senior_title}</p>
-                  </div>
-                  <div class="member" id="member">
-                      ${item.name}
-                  </div>
-                  <div class="article" id="article">
-                      ${item.senior_content}
-                  </div>
-              </div>
+
+
+             
             `;
         });
     })
@@ -180,3 +198,24 @@ window.onload = function() {
 //         console.log(data);
 //     })
 // }
+
+
+
+
+
+{/* <div class="topic-photo flex">
+                  
+<img src="${item.senior_image}" class="photo"> 
+</div>
+
+<div class="topic-content flex" >
+<div class="topic-name">
+    <p>${item.senior_title}</p>
+</div>
+<div class="member" id="member">
+    ${item.name}
+</div>
+<div class="article" id="article">
+    ${item.senior_content}
+</div>
+</div> */}
