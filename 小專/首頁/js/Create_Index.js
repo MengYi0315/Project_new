@@ -1,5 +1,5 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
-console.log(LoginToken);
+console.log("token1=>",LoginToken);
 function postData(url, data, headers) {
     return fetch(url, {
         body: JSON.stringify(data),
@@ -33,6 +33,22 @@ function submit() {
             console.error(error);
         })
 }
+
+
+function deleteData(url, id) {
+    console.log('Deleting data:', `${url}${id}`); // 调试信息
+    return fetch(`${url}${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
+    })
+    .then(data => {
+        console.log(data); // 刪除成功後的回應
+    })
+    .catch(error => {
+        console.error('There was a problem deleting data:', error);
+    });
+}
+
 window.onload = function() {
     var post = document.querySelector("#post");
     fetch("http://localhost:5229/api/Announcement/GetAllDataList")
@@ -43,6 +59,7 @@ window.onload = function() {
         data.forEach((item) => {
             const date = new Date(item.update_time);
             const update_time = date.toLocaleString();
+
             post.innerHTML +=
             `
             <div class="flex">
@@ -56,8 +73,8 @@ window.onload = function() {
                 </div>
                 
                 <div class="flex">
-                    <button type="submit"  class="edit-row-button"><a href="./Edit_Login_Index.html/${item.announce_id}"  style="color:#FFF;">修改</a></button>
-                    <button type="submit"  onclick="deleteData('http://localhost:5229/api/Announcement/DeleteData?id=', ${item.announce_id})"class="delete-row-button">刪除</button>
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit"  class="edit-row-button" value="修改"></a>
+                    <input type="submit" onclick="deleteData('http://localhost:5229/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
                 </div>
             </div>
             `;
@@ -66,19 +83,6 @@ window.onload = function() {
     .catch(error => console.error(error));
 }
 
-function deleteData(url, id) {
-    console.log('Deleting data:', `${url}${id}`); // 调试信息
-    return fetch(`${url}${id}`, {
-        method: 'DELETE',
-        headers: {'Authorization': `Bearer ${LoginToken}`}
-    })
-    .then(data => {
-        console.log(data); // 刪除成功後的回應
-    })
-    .catch(error => {
-        console.error('There was a problem deleting data:', error);
-    });
-}
 
 // function postData(url,data,headers){
 
