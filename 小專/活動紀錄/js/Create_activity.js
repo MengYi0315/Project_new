@@ -13,20 +13,13 @@ function postData(url, data, headers) {
       .then(response => response.formData) //輸出成json
 }
 
-
-function resultvalue(result){
-    if(result==0)
-        return '0';
-    else if(result==1)
-        return '1';
-}
-
+let LoginToken=sessionStorage.getItem('LoginToken');
 
 function submit() {
+    console.log(LoginToken);
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
     const image = document.getElementById('image').files[0];
-    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODI1MDM3MzV9.dU4k9OBupPvholFaKwWM_RJaedcrItBZ3NnwR6V21Fw';
 
     const data = {
         title: title,
@@ -35,15 +28,13 @@ function submit() {
     };
 
     const headers = {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${LoginToken}`
     };
     
 
     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
-        .then(data => {
-        const result = data.result;
-        console.log(data);
-        console.log(result);
+        .then(({data}) => {
+            console.log(data);
         });
 }
 

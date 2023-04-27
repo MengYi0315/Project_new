@@ -1,25 +1,16 @@
 window.onload = function() {
-    
-    
-
-
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Announcement/GetAllDataList")
+    fetch("http://localhost:5229/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
-        data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
         data.forEach((item) => {
-            const date = new Date(item.update_time);
-            const update_time = date.toLocaleString();
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
+            <div class="relative w-25 flex">
+                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html/${item.activity_id}" class="a1">
+                    <img src="${item.first_image}" class="b-25">
+                    <div class="center">${item.activity_title}</div>
                 </a>
             </div>
             `;

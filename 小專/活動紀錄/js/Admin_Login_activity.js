@@ -1,34 +1,68 @@
 window.onload = function() {
-    
-    
-
-
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Announcement/GetAllDataList")
+    fetch("http://localhost:5229/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
-        data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
         data.forEach((item) => {
-            const date = new Date(item.update_time);
-            const update_time = date.toLocaleString();
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
-                </a>
+            <div class="relative w-25 flex">
+                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html" class="a1">
+                    <img src="${item.first_image}" class="b-25">
+                    <div class="center">${item.activity_title}</div>
+                </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
             </div>
             `;
         });
     })
     .catch(error => console.error(error));
+};
+//http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html/id=${item.activity_id}
+
+let LoginToken = sessionStorage.getItem('LoginToken');
+function deleteData(url, id) {
+    console.log('Deleting data:', `${url}${id}`); // 调试信息
+    return fetch(`${url}${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${LoginToken}`}
+    })
+    .then(data => {
+        console.log(data); // 刪除成功後的回應
+    })
+    .catch(error => {
+        console.error('There was a problem deleting data:', error);
+    });
 }
 
 
+// // 獲取屏幕尺寸
+// const screenWidth = window.screen.width;
+// const screenHeight = window.screen.height;
+
+// // 設置視窗尺寸
+// const popupWidth = 500;
+// const popupHeight = 500;
+
+// // 計算視窗在屏幕中心的位置
+// const leftPos = (screenWidth - popupWidth) / 2;
+// const topPos = (screenHeight - popupHeight) / 2;
+
+
+// // 打開彈出視窗
+// window.open('http://localhost:5229/api/Activity/ReadOneData?id=', 'example', `width=${popupWidth}, height=${popupHeight}, left=${leftPos}, top=${topPos}`);
+
+
+
+
+
+// function updateData(url, id, headers) {
+//     return fetch(`${url}?${id}`, {
+//         method: 'DELETE',
+//         headers: headers
+//     })
+//     // .then(response => response.json()); // 輸出成 json
+// }
 
 // const apiURL = 'http://localhost:5229/api/Announcement/GetAllDataList/${post.id}';
 
