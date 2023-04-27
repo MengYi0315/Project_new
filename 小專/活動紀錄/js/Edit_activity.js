@@ -4,20 +4,19 @@ function updateData(id, data, headers) {
     formData.append('activity_content', data.content);
     formData.append('FormImage', data.image);
 
-    return fetch(`http://localhost:5229/api/Activity/UpdateData?id=${id}`, {
-        method: 'POST',
+    return fetch(url, {
+        method: 'PUT',
         mode: 'cors',
         body: formData,
         headers: headers
     })
-    .then(response => response.json()) // 轉成 JSON 格式
+    // .then(response => response.json()) // 轉成 JSON 格式
 }
-
+let LoginToken=sessionStorage.getItem('LoginToken');
 function submit() {
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
     const image = document.getElementById('image').files[0];
-    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODIyNjAzODV9.GDJWDDM1pk-sRUbTPSrdFTh3KYcQFSaihmWxllohgmQ';
 
     const data = {
         title: title,
@@ -26,25 +25,16 @@ function submit() {
     };
 
     const headers = {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${LoginToken}`
     };
     
 
-    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
-        .then(response => response.json()) // 轉成 JSON 格式
-        .then(data => {
-            const result = data.result;
-            console.log(data);
-            console.log(result);
 
-            const id = data.id; // 取得新增資料的 ID
-            updateData(id, data, headers)
-                .then(response => response.json())
-                .then(data => {
-                    const result = data.result;
-                    console.log(data);
-                    console.log(result);
-                });
+    const id = data.id; // 取得新增資料的 ID
+    updateData('http://localhost:5229/api/Activity/UpdateData?id=',id, headers)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
         });
 }
 

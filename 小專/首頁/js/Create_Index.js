@@ -33,7 +33,52 @@ function submit() {
             console.error(error);
         })
 }
+window.onload = function() {
+    var post = document.querySelector("#post");
+    fetch("http://localhost:5229/api/Announcement/GetAllDataList")
+    .then(response => response.json())
+    .then(data => {
+        data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
+        post.innerHTML = "";
+        data.forEach((item) => {
+            const date = new Date(item.update_time);
+            const update_time = date.toLocaleString();
+            post.innerHTML +=
+            `
+            <div class="flex">
+                <div style="width:100%;">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
+                        <div class="space-between flex">
+                            <div> 標題： ${item.announce_title}</div>
+                            <div> 更新時間： ${update_time}</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex">
+                    <button type="submit"  class="edit-row-button"><a href="./Edit_Login_Index.html/${item.announce_id}"  style="color:#FFF;">修改</a></button>
+                    <button type="submit"  onclick="deleteData('http://localhost:5229/api/Announcement/DeleteData?id=', ${item.announce_id})"class="delete-row-button">刪除</button>
+                </div>
+            </div>
+            `;
+        });
+    })
+    .catch(error => console.error(error));
+}
 
+function deleteData(url, id) {
+    console.log('Deleting data:', `${url}${id}`); // 调试信息
+    return fetch(`${url}${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${LoginToken}`}
+    })
+    .then(data => {
+        console.log(data); // 刪除成功後的回應
+    })
+    .catch(error => {
+        console.error('There was a problem deleting data:', error);
+    });
+}
 
 // function postData(url,data,headers){
 

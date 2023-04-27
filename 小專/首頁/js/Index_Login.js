@@ -1,8 +1,4 @@
 window.onload = function() {
-    
-    
-
-
     var post = document.querySelector("#post");
     fetch("http://localhost:5229/api/Announcement/GetAllDataList")
     .then(response => response.json())

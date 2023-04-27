@@ -567,3 +567,37 @@ a{
     font-size: 16px;
     font-weight: bold;
 }
+.edit-row-button{
+    cursor: pointer;
+
+    height: 35px;
+    width: 50px;
+    background-color:#2B8282;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 5px 5px;
+}
+.delete-row-button{
+    cursor: pointer;
+
+    height: 35px;
+    width: 50px;
+    background-color:crimson;
+    color: #fff;
+    border-width: thin;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 5px 5px;
+}
+
+.a4{
+    color:#FFF;
+}
