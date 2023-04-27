@@ -3,17 +3,25 @@ window.onload = function() {
     fetch("http://localhost:5229/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
+        
         post.innerHTML = "";
         data.forEach((item) => {
+            readone('http://localhost:5229/api/Activity/ReadOneData?id=',item);
             post.innerHTML +=
             `
-            <div class="relative w-25 flex">
-                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html" class="a1">
-                    <img src="${item.first_image}" class="b-25">
-                    <div class="center">${item.activity_title}</div>
-                </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+            <div class="flex">
+                <div class="relSative w-25 flex">
+                    <a href="/小專/活動紀錄/Admin_Login_activity.html" class="a1">
+                        <img src="${item.first_image}" class="b-25">
+                        <div class="center">${item.activity_title}</div>
+                    </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+                </div>
+                
             </div>
+
+            
             `;
+            
         });
     })
     .catch(error => console.error(error));
@@ -21,20 +29,90 @@ window.onload = function() {
 //http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html/id=${item.activity_id}
 
 let LoginToken = sessionStorage.getItem('LoginToken');
-function deleteData(url, id) {
-    console.log('Deleting data:', `${url}${id}`); // 调试信息
-    return fetch(`${url}${id}`, {
-        method: 'DELETE',
+
+// function readone(url,item){
+//     var getread = document.querySelector("#getread");
+//     console.log('Readone data:', `${url}${item.activity_id}`); // 调试信息
+//     getread.forEach(getread => {
+//         getread.addEventListener('click', () => {
+            
+//             // 將內容顯示在彈出視窗中
+//             const popup = document.getElementById('popup');
+//             popup.innerHTML = 
+//             `
+//             <div class="absolute-x"><a href="/小專/活動紀錄/Admin_Login_activity.html">X</a></div>
+//             <div class="reveal-left flex">
+//                 <img src="${item.first_image}" class="b-25">
+//             </div>
+//             <div class="reveal-right flex">
+//                 <div class="title-detail">${item.activity_title}</div>
+//                 <div class="activity-detail">${item.activity_content}</div>
+//             </div>
+//             `;
+            
+//             // 顯示彈出視窗
+//             popup.style.display = 'block';
+//         });
+//         });
+//     return fetch(`${url}${id}`, {
+//         method: 'GET',
+//         headers: {'Authorization': `Bearer ${LoginToken}`}
+//     });
+    
+// }
+
+
+function readone(url, item) {
+    console.log(item);
+    console.log(item.activity_id);
+    console.log('Readone data:', `${url}${item.activity_id}`); // 调试信息
+    return fetch(`${url}${item.activity_id}`, {
+        method: 'GET',
         headers: {'Authorization': `Bearer ${LoginToken}`}
     })
-    .then(data => {
+        .then(response => response.json())
+        .then(data => {
+        // 将内容显示在弹出窗口中
+        const popup = document.getElementById('popup');
+        
+        popup.innerHTML =
+        `
+        <div class="flex">
+            <div class="absolute-x "><a href="/小專/活動紀錄/Admin_Login_activity.html">X</a></div>
+            <div class="reveal-left flex">
+                <img src="${item.first_image}" class="b-25">
+            </div>
+            <div class="reveal-right flex">
+                <div class="title-detail">${item.activity_title}</div>
+                <div class="activity-detail">${item.activity_content}</div>
+            </div>
+            <div class="absolute-edit"><a href="./Edit_Login_activity"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
+        </div>
+            
+        `;
+
+        // 显示弹出窗口
+        popup.style.display = 'flex';
+
+      })
+      .then(data => {
         console.log(data); // 刪除成功後的回應
     })
     .catch(error => {
         console.error('There was a problem deleting data:', error);
     });
-}
+  }
+  
 
+
+// 點擊彈出視窗外的區域，隱藏彈出視窗
+    document.addEventListener('click', (event) => {
+    const popup = document.getElementById('popup');
+    if (event.target !== popup && !popup.contains(event.target)) {
+        popup.style.display = 'none';
+    }
+});
+    
 
 // // 獲取屏幕尺寸
 // const screenWidth = window.screen.width;
