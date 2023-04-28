@@ -1,29 +1,28 @@
 
 
-function readone(url, id, title, content, img) {
-    console.log(url, id, title, content, img);
-    console.log('Readone data:', `${url}${id}`); // 调试信息
+function readone(id) {
     
-    return fetch(`${url}${id}`, {
-        method: 'GET'
-    })
+    var popup = document.querySelector("#popup");
+    console.log('Readone data:', `${id}`); // 调试信息
+    
+    fetch(`http://localhost:5229/api/Activity/ReadOneData?id=${id}`)
     .then(response => response.json())
     .then(data => {
         popup.innerHTML = "";
-        console.log(data);
         popup.innerHTML +=
         `
-            <div class="absolute-x "><a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>
+            <div class="absolute-x "><a href="./Admin_Login_activity.html">X</a></div>
             <div class="reveal-left flex">
-                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=${id}"><img src="${img}" class="b-25"></a>
+                <img src="${data.first_image}" class="b-25">
             </div>
             <div class="reveal-right flex">
-                <div class="title-detail">${title}</div>
-                <div class="activity-detail">${content}</div>
+                <div class="title-detail">${data.activity_title}</div>
+                <div class="activity-detail">${data.activity_content}</div>
             </div>
-            <div class="absolute-edit"><a href="./Edit_Login_activity?id=${id}"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
+            <div class="absolute-edit"><a href="./Edit_Login_activity.html?id=${id}"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
             
         `;
+        console.log(data);
     })
     .catch(error => console.error(error));
 }
@@ -43,7 +42,7 @@ function deleteData(url, id) {
                 post.innerHTML +=
                 `
                 <div class="relative w-25 flex">
-                    <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=${item.activity_id}" onclick="readone('http://localhost:5229/api/Activity/ReadOneData?id=','${item.activity_id}','${item.activity_title}','${item.activity_content}','${item.first_image}')" class="a1">
+                    <a href="./Admin_Login_detail_activity.html?id=${item.activity_id}" class="a1">
                         <img src="${item.first_image}" class="b-25">
                         <div class="center">${item.activity_title}</div>
                     </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
@@ -58,46 +57,36 @@ function deleteData(url, id) {
         console.error('There was a problem deleting data:', error);
     });
 }
-window.onload = function() {
-    var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Activity/GetAllDataList")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
-    })
-    .then(data => {
-        post.innerHTML = "";
-        data.forEach((item) => {
-            post.innerHTML +=
-            `
-            <div class="relative w-25 flex">
-                <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=${item.activity_id}" onclick="readone('http://localhost:5229/api/Activity/ReadOneData?id=','${item.activity_id}','${item.activity_title}','${item.activity_content}','${item.first_image}')"class="a1">
-                    <img src="${item.first_image}"  class="b-25">
-                    <div class="center">${item.activity_title}</div>
-                </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
-            </div>
-            `;
 
-        //     popup.innerHTML +=
-        // `
-        //     <div class="absolute-x "><a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>
-        //     <div class="reveal-left flex">
-        //         <img src="${img}" onclick="readone('http://localhost:5229/api/Activity/ReadOneData?id=','${item.activity_id}','${item.activity_title}',,'${item.activity_content}','${item.first_image}')"class="b-25"></a>
-        //     </div>
-        //     <div class="reveal-right flex">
-        //         <div class="title-detail">${title}</div>
-        //         <div class="activity-detail">${content}</div>
-        //     </div>
-        //     <div class="absolute-edit"><a href="./Edit_Login_activity?id=${id}"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
-            
-        // `;
-        });
-
-    })
-    .catch(error => console.error(error));
-};
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    readone(id);
+}
+// window.onload = function() {
+//     var post = document.querySelector("#post");
+//     fetch("http://localhost:5229/api/Activity/GetAllDataList")
+//     .then(response => response.json())
+//     .then(data => {
+//         post.innerHTML = "";
+//         data.forEach((item) => {
+//             post.innerHTML +=
+//             `
+//             <div class="relative w-25 flex">
+//                 <a href="./Admin_Login_detail_activity.html?id=${item.activity_id}" class="a1">
+//                     <img src="${item.first_image}" class="b-25">
+//                     <div class="center">${item.activity_title}</div>
+//                 </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+//             </div>
+//             `;
+//         });
+//     })
+//     .catch(error => console.error(error));
+// };
         // popup.innerHTML +=
         //     `
         //         <div class="absolute-x "><a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>

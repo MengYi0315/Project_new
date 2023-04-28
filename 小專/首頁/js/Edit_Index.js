@@ -1,9 +1,8 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
-let updateForm = document.querySelector("#update-form");
 
-console.log(updateForm);
-function updateData(url, id) {
+function updateData(id) {
+    var post = document.querySelector("#post");
     // 讀取舊有資料
     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {
     headers: {
@@ -12,19 +11,28 @@ function updateData(url, id) {
     })
     .then(response => response.json())
     .then(data => {
-        // 將舊有資料填充到表單中
-        updateForm.title.value = data.announce_title;
-        updateForm.content.value = data.announce_content;
+
+        post.innerHTML = "";
+
+        post.innerHTML +=
+        `
+        <div class="title">修改公告</div>
+        <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+        <div class="create-content flex">
+            內容：<textarea name="" id="" cols="74" rows="9">${data.announce_content}</textarea>
+            
+        </div>
+        <div style="margin-left:20px;">
+            <input type="button" value="發布" class="submit">
+        </div> 
+        `;
     })
     .catch(error => console.error('Error:', error));
 
-    // 監聽表單提交事件
-    updateForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    let formData = new FormData(updateForm);
+
 
     // 更新資料
-    fetch(`${url}${id}`, {
+    fetch(`http://localhost:5229/api/Announcement/UpdateData?id=${id}`, {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${LoginToken}`
@@ -37,8 +45,17 @@ function updateData(url, id) {
         // 在成功更新後，可以執行一些額外的操作，例如重定向到另一個頁面
     })
     .catch(error => console.error('Error:', error));
-});
+}
 
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var href = split[0];
+    var id = split[1];
+    updateData(id);
+}
 
 
     // return fetch(`${url}${id}`, {
@@ -78,7 +95,6 @@ function updateData(url, id) {
     //     });
     // });  
     // });
-}
 
 
 

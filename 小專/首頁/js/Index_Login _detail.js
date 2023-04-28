@@ -1,25 +1,37 @@
-function readdata(url,id) {
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var href = split[0];
+    var id = split[1];
+    readdata(id);
+}
+
+function readdata(id) {
     var post = document.querySelector("#post");
-    fetch(`${url}${id}`)
+    fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`)
     .then(response => response.json())
     .then(data => {
-        data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
 
-            post.innerHTML +=
-            `
-            <div class="detail-title">${data.announce_title}</div>
-            <div class="detail-time"><i style="margin-right:15px;"class="fa-sharp fa-solid fa-clock"></i>${item.update_time}</div>
-            <div class="detail-content">
-                ${data.announce_content}
-                </div>
-                
+        post.innerHTML +=
+        `
+        <div class="detail-title">${data.announce_title}</div>
+        <div class="detail-time"><i style="margin-right:15px;"class="fa-sharp fa-solid fa-clock"></i>${data.update_time}</div>
+        <div class="detail-content">
+            ${data.announce_content}
             </div>
-            `;
+            
+        </div>
+        `;
+
+        console.log(data);
 
     })
-    .catch(error => console.error(error));
 }
+
+
 
 // function readdata(url,id) {
 //     var xhr = new XMLHttpRequest();

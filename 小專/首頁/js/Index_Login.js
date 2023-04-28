@@ -11,7 +11,9 @@ window.onload = function() {
             post.innerHTML +=
             `
             <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" onclick="readdata('http://localhost:5229/api/Announcement/ReadOneData?id=','${item.announce_id}')"class="a1 flex">
+                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+                
+                class="a1 flex">
                     <div class="space-between flex">
                         <div> 標題： ${item.announce_title}</div>
                         <div> 更新時間： ${update_time}</div>
