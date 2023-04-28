@@ -56,6 +56,7 @@ window.onload = function() {
     fetch("http://localhost:5229/api/Announcement/GetAllDataList")
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
         data.forEach((item) => {
@@ -75,14 +76,13 @@ window.onload = function() {
                 </div>
                 
                 <div class="flex">
-                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit"  class="edit-row-button" value="修改"></a>
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit"  onclick="updateData('http://localhost:5229/api/Announcement/UpdateData?id=', '${item.announce_id}')" class="edit-row-button" value="修改"></a>
                     <input type="submit" onclick="deleteData('http://localhost:5229/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
                 </div>
             </div>
             `;
         });
     })
-    .catch(error => console.error(error));
 }
 
 

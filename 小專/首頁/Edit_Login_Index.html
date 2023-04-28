@@ -68,7 +68,7 @@
 
     <div class="content column flex" style="padding-bottom: 100%;">
         <div style="width:100%;"class="flex">
-            <div class="create">
+            <div class="create" id="update-form">
                 <div class="title">修改公告</div>
                 <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value=""></div>
                 <div class="create-content flex">
@@ -77,7 +77,21 @@
                 </div>
                 <div style="margin-left:20px;">
                     <input type="button" value="發布" class="submit">
-                </div>
+                </div> 
+
+                <!-- <form class="create"id="update-form">
+                    <div>
+                        <label for="announce_title">公告標題：</label>
+                        <input type="text" id="announce_title" name="announce_title">
+                    </div>
+                    <div>
+                        <label for="content">公告內容：</label>
+                        <textarea id="announce_content" name="announce_content"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">更新</button>
+                    </div>
+                </form> -->
             </div>
             <div style="width:100%;" class="back"><a href="/小專/首頁/Admin_Login_Index.html" class="a2"><i style="font-size:20px;margin-right:5px;"class="fa-solid fa-house"></i>回首頁</a></div>
         </div>
@@ -86,6 +100,10 @@
     <footer>
 
     </footer>
-    <script src="./js/test.js"></script>
+    
+    
 </body>
+<script src="./js/test.js"></script>
+<!-- <script src="./js/Create_Index.js"></script> -->
+<script src="./js/Edit_Index.js"></script>
 </html>
