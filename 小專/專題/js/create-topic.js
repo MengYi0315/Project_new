@@ -5,14 +5,16 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token1=>",LoginToken);
 function postData(url, data, headers) {
     const formData = new FormData();
+    console.log("data" ,data);
     formData.append('senior_title', data.title);
     formData.append('senior_year', data.year);
-    formData.append('senior_person', data.post);
     formData.append('senior_content', data.content);
     formData.append('FormImage', data.image);
+
+    formData.append('members_id', data.members_id);
+
     // formData.append('senior_selectedValues', JSON.stringify(data.selectedValues)); // 將selectedValues轉為JSON字串後附加到FormData
-
-
+    console.log("formdata",formData);
 
     return fetch(url, {
         method: 'POST',
@@ -30,7 +32,9 @@ function submit() {
     
     const senior_title = document.getElementById('title').value;
     const senior_year = document.getElementById('year').value;
-    const senior_person = document.getElementById('post').value;
+    const year_number = Number(senior_year);
+
+    // const members_id = document.getElementById('post').value;
     const senior_image = document.getElementById('image').files[0];
     const senior_content = document.getElementById('content').value;
     // const select = document.getElementById('options');
@@ -42,10 +46,27 @@ function submit() {
     //         selectedValues.push(select.options[i].value);
     //     }
     // }
+    
+    var selected = [];
+    for (var option of document.getElementById('post').options)
+    {
+        if (option.selected) {
+            selected.push(option.value);
+        }
+    }
+    console.log("id" ,selected);
+
+
+
+
+    
     const data = {
         title: senior_title,
-        year: senior_year,
-        post:senior_person,
+        // year: 109,
+        year: year_number,
+        members_id:selected,
+        // members_id:"f63019c4-fbbas-40cc-aac9-3dcaaa33b8a7",
+
         content: senior_content,
         image: senior_image,
         // selectedOptions: selectedValues,
@@ -142,17 +163,18 @@ window.onload = function() {
     fetch("http://localhost:5229/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
-        console.log("data",data);
+        console.log("member",data);
 
         post.innerHTML = "";
         data.forEach((item) => {
+            // console.log("item",item)
             const date = new Date(item.update_time);
             const update_time = date.toLocaleString();
 
             post.innerHTML +=
             `
 
-            <option>${item.name}</option>
+            <option value=${item.members_id}>${item.name}</option>
             `;
         });
     })
