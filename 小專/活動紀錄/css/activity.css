@@ -268,6 +268,11 @@ a
     margin-top:100px;
     margin-right:60px;
 }
+
+.img
+{
+    width:300px;
+}
 .absolute-img
 {
     position:absolute;

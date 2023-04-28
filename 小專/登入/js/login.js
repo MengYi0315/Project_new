@@ -6,8 +6,6 @@ function postData(url,data,headers){
       method:'POST',
       mode:'cors',
   })
-  loginSuccessHandler(token);
-  //.then(response => response.json()) //輸出成json
 }
 
 function submit(){
@@ -34,7 +32,7 @@ function submit(){
 
 
 
-// 登录成功后保存 token 到本地存储
-function loginSuccessHandler(token) {
-  localStorage.setItem('token', token);
-}
+// // 登录成功后保存 token 到本地存储
+// function loginSuccessHandler(token) {
+//   localStorage.setItem('token', token);
+// }
