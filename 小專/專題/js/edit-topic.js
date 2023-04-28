@@ -1,47 +1,110 @@
 
-//新增
+
 
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token1=>",LoginToken);
 function postData(url, data, headers) {
+    const formData = new FormData();
+    formData.append('senior_title', data.title);
+    formData.append('senior_year', data.year);
+    formData.append('senior_person', data.post);
+    formData.append('senior_content', data.content);
+    formData.append('FormImage', data.image);
+    // formData.append('senior_selectedValues', JSON.stringify(data.selectedValues)); // 將selectedValues轉為JSON字串後附加到FormData
+
+
+
     return fetch(url, {
-        body: JSON.stringify(data),
-        headers: headers,
         method: 'POST',
         mode: 'cors',
+        body: formData,
+        headers: headers
     })
-    //.then(response => response.json()) //輸出成json
+      .then(response => response.formData) //輸出成json
 }
+
+//新增
 
 function submit() {
     console.log(LoginToken);
-   
-
-
-
-
-
-    const announce_title = document.getElementById('title').value;
-    const announce_content = document.getElementById('content').value;
-
-
+    
+    const senior_title = document.getElementById('title').value;
+    const senior_year = document.getElementById('year').value;
+    const senior_person = document.getElementById('post').value;
+    const senior_image = document.getElementById('image').files[0];
+    const senior_content = document.getElementById('content').value;
+    // const select = document.getElementById('options');
+    // const selectedValues = [];
+    // for (let i = 0; i < select.options.length; i++) 
+    // {
+    //     if (select.options[i].selected) 
+    //     {
+    //         selectedValues.push(select.options[i].value);
+    //     }
+    // }
     const data = {
-        announce_title,
-        announce_content
-    }
-    const headers = {
-        'Authorization': `Bearer ${LoginToken}`,
-        "Content-Type": "application/json",
-        "Accept": "application/json",
+        title: senior_title,
+        year: senior_year,
+        post:senior_person,
+        content: senior_content,
+        image: senior_image,
+        // selectedOptions: selectedValues,
     };
-    postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
-        .then(({data}) => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+
+    const headers = {
+        'Authorization': `Bearer ${LoginToken}`
+    };
+    
+
+    postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+    .then(({data}) => {
+        console.log(data);
+        
+        });
+
+
+    // const senior_title = document.getElementById('title').value;
+    // const senior_content = document.getElementById('content').value;
+    // const senior_year = document.getElementById('year').value;
+    // const members_id = document.getElementById('post').value;
+
+
+    // const data = {
+    //     announce_title,
+    //     announce_content
+    // }
+    // const headers = {
+    //     'Authorization': `Bearer ${LoginToken}`,
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json",
+    // };
+    // postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+    //     .then(({data}) => {
+    //         console.log(data);
+    //     })
+    //     .catch(error => {
+    //         console.error(error);
+    //     })
 }
+function previewFile() {
+    var preview = document.querySelector('.img');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // 設定圖片大小
+    preview.style.width = "300px";
+}
+
+
 
 
 
@@ -67,7 +130,7 @@ function deleteData(url, id) {
 
 
 
-//取的資料 
+//取的資料 ok
 
 window.onload = function() {
     //
@@ -76,7 +139,7 @@ window.onload = function() {
 
 
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
+    fetch("http://localhost:5229/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
         console.log("data",data);
@@ -88,41 +151,8 @@ window.onload = function() {
 
             post.innerHTML +=
             `
-            <div class="flex">
-            <div class="topic-photo flex">
-                <div class="photo" id="photo"></div>
-                <img src="" class="photo"> 
-            </div>
-            
-            <div class="topic-content flex" >
-                <div class="topic-name">
-                    <p>${item.senior_title}</p>
-                </div>
-                <div class="member" id="member">
-                ${item.name}
-                </div>
-                <div class="article" id="article">
-                ${item.senior_content}
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="edit flex">
-                <button type="button" class="edit-row-button">
-                    <a href="./topic-edit.html">
-                        修改
-                    </a>
-                </button>
-                <button type="button" class="delete-row-button">
-                    刪除
-                </button>
-                
-            </div>
-        </div>
 
-
-
-             
+            <option>${item.name}</option>
             `;
         });
     })
@@ -198,24 +228,3 @@ window.onload = function() {
 //         console.log(data);
 //     })
 // }
-
-
-
-
-
-{/* <div class="topic-photo flex">
-                  
-<img src="${item.senior_image}" class="photo"> 
-</div>
-
-<div class="topic-content flex" >
-<div class="topic-name">
-    <p>${item.senior_title}</p>
-</div>
-<div class="member" id="member">
-    ${item.name}
-</div>
-<div class="article" id="article">
-    ${item.senior_content}
-</div>
-</div> */}

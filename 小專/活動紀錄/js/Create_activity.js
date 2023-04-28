@@ -14,7 +14,7 @@ function postData(url, data, headers) {
 }
 
 let LoginToken=sessionStorage.getItem('LoginToken');
-
+console.log(LoginToken);
 function submit() {
     console.log(LoginToken);
     const title = document.getElementById('title').value;
@@ -35,7 +35,7 @@ function submit() {
     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
-            window.onload();
+            
         });
 }
 
