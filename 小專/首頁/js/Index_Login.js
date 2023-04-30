@@ -1,4 +1,7 @@
 window.onload = function() {
+    
+let LoginToken=sessionStorage.getItem('LoginToken');
+console.log("token",LoginToken)
     var post = document.querySelector("#post");
     fetch("http://localhost:5229/api/Announcement/GetAllDataList")
     .then(response => response.json())

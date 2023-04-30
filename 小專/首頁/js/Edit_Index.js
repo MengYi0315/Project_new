@@ -2,6 +2,7 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
 
 function updateData(id) {
+    
     var post = document.querySelector("#post");
     // 讀取舊有資料
     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {

@@ -16,6 +16,7 @@ function LoginData(){
         }
     })
             .then(( { data } ) => {
+                console.log("data",data)
                 sessionStorage.setItem('LoginToken',data);
                 console.log(data);
                 
