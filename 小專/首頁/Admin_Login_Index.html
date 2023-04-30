@@ -74,31 +74,15 @@
                 輪播圖
                 <div style="margin-top:5px;"><a href="./CarouselImg_Login_Index.html"><img src="./img/edit.png" style="width: 45px;height:40px;"/></a></div>
             </div>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext"></div>
-                    <img src="./img/3.jpg" class="carousel-set">
+            <div>
+                <div class="slideshow-container" id="slideshow">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext"></div>
-                    <img src="./img/2.png" class="carousel-set">
+    
+                <!-- 下面原點 -->
+                <div id="circle" style="text-align: center;">
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext"></div>
-                    <img src="./img/4.png" class="carousel-set">
-                </div>
-                <div style="width:100%;justify-content: space-between;">
-                    <div><a class="prev" onclick="plusSlides(-1)">&#10094;</a></div>
-                    <div><a class="next" onclick="plusSlides(1)">&#10095;</a></div>
-                </div>
-                
-            </div>
-
-            <!-- 下面原點 -->
-            <div class="circle">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </div>
         <div class="content-index">

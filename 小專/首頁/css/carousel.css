@@ -344,6 +344,14 @@ a{
     margin:0px 5%;
 }
 
+#carousel-set
+{
+    justify-content: center;
+    width:90%;
+    height: 400px;
+    margin:0px 5%;
+}
+
 .carousel
 {
     width:100%;
@@ -358,6 +366,11 @@ a{
 
 /* Hide the images by default */
 .mySlides {
+    display: none;
+    width:100%;
+}
+
+#mySlides {
     display: none;
     width:100%;
 }
@@ -420,6 +433,12 @@ a{
     text-align:center;
     line-height: 60px;
 }
+
+#circle
+{
+    text-align:center;
+    line-height: 60px;
+}
 /* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
@@ -439,6 +458,13 @@ a{
 
 /* Fading animation */
 .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+#fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -568,6 +594,7 @@ a{
 }
 
 #ForReadImg {
+    width:200%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -631,4 +658,10 @@ a{
 {
     background-color: #2B8282;
     font-weight: bold;
+}
+
+#slideshow {
+    min-width: 80%;
+    justify-content: center;
+    z-index: 2;
 }
