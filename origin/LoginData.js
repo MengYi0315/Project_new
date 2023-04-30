@@ -16,6 +16,7 @@ function LoginData(){
         }
     })
             .then(( { data } ) => {
+                console.log("data",data)
                 sessionStorage.setItem('LoginToken',data);
                 console.log(data);
                 window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
