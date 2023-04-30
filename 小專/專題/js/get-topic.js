@@ -65,7 +65,7 @@ function deleteData(url, id) {
                     <div class="flex">
                         <div class="topic-photo flex">
                             
-                        <img src="${item.senior_image}" class="photo">
+                        <img src="http://localhost:5229/${item.senior_image}" class="photo">
                         </div>
                         
                         <div class="topic-content flex" >
@@ -131,7 +131,7 @@ window.onload = function() {
                 <div class="flex">
                     <div class="topic-photo flex">
                         
-                    <img src="${item.senior_image}" class="photo">
+                    <img src="http://localhost:5229/${item.senior_image}" class="photo">
                     </div>
                     
                     <div class="topic-content flex" >
