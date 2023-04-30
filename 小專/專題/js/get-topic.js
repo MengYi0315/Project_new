@@ -83,18 +83,18 @@ function deleteData(url, id) {
                     <div>
                         <div class="edit">
                             <button type="button" class="edit-row-button">
-                                <a href="./topic-edit.html">
+                                <a href="./topic-edit.html?id=${itemseniorproject_id}">
                                     修改
                                 </a>
                             </button>
-                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E', '${item.seniorproject_id}')">
+                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
                             
                         </div>
                     </div>
                 </div>
     
                 `;
-                });
+            });
             window.onload();
         })
         .catch(error => console.error(error));
@@ -106,6 +106,15 @@ function deleteData(url, id) {
     });
 }
 
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    readone(id);
+}
 
 
 //取的資料 
