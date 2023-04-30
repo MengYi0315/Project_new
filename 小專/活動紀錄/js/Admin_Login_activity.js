@@ -34,9 +34,12 @@ function deleteData(url, id) {
 
 window.onload = function() {
     var post = document.querySelector("#post");
+    
     fetch("http://localhost:5229/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
+
+        console.log("data",data);
         post.innerHTML = "";
         data.forEach((item) => {
             post.innerHTML +=

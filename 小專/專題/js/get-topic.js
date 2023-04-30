@@ -55,10 +55,57 @@ function deleteData(url, id) {
     console.log('Deleting data:', `${url}${id}`); // 调试信息
     return fetch(`${url}${id}`, {
         method: 'DELETE',
-        headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
+        headers: {'Authorization': `Bearer ${LoginToken}`}
     })
     .then(data => {
         console.log(data); // 刪除成功後的回應
+
+        fetch("http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E")
+        .then(response => response.json())
+        .then(data => {
+            post.innerHTML = "";
+            data.forEach((item) => {
+                post.innerHTML +=
+                `
+                <div class="topic" style="margin-bottom: 10px;" >
+                    <div class="flex">
+                        <div class="topic-photo flex">
+                            
+                        <img src="${item.senior_image}" class="photo">
+                        </div>
+                        
+                        <div class="topic-content flex" >
+                            <div class="topic-name">
+                            ${item.senior_title}
+                            </div>
+                            <div class="member" id="member">
+                            ${item.name}
+                            </div>
+                            <div class="article" id="article">
+                            ${item.senior_content}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="edit">
+                            <button type="button" class="edit-row-button">
+                                <a href="./topic-edit.html">
+                                    修改
+                                </a>
+                            </button>
+                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                `;
+                });
+            window.onload();
+        })
+        .catch(error => console.error(error));
+
+        
     })
     .catch(error => {
         console.error('There was a problem deleting data:', error);
@@ -70,21 +117,19 @@ function deleteData(url, id) {
 //取的資料 
 
 window.onload = function() {
-    //
-
-
-
 
     var post = document.querySelector("#post");
+
     fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
     .then(response => response.json())
     .then(data => {
+        
         console.log("data",data);
 
         post.innerHTML = "";
         data.forEach((item) => {
-            const date = new Date(item.update_time);
-            const update_time = date.toLocaleString();
+            // const date = new Date(item.update_time);
+            // const update_time = date.toLocaleString();
 
             post.innerHTML +=
             `
@@ -92,7 +137,7 @@ window.onload = function() {
                 <div class="flex">
                     <div class="topic-photo flex">
                         
-                        <img src="./img/1.jpg" class="photo"> 
+                    <img src="${item.senior_image}" class="photo">
                     </div>
                     
                     <div class="topic-content flex" >
@@ -114,9 +159,7 @@ window.onload = function() {
                                 修改
                             </a>
                         </button>
-                        <button type="button" class="delete-row-button">
-                            刪除
-                        </button>
+                        <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
                         
                     </div>
                 </div>
@@ -127,6 +170,30 @@ window.onload = function() {
     })
     .catch(error => console.error(error));
 }
+
+
+function previewFile() {
+    var preview = document.querySelector('.img');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    var fileName = file.name;
+    var fileNameDisplay = document.querySelector('.file-name');
+    fileNameDisplay.textContent = fileName;
+
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // 設定圖片大小
+    preview.style.width = "300px";
+}
+
 
 //<div class="photo" id="photo"></div>
 
