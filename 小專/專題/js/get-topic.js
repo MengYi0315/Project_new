@@ -15,12 +15,6 @@ function postData(url, data, headers) {
 
 function submit() {
     console.log(LoginToken);
-   
-
-
-
-
-
     const announce_title = document.getElementById('title').value;
     const announce_content = document.getElementById('content').value;
 

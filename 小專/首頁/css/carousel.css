@@ -391,7 +391,11 @@ a{
     user-select: none;
 }
 
-
+#CHANGEPreview
+{
+    width:250px;
+    font-weight: bold;
+}
 /* Position the "next button" to the right */
 .next {
     right: 0;
