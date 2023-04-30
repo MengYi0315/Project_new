@@ -69,7 +69,7 @@
         </div>
         
         <!-- 右側 -->
-        <div class="right-content">
+        <div class="right-content"  id="post1">
             <div class="title">
                 修改專題作品
             </div>
@@ -78,7 +78,7 @@
                 <div class="topic-1">
                     <div class="flex" style="width: 100%;">
                         <div class="topic-photo flex">
-                            <div class="photo flex">
+                            <div class="photo flex" id="img">
                                 <img  class="img">
                                 <!-- <input type="button" value="IMG" class="select-photo">     -->
                             </div>     
@@ -88,11 +88,11 @@
                         <div class="topic-content">
                             <div style="padding-top: 72px;">
                                 專題名稱：
-                                <input class="topic-text">
+                                <input class="topic-text" id="title">
                             </div>
-                            <div class="member">
+                            <div class="member" >
                                 選擇年份：
-                                <select class="year-select">
+                                <select class="year-select" id="year">
                                     <option>請選擇年份</option>
                                     <option>111年</option>
                                     <option>110年</option>
@@ -113,17 +113,17 @@
                                     <option>五</option>
                                     <option>五</option>
                                     <option>五</option>
-                                     -->
+                                    -->
                                 </select>
                             
                             </div>
                             <div  class="member">
                                 圖片檔案：
-                                <input type="file" value="IMG" onchange="previewFile()" class="select-photo" accept="image/*">
+                                <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*">
                             </div>
                             <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                 專題簡介：
-                                <textarea class="topic-content-text"></textarea>
+                                <textarea class="topic-content-text" id="content"></textarea>
                                 
                             </div>
 
