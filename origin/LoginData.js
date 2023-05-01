@@ -18,9 +18,9 @@ function LoginData(){
             .then(( { data } ) => {
                 console.log("data",data)
                 sessionStorage.setItem('LoginToken',data);
-                LoginMember(account.value);
+                
                 console.log(data);
-                //window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
+                window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
             })
             .catch(error => {
                 console.log(error);
@@ -28,20 +28,20 @@ function LoginData(){
 
 }
 
-function LoginMember(Account)
-{
-  return fetch(`http://localhost:5229/api/Members/GetLoginRole?Account=${Account}`, {
-            method:'GET',
-            mode:'cors',
-            })  
-            .then(response => response.json())
-            .then(data => {
-    console.log(data);
-    sessionStorage.setItem('Role',data.Role);
-    Role=sessionStorage.getItem('Role');
-    console.log(data.Role);
-  })
-}
+// function LoginMember(Account)
+// {
+//   return fetch(`http://localhost:5229/api/Members/GetLoginRole?Account=${Account}`, {
+//             method:'GET',
+//             mode:'cors',
+//             })  
+//             .then(response => response.json())
+//             .then(data => {
+//     console.log(data);
+//     sessionStorage.setItem('Role',data.Role);
+//     Role=sessionStorage.getItem('Role');
+//     console.log(data.Role);
+//   })
+// }
 
 
 let Login_btn=document.getElementById('Login_btn');

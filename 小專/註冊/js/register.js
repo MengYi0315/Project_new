@@ -26,10 +26,9 @@ function submit() {
         password,
         passwordCheck,
         email,
-        level
+        level,
     }
     const headers = {
-        'Authorization': `Bearer ${LoginToken}`,
         "Content-Type": "application/json",
         "Accept": "application/json",
     };
