@@ -6,7 +6,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>小專</title>
 </head>
 <body>
@@ -16,9 +15,9 @@
             
         </div>
         <div class="header-right flex"> 
-            <ul class="flex"style="align-items:flex-end;"> 
+            <ul class="flex " style="align-items: flex-end;"> 
                 <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
-                    <li>首頁</li>
+                    <li style="font-size:18px;">首頁</li>
                 </a>
                 <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
@@ -26,41 +25,57 @@
                 <li class="nav-a-t" id="nav-a-hover">
                     <a href="#" class="down-bar-title">研究室成果</a>
                     <ul class="down-bar " id="down-bar">
-                        <a href="/小專/論文/admin-thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a> 
+                        <!-- <a href="/小專/論文/logout-thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a>  -->
                         <a href="/小專/專題/Admin_topic-login.html"  class="down-bar-text"><li>專題作品</li></a>
                         <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html"  class="down-bar-text"><li>歷屆得獎紀錄</li></a>
                     </ul>
 
 
                 </li>
- 
                 <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <li class="nav-a-t" id="nav-a-hover-1">
+                <!-- <li class="nav-a-t" id="nav-a-hover-1">
                     <a href="#" class="down-bar-title">學習專區</a>
                     <ul class="down-bar " id="down-bar-1">
                         <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="down-bar-text"><li>考試專區</li></a> 
                         <a href=""  class="down-bar-text"><li>作業專區</li></a>
-                        <a href="/小專/留言板/admin-msgboard.html"  class="down-bar-text"><li>討論留言板</li></a>
+                        <a href="/小專/留言板/Admin-msgboard.html"  class="down-bar-text"><li>討論留言板</li></a>
 
                     </ul>
 
 
                 </li>
-      
-                <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"  class="nav-a-current">
-                    <li>使用者專區</li> 
-                </a> 
-                <a href="/小專/登入/Login.html"  class="nav-a">
-                    <li>登出</li>
-                </a> 
-            </ul>
+
+                
+                <li class="nav-a-t" id="nav-a-hover-2">
+                    <a href="#" class="down-bar-title">使用者專區</a>
+                    <ul class="down-bar " id="down-bar-2">
+                        <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html" class="down-bar-text"><li>個人資訊</li></a> 
+                        <a href="/小專/使用者專區-權限管理/Admin-permission.html"  class="down-bar-text"><li>權限管理</li></a>
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>新增使用者</li></a>
+                    </ul>
+
+
+                </li>     -->
+                <li class="nav-a-t" id="nav-a-hover-1">
+                    <a href="#" class="down-bar-title">操作</a>
+                    <ul class="down-bar " id="down-bar-1">
+                        <a href="/小專/使用者專區-修改密碼/Admin-ChangePassword.html" class="down-bar-text"><li>修改密碼</li></a> 
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>註冊</li></a>
+
+                        <a href="/小專/登入/Login.html"  class="down-bar-text"><li>登出</li></a>
+
+                    </ul>
+
+
+                </li>          
+              </ul>
         </div>
     </header>
 
     <div class="content flex">
-        <div class="left-content flex">
+        <!-- <div class="left-content flex">
             <div class="ul-win" style="cursor: pointer;">
                 <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"><div class="menu">個人資訊</div></a>
             </div>
@@ -71,84 +86,78 @@
                 <a href="/小專/註冊/Register.html"><div class="menu-c">註冊會員</div></a>
             </div>
             
-        </div>
+        </div> -->
 
         <div class="right-content ">
             <div class="flex" style="justify-content: center;">
                 <div class="title">
                     註冊會員
                 </div>
-                
             </div>
             <div class="login-div flex">
-                
+                <form id="myForm" onsubmit="return validateForm()">
                 <table>
                     <tr>
                         <td class="normal-word text-bottom field" >
                             姓名：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+
+                            <input type="text"  class="text" required id="name">
+                            <span id="nameverify"></span>
                         </td>
-    
                     </tr>
                     <tr>
                         <td class="normal-word text-bottom field" >
                             帳號：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="text"  class="text" required id="account">
                         </td>
-    
                     </tr>
                     <tr>
                         <td class="normal-word text-bottom field" >
                             密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="required"  class="text" required id="password">
                         </td>
-    
                     </tr>
                     <tr>
-                        <td class="normal-word text-bottom field" >
+                        <td class="normal-word text-bottom field">
                             確認密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="text"  class="text"  required id="checkpassword">
                         </td>
-    
                     </tr>
                     <tr>
                         <td class="normal-word text-bottom field" >
                             Email：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="email"  class="text" required id="email">
                         </td>
-    
                     </tr>
-    
-    
-                    <tr>
-                        <td class="normal-word text-bottom field" >
-                            權限：
-                        </td>
-                        <td class="text-bottom field">
-                            <select class="text">
-                                <option>學生</option>
-                                <option>學長姐</option>
-                                <option>管理員</option>
-    
-                            </select>
+                </tr>
+                <tr>
+                    <td class="normal-word text-bottom field" >
+                        權限：
+                    </td>
+                    <td class="text-bottom field" id="level">
+                        <select class="text" id="select">
+                            <option id="student">學生</option>
+                            <option id="senior">學長姐</option>
                             
-                        </td>
+                        </select>
+                    </td>
+                </tr>
     
-                    </tr>
+                
                 </table>
                 
-                <div class="margin-top-login-content"> 
-                    <input type="button" value="註冊" class="login-button" onclick="location.href='./Register.html'">
+                <div class="margin-top-login-content" style="text-align: center;"> 
+                    <input type="submit" value="註冊" class="login-button" onclick="submit()">
                 </div>
                 
     
@@ -156,29 +165,13 @@
     
     
             </div>
-            
-
-
-
-
         </div>
-        
-        
-            
-
-
-
-
     </div>
-
-
-
-
-    
-
     <footer>
 
     </footer>
     <script src="./js/test.js"></script>
 </body>
+<script src="./js/test.js"></script>
+<script src="./js/register.js"></script>
 </html>

@@ -408,6 +408,8 @@ textarea
     margin-top:-1px;
     
     white-space:nowrap;
+    position: relative;
+    right: 70px;
 }
 .down-bar :hover{
     background-color: #75E9BF;

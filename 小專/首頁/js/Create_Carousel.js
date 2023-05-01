@@ -133,6 +133,7 @@ function submit() {
     (data) => {
         location.reload();
         console.log(data);
+        window.alert("新增成功");
     }
   );
 }
@@ -311,11 +312,13 @@ function UpdateImage(id,FileBtn,headers)
     {
         console.log(`Image ${id} updated successfully.`);
         location.reload();
+        window.alert("修改成功");
     })
     .catch((error) => 
     {
         console.error(error);
-    });
+        window.alert("修改失敗");
+      });
 }
 
 function DeleteImage(id)

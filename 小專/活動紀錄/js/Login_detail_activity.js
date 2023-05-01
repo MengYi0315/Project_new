@@ -11,7 +11,7 @@ function readone(id) {
         popup.innerHTML = "";
         popup.innerHTML +=
         `
-            <div class="absolute-x "><a href="./Admin_Login_activity.html">X</a></div>
+            <div class="absolute-x "><a href="./Login_activity.html">X</a></div>
             <div class="reveal-left flex">
                 <img src="${data.first_image}" class="b-25">
             </div>
@@ -19,7 +19,7 @@ function readone(id) {
                 <div class="title-detail">${data.activity_title}</div>
                 <div class="activity-detail">${data.activity_content}</div>
             </div>
-            <div class="absolute-edit"><a href="./Edit_Login_activity.html?id=${id}"><img src="./img/edit.PNG" style="width: 45px;height:40px;"></a></div>
+            
             
         `;
         console.log(data);
@@ -42,15 +42,14 @@ function deleteData(url, id) {
                 post.innerHTML +=
                 `
                 <div class="relative w-25 flex">
-                    <a href="./Admin_Login_detail_activity.html?id=${item.activity_id}" class="a1">
+                    <a href="./Login_detail_activity.html?id=${item.activity_id}" class="a1">
                         <img src="${item.first_image}" class="b-25">
                         <div class="center">${item.activity_title}</div>
-                    </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+                    </a>
                 </div>
                 `;
             });
             window.onload();
-            window.alert("刪除成功");
         })
         .catch(error => console.error(error));
     })

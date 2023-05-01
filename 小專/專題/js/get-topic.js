@@ -54,7 +54,7 @@ function deleteData(url, id) {
     .then(data => {
         console.log(data); // 刪除成功後的回應
 
-        fetch("http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E")
+        fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
         .then(response => response.json())
         .then(data => {
             post.innerHTML = "";
@@ -65,7 +65,7 @@ function deleteData(url, id) {
                     <div class="flex">
                         <div class="topic-photo flex">
                             
-                        <img src="${item.senior_image}" class="photo">
+                        <img src="http://localhost:5229/${item.senior_image}" class="photo">
                         </div>
                         
                         <div class="topic-content flex" >
@@ -83,7 +83,7 @@ function deleteData(url, id) {
                     <div>
                         <div class="edit">
                             <button type="button" class="edit-row-button">
-                                <a href="./topic-edit.html">
+                                <a href="./topic-edit.html?id=${itemseniorproject_id}">
                                     修改
                                 </a>
                             </button>
@@ -94,7 +94,8 @@ function deleteData(url, id) {
                 </div>
     
                 `;
-                });
+                window.alert("刪除成功");
+            });
             window.onload();
         })
         .catch(error => console.error(error));
@@ -106,6 +107,15 @@ function deleteData(url, id) {
     });
 }
 
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    readone(id);
+}
 
 
 //取的資料 
@@ -131,7 +141,7 @@ window.onload = function() {
                 <div class="flex">
                     <div class="topic-photo flex">
                         
-                    <img src="${item.senior_image}" class="photo">
+                    <img src="http://localhost:5229/${item.senior_image}" class="photo">
                     </div>
                     
                     <div class="topic-content flex" >
@@ -149,10 +159,12 @@ window.onload = function() {
                 <div>
                     <div class="edit">
                         <button type="button" class="edit-row-button">
-                            <a href="./topic-edit.html">
+
+                            <a href="./topic-edit.html?id">
                                 修改
                             </a>
                         </button>
+                        
                         <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
                         
                     </div>
@@ -189,78 +201,9 @@ function previewFile() {
 }
 
 
-//<div class="photo" id="photo"></div>
-
-// function postData(url,data,headers){
-
-//     return fetch(url, {
-//         body: JSON.stringify(data),
-//         headers:headers,
-//         method:'POST',
-//         mode:'cors',
-//     })
-//     //.then(response => response.json()) //輸出成json
-// }
-
-// function submit(){
-//     const announce_title=document.getElementById('title').value;
-//     const announce_content=document.getElementById('content').value;
-//     const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODI1MDM3MzV9.dU4k9OBupPvholFaKwWM_RJaedcrItBZ3NnwR6V21Fw';
-
-//     const data={
-//         announce_title,
-//         announce_content
-//     }
-//     const headers = {
-//         'Authorization': `Bearer ${token}`,
-//         'Content-Type': 'application/json'
-//     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
-//     .then(data=>{
-//         // sessionStorage.setItem('LoginData', JSON.stringify(data));
-//         console.log(data);
-//     })
-// }  
 
 
-// function getToken() {
-//     const loginData = JSON.parse(sessionStorage.getItem('LoginData'));
-//     return loginData.token;
-// }
-
-// function postData(url,data,headers){
-
-//     return fetch(url, {
-//         body: JSON.stringify(data),
-//         headers:headers,
-//         method:'POST',
-//         mode:'cors',
-//     })
-//     //.then(response => response.json()) //輸出成json
-// }
-
-// function submit(){
-//     const announce_title=document.getElementById('title').value;
-//     const announce_content=document.getElementById('content').value;
-//     const token = getToken();
-
-//     const data={
-//         announce_title,
-//         announce_content
-//     }
-//     const headers = {
-//         'Authorization': `Bearer ${token}`,
-//         'Content-Type': 'application/json'
-//     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
-//     .then(data=>{
-//         sessionStorage.setItem('LoginData', JSON.stringify(data));
-//         console.log(data);
-//     })
-// }
-
-
-
+//${seniorproject_id}
 
 
 {/* <div class="topic-photo flex">

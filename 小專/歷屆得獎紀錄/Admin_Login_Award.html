@@ -23,13 +23,13 @@
                 <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
                 </a>
-                <a href="/小專/論文/admin-thesis.html"  class="nav-a-current">
+                <a href=""  class="nav-a-current">
                     <li style="font-size:18px;">研究室成果</li>
                 </a>    
                 <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
                 </a>
-                <li class="nav-a-t" id="nav-a-hover-1">
+                <!-- <li class="nav-a-t" id="nav-a-hover-1">
                     <a href="#" class="down-bar-title">學習專區</a>
                     <ul class="down-bar " id="down-bar-1">
                         <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="down-bar-text"><li>考試專區</li></a> 
@@ -51,18 +51,26 @@
                     </ul>
 
 
-                </li>    
-                <a href="/小專/登入/Login.html"  class="nav-a">
-                    <li>登出</li>
-                </a>   
-            </ul>
+                </li>     -->
+                <li class="nav-a-t" id="nav-a-hover-1">
+                    <a href="#" class="down-bar-title">操作</a>
+                    <ul class="down-bar " id="down-bar-1">
+                        <a href="/小專/使用者專區-修改密碼/Admin-ChangePassword.html" class="down-bar-text"><li>修改密碼</li></a> 
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>註冊</li></a>
+
+                        <a href="/小專/登入/Login.html"  class="down-bar-text"><li>登出</li></a>
+
+                    </ul>
+
+
+                </li>            </ul>
         </div>
     </header>
 
     <div class="content flex">
         <div class="left-content flex">
             <ul class="ul-win">
-                <a href="/小專/論文/admin-thesis.html" class="a-win"><li class="li-win">研究生畢業論文</li></a>
+                    <!-- <a href="/小專/論文/admin-thesis.html" class="a-win"><li class="li-win">研究生畢業論文</li></a> -->
                 <a href="/小專/專題/Admin_topic-login.html" class="a-win"><li class="li-win">專題作品</li></a>
                 <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html" class="a-win"><li class="li-win">歷屆得獎紀錄</li></a>
             </ul>
@@ -90,16 +98,16 @@
                 </ul>
             </div>
             <br>
-            <div class="flex" style="font-weight: bold;">
+            <div style="font-weight: bold;">
                 <table class="win-table">
                     <tr class="li-award-title">
-                        <td>競賽名稱</td>
-                        <td>作品名稱</td>
-                        <td>得獎名次</td>
-                        <td>參與人員</td>
-                        <td>操作</td>
+                        <td style="width:25%;">競賽名稱</td>
+                        <td style="width:25%;">作品名稱</td>
+                        <td style="width:20%;">得獎名次</td>
+                        <td style="width:30%;">操作</td>
                     </tr>
-                    <tr class="li-award-win">
+                    
+                    <!-- <tr class="li-award-win">
                         <td>資訊應用服務創新競賽</td>
                         <td>食在好「盲」</td>
                         <td>佳作</td>
@@ -148,7 +156,10 @@
                             <button type="button"  class="edit-row-button"><a href="./Edit_Login_Award.html">修改</a></button>
                             <button type="button"  class="delete-row-button">刪除</button>
                         </td>
-                    </tr>
+                    </tr> -->
+                </table>
+                <table class="win-table" id="post">
+
                 </table>
             </div>
         </div>
@@ -160,7 +171,7 @@
     <footer>
 
     </footer>
-    <script src="./js/Create_Award.js"></script>
+    <script src="./js/Admin_Award.js"></script>
     <script src="./js/test.js"></script>
 </body>
 </html>

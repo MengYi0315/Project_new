@@ -18,8 +18,8 @@
     })
 
 
-    let navhover2 = document.getElementById('nav-a-hover-2');
-    let downbar2 = document.getElementById('down-bar-2');
+    let navhover2 = document.getElementById('nav-a-hover');
+    let downbar2 = document.getElementById('down-bar');
     
 
     

@@ -2,7 +2,177 @@
 
 
 let LoginToken=sessionStorage.getItem('LoginToken');
-console.log("token1=>",LoginToken);
+console.log("token1",LoginToken);
+
+let projectdata;
+
+function previewFile() {
+    var preview = document.querySelector('.img');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    // 取得檔案名稱
+    var fileName = file.name;
+    var fileNameDisplay = document.querySelector('.file-name');
+    fileNameDisplay.textContent = fileName;
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // 設定圖片大小
+    preview.style.width = "300px";
+}
+
+function submit(id) {
+    var post = document.querySelector("#post");
+
+    fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${id}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    
+    .then(response => response.json())
+    .then(data => {
+        projectdata = data;
+        post.innerHTML = "";
+        post.innerHTML +=
+        `
+        <div class="title">
+            修改專題作品
+        </div>
+        <br>
+        <div>
+            <div class="topic-1">
+                <div class="flex" style="width: 100%;">
+                    <div class="topic-photo flex">
+                        <div class="photo flex" id="img">
+                            <img  class="img">
+                            <!-- <input type="button" value="IMG" class="select-photo">     -->
+                        </div>     
+                    </div>
+                
+                
+                    <div class="topic-content">
+                        <div style="padding-top: 72px;">
+                            專題名稱：
+                            <input class="topic-text" id="title">
+                        </div>
+                        <div class="member" >
+                            選擇年份：
+                            <select class="year-select" id="year">
+                                <option>請選擇年份</option>
+                                <option>111年</option>
+                                <option>110年</option>
+                                <option>109年</option>
+                                <option>108年</option>
+                                <option>107年</option>
+                            </select>
+                        </div>
+                        <div class="member flex">
+                            專題組員：
+                            <select class="member-select" id="post" multiple>
+                            
+                                <!-- <option>一</option>
+                                <option>二</option>
+                                <option>三</option>
+                                <option>四</option>
+                                <option>五</option>
+                                <option>五</option>
+                                <option>五</option>
+                                <option>五</option>
+                                -->
+                            </select>
+                    
+                        </div>
+                        <div  class="member">
+                            圖片檔案：
+                            <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*" value"${data.senior_image}>
+                        </div>
+                        <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
+                            專題簡介：
+                            <textarea class="topic-content-text" id="content" value"${data.senior_content}"></textarea>
+                        
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+            
+                <div class="button-div flex">
+                    <div class="button-padding">
+                        <input type="button" value="保存" class="create-button" onclick="update('${id}')">
+                    </div>
+                    <div class="button-padding">
+                        <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        `;
+        console.log(data);
+        window.alert("修改成功");
+    }) 
+}
+
+function update(id) { 
+    const senior_title = document.querySelector('input[type="text"]').value;
+    const senior_year = document.getElementById('year').value;
+    const senior_person = document.getElementById('post').value;
+    
+    
+
+    const senior_image = document.querySelector('input[type="file"]');
+    const senior_content = document.querySelector('textarea').value;
+
+    // 创建一个 FormData 对象，并添加要修改的图片和文字内容
+    
+    const formData = new FormData();
+    formData.append('senior_title', titleInput);
+    formData.append('senior_content', contentInput);
+    formData.append('senior_year', yearInput);
+    formData.append('senior_person', presonInput);
+
+    formData.append('FormImage', image.files[0]);
+
+
+    fetch(`http://localhost:5229/api/Activity/UpdateData?id=${id}`, {
+        method: 'PUT',
+        mode: 'cors',
+        headers: {
+            'Authorization': `Bearer ${LoginToken}`
+        },
+        body: formData
+    })
+
+    .then(data => {
+        console.log(data);
+    });
+}
+
+
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    submit(id);
+}
+
+
+
+
 function postData(url, data, headers) {
     const formData = new FormData();
     formData.append('senior_title', data.title);
@@ -25,112 +195,112 @@ function postData(url, data, headers) {
 
 //新增
 
-function submit() {
-    console.log(LoginToken);
+// function submit() {
+//     console.log(LoginToken);
     
-    const senior_title = document.getElementById('title').value;
-    const senior_year = document.getElementById('year').value;
-    const senior_person = document.getElementById('post').value;
-    const senior_image = document.getElementById('image').files[0];
-    const senior_content = document.getElementById('content').value;
-    // const select = document.getElementById('options');
-    // const selectedValues = [];
-    // for (let i = 0; i < select.options.length; i++) 
-    // {
-    //     if (select.options[i].selected) 
-    //     {
-    //         selectedValues.push(select.options[i].value);
-    //     }
-    // }
-    const data = {
-        title: senior_title,
-        year: senior_year,
-        post:senior_person,
-        content: senior_content,
-        image: senior_image,
-        // selectedOptions: selectedValues,
-    };
+//     const senior_title = document.getElementById('title').value;
+//     const senior_year = document.getElementById('year').value;
+//     const senior_person = document.getElementById('post').value;
+//     const senior_image = document.getElementById('image').files[0];
+//     const senior_content = document.getElementById('content').value;
+//     // const select = document.getElementById('options');
+//     // const selectedValues = [];
+//     // for (let i = 0; i < select.options.length; i++) 
+//     // {
+//     //     if (select.options[i].selected) 
+//     //     {
+//     //         selectedValues.push(select.options[i].value);
+//     //     }
+//     // }
+//     const data = {
+//         title: senior_title,
+//         year: senior_year,
+//         post:senior_person,
+//         content: senior_content,
+//         image: senior_image,
+//         // selectedOptions: selectedValues,
+//     };
 
-    const headers = {
-        'Authorization': `Bearer ${LoginToken}`
-    };
+//     const headers = {
+//         'Authorization': `Bearer ${LoginToken}`
+//     };
     
 
-    postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
-    .then(({data}) => {
-        console.log(data);
+//     postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+//     .then(({data}) => {
+//         console.log(data);
         
-        });
+//         });
 
 
-    // const senior_title = document.getElementById('title').value;
-    // const senior_content = document.getElementById('content').value;
-    // const senior_year = document.getElementById('year').value;
-    // const members_id = document.getElementById('post').value;
+//     // const senior_title = document.getElementById('title').value;
+//     // const senior_content = document.getElementById('content').value;
+//     // const senior_year = document.getElementById('year').value;
+//     // const members_id = document.getElementById('post').value;
 
 
-    // const data = {
-    //     announce_title,
-    //     announce_content
-    // }
-    // const headers = {
-    //     'Authorization': `Bearer ${LoginToken}`,
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json",
-    // };
-    // postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
-    //     .then(({data}) => {
-    //         console.log(data);
-    //     })
-    //     .catch(error => {
-    //         console.error(error);
-    //     })
-}
-function previewFile() {
-    var preview = document.querySelector('.img');
-    var file    = document.querySelector('input[type=file]').files[0];
-    var reader  = new FileReader();
+//     // const data = {
+//     //     announce_title,
+//     //     announce_content
+//     // }
+//     // const headers = {
+//     //     'Authorization': `Bearer ${LoginToken}`,
+//     //     "Content-Type": "application/json",
+//     //     "Accept": "application/json",
+//     // };
+//     // postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+//     //     .then(({data}) => {
+//     //         console.log(data);
+//     //     })
+//     //     .catch(error => {
+//     //         console.error(error);
+//     //     })
+// }
+// function previewFile() {
+//     var preview = document.querySelector('.img');
+//     var file    = document.querySelector('input[type=file]').files[0];
+//     var reader  = new FileReader();
 
 
-    reader.addEventListener("load", function () {
-        preview.src = reader.result;
-    }, false);
+//     reader.addEventListener("load", function () {
+//         preview.src = reader.result;
+//     }, false);
 
-    if (file) {
-        reader.readAsDataURL(file);
-    }
+//     if (file) {
+//         reader.readAsDataURL(file);
+//     }
 
-    // 設定圖片大小
-    preview.style.width = "300px";
-}
-
-
-
+//     // 設定圖片大小
+//     preview.style.width = "300px";
+// }
 
 
 
 
 
 
-//刪除
-
-function deleteData(url, id) {
-    console.log('Deleting data:', `${url}${id}`); // 调试信息
-    return fetch(`${url}${id}`, {
-        method: 'DELETE',
-        headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
-    })
-    .then(data => {
-        console.log(data); // 刪除成功後的回應
-    })
-    .catch(error => {
-        console.error('There was a problem deleting data:', error);
-    });
-}
 
 
 
-//取的資料 ok
+// //刪除
+
+// function deleteData(url, id) {
+//     console.log('Deleting data:', `${url}${id}`); // 调试信息
+//     return fetch(`${url}${id}`, {
+//         method: 'DELETE',
+//         headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
+//     })
+//     .then(data => {
+//         console.log(data); // 刪除成功後的回應
+//     })
+//     .catch(error => {
+//         console.error('There was a problem deleting data:', error);
+//     });
+// }
+
+
+
+//取的使用者資料 ok
 
 window.onload = function() {
     //
