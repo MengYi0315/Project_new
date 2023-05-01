@@ -292,7 +292,7 @@ function GetOneImage(url)
 }
 
 
-function UpdateImage(id,FileBtn,headers) 
+function UpdateImage(id,FileBtn) 
 {
     const newimage = FileBtn.files[0];
     const formData = new FormData();
