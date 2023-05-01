@@ -36,7 +36,7 @@ function submit() {
             window.alert("新增成功");
         })
         .catch(error => {
-            window.alert("新增失敗");
+            // window.alert("新增失敗");
         })
 }
 

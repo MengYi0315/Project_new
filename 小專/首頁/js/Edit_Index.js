@@ -26,6 +26,7 @@ function updateData(id) {
             <input type="button" value="發布" class="submit">
         </div> 
         `;
+        
     })
     .catch(error => console.error('Error:', error));
 }
@@ -54,12 +55,12 @@ function submit() {
         'Authorization': `Bearer ${LoginToken}`
     };
     
-
+    
     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
             
-            window.alert("更新成功");
+            
         });
 }
 
