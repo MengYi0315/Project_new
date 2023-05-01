@@ -18,16 +18,16 @@
     })
 
 
-    let navhover2 = document.getElementById('nav-a-hover');
-    let downbar2 = document.getElementById('down-bar');
+    // let navhover2 = document.getElementById('nav-a-hover');
+    // let downbar2 = document.getElementById('down-bar');
     
 
     
-    navhover2.addEventListener('mouseover', function () {
-      downbar2.style.display = 'block';
-    })
+    // navhover2.addEventListener('mouseover', function () {
+    //   downbar2.style.display = 'block';
+    // })
 
     
-    navhover2.addEventListener('mouseout', function () {
-        downbar2.style.display = 'none';
-    })
+    // navhover2.addEventListener('mouseout', function () {
+    //     downbar2.style.display = 'none';
+    // })
