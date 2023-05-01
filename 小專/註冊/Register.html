@@ -16,45 +16,36 @@
             
         </div>
         <div class="header-right flex"> 
-            <ul class="flex"style="align-items:flex-end;"> 
-                <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
-                    <li>首頁</li>
+            <ul class="flex " style="align-items: flex-end;"> 
+                <a href="/小專/首頁/Logout_Index.html"  class="nav-a">
+                    <li style="font-size:18px;">首頁</li>
                 </a>
-                <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
+                <a href="/小專/教授介紹/Logout_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
                 </a>
                 <li class="nav-a-t" id="nav-a-hover">
                     <a href="#" class="down-bar-title">研究室成果</a>
                     <ul class="down-bar " id="down-bar">
-                        <!-- <a href="/小專/論文/admin-thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a>  -->
-                        <a href="/小專/專題/Admin_topic-login.html"  class="down-bar-text"><li>專題作品</li></a>
-                        <a href="/小專/歷屆得獎紀錄/Admin_Login_Award.html"  class="down-bar-text"><li>歷屆得獎紀錄</li></a>
+                        <!-- <a href="/小專/論文/logout-thesis.html " class="down-bar-text"><li>研究生畢業論文</li></a>  -->
+                        <a href="/小專/專題/topic-logout.html"  class="down-bar-text"><li>專題作品</li></a>
+                        <a href="/小專/歷屆得獎紀錄/Logout_Award.html"  class="down-bar-text"><li>歷屆得獎紀錄</li></a>
                     </ul>
 
 
                 </li>
- 
-                <a href="/小專/活動紀錄/Admin_Login_activity.html"  class="nav-a">
+                <a href="/小專/活動紀錄/Logout_activity.html"  class="nav-a">
                     <li>活動紀錄</li>
-                </a>
-                <!-- <li class="nav-a-t" id="nav-a-hover-1">
-                    <a href="#" class="down-bar-title">學習專區</a>
+                </a>    
+                <li class="nav-a-t" id="nav-a-hover-1">
+                    <a href="#" class="down-bar-title">操作</a>
                     <ul class="down-bar " id="down-bar-1">
-                        <a href="/小專/學習專區-考試列表/Admin-Test-TestList.html" class="down-bar-text"><li>考試專區</li></a> 
-                        <a href=""  class="down-bar-text"><li>作業專區</li></a>
-                        <a href="/小專/留言板/admin-msgboard.html"  class="down-bar-text"><li>討論留言板</li></a>
+                        <a href="/小專/登入/Login.html" class="down-bar-text"><li>登入</li></a> 
+                        <a href="/小專/註冊/Register.html"  class="down-bar-text"><li>註冊</li></a>
 
                     </ul>
 
 
-                </li>
-      
-                <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"  class="nav-a-current">
-                    <li>使用者專區</li> 
-                </a>  -->
-                <a href="/小專/登入/Login.html"  class="nav-a">
-                    <li>登出</li>
-                </a> 
+                </li>    
             </ul>
         </div>
     </header>
@@ -88,7 +79,7 @@
                             姓名：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text" required>
+                            <input type="text"  class="text" required id="name">
                         </td>
     
                     </tr>
@@ -97,7 +88,7 @@
                             帳號：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text" required>
+                            <input type="text"  class="text" requiredid="account">
                         </td>
     
                     </tr>
@@ -106,35 +97,48 @@
                             密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="required"  class="text" required>
+                            <input type="required"  class="text" required id="pw">
                         </td>
     
                     </tr>
                     <tr>
-                        <td class="normal-word text-bottom field" required >
+                        <td class="normal-word text-bottom field">
                             確認密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="text"  class="text"  required id="checkpw">
                         </td>
     
                     </tr>
                     <tr>
-                        <td class="normal-word text-bottom field" required>
+                        <td class="normal-word text-bottom field" >
                             Email：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text">
+                            <input type="text"  class="text" required id="email">
                         </td>
     
                     </tr>
+                </tr>
+                <tr>
+                    <td class="normal-word text-bottom field" >
+                        權限：
+                    </td>
+                    <td class="text-bottom field">
+                        <select class="text">
+                            <option>學生</option>
+                            <option>學長姐</option>
+                            
+                        </select>
+                    </td>
+
+                </tr>
     
-    
-                   
+                
                 </table>
                 
                 <div class="margin-top-login-content"> 
-                    <input type="button" value="註冊" class="login-button" onclick="location.href='./Register.html'">
+                    <input type="submit" value="註冊" class="login-button" onclick="location.href='./Register.html'">
                 </div>
                 
     
