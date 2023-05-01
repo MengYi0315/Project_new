@@ -78,10 +78,13 @@ function update(id) {
             'Authorization': `Bearer ${LoginToken}`
         },
         body: formData
+
+        
     })
 
     .then(data => {
         console.log(data);
+        
     });
 }
 
