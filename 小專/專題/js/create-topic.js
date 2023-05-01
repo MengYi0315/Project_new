@@ -10,7 +10,9 @@ function postData(url, data, headers) {
     formData.append('senior_content', data.content);
     formData.append('FormImage', data.image);
 
-    formData.append('members_id', data.members_id);
+    for (let i=0; i < data.members_id.length; i++){
+        formData.append('members_id[]', data.members_id[i]);
+    }
 
     // formData.append('senior_selectedValues', JSON.stringify(data.selectedValues)); // 將selectedValues轉為JSON字串後附加到FormData
     console.log("formdata",formData);
