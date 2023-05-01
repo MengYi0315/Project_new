@@ -78,10 +78,10 @@
             <div class="title-win flex">
                 修改歷屆得獎紀錄
             </div>
-            <div class="area flex">
-                <div class="item">
+            <div class="area flex" id="post">
+                <!-- <div class="item">
                     作品年份：
-                    <select name="year" style="height:30px;width:200px;font-size: 20px;">
+                    <select name="year" id="contest_year" style="height:30px;width:200px;font-size: 20px;">
                         <option>請選擇得獎年份</option>
                         <option value="111">111年</option>
                         <option value="110">110年</option>
@@ -99,25 +99,21 @@
                 </div>
                 <div class="item">
                     競賽名稱：
-                    <input type="text" class="item_detail">
+                    <input type="text" id="contest_name" class="item_detail">
                 </div>
                 <div class="item">
                     作品名稱：
-                    <input type="text" class="item_detail">
+                    <input type="text" id="contest_work" class="item_detail">
                 </div>
                 <div class="item">
                     得獎名次：
-                    <input type="text" class="item_detail">
-                </div>
-                <div class="item">
-                    參與人員：
-                    <input type="button" value="選擇人員" class="select-person">
+                    <input type="text" id="contest_rank" class="item_detail">
                 </div>
                 <div class="button-right flex">
-                    <a href="#"><input type="button" value="保存" class="create-button"></a>
+                    <a href="#"><input type="submit" value="保存" class="create-button"></a>
                     <a href="./Admin_Login_Award.html"><input type="button" value="返回" class="create-button"></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -125,6 +121,8 @@
     <footer>
 
     </footer>
-    <script src="./js/test.js"></script>
+    
 </body>
+<script src="./js/test.js"></script>
+<script src="./js/Edit_Award.js"></script>
 </html>

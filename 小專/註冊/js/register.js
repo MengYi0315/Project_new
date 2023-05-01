@@ -15,7 +15,7 @@ function submit() {
     const account = document.getElementById('account').value;
     const name = document.getElementById('name').value;
     const password = document.getElementById('password').value;
-    const checkpassword = document.getElementById('checkpassword').value;
+    const passwordCheck = document.getElementById('checkpassword').value;
     const email = document.getElementById('email').value;
     const level = document.getElementById('level').value;
 
@@ -24,7 +24,7 @@ function submit() {
         account,
         name,
         password,
-        checkpassword,
+        passwordCheck,
         email,
         level
     }
@@ -36,7 +36,7 @@ function submit() {
     postData('http://localhost:5229/api/Members/register', data, headers)
         .then(({data}) => {
             console.log(data);
-            window.onload();
+            
         })
         .catch(error => {
             console.error(error);

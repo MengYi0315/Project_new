@@ -1,80 +1,217 @@
+let LoginToken=sessionStorage.getItem('LoginToken');
+console.log(LoginToken);
 
-const contest_year = document.querySelector('year');
-const contest_name = document.querySelector('name');
-const contest_work = document.querySelector('work');
-const contest_rank = document.querySelector('rank');
+function submit(id) {
+    var post = document.querySelector("#post");
 
-// 假設您已經取得了要修改的資料，並將其儲存在一個名為 data 的物件中。
-const data = {
-    id: 'contest_id',
-    year: 'contest_year',
-    title: 'contest_title',
-    content: 'contest_work',
-    rk: 'contest_rank',
-    member: 'contest_member',
-};
-
-// 將資料填入表單中。
-titleInput.value = data.title;
-contentInput.value = data.content;
-dateInput.value = data.date;
-
-// 偵聽表單的提交事件，當使用者提交表單時，呼叫相應的函數進行處理。
-submitButton.addEventListener('click', handleSubmit);
-
-function handleSubmit(event) {
-    event.preventDefault();
-
-  // 從表單中獲取使用者輸入的資料。
-    const updatedData = {
-    id: data.id, // 帶入原始資料的 ID。
-    title: titleInput.value,
-    content: contentInput.value,
-    date: dateInput.value,
-    };
-
-  // 在這裡呼叫修改資料的 API，傳入使用者輸入的資料。
-  // 請注意，這個範例僅僅是示範如何呼叫 API，實際上還需要根據你的具體情況進行相應的修改。
-    updateData(updatedData);
-}
-
-function updateData(data) {
-  // 在這裡使用 XMLHttpRequest 或 fetch 呼叫修改資料的 API，傳入使用者輸入的資料。
-  // 請注意，這個範例僅僅是示範如何呼叫 API，實際上還需要根據你的具體情況進行相應的修改。
-}
-
-
-function postData(url,data,headers){
-
-    return fetch(url, {
-        body: JSON.stringify(data),
-        headers:headers,
-        method:'POST',
-        mode:'cors',
+    fetch(`http://localhost:5229/api/ContestAward/ReadOneData?id=${encodeURIComponent(id)}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
-    //.then(response => response.json()) //輸出成json
-}
-
-function submit(){
-    const contest_year=document.getElementById('year').value;
-    const contest_name=document.getElementById('name').value;
-    const contest_work=document.getElementById('work').value;
-    const contest_rank=document.getElementById('rank').value;
-    const token = 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjpbIkp1bmlvciIsIlNlbmlvciJdLCJleHAiOjE2ODI1MDM3MzV9.dU4k9OBupPvholFaKwWM_RJaedcrItBZ3NnwR6V21Fw';
-
-    const data={
-        contest_year,
-        contest_name,
-        contest_work,
-        contest_rank
-    }
-    const headers = {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-    };
-    postData('http://localhost:5229/api/ContestAward/CreateData',data,headers)
-    .then(data=>{
-        // sessionStorage.setItem('LoginData', JSON.stringify(data));
+    
+    .then(response => response.json())
+    .then(data => {
+        post.innerHTML = "";
+        post.innerHTML +=
+        `
+        <div class="item">
+            作品年份：
+            <select name="year" id="contest_year" style="height:30px;width:200px;font-size: 20px;">
+                <option>請選擇得獎年份</option>
+                <option value="111">111年</option>
+                <option value="110">110年</option>
+                <option value="109">109年</option>
+                <option value="108">108年</option>
+                <option value="107">107年</option>
+                <option value="106">106年</option>
+                <option value="105">105年</option>
+                <option value="104">104年</option>
+                <option value="103">103年</option>
+                <option value="102">102年</option>
+                <option value="103">101年</option>
+                <option value="102">100年</option>
+            </select>
+        </div>
+        <div class="item">
+            競賽名稱：
+            <input type="text" id="contest_name" class="item_detail" value="${data.contest_name}">
+        </div>
+        <div class="item">
+            作品名稱：
+            <input type="text" id="contest_work" class="item_detail" value="${data.contest_work}">
+        </div>
+        <div class="item">
+            得獎名次：
+            <input type="text" id="contest_rank" class="item_detail" value="${data.contest_rank}">
+        </div>
+        
+        <div class="button-right flex">
+            <div>
+                <a href="#"><input type="submit" onclick="update('${id}')" value="保存" class="create-button"></a>
+                <a href="./Admin_Login_Award.html"><input type="button" value="返回" class="create-button"></a>
+            </div>
+        </div>
+            
+        `;
         console.log(data);
-    })
+    }) 
 }
+
+function update(id)
+{
+    const contest_year = document.querySelector("#contest_year");
+    const contest_name = document.querySelector("#contest_name");
+    const contest_work = document.querySelector("#contest_work");
+    const contest_rank = document.querySelector("#contest_rank");
+
+    const data = {
+        contest_year: contest_year.value.toString(),
+        contest_name: contest_name.value.toString(),
+        contest_work: contest_work.value.toString(),
+        contest_rank: contest_rank.value.toString()
+    };
+
+    fetch(`http://localhost:5229/api/ContestAward/UpdateData?id=${encodeURIComponent(id)}`, {
+        method: 'PUT',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${LoginToken}`
+        },
+        body: JSON.stringify(data) // 加入要傳送的公告內容
+    })
+    .then(data => {
+        console.log(data);
+    });
+}
+
+window.onload = function (){
+    
+    const url = window.location.href;
+    console.log("url",url);
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    submit(id);
+}
+
+
+
+// function updateData(id) {
+//     var post = document.querySelector("#post");
+//     // 讀取舊有資料
+//     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {
+//     headers: {
+//         'Authorization': `Bearer ${LoginToken}`
+//     }
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+
+//         post.innerHTML = "";
+
+//         post.innerHTML +=
+//         `
+//         <div class="title">修改公告</div>
+//         <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+//         <div class="create-content flex">
+//             內容：<textarea name="" id="" cols="74" rows="9">${data.announce_content}</textarea>
+            
+//         </div>
+//         <div style="margin-left:20px;">
+//             <input type="button" value="發布" class="submit">
+//         </div> 
+//         `;
+//     })
+//     .catch(error => console.error('Error:', error));
+// }
+
+// window.onload = function (){
+    
+//     const url = window.location.href;
+//     console.log("url",url);
+//     var split = url.split("=");
+//     var href = split[0];
+//     var id = split[1];
+//     updateData(id);
+// }
+// post.innerHTML = "";
+// post.innerHTML +=
+// `
+// <div class="title">修改公告</div>
+// <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+// <div class="create-content flex">
+//     內容：<textarea name="" id="" cols="74" rows="9">${data.announce_content}</textarea>
+    
+// </div>
+// <div style="margin-left:20px;">
+//     <input type="submit" onclick="update(id)" value="發布" class="submit" >
+// </div> 
+    
+// `;
+// window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
+
+
+// function submit() {
+//     console.log(LoginToken);
+//     const title = document.getElementById('title').value;
+//     const content = document.getElementById('content').value;
+
+//     const data = {
+//         title: title,
+//         content: content,
+//     };
+
+//     const headers = {
+//         'Authorization': `Bearer ${LoginToken}`
+//     };
+    
+
+//     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+//         .then(({data}) => {
+//             console.log(data);
+            
+//         });
+// }
+
+// function updateData(id) {
+//     var post = document.querySelector("#post");
+//     // 讀取舊有資料
+//     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {
+//     headers: {
+//         'Authorization': `Bearer ${LoginToken}`
+//     }
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+
+//         post.innerHTML = "";
+
+//         post.innerHTML +=
+//         `
+//         <div class="title">修改公告</div>
+//         <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+//         <div class="create-content flex">
+//             內容：<textarea name="" id="" cols="74" rows="9">${data.announce_content}</textarea>
+            
+//         </div>
+//         <div style="margin-left:20px;">
+//             <input type="button" value="發布" class="submit">
+//         </div> 
+//         `;
+//     })
+//     .catch(error => console.error('Error:', error));
+// }
+
+// window.onload = function (){
+    
+//     const url = window.location.href;
+//     console.log("url",url);
+//     var split = url.split("=");
+//     var href = split[0];
+//     var id = split[1];
+//     updateData(id);
+// }

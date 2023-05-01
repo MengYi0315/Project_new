@@ -22,12 +22,12 @@ function submit(){
   };
   postData('http://localhost:5229/api/Members/Login',data,headers)
   .then(data=>{
-    console.log(data);
 
       // sessionStorage.setItem('LoginData', data);
       console.log(data);
   })
 }
+
 
 
 

@@ -34,7 +34,7 @@ console.log("token",LoginToken)
                 <td style="width:25%;">${item.contest_work}</td>
                 <td style="width:20%;">${item.contest_rank}</td>
                 <td style="width:30%;">
-                    <button type="button"  class="edit-row-button"><a href="./Edit_Login_Award.html">修改</a></button>
+                    <button type="button"  class="edit-row-button"><a href="./Edit_Login_Award.html?id=${item.contest_id}">修改</a></button>
                     <button type="button"  onclick="deleteData('http://localhost:5229/api/ContestAward/DeleteData?id=','${item.contest_id}')"class="delete-row-button">刪除</button>
                 </td>
             </tr>
