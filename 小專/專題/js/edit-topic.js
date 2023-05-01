@@ -28,8 +28,12 @@ function previewFile() {
     preview.style.width = "300px";
 }
 
+
+
 function submit(id) {
+    var img = document.querySelector("#img");
     var post = document.querySelector("#post");
+    
 
     fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${id}`, {
         method: 'GET',
@@ -42,79 +46,31 @@ function submit(id) {
     .then(response => response.json())
     .then(data => {
         projectdata = data;
+
+        img.innerHTML="";
+        img.innerHTML+=
+        `
+        <div class="topic-photo flex">
+            <div class="photo flex" id="img">
+                <img  src="${item.senior_image}" class="img">
+            </div>     
+        </div>
+        `;
         post.innerHTML = "";
         post.innerHTML +=
-        `
-        <div class="title">
-            修改專題作品
-        </div>
-        <br>
-        <div>
-            <div class="topic-1">
-                <div class="flex" style="width: 100%;">
-                    <div class="topic-photo flex">
-                        <div class="photo flex" id="img">
-                            <img  class="img">
-                            <!-- <input type="button" value="IMG" class="select-photo">     -->
-                        </div>     
-                    </div>
-                
-                
-                    <div class="topic-content">
-                        <div style="padding-top: 72px;">
-                            專題名稱：
-                            <input class="topic-text" id="title">
-                        </div>
-                        <div class="member" >
-                            選擇年份：
-                            <select class="year-select" id="year">
-                                <option>請選擇年份</option>
-                                <option>111年</option>
-                                <option>110年</option>
-                                <option>109年</option>
-                                <option>108年</option>
-                                <option>107年</option>
-                            </select>
-                        </div>
-                        <div class="member flex">
-                            專題組員：
-                            <select class="member-select" id="post" multiple>
-                            
-                                <!-- <option>一</option>
-                                <option>二</option>
-                                <option>三</option>
-                                <option>四</option>
-                                <option>五</option>
-                                <option>五</option>
-                                <option>五</option>
-                                <option>五</option>
-                                -->
-                            </select>
-                    
-                        </div>
-                        <div  class="member">
-                            圖片檔案：
-                            <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*" value"${data.senior_image}>
-                        </div>
-                        <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
-                            專題簡介：
-                            <textarea class="topic-content-text" id="content" value"${data.senior_content}"></textarea>
-                        
-                        </div>
-
-                    </div>
-
-                    
-                </div>
-            
-                <div class="button-div flex">
-                    <div class="button-padding">
-                        <input type="button" value="保存" class="create-button" onclick="update('${id}')">
-                    </div>
-                    <div class="button-padding">
-                        <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
-                    </div>
-                </div>
+        `              
+        <div class="topic-content">
+            <div style="padding-top: 72px;">
+                專題名稱：
+                <input class="topic-text" id="senior_title">
+            </div>
+            <div  class="member">
+                圖片檔案：
+                <input type="file" id="senior_image" onchange="previewFile()" class="select-photo" accept="image/*" value="${data.senior_image}>
+            </div>
+            <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
+                專題簡介：
+                <textarea class="topic-content-text" id="senior_content" value="${data.senior_content}"></textarea>
             </div>
         </div>  
 
@@ -124,28 +80,25 @@ function submit(id) {
     }) 
 }
 
-function update(id) { 
-    const senior_title = document.querySelector('input[type="text"]').value;
-    const senior_year = document.getElementById('year').value;
-    const senior_person = document.getElementById('post').value;
-    
-    
 
-    const senior_image = document.querySelector('input[type="file"]');
-    const senior_content = document.querySelector('textarea').value;
+
+
+function update(id) { 
+    const senior_title = document.querySelector("#senior_title").value;
+    const senior_year = document.querySelector("#senior_year").value;    
+    const senior_image = document.querySelector("#senior_image").files[0];
+    const senior_content = document.querySelector("#senior_content").value;
 
     // 创建一个 FormData 对象，并添加要修改的图片和文字内容
     
     const formData = new FormData();
-    formData.append('senior_title', titleInput);
-    formData.append('senior_content', contentInput);
-    formData.append('senior_year', yearInput);
-    formData.append('senior_person', presonInput);
-
-    formData.append('FormImage', image.files[0]);
+    formData.append('senior_title', senior_title);
+    formData.append('senior_content', senior_content);
+    formData.append('senior_year', senior_year);
+    formData.append('senior_image', senior_image.files[0]);
 
 
-    fetch(`http://localhost:5229/api/Activity/UpdateData?id=${id}`, {
+    fetch(`http://localhost:5229/api/seniorproject/UpdateData?id=${id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -192,6 +145,10 @@ function postData(url, data, headers) {
     })
       .then(response => response.formData) //輸出成json
 }
+
+
+
+
 
 //新增
 
@@ -308,7 +265,7 @@ window.onload = function() {
 
 
 
-    var post = document.querySelector("#post");
+    var post = document.querySelector("#member");
     fetch("http://localhost:5229/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
@@ -322,7 +279,7 @@ window.onload = function() {
             post.innerHTML +=
             `
 
-            <option>${item.name}</option>
+            <option value=${item.members_id}>${item.name}</option>
             `;
         });
     })

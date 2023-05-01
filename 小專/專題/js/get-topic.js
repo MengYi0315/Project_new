@@ -28,7 +28,7 @@ function submit() {
         "Content-Type": "application/json",
         "Accept": "application/json",
     };
-    postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
+    postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
         })
@@ -82,19 +82,18 @@ function deleteData(url, id) {
                     </div>
                     <div>
                         <div class="edit">
-                            <button type="button" class="edit-row-button">
-                                <a href="./topic-edit.html?id=${itemseniorproject_id}">
+                            <button type="submit" class="edit-row-button">
+                                <a href="./topic-edit.html?id=${item.seniorproject_id}">
                                     修改
                                 </a>
                             </button>
-                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
+                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
                             
                         </div>
                     </div>
                 </div>
     
                 `;
-                window.alert("刪除成功");
             });
             window.onload();
         })
@@ -160,12 +159,12 @@ window.onload = function() {
                     <div class="edit">
                         <button type="button" class="edit-row-button">
 
-                            <a href="./topic-edit.html?id">
+                            <a href="/小專/專題/topic-edit.html?id=${item.seniorproject_id}">
                                 修改
                             </a>
                         </button>
                         
-                        <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/64C74EF0-24D8-4F07-AC8B-41A8FDD0982E?id=', '${item.seniorproject_id}')">
+                        <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
                         
                     </div>
                 </div>
