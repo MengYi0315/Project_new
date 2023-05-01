@@ -59,6 +59,7 @@ function submit() {
         .then(({data}) => {
             console.log(data);
             
+            window.alert("更新成功");
         });
 }
 

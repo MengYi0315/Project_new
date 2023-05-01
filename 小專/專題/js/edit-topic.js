@@ -120,6 +120,7 @@ function submit(id) {
 
         `;
         console.log(data);
+        window.alert("修改成功");
     }) 
 }
 

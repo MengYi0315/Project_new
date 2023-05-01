@@ -50,6 +50,7 @@ function deleteData(url, id) {
                 `;
             });
             window.onload();
+            window.alert("刪除成功");
         })
         .catch(error => console.error(error));
     })

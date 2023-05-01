@@ -10,6 +10,7 @@ function validateForm() {
     alert("請填寫姓名");
     return false;
     }
+    return true;
     if (acount === "") {
         alert("請填寫帳號");
         return false;
