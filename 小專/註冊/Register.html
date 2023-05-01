@@ -90,13 +90,40 @@
 
         <div class="right-content ">
             <div class="flex" style="justify-content: center;">
-                <div class="title">
+                <div class="title" style="margin-bottom:50px;">
                     註冊會員
                 </div>
             </div>
             <div class="login-div flex">
                 <!-- <form id="myForm" onsubmit="return validateForm()"> -->
-                <table>
+                    <div class="normal-word text-bottom field">
+                        姓名：<input type="text"  class="text" required id="name">
+                    </div>
+                    <div class="normal-word text-bottom field">
+                        帳號：<input type="text"  class="text" required id="account">
+                    </div>
+                    <div class="normal-word text-bottom field">
+                        密碼：<input type="text"  class="text" required id="password">
+                    </div>
+                    <div class="normal-word text-bottom field" style="margin-right:40px;">
+                        確認密碼：<input type="text"  class="text" required id="checkpassword">
+                    </div>
+                    <div class="normal-word text-bottom field">
+                        Email：<input type="text"  class="text" required id="email"  style="margin-right:5px;">
+                    </div>
+                    <div class="normal-word text-bottom field">
+                        權限：
+                        <select class="text"  id="level">
+                            <option id="student" value="2">學生</option>
+                            <option id="senior" value="1">學長姐</option>
+                            <option id="admin" value="0">管理者</option>
+                        </select>
+                    </div>
+                    <div class="margin-top-login-content" style="text-align: center;"> 
+                        <input type="submit" value="註冊" class="login-button" onclick="submit()">
+                    </div>
+
+                <!-- <table class="flex">
                     <tr>
                         <td class="normal-word text-bottom field" >
                             姓名：
@@ -139,29 +166,25 @@
                             <input type="email"  class="text" required id="email">
                         </td>
                     </tr>
-                </tr>
                 
+                    <tr>
+                        <td class="normal-word text-bottom field" >
+                            權限：
+                        </td>
+                        <td class="text-bottom field">
+                            <input type="level"  class="text" required id="level">
+                            <select class="text"  id="level">
+                                <option id="student" value="2">學生</option>
+                                <option id="senior" value="1">學長姐</option>
+                            </select>
+                        </td>
+                    </tr>
                 <tr>
-                    <td class="normal-word text-bottom field" >
-                        權限：
-                    </td>
-                    <td class="text-bottom field">
-                        <!-- <input type="level"  class="text" required id="level"> -->
-                        <select class="text"  id="level">
-                            <option id="student" value="2">學生</option>
-                            <option id="senior" value="1">學長姐</option>
-                            
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><div class="margin-top-login-content" style="text-align: center;"> 
-                        <input type="submit" value="註冊" class="login-button" onclick="submit()">
-                    </div></td>
+                    <input type="submit" value="註冊" class="login-button" onclick="submit()">
                 </tr>
     
                 
-                </table>
+                </table> -->
                 
                 <!-- <div class="margin-top-login-content" style="text-align: center;"> 
                     <input type="submit" value="註冊" class="login-button" onclick="submit()">
