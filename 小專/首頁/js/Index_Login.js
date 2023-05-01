@@ -24,6 +24,7 @@ console.log("token",LoginToken)
                 </a>
             </div>
             `;
+            
         });
     })
     .catch(error => console.error(error));

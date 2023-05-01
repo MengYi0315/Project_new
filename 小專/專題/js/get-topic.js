@@ -94,6 +94,7 @@ function deleteData(url, id) {
                 </div>
     
                 `;
+                window.alert("刪除成功");
             });
             window.onload();
         })
