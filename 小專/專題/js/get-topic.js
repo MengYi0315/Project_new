@@ -160,7 +160,7 @@ window.onload = function() {
                     <div class="edit">
                         <button type="button" class="edit-row-button">
 
-                            <a href="./topic-edit.html?id${id}">
+                            <a href="./topic-edit.html?id">
                                 修改
                             </a>
                         </button>
@@ -203,7 +203,7 @@ function previewFile() {
 
 
 
-
+//${seniorproject_id}
 
 
 {/* <div class="topic-photo flex">
