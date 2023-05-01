@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>信箱驗證</title>
+</head>
+<body>
+    <h1>Email validation result</h1>
+    <p>Account: <span id="account"></span></p>
+    <p>AuthCode: <span id="authCode"></span></p>
+    <div id="result"></div>
+
+    
+</body>
+<script>
+    // 获取 URL 参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const account = urlParams.get('account');
+    const authCode = urlParams.get('authcode');
+
+    // 将参数显示在页面上
+    document.getElementById("account").innerHTML = account;
+    document.getElementById("authCode").innerHTML = authCode;
+
+    // 如果 URL 不包含 ".html" 后缀，则添加后缀和参数
+    if (!window.location.pathname.endsWith(".html")) {
+        const pathname = window.location.pathname + ".html";
+        const searchParams = new URLSearchParams();
+        searchParams.append("account", account);
+        searchParams.append("authcode", authCode);
+        const newUrl = window.location.origin + pathname + "?" + searchParams.toString();
+        window.location.replace(newUrl);
+    }
+
+    // 构造 API 调用 URL
+    const apiUrl = `http://http://127.0.0.1:5555/api/Members/EmailValidate?account=${account}&authCode=${authCode}`;
+
+    // 发送 API 请求并处理响应
+    fetch(apiUrl)
+        .then(response => response.text())
+        .then(data => {
+            if(data=='驗證碼錯誤，請重新確認或在註冊'){
+                document.getElementById("result").innerHTML = ``;
+            }else{
+                document.getElementById("result").innerHTML = `成功`;
+            }
+
+            setTimeout(function(){
+            window.location.href = 'http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E8%A8%BB%E5%86%8A/EmailValidate.html';
+            }, 5000); // 延迟时间为5秒，即5000毫秒
+        })
+        .catch(error => {
+            document.getElementById("result").innerHTML = "API request failed.";
+        });
+</script>
+</html>
