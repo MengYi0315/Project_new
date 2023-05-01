@@ -602,7 +602,6 @@ a{
 }
 
 #ForReadImg {
-    width:200%;
     display: flex;
     flex-wrap: wrap;
 }
