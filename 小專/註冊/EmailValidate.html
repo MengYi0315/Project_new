@@ -32,7 +32,7 @@
     }
 
     // 构造 API 调用 URL
-    const apiUrl = `http://http://127.0.0.1:5555/api/Members/EmailValidate?account=${account}&authCode=${authCode}`;
+    const apiUrl = `http://localhost:5229/api/Members/EmailValidate?account=${account}&authCode=${authCode}`;
 
     // 发送 API 请求并处理响应
     fetch(apiUrl)
@@ -45,7 +45,7 @@
             }
 
             setTimeout(function(){
-            window.location.href = 'http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E8%A8%BB%E5%86%8A/EmailValidate.html';
+            window.location.href = '/小專/登入/Login.html';
             }, 5000); // 延迟时间为5秒，即5000毫秒
         })
         .catch(error => {
