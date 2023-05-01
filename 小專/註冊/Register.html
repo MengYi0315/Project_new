@@ -72,14 +72,16 @@
                 
             </div>
             <div class="login-div flex">
-                
+                <form id="myForm" onsubmit="return validateForm()">
                 <table>
                     <tr>
                         <td class="normal-word text-bottom field" >
                             姓名：
                         </td>
                         <td class="text-bottom field">
+
                             <input type="text"  class="text" required id="name">
+                            <span id="nameverify"></span>
                         </td>
     
                     </tr>
@@ -88,7 +90,7 @@
                             帳號：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text" requiredid="account">
+                            <input type="text"  class="text" required id="account">
                         </td>
     
                     </tr>
@@ -97,7 +99,7 @@
                             密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="required"  class="text" required id="pw">
+                            <input type="password"  class="text" required id="password">
                         </td>
     
                     </tr>
@@ -106,7 +108,7 @@
                             確認密碼：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text"  required id="checkpw">
+                            <input type="password"  class="text"  required id="checkpassword">
                         </td>
     
                     </tr>
@@ -115,7 +117,7 @@
                             Email：
                         </td>
                         <td class="text-bottom field">
-                            <input type="text"  class="text" required id="email">
+                            <input type="email"  class="text" required id="email">
                         </td>
     
                     </tr>
@@ -125,21 +127,22 @@
                         權限：
                     </td>
                     <td class="text-bottom field">
-                        <select class="text">
-                            <option>學生</option>
-                            <option>學長姐</option>
+                        <select class="text" id="select">
+                            <option id="student">學生</option>
+                            <option id="senior">學長姐</option>
                             
                         </select>
                     </td>
 
                 </tr>
-    
+                
                 
                 </table>
-                
                 <div class="margin-top-login-content"> 
-                    <input type="submit" value="註冊" class="login-button" onclick="location.href='./Register.html'">
+                    <input type="submit" value="註冊" class="login-button">
                 </div>
+                </form>
+                
                 
     
     
@@ -170,5 +173,6 @@
 
     </footer>
     <script src="./js/test.js"></script>
+    <script src="./js/verify.js"></script>
 </body>
 </html>
