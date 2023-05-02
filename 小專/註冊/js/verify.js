@@ -12,6 +12,7 @@ function  validateForm() {
     let emailvalidate="";
     let emaillength="";
     let namechar="";
+    let emailerror="";
 
     
     
@@ -85,6 +86,15 @@ function  validateForm() {
       length +=1;
       emaillength="Email長度不能超過200字元";
     }
+
+    if (!isValidEmail(email)) {
+      
+      emailerror="請輸入正確的Email格式";
+     
+    }
+
+
+
       
 
       if (length > 0) {
@@ -93,7 +103,8 @@ function  validateForm() {
         +namechar+"\n"
         +accountvenify+"\n"
         +emailvalidate+"\n"
-        +emaillength
+        +emaillength+"\n"
+        +emailerror+"\n"
         );
 
 
@@ -101,6 +112,17 @@ function  validateForm() {
 
         return false;
       }
-
+  alert("註冊成功。請去收信");
+  // window.location.href="./";
       return true;
+
+      
     }
+
+    function isValidEmail(email) {
+      // 檢查 email 格式是否正確
+      const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      return regex.test(email);
+    }
+    
+

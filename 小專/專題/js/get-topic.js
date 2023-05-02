@@ -96,7 +96,10 @@ function deleteData(url, id) {
                     </div>
         
                     `;
+
                 });
+
+                alert("刪除成功");
                 window.onload();
             })
             .catch(error => console.error(error));

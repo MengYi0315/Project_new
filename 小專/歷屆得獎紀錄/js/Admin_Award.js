@@ -1,7 +1,9 @@
 
 function deleteData(url, id) {
     console.log('Deleting data:', `${url}${id}`); // 调试信息
-    return fetch(`${url}${id}`, {
+
+    if(confirm("確定是否刪除?")){
+            return fetch(`${url}${id}`, {
         method: 'DELETE',
         headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
     })
@@ -14,6 +16,8 @@ function deleteData(url, id) {
         console.error('There was a problem deleting data:', error);
         window.alert("刪除失敗ˋ");
     });
+
+    }
 }
 
 
