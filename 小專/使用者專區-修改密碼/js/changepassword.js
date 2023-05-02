@@ -27,7 +27,7 @@ function submit(id) {
                         帳號：
                     </td>
                     <td class="text-bottom field">
-                        <input type="password"  class="text">
+                        <input type="text"  class="text">
                     </td>
 
                 </tr>
@@ -51,7 +51,7 @@ function submit(id) {
                 </tr>
                 <tr style="line-height: 8;">
                     <td colspan="2"  style="text-align: center;width:237%;">
-                        <input type="submit" value="修改密碼" class="login-button">
+                        <input type="submit" onclick="update()"value="修改密碼" class="login-button">
                         <input type="submit" value="返回" class="login-button">
                     </td>
                 </tr>
@@ -62,34 +62,30 @@ function submit(id) {
     }) 
 }
 
-function update(account)
+function update()
 {
-    const titleInput = document.querySelector('input[type="text"]');
-    const contentInput = document.querySelector('textarea');
+    const Account = document.getElementById('Account');
+    const Password = document.getElementById('OldPassword');
+    const NewPassword = document.getElementById('NewPassword');
 
     const data = {
-        announce_title: titleInput.value.toString(),
-        announce_content: contentInput.value.toString()
+        Account: Account.value,
+        Password: Password.value,
+        NewPassword: NewPassword.value,
     };
-    fetch(`http://localhost:5229/api/Members/ForgetPassword?account=${account}`, {
+    console.log(data);
+    fetch(`http://localhost:5229/api/Members/ChangePassword`, {
         method: 'PUT',
         mode: 'cors',
+        body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${LoginToken}`
+            'Authorization': `Bearer ${LoginToken}`,
         },
-        body: JSON.stringify(data) // 加入要傳送的公告內容
+        
     })
-    .then(data => {
-        console.log(data);
-    });
+      .catch(error => {
+        console.error(error);
+      });
 }
 
-window.onload = function (){
-    
-    const url = window.location.href;
-    console.log("url",url);
-    var id = split[1];
-    console.log(id);
-    submit(id);
-}
