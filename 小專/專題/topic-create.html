@@ -113,22 +113,29 @@
                         <div class="topic-content">
                             <div style="padding-top: 72px;">
                                 專題名稱：
-                                <input class="topic-text" id="title">
+                                <input class="topic-text" id="title" maxlength="50" required>
                             </div>
                             <div class="member">
                                 選擇年份：
-                                <select class="year-select" id="year">
-                                    <option>請選擇年份</option>
+                                <select class="year-select" id="year" required>
+                                    <option value="">請選擇年份</option>
                                     <option>111</option>
                                     <option>110</option>
                                     <option>109</option>
                                     <option>108</option>
                                     <option>107</option>
+                                    <option>106</option>
+                                    <option>105</option>
+                                    <option>104</option>
+                                    <option>103</option>
+                                    <option>102</option>
+                                    <option>101</option>
+                                    <option>100</option>
                                 </select>
                             </div>
                             <div class="member flex">
                                 專題組員：
-                                <select class="member-select" id="post" multiple="multiple">
+                                <select class="member-select" id="post" multiple="multiple" required>
                                     
                                     <!-- <option>王小姐</option>
                                     <option>林先生</option>
@@ -144,11 +151,11 @@
                             </div>
                             <div  class="member">
                                 圖片檔案：
-                                <input type="file" id="image" onchange="previewFile()" class="select-photo img" accept="image/*">
+                                <input type="file" id="image" onchange="previewFile()" required class="select-photo img" accept="image/* ">
                             </div>
                             <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                 專題簡介：
-                                <textarea id="content"class="topic-content-text"></textarea>
+                                <textarea id="content"class="topic-content-text" maxlength="200" required></textarea>
                                 
                             </div>
 
@@ -158,7 +165,7 @@
                     
                     <div class="button-div flex">
                         <div class="button-padding">
-                            <input type="submit" onclick="submit()" value="保存" class="create-button">
+                            <input type="submit" onclick="submit() ,validateForm()" value="保存" class="create-button">
                         </div>
                         <div class="button-padding">
                             <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
@@ -178,4 +185,5 @@
 
 <script src="./js/create-topic.js"></script>
 <script src="./js/test.js"></script>
+<script src="./js/verify.js"></script>
 </html>

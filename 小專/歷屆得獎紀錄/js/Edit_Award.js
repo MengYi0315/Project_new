@@ -20,7 +20,7 @@ function submit(id) {
         <div class="item">
             作品年份：
             <select name="year" id="contest_year" style="height:30px;width:200px;font-size: 20px;">
-                <option>請選擇得獎年份</option>
+                <option value="">請選擇得獎年份</option>
                 <option value="111">111年</option>
                 <option value="110">110年</option>
                 <option value="109">109年</option>
@@ -50,7 +50,7 @@ function submit(id) {
         
         <div class="button-right flex">
             <div>
-                <a href="#"><input type="submit" onclick="update('${id}')" value="保存" class="create-button"></a>
+                <a href="#"><input type="submit" onclick="update('${id}'),validateForm()" value="保存" class="create-button"></a>
                 <a href="./Admin_Login_Award.html"><input type="button" value="返回" class="create-button"></a>
             </div>
         </div>
@@ -85,7 +85,6 @@ function update(id)
     })
     .then(data => {
         console.log(data);
-        alert("修改成功");
     
     });
 }
