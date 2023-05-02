@@ -12,87 +12,79 @@ function  validateForm() {
     let emailvalidate="";
     let emaillength="";
     let namechar="";
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     
     
     if (name === "") {
-        errors.push("姓名");
-        length +=1;
-      }
-      else{
-        if(name.length >20){
-            length+=1;
-            namechar="姓名長度不能超過20字元";
-         }
-         else{
-            namechar="";
+      errors.push("姓名");
+      length +=1;
+    }
+    else{
+      if(name.length >20){
+          length+=1;
+          namechar="姓名長度不能超過20字元";
+        }
+        else{
+          namechar="";
 
-         }
+        }
     
-      }
+    }
 
-      if (account === "") {
-        errors.push("帳號");
+    if (account === "") {
+      errors.push("帳號");
+      length +=1;
+    }
+    else{
+      if(account.length >30){
         length +=1;
-      }
-      else{
-        if(account.length >30){
-            length +=1;
-accountvenify="帳號長度不能超過30字元";
+        accountvenify="帳號長度不能超過30字元";
         }
         else{
-            accountvenify="";
-        }
+          accountvenify="";
+        } 
 
 
-      }
-      if (password === "") {
-        errors.push("密碼");
-        length +=1;
-      }
-      if (checkpassword === "") {
-        errors.push("確認密碼");
-        length +=1;
-      }
+    }
+    if (password === "") {
+      errors.push("密碼");
+      length +=1;
+    }
 
-      if (email === "") {
-        errors.push("Email");
-        length +=1;
-        emailvalidate="";
+    if (checkpassword === "") {
+      errors.push("確認密碼");
+      length +=1;
+    }
 
-      }
-      else{
-        
-        if (!emailRegex.test(email.value)) {
-            emailvalidate="Email格式不正確";
-            length +=1;
+    if (email === "") {
+      errors.push("Email");
+      length +=1;
+      emailvalidate="";
 
-          }
-          else{
-            emailvalidate="";
+    }
+    
+    
 
-          }
+    
 
-      }
+    if (level === "") {
+      errors.push("權限");
+      length +=1;
+    }
 
-      if (level === "") {
-        errors.push("權限");
-        length +=1;
-      }
+    if(password != checkpassword){
+      differencepw="密碼輸入不一致";
+      //  errors.push("密碼輸入不一致");
+      length +=1;
+    }
+    else{
+      differencepw="";
+    }
 
-      if(password != checkpassword){
-         differencepw="密碼輸入不一致";
-        //  errors.push("密碼輸入不一致");
-         length +=1;
-        }
-        else{
-            differencepw="";
-        }
-     if(email.length > 200){
-length +=1;
-emaillength="Email長度不能超過200字元";
-     }
+    if(email.length > 200){
+      length +=1;
+      emaillength="Email長度不能超過200字元";
+    }
       
 
       if (length > 0) {
