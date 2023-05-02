@@ -5,11 +5,12 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token1",LoginToken);
 
 let projectdata;
+let person;
 
 function previewFile() {
     var preview = document.querySelector('.img');
+    var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
-
 
 
     reader.addEventListener("load", function () {
@@ -80,6 +81,7 @@ function submit(id) {
         </div>
 
         `;
+
         console.log(data);
 
     }) 
@@ -165,7 +167,30 @@ function postData(url, data, headers) {
       .then(response => response.formData) //輸出成json
 }
 
+//取得使用者資料 ok
+//-----------------------------------------------------
+// window.onload = function() {
+//     var post = document.querySelector("#member");
+    
+//     fetch("http://localhost:5229/api/Members/GetIDList")
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log("data",data);
 
+//         post.innerHTML = "";
+//         data.forEach((item) => {
+//             person=item;
+
+//             post.innerHTML +=
+//             `
+
+//             <option value=${item.members_id}>${item.name}</option>
+//             `;
+//         });
+//     })
+//     .catch(error => console.error(error));
+// }
+//-----------------------------------------------------
 
 
 
@@ -276,35 +301,7 @@ function postData(url, data, headers) {
 
 
 
-//取的使用者資料 ok
-//-----------------------------------------------------
-// window.onload = function() {
-//     //
 
-
-
-
-//     var post = document.querySelector("#member");
-//     fetch("http://localhost:5229/api/Members/GetIDList")
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log("data",data);
-
-//         post.innerHTML = "";
-//         data.forEach((item) => {
-//             const date = new Date(item.update_time);
-//             const update_time = date.toLocaleString();
-
-//             post.innerHTML +=
-//             `
-
-//             <option value=${item.members_id}>${item.name}</option>
-//             `;
-//         });
-//     })
-//     .catch(error => console.error(error));
-// }
-//-----------------------------------------------------
 //<div class="photo" id="photo"></div>
 
 // function postData(url,data,headers){
