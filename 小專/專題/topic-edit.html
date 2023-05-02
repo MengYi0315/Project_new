@@ -94,9 +94,8 @@
                         
                         
                         <div class="topic-content">
-                            <div style="padding-top: 72px;"  id="title">
-                                專題名稱：
-                                <input class="topic-text" id="title">
+                            <div style="padding-top: 72px;"  id="name">
+
                             </div>
                             <div class="member" >
                                 選擇年份：
@@ -117,29 +116,32 @@
                                 </select>
                             
                             </div>
-                            <div  class="member">
-                                圖片檔案：
-                                <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*">
+                            <div id="body">
+                                <!-- <div  class="member">
+                                    圖片檔案：
+                                    <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*">
+                                </div>
+                                <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
+                                    專題簡介：
+                                    <textarea class="topic-content-text" id="content"></textarea>
+                                </div>
+                                <div class="button-div flex">
+                                    <div class="button-padding">
+                                        <input type="button" value="保存" onclick="update()"class="create-button">
+                                    </div>
+                                    <div class="button-padding">
+                                        <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
+                                    </div>
+                                </div> -->
                             </div>
-                            <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
-                                專題簡介：
-                                <textarea class="topic-content-text" id="content"></textarea>
-                                
-                            </div>
+                            
 
                         </div>
 
                             
                     </div>
                     
-                    <div class="button-div flex">
-                        <div class="button-padding">
-                            <input type="button" value="保存" class="create-button">
-                        </div>
-                        <div class="button-padding">
-                            <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
-                        </div>
-                    </div>
+                    
                 </div>
             </div>  
         </div>

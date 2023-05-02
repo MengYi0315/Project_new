@@ -8,13 +8,9 @@ let projectdata;
 
 function previewFile() {
     var preview = document.querySelector('.img');
-    var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
-    // 取得檔案名稱
-    var fileName = file.name;
-    var fileNameDisplay = document.querySelector('.file-name');
-    fileNameDisplay.textContent = fileName;
+
 
     reader.addEventListener("load", function () {
         preview.src = reader.result;
@@ -32,7 +28,8 @@ function previewFile() {
 
 function submit(id) {
     var img = document.querySelector("#img");
-    var post = document.querySelector("#post");
+    var name = document.querySelector("#name");
+    var body = document.querySelector("#body");
     
 
     fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${id}`, {
@@ -52,37 +49,39 @@ function submit(id) {
         `
         <div class="topic-photo flex">
             <div class="photo flex" id="img">
-                <img  src="${item.senior_image}" class="img">
+                <img src="http://localhost:5229/${projectdata.senior_image}"class="img" style="width:300px;">
             </div>     
         </div>
         `;
-        post.innerHTML = "";
-        post.innerHTML +=
-        `              
-        <div class="topic-content">
-            <div style="padding-top: 72px;">
-                專題名稱：
-                <input class="topic-text" id="senior_title">
+        name.innerHTML="";
+        name.innerHTML+=
+        `
+        專題名稱：<input class="topic-text" id="title" value="${data.senior_title}">
+        `;
+        body.innerHTML = "";
+        body.innerHTML +=
+        `
+        <div  class="member">
+            圖片檔案：
+            <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*">
+        </div>
+        <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
+            專題簡介：
+            <textarea class="topic-content-text" id="content">${data.senior_content}</textarea>
+            
+        </div>
+        <div class="button-div flex">
+            <div class="button-padding">
+                <input type="button" value="保存" onclick="update('${id}')"class="create-button">
             </div>
-            <div  class="member">
-                圖片檔案：
-                <input type="file" id="senior_image" onchange="previewFile()" class="select-photo" accept="image/*" value="${data.senior_image}>
+            <div class="button-padding">
+                <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
             </div>
-            <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
-                專題簡介：
-                <textarea class="topic-content-text" id="senior_content" value="${data.senior_content}"></textarea>
-            </div>
-        </div>  
+        </div>
 
         `;
-
-
-
-
-
-
         console.log(data);
-        window.alert("修改成功");
+
     }) 
 }
 
@@ -90,10 +89,10 @@ function submit(id) {
 
 
 function update(id) { 
-    const senior_title = document.querySelector("#senior_title").value;
-    const senior_year = document.querySelector("#senior_year").value;    
-    const senior_image = document.querySelector("#senior_image").files[0];
-    const senior_content = document.querySelector("#senior_content").value;
+    const senior_title = document.querySelector("#senior_title");
+    const senior_year = document.querySelector("#senior_year");    
+    const senior_image = document.querySelector("#senior_image");
+    const senior_content = document.querySelector("#senior_content");
 
     var selected = [];
     for (var option of document.getElementById('member').options)
@@ -109,7 +108,7 @@ function update(id) {
     formData.append('senior_title', senior_title);
     formData.append('senior_content', senior_content);
     formData.append('senior_year', senior_year);
-    formData.append('senior_image', senior_image.files[0]);
+    formData.append('senior_image', senior_image);
 
     for (let i=0; i < data.members_id.length; i++){
         formData.append('members_id[]', data.members_id[i]);
@@ -129,6 +128,7 @@ function update(id) {
 
     .then(data => {
         console.log(data);
+        window.alert("修改成功");
     });
 }
 
@@ -148,11 +148,10 @@ window.onload = function (){
 
 function postData(url, data, headers) {
     const formData = new FormData();
-    formData.append('senior_title', data.title);
-    formData.append('senior_year', data.year);
-    formData.append('senior_person', data.post);
-    formData.append('senior_content', data.content);
-    formData.append('FormImage', data.image);
+    formData.append('senior_title', data.senior_title);
+    formData.append('senior_year', data.senior_year);
+    formData.append('senior_content', data.senior_content);
+    formData.append('senior_image', data.senior_image);
     // formData.append('senior_selectedValues', JSON.stringify(data.selectedValues)); // 將selectedValues轉為JSON字串後附加到FormData
 
 
@@ -278,34 +277,34 @@ function postData(url, data, headers) {
 
 
 //取的使用者資料 ok
-
-window.onload = function() {
-    //
-
-
+//-----------------------------------------------------
+// window.onload = function() {
+//     //
 
 
-    var post = document.querySelector("#member");
-    fetch("http://localhost:5229/api/Members/GetIDList")
-    .then(response => response.json())
-    .then(data => {
-        console.log("data",data);
 
-        post.innerHTML = "";
-        data.forEach((item) => {
-            const date = new Date(item.update_time);
-            const update_time = date.toLocaleString();
 
-            post.innerHTML +=
-            `
+//     var post = document.querySelector("#member");
+//     fetch("http://localhost:5229/api/Members/GetIDList")
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log("data",data);
 
-            <option value=${item.members_id}>${item.name}</option>
-            `;
-        });
-    })
-    .catch(error => console.error(error));
-}
+//         post.innerHTML = "";
+//         data.forEach((item) => {
+//             const date = new Date(item.update_time);
+//             const update_time = date.toLocaleString();
 
+//             post.innerHTML +=
+//             `
+
+//             <option value=${item.members_id}>${item.name}</option>
+//             `;
+//         });
+//     })
+//     .catch(error => console.error(error));
+// }
+//-----------------------------------------------------
 //<div class="photo" id="photo"></div>
 
 // function postData(url,data,headers){
