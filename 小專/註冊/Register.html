@@ -103,26 +103,27 @@
                         帳號：<input type="text"  class="text" required id="account">
                     </div>
                     <div class="normal-word text-bottom field">
-                        密碼：<input type="text"  class="text" required id="password">
+                        密碼：<input type="password"  class="text" required id="password">
                     </div>
                     <div class="normal-word text-bottom field" style="margin-right:40px;">
-                        確認密碼：<input type="text"  class="text" required id="checkpassword">
+                        確認密碼：<input type="password"  class="text" required id="checkpassword">
                     </div>
                     <div class="normal-word text-bottom field">
-                        Email：<input type="text"  class="text" required id="email"  style="margin-right:5px;">
+                        Email：<input type="email"  class="text" required id="email"  style="margin-right:5px;">
                     </div>
                     <div class="normal-word text-bottom field">
                         權限：
                         <select class="text"  id="level">
+                            <option value="">請選擇</option>
                             <option id="student" value="2">學生</option>
                             <option id="senior" value="1">學長姐</option>
                             <option id="admin" value="0">管理者</option>
                         </select>
                     </div>
                     <div class="margin-top-login-content" style="text-align: center;"> 
-                        <input type="submit" value="註冊" class="login-button" onclick="submit()">
+                        <input type="submit" value="註冊" class="login-button" onclick="submit() ,validateForm()">
                     </div>
-
+                <!-- </form> -->
                 <!-- <table class="flex">
                     <tr>
                         <td class="normal-word text-bottom field" >

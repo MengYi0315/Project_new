@@ -75,6 +75,12 @@ function submit(id) {
         </div>  
 
         `;
+
+
+
+
+
+
         console.log(data);
         window.alert("修改成功");
     }) 
@@ -89,6 +95,14 @@ function update(id) {
     const senior_image = document.querySelector("#senior_image").files[0];
     const senior_content = document.querySelector("#senior_content").value;
 
+    var selected = [];
+    for (var option of document.getElementById('member').options)
+    {
+        if (option.selected) {
+            selected.push(option.value);
+        }
+    }
+
     // 创建一个 FormData 对象，并添加要修改的图片和文字内容
     
     const formData = new FormData();
@@ -96,6 +110,12 @@ function update(id) {
     formData.append('senior_content', senior_content);
     formData.append('senior_year', senior_year);
     formData.append('senior_image', senior_image.files[0]);
+
+    for (let i=0; i < data.members_id.length; i++){
+        formData.append('members_id[]', data.members_id[i]);
+    }
+
+
 
 
     fetch(`http://localhost:5229/api/seniorproject/UpdateData?id=${id}`, {
