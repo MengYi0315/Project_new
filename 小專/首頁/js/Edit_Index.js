@@ -104,13 +104,13 @@ function submit(id) {
         post.innerHTML +=
         `
         <div class="title">修改公告</div>
-        <div class="create-content">標題：<input style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+        <div class="create-content">標題：<input id="title" style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
         <div class="create-content flex">
-            內容：<textarea name="" id="" cols="74" rows="9">${data.announce_content}</textarea>
+            內容：<textarea name="" id="content" cols="74" rows="9">${data.announce_content}</textarea>
             
         </div>
         <div style="margin-left:20px;">
-            <input type="submit" onclick="update('${id}')" value="發布" class="submit">
+            <input type="submit" onclick="update('${id}') ,validateForm() " value="發布" class="submit">
         </div> 
             
         `;
@@ -138,7 +138,6 @@ function update(id)
     })
     .then(data => {
         console.log(data);
-        alert("修改成功");
     });
 }
 

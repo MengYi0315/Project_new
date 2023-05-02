@@ -29,11 +29,9 @@ function submit() {
         .then(({data}) => {
             console.log(data);
             window.onload();
-            window.alert("新增成功");
-        })
+       })
         .catch(error => {
             console.error(error);
-            window.alert("新增失敗");
         })
 }
 

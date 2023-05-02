@@ -5,7 +5,7 @@ function  validateForm() {
     
 
     if ( fileInput === "") {
-      errors.push("帳號");
+      errors.push("圖片");
       length +=1;
     }
 
@@ -20,6 +20,7 @@ function  validateForm() {
 
         return false;
       }
+     
     }
 
     

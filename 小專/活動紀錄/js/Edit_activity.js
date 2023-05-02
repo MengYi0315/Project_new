@@ -50,7 +50,7 @@ function submit(id) {
             <p class="file-name" style="font-size:20px;font-weight: bold;"></p>
         </div>
         
-        <input type="submit" onclick="update('${id}')" value="修改" class="create-button">
+        <input type="submit" onclick="update('${id}') , validateForm()" value="修改" class="create-button">
         <a href="./Admin_Login_activity.html"><input type="button" value="返回" class="create-button"></a>
             
         `;
@@ -83,7 +83,6 @@ function update(id) {
 
     .then(data => {
         console.log(data);
-        window.alert("修改成功");
 
     });
 }
