@@ -132,7 +132,7 @@ function submit() {
 
 console.log(data.MultiImages)
   
-    
+  
 
   postData("http://localhost:5229/api/Carousel/CreateData", data, headers).then(
     (data) => {
@@ -282,7 +282,6 @@ function GetOneImage(url)
                 Authorization: `Bearer ${token}`,
             };
             UpdateImage(img.id,FileBtn,headers)
-            
         });
         
         const deleteBtn = document.createElement('button');
@@ -320,6 +319,7 @@ function UpdateImage(id,FileBtn,headers)
     {
         console.log(`Image ${id} updated successfully.`);
         location.reload();
+        alert("修改成功");
     })
     .catch((error) => 
     {
