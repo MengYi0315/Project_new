@@ -42,8 +42,8 @@ function submit(id) {
         post.innerHTML +=
         `
         <div class="title">修改活動</div>
-        <div class="create-text">名稱：<input type="text" id="title"class="create-input" value="${data.activity_title}"></div>
-        <div class="create-text flex"><div class="flex"style="justify-content: flex-start;">描述：</div><textarea id="content" style="font-size: 20px;">${data.activity_content}</textarea></div>
+        <div class="create-text">名稱：<input type="text" id="title"class="create-input" maxlength="50" value="${data.activity_title}"></div>
+        <div class="create-text flex"><div class="flex"style="justify-content: flex-start;">描述：</div><textarea id="content" maxlength="200" style="font-size: 20px;">${data.activity_content}</textarea></div>
         <div class="create-text">圖片：<input type="file" value="${data.first_image}"id="image"onchange="previewFile()"style="justify-content: right;"class="create-input"></div>
         <div style="margin-left:10px;margin-bottom:20px;">
             <img class="img" src="${data.first_image}" style="width:300px;">
@@ -55,7 +55,6 @@ function submit(id) {
             
         `;
         console.log(data);
-        window.alert("修改成功");
     }) 
 }
 
@@ -84,7 +83,8 @@ function update(id) {
 
     .then(data => {
         console.log(data);
-        
+        window.alert("修改成功");
+
     });
 }
 
