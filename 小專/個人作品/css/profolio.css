@@ -115,14 +115,18 @@ a{
 {
     background-color: antiquewhite;
     width:100%;
-    height: 2000px;
+    justify-content: center;
+    height: 100%;
+
 }
 .left-content
 {
     width:20%;
     height:auto;
     margin:250px 0px 50px 20px;
-    justify-content: center;
+    
+    align-items: center;
+    flex-direction: column;
 }
 .right-content
 {
@@ -436,4 +440,26 @@ cursor: pointer;
 
     cursor: pointer;
     
+}
+
+.menu{
+    background-color: #003247;
+    padding: 20px;
+
+
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin:1px;
+}
+
+.menu-c{
+    background-color: #fb8947;
+    padding: 20px;
+
+
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin:1px;
 }
