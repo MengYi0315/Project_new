@@ -48,7 +48,7 @@ function submit() {
     }
     console.log("id" ,selected);
 
-
+    
 
 
     
@@ -76,7 +76,7 @@ function submit() {
         });
 
 
-
+    // window.location.href='Admin_topic-login.html';
 }
 
 

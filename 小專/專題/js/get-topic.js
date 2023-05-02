@@ -47,63 +47,68 @@ function submit() {
 
 function deleteData(url, id) {
     console.log('Deleting data:', `${url}${id}`); // 调试信息
-    return fetch(`${url}${id}`, {
-        method: 'DELETE',
-        headers: {'Authorization': `Bearer ${LoginToken}`}
-    })
-    .then(data => {
-        console.log(data); // 刪除成功後的回應
 
-        fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
-        .then(response => response.json())
-        .then(data => {
-            post.innerHTML = "";
-            data.forEach((item) => {
-                post.innerHTML +=
-                `
-                <div class="topic" style="margin-bottom: 10px;" >
-                    <div class="flex">
-                        <div class="topic-photo flex">
-                            
-                        <img src="${item.senior_image}" class="photo">
-                        </div>
-                        
-                        <div class="topic-content flex" >
-                            <div class="topic-name">
-                            ${item.senior_title}
-                            </div>
-                            <div class="member" id="member">
-                            ${item.name}
-                            </div>
-                            <div class="article" id="article">
-                            ${item.senior_content}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="edit">
-                            <button type="submit" class="edit-row-button">
-                                <a href="./topic-edit.html?id=${item.seniorproject_id}">
-                                    修改
-                                </a>
-                            </button>
-                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
-                            
-                        </div>
-                    </div>
-                </div>
-    
-                `;
-            });
-            window.onload();
+
+    if(confirm("確認是否刪除?")){
+        return fetch(`${url}${id}`, {
+            method: 'DELETE',
+            headers: {'Authorization': `Bearer ${LoginToken}`}
         })
-        .catch(error => console.error(error));
-
+        .then(data => {
+            console.log(data); // 刪除成功後的回應
+            
+            fetch("http://localhost:5229/api/seniorproject/GetAllDataList")
+            .then(response => response.json())
+            .then(data => {
+                post.innerHTML = "";
+                data.forEach((item) => {
+                    post.innerHTML +=
+                    `
+                    <div class="topic" style="margin-bottom: 10px;" >
+                        <div class="flex">
+                            <div class="topic-photo flex">
+                                
+                            <img src="${item.senior_image}" class="photo">
+                            </div>
+                            
+                            <div class="topic-content flex" >
+                                <div class="topic-name">
+                                ${item.senior_title}
+                                </div>
+                                <div class="member" id="member">
+                                ${item.name}
+                                </div>
+                                <div class="article" id="article">
+                                ${item.senior_content}
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="edit">
+                                <button type="submit" class="edit-row-button">
+                                    <a href="./topic-edit.html?id=${item.seniorproject_id}">
+                                        修改
+                                    </a>
+                                </button>
+                                <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
+                                
+                            </div>
+                        </div>
+                    </div>
         
-    })
-    .catch(error => {
-        console.error('There was a problem deleting data:', error);
-    });
+                    `;
+                });
+                window.onload();
+            })
+            .catch(error => console.error(error));
+    
+            
+        })
+        .catch(error => {
+            console.error('There was a problem deleting data:', error);
+        });
+    
+    }
 }
 
 window.onload = function (){
