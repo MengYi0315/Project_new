@@ -85,6 +85,8 @@ function update(id)
     })
     .then(data => {
         console.log(data);
+        alert("修改成功");
+    
     });
 }
 

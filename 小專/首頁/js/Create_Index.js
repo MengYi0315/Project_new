@@ -40,6 +40,8 @@ function submit() {
 
 function deleteData(url, id) {
     console.log('Deleting data:', `${url}${id}`); // 调试信息
+
+    if(confirm("確定是否刪除?")){
     return fetch(`${url}${id}`, {
         method: 'DELETE',
         headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
@@ -53,6 +55,9 @@ function deleteData(url, id) {
         console.error('There was a problem deleting data:', error);
         window.alert("刪除失敗ˋ");
     });
+
+    }
+   
 }
 
 window.onload = function() {
@@ -71,7 +76,7 @@ window.onload = function() {
             `
             <div class="flex">
                 <div style="width:100%;">
-                    <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" class="a1 flex">
                         <div class="space-between flex">
                             <div> 標題： ${item.announce_title}</div>
                             <div> 更新時間： ${update_time}</div>

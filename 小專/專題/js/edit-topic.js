@@ -12,7 +12,6 @@ function previewFile() {
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
-
     reader.addEventListener("load", function () {
         preview.src = reader.result;
     }, false);
@@ -27,74 +26,18 @@ function previewFile() {
 
 
 
-function submit(id) {
-    var img = document.querySelector("#img");
-    var name = document.querySelector("#name");
-    var body = document.querySelector("#body");
-    
-
-    fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${id}`, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    
-    .then(response => response.json())
-    .then(data => {
-        projectdata = data;
-
-        img.innerHTML="";
-        img.innerHTML+=
-        `
-        <div class="topic-photo flex">
-            <div class="photo flex" id="img">
-                <img src="http://localhost:5229/${projectdata.senior_image}"class="img" style="width:300px;">
-            </div>     
-        </div>
-        `;
-        name.innerHTML="";
-        name.innerHTML+=
-        `
-        專題名稱：<input class="topic-text" id="title" value="${data.senior_title}">
-        `;
-        body.innerHTML = "";
-        body.innerHTML +=
-        `
-        <div  class="member">
-            圖片檔案：
-            <input type="file" id="image" onchange="previewFile()" class="select-photo" accept="image/*">
-        </div>
-        <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
-            專題簡介：
-            <textarea class="topic-content-text" id="content">${data.senior_content}</textarea>
-            
-        </div>
-        <div class="button-div flex">
-            <div class="button-padding">
-                <input type="button" value="保存" onclick="update('${id}')"class="create-button">
-            </div>
-            <div class="button-padding">
-                <input type="button" value="返回" class="create-button" onclick="location.href='./Admin_topic-login.html'">
-            </div>
-        </div>
-
-        `;
-
-        console.log(data);
-
-    }) 
-}
 
 
 
-
-function update(id) { 
-    const senior_title = document.querySelector("#senior_title");
-    const senior_year = document.querySelector("#senior_year");    
-    const senior_image = document.querySelector("#senior_image");
-    const senior_content = document.querySelector("#senior_content");
+function update() {
+    const url = window.location.href; // 获取当前网址
+    const urlParts = url.split('='); // 将网址拆分成多个部分
+    const dick = urlParts[1]; // 获取协议部分 
+    const senior_title = document.querySelector("#title").value;
+    const senior_year = document.querySelector("#senior_year");
+    const year_number = parseInt(senior_year.value);  
+    const senior_image = document.getElementById("FFF").files[0];
+    const senior_content = document.querySelector("#content").value;
 
     var selected = [];
     for (var option of document.getElementById('member').options)
@@ -103,23 +46,27 @@ function update(id) {
             selected.push(option.value);
         }
     }
-
+    const members_id= selected;
     // 创建一个 FormData 对象，并添加要修改的图片和文字内容
     
     const formData = new FormData();
     formData.append('senior_title', senior_title);
     formData.append('senior_content', senior_content);
-    formData.append('senior_year', senior_year);
-    formData.append('senior_image', senior_image);
+    formData.append('senior_year', year_number);
+    formData.append('FormImage', senior_image);
+    console.log(senior_title)
+    console.log(senior_content)
+    console.log(year_number)
+    console.log(senior_image)
 
-    for (let i=0; i < data.members_id.length; i++){
-        formData.append('members_id[]', data.members_id[i]);
+    for (let i=0; i < members_id.length; i++){
+        formData.append('members_id[]', members_id[i]);
     }
 
 
 
 
-    fetch(`http://localhost:5229/api/seniorproject/UpdateData?id=${id}`, {
+    fetch(`http://localhost:5229/api/seniorproject/UpdateData?id=${dick}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -127,22 +74,68 @@ function update(id) {
         },
         body: formData
     })
-
-    .then(data => {
-        console.log(data);
-        window.alert("修改成功");
-    });
+    .then(response => {
+        if (response.ok) {
+          window.alert("修改成功");
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
 }
 
 
-window.onload = function (){
+window.onload = function() {
+    const url = window.location.href; // 获取当前网址
+    const urlParts = url.split('='); // 将网址拆分成多个部分
+
+    const dick = urlParts[1]; // 获取协议部分
+    fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${dick}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        var fuck = document.getElementById("OHJI");
+        var muck = document.getElementById("title");
+        var duck = document.getElementById("senior_year");
+        var suck = document.getElementById("content");
+        
+        fuck.src = data.senior_image;
+        fuck.style.width = "300px";
+        muck.value = data.senior_title;
+        duck.value = data.senior_year;
+        suck.value = data.senior_content;
+        console.log(data.senior_image)
+        var post = document.querySelector("#member");
+    fetch("http://localhost:5229/api/Members/GetIDList")
+    .then(response => response.json())
+    .then(data => {
+
+        post.innerHTML = "";
+        data.forEach((item) => {
+            // console.log("item",item)
+            const date = new Date(item.update_time);
+            const update_time = date.toLocaleString();
+
+            post.innerHTML +=
+            `
+
+            <option value=${item.members_id}>${item.name}</option>
+            `;
+        });
+    })
+    .catch(error => console.error(error));
+    })
     
-    const url = window.location.href;
-    console.log("url",url);
-    var split = url.split("=");
-    var id = split[1];
-    console.log(id);
-    submit(id);
+    
+
+    
 }
 
 

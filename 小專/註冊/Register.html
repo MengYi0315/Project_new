@@ -19,9 +19,9 @@
                 <a href="/小專/首頁/Admin_Login_Index.html"  class="nav-a">
                     <li style="font-size:18px;">首頁</li>
                 </a>
-                <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
+                <!-- <a href="/小專/教授介紹/Admin_Login_Introduce_detail.html"  class="nav-a">
                     <li>教授介紹</li>
-                </a>
+                </a> -->
                 <li class="nav-a-t" id="nav-a-hover">
                     <a href="#" class="down-bar-title">研究室成果</a>
                     <ul class="down-bar " id="down-bar">
@@ -97,10 +97,10 @@
             <div class="login-div flex">
                 <!-- <form id="myForm" onsubmit="return validateForm()"> -->
                     <div class="normal-word text-bottom field">
-                        姓名：<input type="text"  class="text" required id="name">
+                        姓名：<input type="text"  class="text" required id="name" maxlength="20" title="姓名長度不能超過">
                     </div>
                     <div class="normal-word text-bottom field">
-                        帳號：<input type="text"  class="text" required id="account">
+                        帳號：<input type="text"  class="text" required id="account"  maxlength="30">
                     </div>
                     <div class="normal-word text-bottom field">
                         密碼：<input type="password"  class="text" required id="password">
@@ -109,14 +109,14 @@
                         確認密碼：<input type="password"  class="text" required id="checkpassword">
                     </div>
                     <div class="normal-word text-bottom field">
-                        Email：<input type="email"  class="text" required id="email"  style="margin-right:5px;">
+                        Email：<input type="email"  class="text" required id="email"  style="margin-right:5px;" maxlength="200">
                     </div>
                     <div class="normal-word text-bottom field">
                         權限：
                         <select class="text"  id="level">
                             <option value="">請選擇</option>
-                            <option id="student" value="2">學生</option>
-                            <option id="senior" value="1">學長姐</option>
+                            <!-- <option id="student" value="2">學生</option>
+                            <option id="senior" value="1">學長姐</option> -->
                             <option id="admin" value="0">管理者</option>
                         </select>
                     </div>

@@ -80,17 +80,6 @@ function deleteData(url, id) {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="edit">
-                            <button type="submit" class="edit-row-button">
-                                <a href="./topic-edit.html?id=${item.seniorproject_id}">
-                                    修改
-                                </a>
-                            </button>
-                            <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
-                            
-                        </div>
-                    </div>
                 </div>
     
                 `;
@@ -140,7 +129,7 @@ window.onload = function() {
                 <div class="flex">
                     <div class="topic-photo flex">
                         
-                    <img src="${item.senior_image}" class="photo">
+                    <img src="http://localhost:5229/${item.senior_image}" class="photo">
                     </div>
                     
                     <div class="topic-content flex" >
@@ -153,19 +142,6 @@ window.onload = function() {
                         <div class="article" id="article">
                         ${item.senior_content}
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="edit">
-                        <button type="button" class="edit-row-button">
-
-                            <a href="/小專/專題/topic-edit.html?id=${item.seniorproject_id}">
-                                修改
-                            </a>
-                        </button>
-                        
-                        <input class="delete-row-button" value="刪除" type="submit" onclick="deleteData('http://localhost:5229/api/seniorproject/DeleteData?id=', '${item.seniorproject_id}')">
-                        
                     </div>
                 </div>
             </div>
