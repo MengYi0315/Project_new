@@ -129,13 +129,20 @@ function submit() {
   const headers = {
     Authorization: `Bearer ${token}`,
   };
+
+console.log(data.MultiImages)
+  
+    
+
   postData("http://localhost:5229/api/Carousel/CreateData", data, headers).then(
     (data) => {
         location.reload();
         console.log(data);
-        window.alert("新增成功");
+        
     }
   );
+
+
 }
 
 // 當選擇檔案時，呼叫此函式
@@ -275,6 +282,7 @@ function GetOneImage(url)
                 Authorization: `Bearer ${token}`,
             };
             UpdateImage(img.id,FileBtn,headers)
+            
         });
         
         const deleteBtn = document.createElement('button');
@@ -312,17 +320,16 @@ function UpdateImage(id,FileBtn,headers)
     {
         console.log(`Image ${id} updated successfully.`);
         location.reload();
-        window.alert("修改成功");
     })
     .catch((error) => 
     {
         console.error(error);
-        window.alert("修改失敗");
       });
 }
 
 function DeleteImage(id)
 {
+  if(confirm("確定是否刪除?")){
     fetch(`http://localhost:5229/api/Carousel/DeleteData?id=${id}`,
     {
         method: "DELETE",
@@ -331,11 +338,14 @@ function DeleteImage(id)
     .then((data) => 
     {
         location.reload();
+        window.alert("刪除成功");
     })
     .catch((error) => 
     {
         console.error(error);
     });
+
+  }
 }
 
 function UpdateFileSelect(event) {

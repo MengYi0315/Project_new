@@ -9,6 +9,7 @@ function postData(url,data,headers){
 }
 
 function submit(){
+  
   const Account=document.getElementById('account').value;
   const Password=document.getElementById('password').value;
   
@@ -26,6 +27,14 @@ function submit(){
       // sessionStorage.setItem('LoginData', data);
       console.log(data);
   })
+
+
+
+
+
+
+
+  
 }
 
 
