@@ -60,7 +60,9 @@ function findpassword()
     })
     .then(data => {
         console.log(data);
+        alert("已發送郵件，請去收信");
     });
+    
 }
 
 // window.onload = function (){
