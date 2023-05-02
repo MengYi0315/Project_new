@@ -104,9 +104,9 @@ function submit(id) {
         post.innerHTML +=
         `
         <div class="title">修改公告</div>
-        <div class="create-content">標題：<input id="title" style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
+        <div class="create-content">標題：<input id="title" maxlength="50" style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
         <div class="create-content flex">
-            內容：<textarea name="" id="content" cols="74" rows="9">${data.announce_content}</textarea>
+            內容：<textarea name="" id="content" maxlength="200" cols="74" rows="9">${data.announce_content}</textarea>
             
         </div>
         <div style="margin-left:20px;">

@@ -37,11 +37,11 @@ function submit(id) {
         </div>
         <div class="item">
             競賽名稱：
-            <input type="text" id="contest_name" class="item_detail" value="${data.contest_name}">
+            <input type="text" maxlength="40" id="contest_name" class="item_detail" value="${data.contest_name}">
         </div>
         <div class="item">
             作品名稱：
-            <input type="text" id="contest_work" class="item_detail" value="${data.contest_work}">
+            <input type="text" maxlength="50" id="contest_work" class="item_detail" value="${data.contest_work}">
         </div>
         <div class="item">
             得獎名次：
