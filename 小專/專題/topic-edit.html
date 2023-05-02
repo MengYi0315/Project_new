@@ -96,12 +96,12 @@
                         <div class="topic-content">
                             <div style="padding-top: 72px;">
                                 專題名稱：
-                                <input class="topic-text" id="title">
+                                <input class="topic-text" id="title" required>
                             </div>
                             <div class="member" >
                                 選擇年份：
-                                <select class="year-select" id="senior_year">
-                                    <option>請選擇年份</option>
+                                <select class="year-select" id="senior_year" required>
+                                    <option value="">請選擇年份</option>
                                     <option>111年</option>
                                     <option>110年</option>
                                     <option>109年</option>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="member flex">
                                 專題組員：
-                                <select class="member-select" id="member" multiple>
+                                <select class="member-select" id="member" multiple required>
                                     
 
                                 </select>
@@ -120,11 +120,11 @@
                             
                                 <div  class="member" id="OHI">
                                     圖片檔案：
-                                    <input type="file" id="FFF" onchange="previewFile()" class="select-photo img" accept="image/*">
+                                    <input type="file" id="FFF" required onchange="previewFile()" class="select-photo img" accept="image/*">
                                 </div>
                                 <div  class="member flex" style="padding-bottom: 20px; justify-content: flex-start;">
                                     專題簡介：
-                                    <textarea class="topic-content-text" id="content"></textarea>
+                                    <textarea class="topic-content-text" required id="content"></textarea>
                                 </div>
                                 <div class="button-div flex">
                                     <div class="button-padding">
@@ -153,4 +153,5 @@
 </body>
 <script src="./js/edit-topic.js"></script>
 <script src="./js/test.js"></script>
+<script src="./js/verify.js"></script>
 </html>

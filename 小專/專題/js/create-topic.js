@@ -72,7 +72,7 @@ function submit() {
     postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
     .then(({data}) => {
         console.log(data);
-        window.alert("新增成功");
+        
         });
 
 
