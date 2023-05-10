@@ -21,7 +21,7 @@ function submit(){
   const headers = {
       'Content-Type': 'application/json'
   };
-  postData('http://localhost:5229/api/Members/Login',data,headers)
+  postData('https://localhost:7275/api/Members/Login',data,headers)
   .then(data=>{
 
       // sessionStorage.setItem('LoginData', data);

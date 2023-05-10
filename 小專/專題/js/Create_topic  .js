@@ -39,7 +39,7 @@ function submit() {
     };
     
 
-    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+    postData('https://localhost:7275/api/Activity/CreateData', data, headers)
         .then(data => {
         const result = data.result;
         console.log(data);

@@ -66,7 +66,7 @@ function update() {
 
 
 
-    fetch(`http://localhost:5229/api/seniorproject/UpdateData?id=${dick}`, {
+    fetch(`https://localhost:7275/api/seniorproject/UpdateData?id=${dick}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -92,7 +92,7 @@ window.onload = function() {
     const urlParts = url.split('='); // 将网址拆分成多个部分
 
     const dick = urlParts[1]; // 获取协议部分
-    fetch(`http://localhost:5229/api/seniorproject/ReadOneData?id=${dick}`, {
+    fetch(`https://localhost:7275/api/seniorproject/ReadOneData?id=${dick}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -113,7 +113,7 @@ window.onload = function() {
         suck.value = data.senior_content;
         console.log(data.senior_image)
         var post = document.querySelector("#member");
-    fetch("http://localhost:5229/api/Members/GetIDList")
+    fetch("https://localhost:7275/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
 
@@ -165,7 +165,7 @@ function postData(url, data, headers) {
 // window.onload = function() {
 //     var post = document.querySelector("#member");
     
-//     fetch("http://localhost:5229/api/Members/GetIDList")
+//     fetch("https://localhost:7275/api/Members/GetIDList")
 //     .then(response => response.json())
 //     .then(data => {
 //         console.log("data",data);
@@ -220,7 +220,7 @@ function postData(url, data, headers) {
 //     };
     
 
-//     postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+//     postData('https://localhost:7275/api/seniorproject/CreateData', data, headers)
 //     .then(({data}) => {
 //         console.log(data);
         
@@ -242,7 +242,7 @@ function postData(url, data, headers) {
 //     //     "Content-Type": "application/json",
 //     //     "Accept": "application/json",
 //     // };
-//     // postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+//     // postData('https://localhost:7275/api/seniorproject/CreateData', data, headers)
 //     //     .then(({data}) => {
 //     //         console.log(data);
 //     //     })
@@ -321,7 +321,7 @@ function postData(url, data, headers) {
 //         'Authorization': `Bearer ${token}`,
 //         'Content-Type': 'application/json'
 //     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
+//     postData('https://localhost:7275/api/Announcement/CreateData',data,headers)
 //     .then(data=>{
 //         // sessionStorage.setItem('LoginData', JSON.stringify(data));
 //         console.log(data);
@@ -358,7 +358,7 @@ function postData(url, data, headers) {
 //         'Authorization': `Bearer ${token}`,
 //         'Content-Type': 'application/json'
 //     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
+//     postData('https://localhost:7275/api/Announcement/CreateData',data,headers)
 //     .then(data=>{
 //         sessionStorage.setItem('LoginData', JSON.stringify(data));
 //         console.log(data);

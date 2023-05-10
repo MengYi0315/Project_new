@@ -4,7 +4,7 @@ console.log(LoginToken);
 function submit(id) {
     var post = document.querySelector("#post");
 
-    fetch(`http://localhost:5229/api/ContestAward/ReadOneData?id=${encodeURIComponent(id)}`, {
+    fetch(`https://localhost:7275/api/ContestAward/ReadOneData?id=${encodeURIComponent(id)}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -74,7 +74,7 @@ function update(id)
         contest_rank: contest_rank.value.toString()
     };
 
-    fetch(`http://localhost:5229/api/ContestAward/UpdateData?id=${encodeURIComponent(id)}`, {
+    fetch(`https://localhost:7275/api/ContestAward/UpdateData?id=${encodeURIComponent(id)}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -104,7 +104,7 @@ window.onload = function (){
 // function updateData(id) {
 //     var post = document.querySelector("#post");
 //     // 讀取舊有資料
-//     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {
+//     fetch(`https://localhost:7275/api/Announcement/ReadOneData?id=${id}`, {
 //     headers: {
 //         'Authorization': `Bearer ${LoginToken}`
 //     }
@@ -171,7 +171,7 @@ window.onload = function (){
 //     };
     
 
-//     postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+//     postData('https://localhost:7275/api/Activity/CreateData', data, headers)
 //         .then(({data}) => {
 //             console.log(data);
             
@@ -181,7 +181,7 @@ window.onload = function (){
 // function updateData(id) {
 //     var post = document.querySelector("#post");
 //     // 讀取舊有資料
-//     fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`, {
+//     fetch(`https://localhost:7275/api/Announcement/ReadOneData?id=${id}`, {
 //     headers: {
 //         'Authorization': `Bearer ${LoginToken}`
 //     }

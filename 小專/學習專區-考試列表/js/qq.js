@@ -1,6 +1,6 @@
 axios({
     method: 'get',
-    url: 'http://localhost:5229/api/Test',
+    url: 'https://localhost:7275/api/Test',
     headers:{
         "Content-Type": "application/json",
         "Accept": "application/json",

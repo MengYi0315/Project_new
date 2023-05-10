@@ -1,6 +1,6 @@
 window.onload = function() {
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Activity/GetAllDataList")
+    fetch("https://localhost:7275/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
         post.innerHTML = "";

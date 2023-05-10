@@ -29,7 +29,7 @@
 //         title
 //     }
 
-//     postData('http://localhost:5229/api/Carousel/CreateData',data)
+//     postData('https://localhost:7275/api/Carousel/CreateData',data)
 //     .then(data=>{
 //         const result =data.result;
 //         console.log(data);
@@ -87,7 +87,7 @@
 //         formData.append('FormImage', image);
 
 //         requests.push(
-//             fetch('http://localhost:5229/api/Carousel/CreateData', {
+//             fetch('https://localhost:7275/api/Carousel/CreateData', {
 //                 method: 'POST',
 //                 mode: 'cors',
 //                 body: formData,
@@ -134,7 +134,7 @@ console.log(data.MultiImages)
   
   
 
-  postData("http://localhost:5229/api/Carousel/CreateData", data, headers).then(
+  postData("https://localhost:7275/api/Carousel/CreateData", data, headers).then(
     (data) => {
         location.reload();
         console.log(data);
@@ -199,7 +199,7 @@ function handleFileSelect(event) {
 const fileInput = document.getElementById("fileInput");
 fileInput.addEventListener("change", handleFileSelect, false);
 
-fetch("http://localhost:5229/api/Carousel/GetAllDataList")
+fetch("https://localhost:7275/api/Carousel/GetAllDataList")
   .then((response) => response.json())
   .then((data) => {
     const imageContainer = document.getElementById("ReadImage");
@@ -233,7 +233,7 @@ fetch("http://localhost:5229/api/Carousel/GetAllDataList")
         if (target.tagName === "IMG") {
         // 获取图片的 ID
         const id = target.getAttribute("id");
-        const url = `http://localhost:5229/api/Carousel/ReadOneData?id=${id}`;
+        const url = `https://localhost:7275/api/Carousel/ReadOneData?id=${id}`;
             GetOneImage(url)
         }
     });
@@ -305,7 +305,7 @@ function UpdateImage(id,FileBtn,headers)
     const newimage = FileBtn.files[0];
     const formData = new FormData();
     formData.append('MultiImages', newimage);
-    const url = `http://localhost:5229/api/Carousel/UpdateData?id=${id}`;
+    const url = `https://localhost:7275/api/Carousel/UpdateData?id=${id}`;
     fetch(url, 
     {
         body: formData,
@@ -330,7 +330,7 @@ function UpdateImage(id,FileBtn,headers)
 function DeleteImage(id)
 {
   if(confirm("確定是否刪除?")){
-    fetch(`http://localhost:5229/api/Carousel/DeleteData?id=${id}`,
+    fetch(`https://localhost:7275/api/Carousel/DeleteData?id=${id}`,
     {
         method: "DELETE",
         mode: "cors",

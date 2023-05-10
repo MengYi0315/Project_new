@@ -10,13 +10,12 @@ function postData(url, data, headers) {
         body: formData,
         headers: headers
     })
-      .then(response => response.formData) //輸出成json
+    .then(response => response.formData)
 }
 
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
 function submit() {
-    console.log(LoginToken);
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
     const image = document.getElementById('image').files[0];
@@ -32,7 +31,7 @@ function submit() {
     };
     console.log(data);
 
-    postData('http://localhost:5229/api/Activity/CreateData', data, headers)
+    postData('https://localhost:7275/api/Activity/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
         });

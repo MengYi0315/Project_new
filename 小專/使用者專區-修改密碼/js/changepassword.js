@@ -4,7 +4,7 @@ console.log(LoginToken);
 function submit(id) {
     var post = document.querySelector("#post");
 
-    fetch(`http://localhost:5229/api/Members/GetLoginRole?Account=${encodeURIComponent(id)}`, {
+    fetch(`https://localhost:7275/api/Members/GetLoginRole?Account=${encodeURIComponent(id)}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -74,7 +74,7 @@ function update()
         NewPassword: NewPassword.value,
     };
     console.log(data);
-    fetch(`http://localhost:5229/api/Members/ChangePassword`, {
+    fetch(`https://localhost:7275/api/Members/ChangePassword`, {
         method: 'PUT',
         mode: 'cors',
         body: JSON.stringify(data),

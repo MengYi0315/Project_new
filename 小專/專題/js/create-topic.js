@@ -69,7 +69,7 @@ function submit() {
     };
     
 
-    postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+    postData('https://localhost:7275/api/seniorproject/CreateData', data, headers)
     .then(({data}) => {
         console.log(data);
         
@@ -123,7 +123,7 @@ window.onload = function() {
 
 
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Members/GetIDList")
+    fetch("https://localhost:7275/api/Members/GetIDList")
     .then(response => response.json())
     .then(data => {
         console.log("member",data);

@@ -27,7 +27,7 @@ function previewFile() {
 function submit(id) {
     var post = document.querySelector("#post");
 
-    fetch(`http://localhost:5229/api/Activity/ReadOneData?id=${id}`, {
+    fetch(`https://localhost:7275/api/Activity/ReadOneData?id=${id}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -70,7 +70,7 @@ function update(id) {
     formData.append('activity_content', contentInput);
     formData.append('FormImage', image.files[0]);
 
-    fetch(`http://localhost:5229/api/Activity/UpdateData?id=${id}`, {
+    fetch(`https://localhost:7275/api/Activity/UpdateData?id=${id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {

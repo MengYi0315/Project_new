@@ -11,7 +11,7 @@ function deleteData(url, id) {
         .then(data => {
             console.log(data); // 刪除成功後的回應
             
-            fetch("http://localhost:5229/api/Activity/GetAllDataList")
+            fetch("https://localhost:7275/api/Activity/GetAllDataList")
             .then(response => response.json())
             .then(data => {
                 post.innerHTML = "";
@@ -22,7 +22,7 @@ function deleteData(url, id) {
                         <a href="./Admin_Login_detail_activity.html?id=${item.activity_id}" class="a1">
                             <img src="${item.first_image}" class="b-25">
                             <div class="center">${item.activity_title}</div>
-                        </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+                        </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('https://localhost:7275/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
                     </div>
                     `;
                 });
@@ -41,7 +41,7 @@ function deleteData(url, id) {
 window.onload = function() {
     var post = document.querySelector("#post");
     
-    fetch("http://localhost:5229/api/Activity/GetAllDataList")
+    fetch("https://localhost:7275/api/Activity/GetAllDataList")
     .then(response => response.json())
     .then(data => {
 
@@ -54,7 +54,7 @@ window.onload = function() {
                 <a href="./Admin_Login_detail_activity.html?id=${item.activity_id}" class="a1">
                     <img src="${item.first_image}" class="b-25">
                     <div class="center">${item.activity_title}</div>
-                </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('http://localhost:5229/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
+                </a><div class="absolute"><input class="submit" value="X" type="submit" onclick="deleteData('https://localhost:7275/api/Activity/DeleteData?id=', '${item.activity_id}')"></div>
             </div>
             `;
         });

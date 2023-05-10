@@ -1,5 +1,5 @@
 
-fetch("http://localhost:5229/api/Carousel/GetAllDataList")
+fetch("https://localhost:7275/api/Carousel/GetAllDataList")
   .then((response) => response.json())
   .then((data) => {
     const imageContainer = document.getElementById("slideshow");

@@ -25,7 +25,7 @@ function submit() {
         "Content-Type": "application/json",
         "Accept": "application/json",
     };
-    postData('http://localhost:5229/api/Announcement/CreateData', data, headers)
+    postData('https://localhost:7275/api/Announcement/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
             window.onload();
@@ -60,7 +60,7 @@ function deleteData(url, id) {
 
 window.onload = function() {
     var post = document.querySelector("#post");
-    fetch("http://localhost:5229/api/Announcement/GetAllDataList")
+    fetch("https://localhost:7275/api/Announcement/GetAllDataList")
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -84,7 +84,7 @@ window.onload = function() {
                 
                 <div class="flex">
                     <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit" class="edit-row-button" value="修改"></a>
-                    <input type="submit" onclick="deleteData('http://localhost:5229/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
+                    <input type="submit" onclick="deleteData('https://localhost:7275/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
                 </div>
             </div>
             `;
@@ -117,7 +117,7 @@ window.onload = function() {
 //         'Authorization': `Bearer ${token}`,
 //         'Content-Type': 'application/json'
 //     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
+//     postData('https://localhost:7275/api/Announcement/CreateData',data,headers)
 //     .then(data=>{
 //         // sessionStorage.setItem('LoginData', JSON.stringify(data));
 //         console.log(data);
@@ -154,7 +154,7 @@ window.onload = function() {
 //         'Authorization': `Bearer ${token}`,
 //         'Content-Type': 'application/json'
 //     };
-//     postData('http://localhost:5229/api/Announcement/CreateData',data,headers)
+//     postData('https://localhost:7275/api/Announcement/CreateData',data,headers)
 //     .then(data=>{
 //         sessionStorage.setItem('LoginData', JSON.stringify(data));
 //         console.log(data);

@@ -8,7 +8,7 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 function LoginData(){
     axios({
         method: 'post',
-        url: `http://localhost:5229/api/Members/Login`,
+        url: `https://localhost:7275/api/Members/Login`,
         headers:{
             "Content-Type": "application/json",
             "Accept": "application/json",
@@ -42,7 +42,7 @@ function LoginData(){
 
 // function LoginMember(Account)
 // {
-//   return fetch(`http://localhost:5229/api/Members/GetLoginRole?Account=${Account}`, {
+//   return fetch(`https://localhost:7275/api/Members/GetLoginRole?Account=${Account}`, {
 //             method:'GET',
 //             mode:'cors',
 //             })  

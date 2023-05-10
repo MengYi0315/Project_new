@@ -29,7 +29,7 @@ function submit() {
         "Content-Type": "application/json",
         "Accept": "application/json",
     };
-    postData('http://localhost:5229/api/ContestAward/CreateData', data, headers)
+    postData('https://localhost:7275/api/ContestAward/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
 

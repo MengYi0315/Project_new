@@ -46,7 +46,7 @@ function submit() {
     };
     
 
-    postData('http://localhost:5229/api/seniorproject/CreateData', data, headers)
+    postData('https://localhost:7275/api/seniorproject/CreateData', data, headers)
         .then(data => {
             console.log(data);
         });

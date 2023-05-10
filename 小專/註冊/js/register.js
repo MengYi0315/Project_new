@@ -32,7 +32,7 @@ function submit() {
         "Content-Type": "application/json",
         "Accept": "application/json",
     };
-    postData('http://localhost:5229/api/Members/register', data, headers)
+    postData('https://localhost:7275/api/Members/register', data, headers)
         .then(({data}) => {
             console.log(data);
             

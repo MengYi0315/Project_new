@@ -4,7 +4,7 @@ console.log(LoginToken);
 // function submit(id) {
 //     var post = document.querySelector("#post");
 
-//     fetch(`http://localhost:5229/api/Members/GetLoginRole?Account=${data.account}`, {
+//     fetch(`https://localhost:7275/api/Members/GetLoginRole?Account=${data.account}`, {
 //         method: 'GET',
 //         mode: 'cors',
 //         headers: {
@@ -49,7 +49,7 @@ function findpassword()
         account: account.value,
         email: email.value,
     };
-    fetch(`http://localhost:5229/api/Members/ForgetPassword`, {
+    fetch(`https://localhost:7275/api/Members/ForgetPassword`, {
         method: 'PUT',
         mode: 'cors',
         headers: {

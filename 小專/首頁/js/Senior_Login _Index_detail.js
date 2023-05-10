@@ -10,7 +10,7 @@ window.onload = function (){
 
 function readdata(id) {
     var post = document.querySelector("#post");
-    fetch(`http://localhost:5229/api/Announcement/ReadOneData?id=${id}`)
+    fetch(`https://localhost:7275/api/Announcement/ReadOneData?id=${id}`)
     .then(response => response.json())
     .then(data => {
         post.innerHTML = "";
