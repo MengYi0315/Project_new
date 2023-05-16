@@ -34,6 +34,7 @@ function submit() {
     postData('https://localhost:7275/api/Activity/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
+            window.location.href="./Admin_Login_activity.html";
         });
 }
 

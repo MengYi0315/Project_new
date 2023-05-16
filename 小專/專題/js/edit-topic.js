@@ -77,9 +77,12 @@ function update() {
     .then(response => {
         if (response.ok) {
         window.alert("修改成功");
+        
         } else {
         throw new Error('Network response was not ok.');
         }
+        window.location.href="./Admin_topic-login.html";
+        
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);

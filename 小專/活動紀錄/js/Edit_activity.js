@@ -83,7 +83,7 @@ function update(id) {
 
     .then(data => {
         console.log(data);
-
+        window.location.href="./Admin_Login_activity.html";
     });
 }
 

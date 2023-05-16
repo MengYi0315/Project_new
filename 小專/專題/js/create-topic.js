@@ -72,6 +72,7 @@ function submit() {
     postData('https://localhost:7275/api/seniorproject/CreateData', data, headers)
     .then(({data}) => {
         console.log(data);
+        window.location.href="./Admin_topic-login.html";
         
         });
 

@@ -115,6 +115,7 @@ function submit(id) {
             
         `;
         console.log(data);
+        
     }) 
 }
 
@@ -138,6 +139,7 @@ function update(id)
     })
     .then(data => {
         console.log(data);
+        window.location.href="./Admin_Login_Index.html";
     });
 }
 
