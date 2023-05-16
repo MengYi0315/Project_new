@@ -600,10 +600,16 @@ a{
     font-size: 16px;
     font-weight: bold;
 }
+#ReadImage
+{
 
+    width:100%;
+
+}
 #ForReadImg {
     display: flex;
-    flex-wrap: wrap;
+    
+    
 }
 
 #ForReadImg img{
