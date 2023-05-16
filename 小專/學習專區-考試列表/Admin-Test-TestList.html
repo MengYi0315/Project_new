@@ -6,7 +6,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <title>小專</title>
 </head>
 <!-- 管理員 考試列表 -->
@@ -104,41 +104,46 @@
             
             <br>
             <table class="test-list-table">
-                <tr>
-                    <td class="table-title">
-                        考試內容
-                    </td>
-                    <td class="table-title">
-                        考試期限
-                    </td>
-                    <td class="table-title">
-                        狀態    
-                    </td>
-                    <td class="table-title">
-                        操作    
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            考試標題
+                        </td>
+                        <td class="table-title">
+                            考試期限
+                        </td>
+                        <td class="table-title">
+                            狀態    
+                        </td>
+                        <td class="table-title">
+                            操作    
+                        </td>
+                    </tr>
+                </thead>
                 
-                <tr>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        4/1 - 4/8
-                    </td>
-                    <td class="row">
-                        <span>已預約</span>
-                        
-                    </td>
-                    <td class="row">
-                        <button type="button"  class="edit-row-button"><a href="./Admin-Test-EditTest.html">修改</a></button>
-                        <button type="button"  class="delete-row-button"><a href="#">刪除</a></button>
-                        
-                    </td>
+                <tbody  id="testlist">
+                    <!-- <tr>
+                        <td class="row">
+                            第八章口試
+                        </td>
+                        <td class="row">
+                            4/1 - 4/8
+                        </td>
+                        <td class="row">
+                            <span>已預約</span>
+                            
+                        </td>
+                        <td class="row">
+                            <button type="button"  class="edit-row-button"><a href="./Admin-Test-EditTest.html">修改</a></button>
+                            <button type="button"  class="delete-row-button"><a href="#">刪除</a></button>
+                            
+                        </td>
+    
+                    </tr> -->
+    
+                </tbody>
 
-                </tr>
-
-                <tr>
+                <!-- <tr>
                     <td class="row">
                         第八章筆試
                     </td>
@@ -147,7 +152,6 @@
                     </td>
                     <td class="row">
                         <span>未考試，還未預約</span>
-                        <!-- <br> -->
                         <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html';">
                     </td>
                     <td class="row">
@@ -157,7 +161,7 @@
                     </td>
 
                 </tr>
-
+ -->
             </table>
             <br>
             <div class="title">
@@ -256,9 +260,10 @@
     </footer>
 
 </body>
-<script src="./js/qq.js"></script>    <script src="./js/qq.js"></script>
+<!-- <script src="./js/qq.js"></script>    <script src="./js/qq.js"></script>
 
 
-<script src="./js/qq.js"></script>
+<script src="./js/qq.js"></script> -->
 <script src="./js/Test.js"></script>
+<script src="./js/testlist.js"></script>
 </html>

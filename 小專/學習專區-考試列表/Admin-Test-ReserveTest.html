@@ -6,7 +6,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>小專</title>
 </head>
 <!-- 預約 -->
@@ -95,13 +94,15 @@
                         <td class="normal-word text-top field">
                             預約考試：
                         </td>
-                        <td class="text-top field">
-                            <select class="text">
+                        <td class="text-top field" style="float: left;">
+
+                            <span id="post"></span>
+                            <!-- <select class="text" id="testlist">
                                 <option>第八章口試</option>
                                 <option>第八章筆試</option>
                                 <option>第九章口試</option>
                                 <option>Html</option>
-                            </select>
+                            </select> -->
                         </td>
                     </tr>
                     <tr>
@@ -109,14 +110,14 @@
                             考核者：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
-                                <option>王曉明</option>
+                            <select class="text" id="member">
+                                <!-- <option>王曉明</option>
                                 <option>王大明</option>
                                 <option>王一明</option>
                                 <option>王二明</option>
                                 <option>王三明</option>
                                 <option>王四明</option>
-                                <option>王五明</option>
+                                <option>王五明</option> -->
                             </select>
                         </td>
                     </tr>
@@ -125,7 +126,7 @@
                             預約日期：
                         </td>
                         <td class="text-top field">
-                            <input type="date" class="text">
+                            <input type="date" class="text" id="date">
                         </td>
                     </tr>
                     <tr>
@@ -133,7 +134,7 @@
                             預約時段：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
+                            <select class="text" id="time">
                                 <option>18:00</option>
                                 <option>19:00</option>
                                 <option>20:00</option>
@@ -144,7 +145,7 @@
                 </table>
 
                 <div class="flex">
-                    <input type="button" value="提交預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
+                    <input type="button" value="提交預約" class="reserve-botton" onclick=" submit()">
                     <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
                 </div>
 
@@ -161,4 +162,5 @@
 
 </body>
 <script src="./js/Test.js"></script>
+<script src="./js/reserve.js"></script>
 </html>

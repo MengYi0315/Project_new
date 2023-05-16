@@ -6,7 +6,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <title>小專</title>
 </head>
 <!-- 新增考試 -->
@@ -98,7 +98,7 @@
                             考試名稱：
                         </td>
                         <td class="text-top field">
-                            <input class="text">
+                            <input class="text" id="test_title">
                         </td>
 
                     </tr>
@@ -107,7 +107,7 @@
                             考試內容：
                         </td>
                         <td class="text-top field-textarea">
-                            <textarea class="textarea"></textarea>
+                            <textarea class="textarea" id="test_content"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -115,9 +115,9 @@
                             考試期限：
                         </td>
                         <td class="text-top field">
-                            <input type="date" class="text-date">
+                            <input type="date" class="text-date" id="start_date">
                             <span>&nbsp;~&nbsp;</span>
-                            <input type="date" class="text-date">
+                            <input type="date" class="text-date" id="end_date">
                         </td>
                         
                     </tr>
@@ -125,7 +125,7 @@
                 </table>
 
                 <div class="flex">
-                    <input type="button" value="發布考試" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html';">
+                    <input type="button" value="發布考試" class="reserve-botton" onclick="submit()">
                     <input type="button" value="取消" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html';">
                 </div>
             </div>
@@ -151,6 +151,7 @@
 
 </body>
 <script src="./js/Test.js"></script>
+<script src="./js/createtest.js"></script>
 
 
 

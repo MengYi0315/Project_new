@@ -117,10 +117,6 @@ function previewFile() {
 //取的資料 ok
 
 window.onload = function() {
-    //
-
-
-
 
     var post = document.querySelector("#post");
     fetch("https://localhost:7275/api/Members/GetIDList")
