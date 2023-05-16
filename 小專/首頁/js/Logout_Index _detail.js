@@ -13,12 +13,14 @@ function readdata(id) {
     fetch(`https://localhost:7275/api/Announcement/ReadOneData?id=${id}`)
     .then(response => response.json())
     .then(data => {
+        const date1 = new Date(data.update_time);
+        const update_time = date1.toLocaleString();
         post.innerHTML = "";
 
         post.innerHTML +=
         `
         <div class="detail-title">${data.announce_title}</div>
-        <div class="detail-time"><i style="margin-right:15px;"class="fa-sharp fa-solid fa-clock"></i>${data.update_time}</div>
+        <div class="detail-time"><i style="margin-right:15px;"class="fa-sharp fa-solid fa-clock"></i>${update_time}</div>
         <div class="detail-content">
             ${data.announce_content}
             </div>
