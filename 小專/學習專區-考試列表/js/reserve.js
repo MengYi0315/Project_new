@@ -34,13 +34,13 @@ window.onload = function() {
 
     //     });
     // })
-    const url = window.location.href;
-    console.log("url",url);
-    var split = url.split("=");
-    var href = split[0];
-    var id = split[1];
-    readdata(id);
-    console.log(id)
+    // const url = window.location.href;
+    // console.log("url",url);
+    // var split = url.split("=");
+    // var href = split[0];
+    // var id = split[1];
+    // readdata(id);
+    // console.log(id)
 
 
 

@@ -466,7 +466,8 @@ cursor: pointer;
     
     white-space:nowrap;
 
-    
+    position: relative;
+    right: 70px;
 
 }
 .down-bar :hover{

@@ -1,3 +1,29 @@
+let LoginToken=sessionStorage.getItem('LoginToken');
+console.log(LoginToken);
+
+
+
+function deleteData(url, id) {
+    console.log('Deleting data:', `${url}${id}`); // 调试信息
+
+    if(confirm("確定是否刪除?")){
+            return fetch(`${url}${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
+    })
+    .then(data => {
+        console.log(data); // 刪除成功後的回應
+        window.onload();
+        window.alert("刪除成功");
+    })
+    .catch(error => {
+        console.error('There was a problem deleting data:', error);
+        window.alert("刪除失敗ˋ");
+    });
+
+    }
+}
+
 window.onload = function(){
     let LoginToken = sessionStorage.getItem('LoginToken');
     console.log("token", LoginToken);
@@ -47,8 +73,6 @@ window.onload = function(){
             // if()
 
 
-
-
             testlist.innerHTML +=
             `
             <tr>
@@ -63,21 +87,34 @@ window.onload = function(){
                 <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
         </td>
                 <td class="row">
-                    <button type="button"  class="edit-row-button"><a href="./Admin-Test-EditTest.html">修改</a></button>
-                    <button type="button"  class="delete-row-button"><a href="#">刪除</a></button>
+
+                
+                    <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
+                    <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/4EACC102-445E-454B-98B5-E9162EAE44C8?id=', '${item.test_id}') ">
                 
                 </td>
 
         </tr>
-
-
-
-            `
-
+            `;
 
         });
     })
 
 
-
 }
+
+
+
+// window.onload = function (){
+    
+//     const url = window.location.href;
+//     console.log("url",url);
+//     var split = url.split("=");
+//     var id = split[1];
+//     console.log(id);
+//     readone(id);
+// }
+
+
+
+

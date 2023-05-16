@@ -26,3 +26,18 @@ let navhover1 = document.getElementById('nav-a-hover-1');
     navhover2.addEventListener('mouseout', function () {
         downbar2.style.display = 'none';
     })
+
+
+    let navhover3 = document.getElementById('nav-a-hover-3');
+    let downbar3 = document.getElementById('down-bar-3');
+    
+
+    
+    navhover3.addEventListener('mouseover', function () {
+    downbar3.style.display = 'block';
+    })
+
+    
+    navhover3.addEventListener('mouseout', function () {
+        downbar3.style.display = 'none';
+    })
