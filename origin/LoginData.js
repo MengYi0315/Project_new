@@ -1,7 +1,7 @@
 let account=document.getElementById('account');
 let password=document.getElementById('password');
 let LoginToken=sessionStorage.getItem('LoginToken');
-let Account=sessionStorage.getItem('account');
+let name=sessionStorage.getItem('name');
 
 
 
@@ -21,7 +21,7 @@ function LoginData(){
             .then(( { data } ) => {
                 console.log("data",data)
                 sessionStorage.setItem('LoginToken',data.token);
-                sessionStorage.setItem('account',data.account);
+                sessionStorage.setItem('name',data.name);
                 window.alert("登入成功");
                 console.log(data);
                 window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
@@ -61,7 +61,7 @@ let Login_btn=document.getElementById('Login_btn');
 Login_btn.onclick=function(){
     LoginData();
     LoginToken=sessionStorage.getItem('LoginToken');
-    Account=sessionStorage.getItem('account');
+    name=sessionStorage.getItem('name');
     console.log(LoginToken);
-    console.log(Account);
+    console.log(name);
 }

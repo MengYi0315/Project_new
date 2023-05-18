@@ -2,7 +2,7 @@ window.onload = function() {
     
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token",LoginToken)
-let Account=sessionStorage.getItem('account');
+let name=sessionStorage.getItem('name');
 
     var post = document.querySelector("#post");
     fetch("https://localhost:7275/api/Homework")
@@ -15,7 +15,7 @@ let Account=sessionStorage.getItem('account');
             const start_time = date1.toLocaleString();
             const date2 = new Date(item.end_time);
             const end_time = date2.toLocaleString();
-            if(item.name === Account)
+            if(item.name === name)
             {
                 post.innerHTML +=
             `

@@ -1,6 +1,6 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token",LoginToken)
-let Account=sessionStorage.getItem('account');
+let name=sessionStorage.getItem('name');
 
 
 function deleteData(url, id) {
@@ -38,7 +38,7 @@ function readcheck(id) {
 
         const date = new Date(item.finishtime);
         const finishtime = date.toLocaleString();
-        if(item.name === Account)
+        if(item.name === name)
         {
             post.innerHTML +=
             `
