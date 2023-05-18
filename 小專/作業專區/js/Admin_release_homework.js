@@ -24,7 +24,8 @@ function deleteData(url, id) {
 window.onload = function() {
     
 let LoginToken=sessionStorage.getItem('LoginToken');
-console.log("token",LoginToken)
+console.log("token",LoginToken);
+let Account=sessionStorage.getItem('account');
     var post = document.querySelector("#post");
     fetch("https://localhost:7275/api/Homework")
     .then(response => response.json())
@@ -36,29 +37,58 @@ console.log("token",LoginToken)
             const start_time = date1.toLocaleString();
             const date2 = new Date(item.end_time);
             const end_time = date2.toLocaleString();
-            post.innerHTML +=
-            `
-            <tr style="width:100%;margin-bottom:30px;">
-                <td class="row" style="width:15%;">
-                    ${item.name}
-                </td>
-                <td class="row" style="width:15%;">
-                    ${item.homework_title}
-                </td>
-                <td class="row" style="width:25%;">
-                    ${item.homework_content}
-                </td>
-                <td class="row" style="width:25%;">
-                    <span>${start_time}到</span><br>
-                    <span>${end_time}止</span>
-                    
-                </td>
-                <td class="row" style="width:20%;">
-                    <a href="./Admin_upload_homework.html?id=${item.homework_id}"><input type="submit"  class="edit-row-button" style="width:80px;"value="上傳作業"></a>
-                    <input type="submit"  class="delete-row-button" style="width:80px;" value="刪除作業" onclick="deleteData('https://localhost:7275/api/Homework/', '${item.homework_id}')">
-                </td>
-            </tr>
-            `;
+            if(item.name === Account)
+            {
+                post.innerHTML +=
+                `
+                <tr style="width:100%;margin-bottom:30px;">
+                    <td class="row" style="width:15%;">
+                        ${item.name}
+                    </td>
+                    <td class="row" style="width:15%;">
+                        ${item.homework_title}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        ${item.homework_content}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        <span>${start_time}到</span><br>
+                        <span>${end_time}止</span>
+                        
+                    </td>
+                    <td class="row" style="width:20%;">
+                        <a href="./Admin_upload_homework.html?id=${item.homework_id}"><input type="submit"  class="edit-row-button" style="width:80px;"value="上傳作業"></a>
+                        <input type="submit"  class="delete-row-button" style="width:80px;" value="刪除作業" onclick="deleteData('https://localhost:7275/api/Homework/', '${item.homework_id}')">
+                    </td>
+                </tr>
+                `;
+            }
+            else
+            {
+                post.innerHTML +=
+                `
+                <tr style="width:100%;margin-bottom:30px;">
+                    <td class="row" style="width:15%;">
+                        ${item.name}
+                    </td>
+                    <td class="row" style="width:15%;">
+                        ${item.homework_title}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        ${item.homework_content}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        <span>${start_time}到</span><br>
+                        <span>${end_time}止</span>
+                        
+                    </td>
+                    <td class="row" style="width:20%;">
+                        <a href="./Admin_upload_homework.html?id=${item.homework_id}"><input type="submit"  class="edit-row-button" style="width:80px;"value="上傳作業"></a>
+                    </td>
+                </tr>
+                `;
+            }
+            
         });
     })
     .catch(error => console.error(error));
