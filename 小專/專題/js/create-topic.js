@@ -47,11 +47,6 @@ function submit() {
         }
     }
     console.log("id" ,selected);
-
-    
-
-
-    
     const data = {
         title: senior_title,
         // year: 109,
