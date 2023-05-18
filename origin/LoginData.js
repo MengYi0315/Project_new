@@ -1,7 +1,7 @@
 let account=document.getElementById('account');
 let password=document.getElementById('password');
 let LoginToken=sessionStorage.getItem('LoginToken');
-
+let Account=sessionStorage.getItem('account');
 
 
 
@@ -20,7 +20,8 @@ function LoginData(){
     })
             .then(( { data } ) => {
                 console.log("data",data)
-                sessionStorage.setItem('LoginToken',data);
+                sessionStorage.setItem('LoginToken',data.token);
+                sessionStorage.setItem('account',data.account);
                 window.alert("登入成功");
                 console.log(data);
                 window.location.href="http://127.0.0.1:5555/小專/學習專區-考試列表/Admin-Test-TestList.html";
@@ -60,5 +61,7 @@ let Login_btn=document.getElementById('Login_btn');
 Login_btn.onclick=function(){
     LoginData();
     LoginToken=sessionStorage.getItem('LoginToken');
+    Account=sessionStorage.getItem('account');
     console.log(LoginToken);
+    console.log(Account);
 }

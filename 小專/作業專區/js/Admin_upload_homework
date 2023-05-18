@@ -2,6 +2,8 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
 function postData(url, data, headers) {
     const formData = new FormData();
+    formData.append('homework_id', data.homework_id);
+    formData.append('check_note', data.check_note);
     formData.append('FormFile', data.check_file);
 
     return fetch(url, {
@@ -15,10 +17,12 @@ function postData(url, data, headers) {
 
 
 function submit(id) {
+    const check_note = "加油";
     const check_file = document.getElementById('FormFile').files[0];
 
     const data = {
-        id:id,
+        homework_id:id,
+        check_note:check_note,
         check_file: check_file,
     };
 
@@ -28,9 +32,8 @@ function submit(id) {
     console.log(data);
 
     postData('https://localhost:7275/api/HomeworkCheck/create', data, headers)
-    .then(response => response.json())
         .then(({data}) => {
-
+            
             console.log(data);
         });
 }

@@ -2,6 +2,8 @@ window.onload = function() {
     
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log("token",LoginToken)
+let Account=sessionStorage.getItem('account');
+
     var post = document.querySelector("#post");
     fetch("https://localhost:7275/api/Homework")
     .then(response => response.json())
@@ -13,7 +15,9 @@ console.log("token",LoginToken)
             const start_time = date1.toLocaleString();
             const date2 = new Date(item.end_time);
             const end_time = date2.toLocaleString();
-            post.innerHTML +=
+            if(item.name === Account)
+            {
+                post.innerHTML +=
             `
             <tr style="width:100%;margin-bottom:30px;">
                 <td class="row" style="width:15%;">
@@ -31,10 +35,12 @@ console.log("token",LoginToken)
                     
                 </td>
                 <td class="row" style="width:20%;">
-                    <input type="submit"  class="edit-row-button" style="width:80px;" value="前往查看" onclick="">
+                    <a href="./Admin_detail_check_homework.html?id=${item.homework_id}"><input type="submit"  class="edit-row-button" style="width:80px;" value="前往查看"></a>
                 </td>
             </tr>
             `;
+            }
+            
         });
     })
     .catch(error => console.error(error));
