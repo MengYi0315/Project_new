@@ -32,10 +32,10 @@ window.onload = function(){
 
     // console.log("token",LoginToken);
 
-    fetch("https://localhost:7275/api/Test")
+    fetch("https://localhost:7275/api/Test/GetAllDataList")
     .then(res => res.json())
     .then(data => {
-    
+        console.log(data);
         testlist.innerHTML = "";
 
         data.forEach((item) => {
@@ -90,7 +90,7 @@ window.onload = function(){
 
                 
                     <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
-                    <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/4EACC102-445E-454B-98B5-E9162EAE44C8?id=', '${item.test_id}') ">
+                    <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
                 
                 </td>
 

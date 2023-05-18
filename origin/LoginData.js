@@ -24,7 +24,7 @@ function LoginData(){
                 sessionStorage.setItem('account',data.account);
                 window.alert("登入成功");
                 console.log(data);
-                window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
+                window.location.href="http://127.0.0.1:5555/小專/學習專區-考試列表/Admin-Test-TestList.html";
             })
             .catch(error => {
                 console.log(error);

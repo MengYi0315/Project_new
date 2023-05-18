@@ -103,9 +103,9 @@
                         <td class="normal-word text-top field">
                             預約考試：
                         </td>
-                        <td class="text-top field" style="float: left;">
+                        <td class="text-top field" style="float: left;" id="post">
 
-                            <span id="post"></span>
+                            <!-- <span id="post"></span> -->
                             <!-- <select class="text" id="testlist">
                                 <option>第八章口試</option>
                                 <option>第八章筆試</option>
@@ -153,8 +153,8 @@
                     </tr>
                 </table>
 
-                <div class="flex">
-                    <input type="button" value="提交預約" class="reserve-botton" onclick=" submit()">
+                <div class="flex" id="button">
+                    <input type="submit" value="提交預約" class="reserve-botton" onclick=" submit(id)">
                     <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
                 </div>
 

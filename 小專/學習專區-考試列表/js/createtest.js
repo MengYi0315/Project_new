@@ -33,7 +33,7 @@ function submit() {
         "Accept": "application/json",
     };
 
-    postData('https://localhost:7275/api/Test/create', data, headers)
+    postData('https://localhost:7275/api/Test/CreateData', data, headers)
         .then(({data}) => {
             console.log(data);
 
