@@ -72,7 +72,7 @@ function update(id) {
 
     .then(data => {
         console.log(data);
-        // window.location.href="./Admin_do_homework.html";
+        window.location.href="./Admin_do_homework.html";
     });
 }
 

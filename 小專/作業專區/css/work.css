@@ -305,7 +305,7 @@ cursor: pointer;
     vertical-align: top;
 }
 .field{
-    height: 60px;
+    line-height: 60px;
 }
 
 .text{

@@ -33,7 +33,7 @@ function readcheck(id) {
     .then(data => {
         
         post.innerHTML = "";
-        data.sort((a, b) => new Date(a.finishtime) - new Date(b.finishtime));
+        data.sort((a, b) => new Date(b.finishtime) - new Date(a.finishtime));
         data.forEach((item) => {
 
         const date = new Date(item.finishtime);
@@ -50,7 +50,7 @@ function readcheck(id) {
                     ${finishtime}
                 </td>
                 <td class="row" style="width:25%;">
-                    ${item.check_file}
+                    <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
                 </td>
                 <td class="row" style="width:30%;">
                     <a href="./Admin_edit_upload_homework.html?id=${item.homeworkcheck_id}"><input type="submit" class="edit-row-button" style="width:85px;" value="修改作業"></a>
@@ -65,42 +65,21 @@ function readcheck(id) {
     })
 
 }
-
-// function readcheck(id) {
-
-//     var post = document.querySelector("#post");
-
-//     fetch(`https://localhost:7275/api/Announcement/ReadOneData?id=${encodeURIComponent(id)}`, {
-//         method: 'GET',
-//         mode: 'cors',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     })
-    
-//     .then(response => response.json())
-//     .then(data => {
-//         announcementData = data;
-//         post.innerHTML = "";
-//         post.innerHTML +=
-//         `
-//         <div class="title">修改公告</div>
-//         <div class="create-content">標題：<input id="title" maxlength="50" style="line-height: 25px;width:500px;margin: 20px 0px;" type="text" value="${data.announce_title}"></div>
-//         <div class="create-content flex">
-//             內容：<textarea name="" id="content" maxlength="200" cols="74" rows="9">${data.announce_content}</textarea>
-            
-//         </div>
-//         <div style="margin-left:20px;">
-//             <input type="submit" onclick="update('${id}') ,validateForm() " value="發布" class="submit">
-//         </div> 
-            
-//         `;
-//         console.log(data);
-        
-//     }) 
-
-// }
-
+function downloadFile(fileUrl, fileName) {
+    fetch(fileUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        // 创建一个<a>元素，用于下载文件
+        var downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = fileName;
+  
+        // 点击下载链接并移除元素
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      });
+  }
 
 window.onload = function (){
     

@@ -12,6 +12,7 @@ function readcheck(id) {
 
         const date = new Date(item.finishtime);
         const finishtime = date.toLocaleString();
+        console.log(item.check_result);
         post.innerHTML +=
         `
         <tr style="width:100%;margin-bottom:30px;">
@@ -25,7 +26,7 @@ function readcheck(id) {
                 ${item.check_file}
             </td>
             <td class="row" style="width:15%;">
-                <input type="checkbox" style="width:30px;height:30px;"value="${item.check_result}">
+                <a href="./Admin_update_check_homework.html?id=${item.homeworkcheck_id}"><input type="button" class="edit-row-button" style="width:85px;"value="作業檢核"></a>
             </td>
         </tr>
         `;
