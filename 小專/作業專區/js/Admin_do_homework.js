@@ -1,8 +1,34 @@
+let LoginToken=sessionStorage.getItem('LoginToken');
+console.log("token",LoginToken)
+let Account=sessionStorage.getItem('account');
+
+
+function deleteData(url, id) {
+    console.log('Deleting data:', `${url}${id}`); // 调试信息
+
+    if(confirm("確定是否刪除?")){
+            return fetch(`${url}${id}`, {
+        method: 'DELETE',
+        headers: {'Authorization': `Bearer ${sessionStorage.getItem('LoginToken')}`}
+    })
+    .then(data => {
+        console.log(data); // 刪除成功後的回應
+        window.onload();
+        window.alert("刪除成功");
+    })
+    .catch(error => {
+        console.error('There was a problem deleting data:', error);
+        window.alert("刪除失敗ˋ");
+    });
+
+    }
+}
+
 
 function readcheck(id) {
 
     var post = document.querySelector("#post");
-    fetch(`https://localhost:7275/api/HomeworkCheck/ReadByHomework?id=${id}`)
+    fetch(`https://localhost:7275/api/HomeworkCheck`)
     .then(response => response.json())
     .then(data => {
         
@@ -12,23 +38,28 @@ function readcheck(id) {
 
         const date = new Date(item.finishtime);
         const finishtime = date.toLocaleString();
-        post.innerHTML +=
-        `
-        <tr style="width:100%;margin-bottom:30px;">
-            <td class="row" style="width:20%;">
-                ${item.name}
-            </td>
-            <td class="row" style="width:30%;">
-                ${finishtime}
-            </td>
-            <td class="row" style="width:35%;">
-                ${item.check_file}
-            </td>
-            <td class="row" style="width:15%;">
-                <input type="checkbox" style="width:30px;height:30px;"value="${item.check_result}">
-            </td>
-        </tr>
-        `;
+        if(item.name === Account)
+        {
+            post.innerHTML +=
+            `
+            <tr style="width:100%;margin-bottom:30px;">
+                <td class="row" style="width:15%;">
+                    ${item.name}
+                </td>
+                <td class="row" style="width:30%;">
+                    ${finishtime}
+                </td>
+                <td class="row" style="width:25%;">
+                    ${item.check_file}
+                </td>
+                <td class="row" style="width:30%;">
+                    <a href="./Admin_edit_upload_homework.html?id=${item.homeworkcheck_id}"><input type="submit" class="edit-row-button" style="width:85px;" value="修改作業"></a>
+                    <input type="submit" class="delete-row-button" style="width:85px;" value="刪除作業" onclick=" deleteData('https://localhost:7275/api/HomeworkCheck/','${item.homeworkcheck_id}')">
+                </td>
+            </tr>
+            `;
+        }
+        
             
         });
     })

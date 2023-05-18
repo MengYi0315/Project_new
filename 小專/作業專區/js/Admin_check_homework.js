@@ -35,7 +35,7 @@ let Account=sessionStorage.getItem('account');
                     
                 </td>
                 <td class="row" style="width:20%;">
-                    <a href="./Admin_detail_check_homework.html"><input type="submit"  class="edit-row-button" style="width:80px;" value="前往查看"></a>
+                    <a href="./Admin_detail_check_homework.html?id=${item.homework_id}"><input type="submit"  class="edit-row-button" style="width:80px;" value="前往查看"></a>
                 </td>
             </tr>
             `;
