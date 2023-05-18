@@ -40,24 +40,48 @@ function readcheck(id) {
         const finishtime = date.toLocaleString();
         if(item.name === name)
         {
-            post.innerHTML +=
-            `
-            <tr style="width:100%;margin-bottom:30px;">
-                <td class="row" style="width:15%;">
-                    ${item.name}
-                </td>
-                <td class="row" style="width:30%;">
-                    ${finishtime}
-                </td>
-                <td class="row" style="width:25%;">
-                    <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
-                </td>
-                <td class="row" style="width:30%;">
-                    <a href="./Login_edit_upload_homework.html?id=${item.homeworkcheck_id}"><input type="submit" class="edit-row-button" style="width:85px;" value="修改作業"></a>
-                    <input type="submit" class="delete-row-button" style="width:85px;" value="刪除作業" onclick=" deleteData('https://localhost:7275/api/HomeworkCheck/','${item.homeworkcheck_id}')">
-                </td>
-            </tr>
-            `;
+            if(item.check_result === false)
+            {
+                post.innerHTML +=
+                `
+                <tr style="width:100%;margin-bottom:30px;">
+                    <td class="row" style="width:15%;">
+                        ${item.name}
+                    </td>
+                    <td class="row" style="width:30%;">
+                        ${finishtime}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
+                    </td>
+                    <td class="row" style="width:30%;">
+                        <a href="./Login_edit_upload_homework.html?id=${item.homeworkcheck_id}"><input type="submit" class="edit-row-button" style="width:85px;" value="修改作業"></a>
+                        <input type="submit" class="delete-row-button" style="width:85px;" value="刪除作業" onclick=" deleteData('https://localhost:7275/api/HomeworkCheck/','${item.homeworkcheck_id}')">
+                    </td>
+                </tr>
+                `;
+            }
+            else
+            {
+                post.innerHTML +=
+                `
+                <tr style="width:100%;margin-bottom:30px;">
+                    <td class="row" style="width:15%;">
+                        ${item.name}
+                    </td>
+                    <td class="row" style="width:30%;">
+                        ${finishtime}
+                    </td>
+                    <td class="row" style="width:25%;">
+                        <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
+                    </td>
+                    <td class="row" style="width:30%;">
+                        <span>作業已檢查完畢</span>
+                    </td>
+                </tr>
+                `;
+            }
+            
         }
         
             

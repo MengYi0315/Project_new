@@ -76,7 +76,7 @@ function update(id) {
     formData.append('check_result', check_result);
     console.log(formData.get('check_result'));
 
-    fetch(`https://localhost:7275/api/HomeworkCheck/${id}`, {
+    fetch(`https://localhost:7275/api/HomeworkCheck/ChangeCheckStatus?id=${id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {

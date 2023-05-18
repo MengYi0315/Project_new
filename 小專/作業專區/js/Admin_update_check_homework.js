@@ -1,5 +1,6 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
+let name=sessionStorage.getItem('name');
 let announcementData;
 
 
@@ -19,49 +20,100 @@ function submit(id) {
     .then(data => {
         announcementData = data;
         post.innerHTML = "";
-        post.innerHTML +=
-        `
-        <div class="title">
-                    作業檢核
-                </div>
-                <br>
-                <table>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            作業繳交人：
-                        </td>
-                        <td class="text-top field" style="text-align:left;align-item:center;">
-                            ${data.name}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            作業檔案：
-                        </td>
-                        <td class="text-top field" style="text-align:left;">
-                            ${data.check_file}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="normal-word text-top field">
-                            檢查結果：
-                        </td>
-                        <td class="text-top field" style="text-align:left;">
-                            <select id="check_result" style="width:300px;height:30px;font-size:16px;">
-                            
-                                <option value="false">作業尚未檢查</option>
-                                <option value="true">作業已檢查完畢</option>
-                            </select>
-                        </td>
-                    </tr>
-                    
-                </table>
 
-                <div class="flex" style="margin-top:30px;">
-                    <input type="submit" value="送出結果" class="reserve-botton" onclick="update('${data.homeworkcheck_id}')">
-                    <input type="button" value="取消送出" class="reserve-botton" onclick="location.href='./Admin_detail_check_homework.html?id=${data.homework_id}';">
-                </div>
-        `;
+        if(data.check_result === false)
+        {
+            post.innerHTML +=
+            `
+            <div class="title">
+                        作業檢核
+                    </div>
+                    <br>
+                    <table>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                作業繳交人：
+                            </td>
+                            <td class="text-top field" style="text-align:left;align-item:center;">
+                                ${data.name}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                作業檔案：
+                            </td>
+                            <td class="text-top field" style="text-align:left;">
+                                ${data.check_file}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                檢查結果：
+                            </td>
+                            <td class="text-top field" style="text-align:left;">
+                                <select id="check_result" style="width:300px;height:30px;font-size:16px;">
+                                
+                                    <option value="false" selected>作業尚未檢查</option>
+                                    <option value="true">作業已檢查完畢</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                    </table>
+
+                    <div class="flex" style="margin-top:30px;">
+                        <input type="submit" value="送出結果" class="reserve-botton" onclick="update('${data.homeworkcheck_id}')">
+                        <input type="button" value="取消送出" class="reserve-botton" onclick="location.href='./Admin_detail_check_homework.html?id=${data.homework_id}';">
+                    </div>
+            `;
+        }
+        else
+        {
+            post.innerHTML +=
+            `
+            <div class="title">
+                        作業檢核
+                    </div>
+                    <br>
+                    <table>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                作業繳交人：
+                            </td>
+                            <td class="text-top field" style="text-align:left;align-item:center;">
+                                ${data.name}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                作業檔案：
+                            </td>
+                            <td class="text-top field" style="text-align:left;">
+                                ${data.check_file}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="normal-word text-top field">
+                                檢查結果：
+                            </td>
+                            <td class="text-top field" style="text-align:left;">
+                                <select id="check_result" style="width:300px;height:30px;font-size:16px;">
+                                
+                                    <option value="false">作業尚未檢查</option>
+                                    <option value="true" selected>作業已檢查完畢</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                    </table>
+
+                    <div class="flex" style="margin-top:30px;">
+                        <input type="submit" value="送出結果" class="reserve-botton" onclick="update('${data.homeworkcheck_id}')">
+                        <input type="button" value="取消送出" class="reserve-botton" onclick="location.href='./Admin_detail_check_homework.html?id=${data.homework_id}';">
+                    </div>
+            `;
+        }
+        
         console.log(data);
     }) 
 }
@@ -76,7 +128,7 @@ function update(id) {
     formData.append('check_result', check_result);
     console.log(formData.get('check_result'));
 
-    fetch(`https://localhost:7275/api/HomeworkCheck/${id}`, {
+    fetch(`https://localhost:7275/api/HomeworkCheck/ChangeCheckStatus?id=${id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
