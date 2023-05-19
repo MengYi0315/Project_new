@@ -19,7 +19,7 @@ function submit(id) {
     .then(data => {
         announcementData = data;
         post.innerHTML = "";
-        if(data.role==="Admin")
+        if(data.level===0)
         {
             post.innerHTML +=
         `
@@ -72,7 +72,7 @@ function submit(id) {
             </div>
         `;
         }
-        else if(data.role===Senior)
+        else if(data.level===1)
         {
             post.innerHTML +=
         `
@@ -125,7 +125,7 @@ function submit(id) {
             </div>
         `;
         }
-        else if(data.role===Student)
+        else if(data.level===2)
         {
             post.innerHTML +=
         `

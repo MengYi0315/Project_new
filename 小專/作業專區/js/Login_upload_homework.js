@@ -35,6 +35,7 @@ function submit(id) {
         .then(({data}) => {
             
             console.log(data);
+            window.location.href="./Login_release_List.html";
         });
 }
 

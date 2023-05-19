@@ -121,6 +121,7 @@ a{
 .content
 {
     background-color: antiquewhite;
+    padding-bottom: 100%;
     width:100%;
     justify-content: center;
     height: 100%;
@@ -128,7 +129,7 @@ a{
 .content-a
 {
     background-color: antiquewhite;
-    padding-bottom: 100%;
+
     width:100%;
     justify-content: center;
     height: auto;

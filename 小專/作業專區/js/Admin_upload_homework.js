@@ -35,6 +35,7 @@ function submit(id) {
         .then(({data}) => {
             
             console.log(data);
+            window.location.href="./Admin_release_List.html";
         });
 }
 
@@ -103,6 +104,7 @@ function updateData(id) {
                     <input type="button" value="取消上傳" class="reserve-botton" onclick="location.href='./Admin_release_List.html';">
                 </div>
         `;
+        
         
     })
     .catch(error => console.error('Error:', error));
