@@ -24,7 +24,7 @@ console.log("token",LoginToken)
                     ${item.role}
                 </td>
                 <td class="row">
-                    <input type="button" class="edit-row-button" style="width:85px;" value="修改權限">
+                    <a href="./Admin-edit-permission.html?id=${item.members_id}"><input type="button" class="edit-row-button" style="width:85px;" value="修改權限"></a>
                 </td>
             </tr>
             `;

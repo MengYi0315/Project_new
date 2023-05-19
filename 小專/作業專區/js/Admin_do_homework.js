@@ -73,7 +73,7 @@ function readcheck(id) {
                         ${finishtime}
                     </td>
                     <td class="row" style="width:25%;">
-                        <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
+                        <span class="file-text" onclick="downloadFile('${item.check_file}')">${item.check_file}</span>
                     </td>
                     <td class="row" style="width:30%;">
                         <span>作業已檢查完畢</span>
@@ -89,21 +89,37 @@ function readcheck(id) {
     })
 
 }
-function downloadFile(fileUrl, fileName) {
-    fetch(fileUrl)
-      .then(response => response.blob())
-      .then(blob => {
+// function downloadFile(fileName) {
+//     fetch(`https://localhost:7275/api/HomeworkCheck/DownloadFile`)
+//       .then(response => response.blob())
+//       .then(blob => {
+//         // 创建一个<a>元素，用于下载文件
+//         var downloadLink = document.createElement("a");
+//         downloadLink.href = URL.createObjectURL(blob);
+//         downloadLink.download = fileName;
+  
+//         // 点击下载链接并移除元素
+//         document.body.appendChild(downloadLink);
+//         downloadLink.click();
+//         document.body.removeChild(downloadLink);
+//       });
+//   }
+function downloadFile(fileName) {
+    fetch(`https://localhost:7275/api/HomeworkCheck/DownloadFile?filename=${encodeURIComponent(fileName)}`)
+    .then(response => response.blob())
+    .then(blob => {
         // 创建一个<a>元素，用于下载文件
         var downloadLink = document.createElement("a");
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = fileName;
-  
+
         // 点击下载链接并移除元素
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
-      });
-  }
+    });
+}
+
 
 window.onload = function (){
     
