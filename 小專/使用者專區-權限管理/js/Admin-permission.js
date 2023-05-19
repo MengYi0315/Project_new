@@ -8,6 +8,7 @@ console.log("token",LoginToken)
     .then(data => {
         // data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
+        data.sort((a, b) => new Date(a.entry_year) - new Date(b.entry_year));
         data.forEach((item) => {
             // const date = new Date(item.update_time);
             // const update_time = date.toLocaleString();

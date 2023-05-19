@@ -19,6 +19,7 @@ function submit(id) {
     .then(data => {
         announcementData = data;
         post.innerHTML = "";
+        
         if(data.level===0)
         {
             post.innerHTML +=
@@ -56,7 +57,7 @@ function submit(id) {
                         ${data.name}
                     </td>
                     <td class="row">
-                        <select id="role" style="width:150px;height:30px;">
+                        <select id="level" style="width:150px;height:30px;">
                             <option value="0" selected>管理者</option>
                             <option value="1">學長姐</option>
                             <option value="2">學生</option>
@@ -67,7 +68,7 @@ function submit(id) {
             </table>
             <br>
             <div style="text-align:center;">
-                <input type="button" class="edit-row-button" onclick="update('${data.members_id}')" style="width:85px;" value="修改權限">
+                <input type="button" class="edit-row-button" onclick="update('${id}')" style="width:85px;" value="修改權限">
                 <input type="button" class="edit-row-button" style="width:85px;" value="取消修改" onclick="location.href='./Admin-permission.html'">
             </div>
         `;
@@ -109,7 +110,7 @@ function submit(id) {
                         ${data.name}
                     </td>
                     <td class="row">
-                        <select id="role" style="width:150px;height:30px;">
+                        <select id="level" style="width:150px;height:30px;">
                             <option value="0">管理者</option>
                             <option value="1" selected>學長姐</option>
                             <option value="2">學生</option>
@@ -120,7 +121,7 @@ function submit(id) {
             </table>
             <br>
             <div style="text-align:center;">
-                <input type="button" class="edit-row-button" onclick="update('${data.members_id}')" style="width:85px;" value="修改權限">
+                <input type="button" class="edit-row-button" onclick="update('${id}')" style="width:85px;" value="修改權限">
                 <input type="button" class="edit-row-button" style="width:85px;" value="取消修改" onclick="location.href='./Admin-permission.html'">
             </div>
         `;
@@ -162,9 +163,9 @@ function submit(id) {
                         ${data.name}
                     </td>
                     <td class="row">
-                        <select id="role" style="width:150px;height:30px;">
+                        <select id="level" style="width:150px;height:30px;">
                             <option value="0">管理者</option>
-                            <option value="1" selected>學長姐</option>
+                            <option value="1">學長姐</option>
                             <option value="2" selected>學生</option>
                         </select>
                     </td>
@@ -173,33 +174,32 @@ function submit(id) {
             </table>
             <br>
             <div style="text-align:center;">
-                <input type="button" class="edit-row-button" onclick="update('${data.members_id}')" style="width:85px;" value="修改權限">
+                <input type="button" class="edit-row-button" onclick="update('${id}')" style="width:85px;" value="修改權限">
                 <input type="button" class="edit-row-button" style="width:85px;" value="取消修改" onclick="location.href='./Admin-permission.html'">
             </div>
         `;
         }
-        
+        console.log(id);
         console.log(data);
     }) 
 }
 
 function update(id) {
-    const role = document.getElementById('role').value;
-
-    // 创建一个 FormData 对象，并添加要修改的图片和文字内容
+    const level = document.getElementById('level').value;
     
-    const formData = new FormData();
-    // formData.append('homework_id', homework_id);
-    formData.append('role', role);
-    console.log(formData.get('role'));
+    const data={
+        members_id:id,
+        level: level,
+    }
 
-    fetch(`https://localhost:7275/api/Members/ChangeLevel?id=${id}`, {
+    fetch(`https://localhost:7275/api/Members/ChangeMemberLevel`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
             'Authorization': `Bearer ${LoginToken}`,
+            'Content-Type': 'application/json',
         },
-        body: formData
+        body:JSON.stringify(data)
 
         
     })
