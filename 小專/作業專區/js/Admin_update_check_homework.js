@@ -89,7 +89,7 @@ function submit(id) {
                                 作業檔案：
                             </td>
                             <td class="text-top field" style="text-align:left;">
-                                ${data.check_file}
+                                <span class="file-text1"  onclick="downloadFile('${data.check_file}')">${data.check_file}</span>
                             </td>
                         </tr>
                         <tr>
@@ -117,6 +117,23 @@ function submit(id) {
         console.log(data);
     }) 
 }
+
+function downloadFile(fileName) {
+    fetch(`https://localhost:7275/api/HomeworkCheck/DownloadFile?filename=${encodeURIComponent(fileName)}`)
+    .then(response => response.blob())
+    .then(blob => {
+        // 创建一个<a>元素，用于下载文件
+        var downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = fileName;
+
+        // 点击下载链接并移除元素
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
+}
+
 
 function update(id) {
     const check_result = document.getElementById('check_result').value;

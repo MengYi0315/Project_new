@@ -123,7 +123,7 @@ a{
     background-color: antiquewhite;
     width:100%;
     height: 100%;
-    padding-bottom: 180px;
+    padding-bottom: 100%;
 }
 .content-a
 {
@@ -475,4 +475,27 @@ cursor: pointer;
     border-radius: 5px;
 }
 
+.file-text
+{
+    color:#FFF;
+}
+
+.file-text:hover
+{
+    color:#50fcff;
+    text-decoration:underline #50fcff;
+    cursor: pointer;
+}
+
+.file-text1
+{
+    color:#000;
+}
+
+.file-text1:hover
+{
+    color:#4589bd;
+    text-decoration:underline #4589bd;
+    cursor: pointer;
+}
 

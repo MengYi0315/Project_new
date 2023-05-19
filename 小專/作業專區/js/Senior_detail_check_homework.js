@@ -23,7 +23,7 @@ function readcheck(id) {
                 ${finishtime}
             </td>
             <td class="row" style="width:35%;">
-                ${item.check_file}
+                <span class="file-text" onclick="downloadFile('${item.check_file}')">${item.check_file}</span>
             </td>
             <td class="row" style="width:15%;">
                 <a href="./Senior_update_check_homework.html?id=${item.homeworkcheck_id}"><input type="button" class="edit-row-button" style="width:85px;"value="作業檢核"></a>
@@ -34,6 +34,22 @@ function readcheck(id) {
         });
     })
 
+}
+
+function downloadFile(fileName) {
+    fetch(`https://localhost:7275/api/HomeworkCheck/DownloadFile?filename=${encodeURIComponent(fileName)}`)
+    .then(response => response.blob())
+    .then(blob => {
+        // 创建一个<a>元素，用于下载文件
+        var downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = fileName;
+
+        // 点击下载链接并移除元素
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
 }
 
 // function readcheck(id) {

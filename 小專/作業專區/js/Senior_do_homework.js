@@ -52,7 +52,7 @@ function readcheck(id) {
                         ${finishtime}
                     </td>
                     <td class="row" style="width:25%;">
-                        <span class="file-text" onclick="downloadFile('${item.check_file}', 'file.txt')">${item.check_file}</span>
+                        <span class="file-text" onclick="downloadFile('${item.check_file}')">${item.check_file}</span>
                     </td>
                     <td class="row" style="width:30%;">
                         <a href="./Senior_edit_upload_homework.html?id=${item.homeworkcheck_id}"><input type="submit" class="edit-row-button" style="width:85px;" value="修改作業"></a>
