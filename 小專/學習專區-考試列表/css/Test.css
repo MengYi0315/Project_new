@@ -95,7 +95,7 @@ a{
     border-radius: 50px;
     background-color: #D9D9D9;
     text-align: center;
-    line-height: 60px;
+    line-height: 50px;
     height: 50px;
     width: 140px;
 }
@@ -493,6 +493,9 @@ cursor: pointer;
 
 
 
+
+
+
 .header-right-small{
     display: none;
     /* align-items: center;
@@ -508,7 +511,8 @@ cursor: pointer;
     background-color: #61AFB3;
     width: 50px;
     height: 50px;
-    
+    border-radius: 5px;
+    cursor: pointer;
 
 }
 /* .ull{
@@ -548,10 +552,7 @@ cursor: pointer;
 }
 
 
-.nav-bar-phone{
-    position: static;
-    display: none;
-}
+
 
 .nav-list{
     height: 250px;
@@ -600,6 +601,9 @@ cursor: pointer;
 }
 
 
+/* ================rwd================ */
+
+
 
 @media screen and (min-width: 1400px) {
 
@@ -616,10 +620,7 @@ cursor: pointer;
     .pcheader{
         display: none;
     }
-    .add-icon{
-        margin-right: 5px;
-        margin-top: 0px;
-    }
+    
 
     .row-button{
         font-size: 13px;
@@ -637,6 +638,19 @@ cursor: pointer;
         font-size: 13px;
         height: 30px;
         width: 70px;
+
+    }
+    .delete-row-button{
+        font-size: 13px;
+        height: 30px;
+        width: 45px;
+
+    }
+
+    .edit-row-button{
+        font-size: 13px;
+        height: 30px;
+        width: 45px;
 
     }
 
@@ -674,7 +688,7 @@ cursor: pointer;
         display: flex;
         width: 100%;
         flex-direction: column;
-        margin: 100px 10px 0 10px;
+        margin: 100px 30px 0 30px;
         text-align: center;
         align-items: center;
     
@@ -690,6 +704,11 @@ cursor: pointer;
     }
     .row{
         font-size: 13px;
+    }
+
+    .add-icon{
+        margin-right: 25px;
+        margin-top: 0px;
     }
 
 
@@ -719,6 +738,13 @@ cursor: pointer;
     .row{
         font-size: 13px;
     }
+
+    .add-icon{
+        margin-right: 5px;
+        margin-top: 0px;
+    }
+
+
 
 }
 

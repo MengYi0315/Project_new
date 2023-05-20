@@ -71,7 +71,7 @@ function ToggleNav(number){
         }
         else{
             ull.style.display = 'none';
-        }nav-lnav-l
+        }
     }
 
     let achievement = document.getElementById('achievement');
@@ -113,6 +113,20 @@ function ToggleNav(number){
             person_list.style.display = 'none';
         }
     }
+
+    let edit = document.getElementById('edit');
+    let edit_list = document.getElementById('edit-list');
+
+    edit.onclick = function(){
+        if(edit_list.style.display == 'none' || edit_list.style.display == ''){
+            edit_list.style.display = 'block';
+        }
+        else{
+            edit_list.style.display = 'none';
+        }
+    }
+
+
 
     let testt = document.getElementById('testt');
     let testt_list = document.getElementById('testt-list');
