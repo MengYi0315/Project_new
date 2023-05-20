@@ -142,7 +142,7 @@ window.onload = function() {
             post.innerHTML +=
             `
             <div class="topic" style="margin-bottom: 10px;" >
-                <div class="flex">
+                <div class="flex a">
                     <div class="topic-photo flex">
                         
                     <img src="${item.senior_image}" class="photo">

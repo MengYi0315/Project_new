@@ -25,20 +25,34 @@ function deleteData(url, id) {
 }
 
 window.onload = function(){
-    let LoginToken = sessionStorage.getItem('LoginToken');
-    console.log("token", LoginToken);
+    // let LoginToken = sessionStorage.getItem('LoginToken');
+    // console.log("token", LoginToken);
 
-    var testlist = document.querySelector("#testlist");
 
     // console.log("token",LoginToken);
 
-    fetch("https://localhost:7275/api/Test/GetAllDataList")
+    fetch("https://localhost:7275/api/Test/GetAllDataList", 
+        {
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${LoginToken}`
+            }
+        })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        console.log("data",data);
+
+        var testlist = document.querySelector("#testlist");
+
+        
         testlist.innerHTML = "";
 
         data.forEach((item) => {
+            console.log("item",item)
+            // const s = item.is_success;
+
+            //  s =false;
 
             const start_dateString = item.start_date;
             const end_dateString = item.end_date;
@@ -69,9 +83,38 @@ window.onload = function(){
             const end_formattedDate = `${end_year}-${end_month < 10 ? '0' + end_month : end_month}-${end_day < 10 ? '0' + end_day : end_day}`;
             console.log(end_formattedDate);
 
+            // if(s === false){
+                testlist.innerHTML +=
+                `
+                <tr>
+                    <td class="row">
+                        ${item.test_title}
+                    </td>
+                    <td class="row">
+                        ${start_formattedDate} ~ ${end_formattedDate}
+                    </td>
+                    <td class="row">
+                    <span>未考試，還未預約</span>
+                    <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
+            </td>
+                    <td class="row">
+    
+                    
+                        <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
+                        <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
+                    
+                    </td>
+    
+            </tr>
+                `;
+    
+    
 
-            // if()
 
+
+            // }
+            
+            console.log("data1",item);
 
             testlist.innerHTML +=
             `
