@@ -19,7 +19,7 @@ function submit(id) {
         `
         <div class="item">
             作品年份：
-            <select name="year" id="contest_year" style="height:30px;width:200px;font-size: 20px;">
+            <select name="year" id="contest_year" class="year-list">
                 <option value="">請選擇得獎年份</option>
                 <option value="111">111年</option>
                 <option value="110">110年</option>
