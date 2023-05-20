@@ -12,6 +12,7 @@ function postData(url, data, headers) {
 
 function submit() {
     console.log(LoginToken);
+    const entry_year = document.getElementById('entry_year').value;
     const account = document.getElementById('account').value;
     const name = document.getElementById('name').value;
     const password = document.getElementById('password').value;
@@ -21,6 +22,7 @@ function submit() {
 
 
     const data = {
+        entry_year,
         account,
         name,
         password,
@@ -35,7 +37,6 @@ function submit() {
     postData('https://localhost:7275/api/Members/register', data, headers)
         .then(({data}) => {
             console.log(data);
-            
         })
         .catch(error => {
             console.error(error);
