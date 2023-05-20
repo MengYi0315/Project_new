@@ -76,7 +76,7 @@ console.log("token",LoginToken)
                 </td>
                 <td class="row" style="width:30%;">
                     <a href="./Admin-edit-permission.html?id=${item.members_id}"><input type="button" class="edit-row-button" style="width:85px;" value="修改權限"></a>
-                    <a href="./Admin-permission.html"><input type="button" class="delete-row-button" onclick="deleteData('https://localhost:7275/api/DeleteMember?id=','${item.members_id}')"style="width:85px;" value="刪除會員"></a>
+                    <a href="./Admin-permission.html"><input type="button" class="delete-row-button" onclick="deleteData('https://localhost:7275/api/Members/DeleteMember?Id=','${item.members_id}')"style="width:85px;" value="刪除會員"></a>
                     </td>
             </tr>
             `;
