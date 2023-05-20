@@ -75,7 +75,7 @@
     </header>
 
     <div class="content flex">
-        <!-- <div class="left-content flex">
+        <div class="left-content flex">
             <div class="ul-win" style="cursor: pointer;">
                 <a href="/小專/使用者專區-個人資訊/Admin-PersonalInformation.html"><div class="menu">個人資訊</div></a>
             </div>
@@ -86,7 +86,7 @@
                 <a href="/小專/註冊/Register.html"><div class="menu-c">註冊會員</div></a>
             </div>
             
-        </div> -->
+        </div>
 
         <div class="right-content ">
             <div class="flex" style="justify-content: center;">
@@ -96,6 +96,9 @@
             </div>
             <div class="login-div flex">
                 <!-- <form id="myForm" onsubmit="return validateForm()"> -->
+                    <div class="normal-word text-bottom field">
+                        學年：<input type="text"  class="text" required id="entry_year">
+                    </div>
                     <div class="normal-word text-bottom field">
                         姓名：<input type="text"  class="text" required id="name" maxlength="20" title="姓名長度不能超過">
                     </div>
@@ -115,8 +118,8 @@
                         權限：
                         <select class="text"  id="level">
                             <option value="">請選擇</option>
-                            <!-- <option id="student" value="2">學生</option>
-                            <option id="senior" value="1">學長姐</option> -->
+                            <option id="student" value="2">學生</option>
+                            <option id="senior" value="1">學長姐</option>
                             <option id="admin" value="0">管理者</option>
                         </select>
                     </div>
