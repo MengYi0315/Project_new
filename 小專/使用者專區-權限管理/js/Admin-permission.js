@@ -13,13 +13,13 @@ function deleteData(url, id) {
     })
     .then(data => {
         console.log(data); // 刪除成功後的回應
-        window.onload();
-        window.alert("刪除成功");
+        // window.onload();
+        // window.alert("刪除成功");
     })
-    .catch(error => {
-        console.error('There was a problem deleting data:', error);
-        window.alert("刪除失敗ˋ");
-    });
+    // .catch(error => {
+    //     console.error('There was a problem deleting data:', error);
+    //     window.alert("刪除失敗ˋ");
+    // });
 
     }
 }
