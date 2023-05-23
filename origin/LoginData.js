@@ -24,18 +24,41 @@ function LoginData(){
                 sessionStorage.setItem('name',data.name);
                 window.alert("登入成功");
                 console.log(data);
-                window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
+                // window.location.href="http://127.0.0.1:5500/小專/首頁/Admin_Login_Index.html";
+                // if(data.is_delete === false)
+                // {
+                    if(data.level === 0)
+                    {
+                        window.location.href="http://127.0.0.1:5500/小專/首頁/Admin_Login_Index.html";
+                    }
+                    else if(data.level === 1)
+                    {
+                        window.location.href="http://127.0.0.1:5500/小專/首頁/Senior-Login_Index.html";
+                    }
+                    else if(data.level === 2)
+                    {
+                        window.location.href="http://127.0.0.1:5500/小專/首頁/Login_Index.html";
+                    }
+                    else
+                    {
+                        window.location.href="http://127.0.0.1:5500/小專/首頁/Logout_Index.html";
+                    }
+                // }
+                if(data.is_delete === true)
+                {
+                    window.alert("此會員已刪除");
+                }
+                
+                
             })
             .catch(error => {
                 console.log(error);
 
-                if (!account.value && !password.value) {
+                if (!account.value && !password.value) 
+                {
                     window.alert("請正確填寫以下欄位：帳號, 密碼");
-                  }
-                  window.alert("登入失敗");
-
-
-
+                }
+                window.alert("登入失敗");
             });
 
 }
