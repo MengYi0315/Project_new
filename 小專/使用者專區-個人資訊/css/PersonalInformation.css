@@ -341,7 +341,12 @@ a{
     font-weight: bold;
 }
 
-
+.title{
+    font-size: 36px;
+    
+    text-align: center;
+    font-weight: bold;
+}
 
 
 

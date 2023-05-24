@@ -3,6 +3,7 @@
 
 
 
+
     let navhover1 = document.getElementById('nav-a-hover-1');
     let downbar1 = document.getElementById('down-bar-1');
     
@@ -32,3 +33,4 @@
         downbar2.style.display = 'none';
     })
 
+    
