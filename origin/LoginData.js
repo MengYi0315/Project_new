@@ -29,13 +29,11 @@ function LoginData(){
             .catch(error => {
                 console.log(error);
 
-                if (!account.value && !password.value) {
+                if (!account.value && !password.value) 
+                {
                     window.alert("請正確填寫以下欄位：帳號, 密碼");
-                  }
-                  window.alert("登入失敗");
-
-
-
+                }
+                window.alert("登入失敗");
             });
 
 }
