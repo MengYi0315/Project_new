@@ -22,28 +22,31 @@ function LoginData(){
                 console.log("data",data)
                 sessionStorage.setItem('LoginToken',data.token);
                 sessionStorage.setItem('name',data.name);
-                window.alert("登入成功");
-                console.log(data);
                 // window.location.href="http://127.0.0.1:5500/小專/首頁/Admin_Login_Index.html";
-                // if(data.is_delete === false)
-                // {
+                if(data.is_delete === false)
+                {
                     if(data.level === 0)
                     {
+                        window.alert("登入成功，您好尊貴的用戶 "+data.name+" 先生/小姐");
                         window.location.href="http://127.0.0.1:5500/小專/首頁/Admin_Login_Index.html";
+
                     }
                     else if(data.level === 1)
                     {
+                        window.alert("登入成功，您好尊貴的用戶 "+data.name+" 先生/小姐");
                         window.location.href="http://127.0.0.1:5500/小專/首頁/Senior-Login_Index.html";
                     }
                     else if(data.level === 2)
                     {
+                        window.alert("登入成功，您好尊貴的用戶 "+data.name+" 先生/小姐");
                         window.location.href="http://127.0.0.1:5500/小專/首頁/Login_Index.html";
                     }
                     else
                     {
+                        window.alert("登入成功，您好尊貴的用戶 "+data.name+" 先生/小姐");
                         window.location.href="http://127.0.0.1:5500/小專/首頁/Logout_Index.html";
                     }
-                // }
+                }
                 if(data.is_delete === true)
                 {
                     window.alert("此會員已刪除");
