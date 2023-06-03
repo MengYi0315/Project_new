@@ -28,15 +28,12 @@ function memberdata(){
 
 
 async function urlid(){
-    const url = await window.location.href;
+    const url = window.location.href;
     console.log("url",url);
-    var split = await url.split("=");
-    var href = await split[0];
-    var id = await split[1];
-    console.log("id",id)
-
-    readdata(id);
-    
+    var split = url.split("=");
+    var id = split[1];
+    console.log(id);
+    submit(id);
 
     memberdata();
 

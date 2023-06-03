@@ -1,6 +1,6 @@
 let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
-
+let name=sessionStorage.getItem('name');
 
 
 function deleteData(url, id) {
@@ -49,16 +49,12 @@ window.onload = function(){
         testlist.innerHTML = "";
 
         data.forEach((item) => {
-            console.log("item",item)
             // const s = item.is_success;
 
             //  s =false;
 
             const start_dateString = item.start_date;
             const end_dateString = item.end_date;
-
-            console.log("date",item.start_date);
-
 
             const start_date = new Date(start_dateString);
             const end_date = new Date(end_dateString);
@@ -70,9 +66,6 @@ window.onload = function(){
     
             // 构建正常格式的日期字符串
             const start_formattedDate = `${start_year}-${start_month < 10 ? '0' + start_month : start_month}-${start_day < 10 ? '0' + start_day : start_day}`;
-            console.log(start_formattedDate);
-    
-
 
             // 獲取年月日(開始日期)
             const end_year = end_date.getFullYear();
@@ -81,9 +74,10 @@ window.onload = function(){
                 
             // 构建正常格式的日期字符串
             const end_formattedDate = `${end_year}-${end_month < 10 ? '0' + end_month : end_month}-${end_day < 10 ? '0' + end_day : end_day}`;
-            console.log(end_formattedDate);
-
-            // if(s === false){
+            console.log("item.name",item.name);
+            console.log("name",name);
+            if(item.name === name)
+            {
                 testlist.innerHTML +=
                 `
                 <tr>
@@ -91,73 +85,47 @@ window.onload = function(){
                         ${item.test_title}
                     </td>
                     <td class="row">
+                        ${item.test_content}
+                    </td>
+                    <td class="row">
+                        ${start_formattedDate} ~ ${end_formattedDate}
+                        
+                    </td>
+                    <td class="row">
+                        <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
+                        <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
+                    </td>
+                </tr>
+                `;
+            }
+            else
+            {
+                testlist.innerHTML +=
+                `
+                <tr>
+                    <td class="row">
+                        ${item.test_title}
+                    </td>
+                    <td class="row">
+                        ${item.test_content}
+                    </td>
+                    <td class="row">
                         ${start_formattedDate} ~ ${end_formattedDate}
                     </td>
                     <td class="row">
-                    <span>未考試，還未預約</span>
-                    <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
-            </td>
-                    <td class="row">
-    
-                    
-                        <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
-                        <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
-                    
+                        <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
                     </td>
-    
-            </tr>
+                </tr>
                 `;
-    
-    
-
-
-
+            }
+            // if(s === false){
+            
             // }
             
             console.log("data1",item);
-
-        //     testlist.innerHTML +=
-        //     `
-        //     <tr>
-        //         <td class="row">
-        //             ${item.test_title}
-        //         </td>
-        //         <td class="row">
-        //             ${start_formattedDate} ~ ${end_formattedDate}
-        //         </td>
-        //         <td class="row">
-        //         <span>未考試，還未預約</span>
-        //         <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
-        // </td>
-        //         <td class="row">
-
-                
-        //             <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
-        //             <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
-                
-        //         </td>
-
-        // </tr>
-        //     `;
-
         });
     })
 
-
 }
-
-
-
-// window.onload = function (){
-    
-//     const url = window.location.href;
-//     console.log("url",url);
-//     var split = url.split("=");
-//     var id = split[1];
-//     console.log(id);
-//     readone(id);
-// }
-
-
 
 
