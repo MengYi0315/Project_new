@@ -727,8 +727,32 @@ a{
 
 }
 
-@media screen and (max-width: 1007.5px) {
+@media screen and (max-width: 1000px) {
     
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .left-content{
+        display: none;
+
+    }
+    .right-content{
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 100px 80px 0 80px;
+    text-align: center;
+    align-items: center;
+
+
+
+
+    }
+
+
     .phoneheader{
         display: flex;
     }
@@ -755,30 +779,6 @@ a{
         width: 70px;
 
     }
-
-}
-
-
-@media screen and (max-width: 992px) {
-    .left-content{
-        display: none;
-
-    }
-    .right-content{
-
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin: 100px 80px 0 80px;
-    text-align: center;
-    align-items: center;
-
-
-
-
-    }
-
-
 
 
 

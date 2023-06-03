@@ -1,12 +1,10 @@
-
-
-    let navhover1 = document.getElementById('nav-a-hover-1');
+let navhover1 = document.getElementById('nav-a-hover-1');
     let downbar1 = document.getElementById('down-bar-1');
     
 
     
     navhover1.addEventListener('mouseover', function () {
-      downbar1.style.display = 'block';
+    downbar1.style.display = 'block';
     })
 
     
@@ -15,51 +13,37 @@
     })
 
     
-
-    let navhover = document.getElementById('nav-a-hover');
-    let downbar = document.getElementById('down-bar');
+    // let navhover2 = document.getElementById('nav-a-hover-2');
+    // let downbar2 = document.getElementById('down-bar-2');
     
 
     
-    navhover.addEventListener('mouseover', function () {
-      downbar.style.display = 'block';
-    })
+    // navhover2.addEventListener('mouseover', function () {
+    // downbar2.style.display = 'block';
+    // })
 
     
-    navhover.addEventListener('mouseout', function () {
-        downbar.style.display = 'none';
-    })
+    // navhover2.addEventListener('mouseout', function () {
+    //     downbar2.style.display = 'none';
+    // })
 
 
-    let navhover2 = document.getElementById('nav-a-hover-2');
-    let downbar2 = document.getElementById('down-bar-2');
-    
-
-    
-    navhover2.addEventListener('mouseover', function () {
-      downbar2.style.display = 'block';
-    })
-
-    
-    navhover2.addEventListener('mouseout', function () {
-        downbar2.style.display = 'none';
-    })
-
-
-
-    let navhover3 = document.getElementById('nav-a-hover-3');
-    let downbar3 = document.getElementById('down-bar-3');
+    // let navhover3 = document.getElementById('nav-a-hover-3');
+    // let downbar3 = document.getElementById('down-bar-3');
     
 
     
-    navhover3.addEventListener('mouseover', function () {
-      downbar3.style.display = 'block';
-    })
+    // navhover3.addEventListener('mouseover', function () {
+    // downbar3.style.display = 'block';
+    // })
 
     
-    navhover3.addEventListener('mouseout', function () {
-        downbar3.style.display = 'none';
-    })
+    // navhover3.addEventListener('mouseout', function () {
+    //     downbar3.style.display = 'none';
+    // })
+
+
+
 
 
     let navbox = document.getElementById('nav-box');
@@ -103,17 +87,17 @@
 
 
 
-    let person = document.getElementById('person');
-    let person_list = document.getElementById('person-list');
+    // let person = document.getElementById('person');
+    // let person_list = document.getElementById('person-list');
 
-    person.onclick = function(){
-        if(person_list.style.display == 'none' || person_list.style.display == ''){
-            person_list.style.display = 'block';
-        }
-        else{
-            person_list.style.display = 'none';
-        }
-    }
+    // person.onclick = function(){
+    //     if(person_list.style.display == 'none' || person_list.style.display == ''){
+    //         person_list.style.display = 'block';
+    //     }
+    //     else{
+    //         person_list.style.display = 'none';
+    //     }
+    // }
 
     let edit = document.getElementById('edit');
     let edit_list = document.getElementById('edit-list');
@@ -153,4 +137,3 @@
             hw_list.style.display = 'none';
         }
     }
-
