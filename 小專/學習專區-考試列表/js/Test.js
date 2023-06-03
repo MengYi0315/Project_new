@@ -28,7 +28,7 @@ function ToggleNav(number){
     downbar.style.display = 'block';
     })
 
-   
+    
     navhover.addEventListener('mouseout', function () {
     downbar.style.display = 'none';
     })

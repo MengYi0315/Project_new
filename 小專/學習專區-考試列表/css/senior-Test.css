@@ -719,28 +719,21 @@ cursor: pointer;
         margin-top: 0px;
     }
 
-
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 469px) {
 
-    .right-content{
-
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        margin: 100px 10px 0 10px;
-        text-align: center;
-        align-items: center;
-    
-    
-    
-    
-    }
 
     .add-icon{
         margin-right: 5px;
         margin-top: 0px;
+    }
+
+    .text, .textarea{
+        width: 230px;
+    }
+    .text-date{
+        width: 100px;
     }
 
 
