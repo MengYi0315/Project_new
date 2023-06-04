@@ -13,9 +13,10 @@ window.onload = function() {
             post.innerHTML +=
             `
             <tr class="li-award-win">
-                <td style="width:35%;">${item.contest_name}</td>
-                <td style="width:35%;">${item.contest_work}</td>
-                <td style="width:30%;">${item.contest_rank}</td>
+                <td style="width:25%;">${item.contest_year}</td>
+                <td style="width:25%;">${item.contest_name}</td>
+                <td style="width:25%;">${item.contest_work}</td>
+                <td style="width:25%;">${item.contest_rank}</td>
             </tr>
             `;
         });

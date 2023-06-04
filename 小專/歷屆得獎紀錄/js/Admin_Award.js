@@ -34,10 +34,11 @@ console.log("token",LoginToken)
             post.innerHTML +=
             `
             <tr class="li-award-win">
+                <td style="width:15%;">${item.contest_year}</td>
                 <td style="width:25%;">${item.contest_name}</td>
                 <td style="width:25%;">${item.contest_work}</td>
-                <td style="width:20%;">${item.contest_rank}</td>
-                <td style="width:30%;">
+                <td style="width:15%;">${item.contest_rank}</td>
+                <td style="width:20%;">
                     <button type="button"  class="edit-row-button"><a href="./Edit_Login_Award.html?id=${item.contest_id}">修改</a></button>
                     <button type="button"  onclick="deleteData('https://localhost:7275/api/ContestAward/DeleteData?id=','${item.contest_id}')"class="delete-row-button">刪除</button>
                 </td>
