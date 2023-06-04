@@ -1,30 +1,26 @@
 
 
-function memberdata(){
-    var post = document.querySelector("#member");
-    fetch("https://localhost:7275/api/Members/GetIDList")
-    .then(response => response.json())
-    .then(data => {
-        // console.log("member",data);
+// function memberdata(){
+//     var member = document.querySelector("#member");
+//     fetch("https://localhost:7275/api/Members/GetIDList")
+//     .then(response => response.json())
+//     .then(data => {
+//         // console.log("member",data);
 
-        post.innerHTML = "";
-        data.forEach((item) => {
-            // console.log("item",item)
-            // const date = new Date(item.update_time);
-            // const update_time = date.toLocaleString();
+//         member.innerHTML = "";
+//         data.forEach((item) => {
+//             // console.log("item",item)
+//             // const date = new Date(item.update_time);
+//             // const update_time = date.toLocaleString();
 
-            post.innerHTML +=
-            `
+//             member.innerHTML +=
+//             `
 
-            <option value=${item.members_id}>${item.name}</option>
-            `;
-        });
-    })
-    .catch(error => console.error(error));
-
-
-
-}
+//             <option value=${item.members_id}>${item.name}</option>
+//             `;
+//         });
+//     })
+// }
 
 
 async function urlid(){
@@ -33,20 +29,13 @@ async function urlid(){
     var split = url.split("=");
     var id = split[1];
     console.log(id);
-    submit(id);
-
-    memberdata();
-
+    readdata(id);
+    // memberdata();
 }
-
-
-
 
 
 // async 
 function readdata(id) {
-
-    var button = document.querySelectorAll("#button");
 
     var post = document.querySelector("#post");
     fetch(`https://localhost:7275/api/Test/ReadOneData?id=${id}`)
@@ -56,25 +45,76 @@ function readdata(id) {
         
         post.innerHTML +=
         `
-            
-            <input class="text" id="test_title" disabled="disabled" value="${data.test_title}">
+        <div class="title">
+            考試預約
+        </div>
+        <br>
+        <table>
+            <tr>
+                <td class="normal-word text-top field">
+                    考試標題：
+                </td>
+                <td class="text-top field" style="float: left;">
+                ${data.testData.test_title}
+                </td>
+            </tr>
+            <tr>
+                <td class="normal-word text-top field">
+                    考核者：
+                </td>
+                <td class="text-top field">
+                    <select class="text" id="member">
+                    
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="normal-word text-top field">
+                    預約日期：
+                </td>
+                <td class="text-top field">
+                    <input type="date" class="text" id="date">
+                </td>
+            </tr>
+            <tr>
+                <td class="normal-word text-top field">
+                    預約時段：
+                </td>
+                <td class="text-top field">
+                    <select class="text" id="time">
+                        <option selected>18:00:00</option>
+                        <option>19:00:00</option>
+                        <option>20:00:00</option>
+                        <option>21:00:00</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
 
+        <div class="flex" id="button">
+            <input type="submit" value="提交預約" class="reserve-botton" onclick=" submit('${data.testData.test_id}')">
+            <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
+        </div>
         `;
+        var member = document.querySelector("#member");
 
-        button.innerHTML = "";
-        button.innerHTML +=
-        `
-        <input type="submit" value="提交預約" class="reserve-botton" onclick=" submit(${data.test_id})">
-        <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
-
-        `;
-
-        console.log(data);
-        console.log(button)
+        member.innerHTML = "";
+        
+        if (data.memberData && data.memberData.length > 0) {
+            data.memberData.forEach((item) => {
+                // console.log("item",item)
+                // const date = new Date(item.update_time);
+                // const update_time = date.toLocaleString();
+                member.innerHTML += `
+                <option value="${item.members_id}">${item.name}</option>
+                `;
+            });
+            }
     })
+    }
 
     
-}
+
 
 
 //新增
@@ -83,6 +123,7 @@ let LoginToken=sessionStorage.getItem('LoginToken');
 console.log(LoginToken);
 
 function postData(url, data, headers) {
+
     return fetch(url, {
         body: JSON.stringify(data),
         headers: headers,
@@ -94,16 +135,17 @@ function postData(url, data, headers) {
 
 function submit(id) {
     console.log(LoginToken);
-    const   members_id = document.getElementById('member').value;
+    const  members_id = document.getElementById('member').value;
     const reservedate = document.getElementById('date').value;
     const reservetime = document.getElementById('time').value;
+    const test_id = id;
 
     console.log(members_id)
     const data = {
         members_id,
         reservedate,
         reservetime,
-        // test_id
+        test_id
     }
     console.log("data",data);
     const headers = {

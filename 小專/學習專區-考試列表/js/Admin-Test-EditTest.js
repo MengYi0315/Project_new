@@ -21,11 +21,11 @@ function submit(id) {
     .then(data => {
         announcementData = data;
 
-        var start_date =data.start_date;
+        var start_date =data.testData.start_date;
         var start_time = start_date.split("T");
         console.log(start_time[0]);
 
-        var end_date =data.end_date;
+        var end_date =data.testData.end_date;
         var end_time = end_date.split("T");
         console.log(end_time[0]);
     //     var existingDateValue = "${data.start_date}";
@@ -44,7 +44,7 @@ function submit(id) {
                     考試名稱：
                 </td>
                 <td class="text-top field">
-                    <input class="text"  id="test_title" value="${data.test_title}">
+                    <input class="text"  id="test_title" value="${data.testData.test_title}">
                 </td>
 
             </tr>
@@ -53,7 +53,7 @@ function submit(id) {
                     考試內容：
                 </td>
                 <td class="text-top field-textarea">
-                    <textarea class="textarea" id="test_content">${data.test_content}</textarea>
+                    <textarea class="textarea" id="test_content">${data.testData.test_content}</textarea>
                 </td>
             </tr>
             <tr>
