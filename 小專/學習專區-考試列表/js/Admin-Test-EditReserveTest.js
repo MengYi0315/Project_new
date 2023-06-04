@@ -96,17 +96,15 @@ function readdata(id) {
 
 function update(id)
 {
-    const  members_id = document.getElementById('member').value;
+    const Newmember_id = document.getElementById('member').value;
     const reservedate = document.getElementById('date').value;
     const reservetime = document.getElementById('time').value;
-    const test_id = id;
 
-    console.log(members_id)
+    console.log(Newmember_id)
     const data = {
-        members_id,
+        Newmember_id,
         reservedate,
         reservetime,
-        test_id
     }
 
     fetch(`https://localhost:7275/api/TestReserve/UpdateTestResever?id=${encodeURIComponent(id)}`, {

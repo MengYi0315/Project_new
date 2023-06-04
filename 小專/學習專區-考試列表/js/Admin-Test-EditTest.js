@@ -71,7 +71,7 @@ function submit(id) {
         </table>
 
         <div class="flex" id="post1">
-            <input type="submit" value="修改考試" class="reserve-botton" onclick=" update('${id}')">
+            <input type="submit" value="修改考試" class="reserve-botton" onclick=" update('${data.testData.test_id}')">
             <input type="button" value="取消" class="reserve-botton"  onclick="location.href='./Admin-Test-TestList.html'">
         </div>
         `;

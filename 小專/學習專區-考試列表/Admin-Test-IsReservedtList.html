@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="./css/Test.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>小專</title>
 </head>
 <!-- 已確認預定時段列表 -->
@@ -206,46 +204,38 @@
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約者
-                    </td>
-                    <td class="table-title">
-                        預約考試
-                    </td>
-                    <td class="table-title">
-                        預約時間
-                    </td>
-                    
-                </tr>   
-                <tr>
-                    <td class="row">
-                        大聰明
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/03 &ensp; 20:00
-                    </td>
-                    
-                    
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            預約者
+                        </td>
+                        <td class="table-title">
+                            預約考試
+                        </td>
+                        <td class="table-title">
+                            預約時間
+                        </td>
+                    </tr>   
+                </thead>
+                
+                <tbody id="post">
+                    <!-- <tr>
+                        <td class="row">
+                            大聰明
+                        </td>
+                        <td class="row">
+                            第八章口試
+                        </td>
+                        <td class="row">
+                            2023/04/03 &ensp; 20:00
+                        </td>
+                        
+                        
+                    </tr> -->
+                </tbody>
+                
 
-                <tr>
-                    <td class="row">
-                        小聰明
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/05 &ensp; 18:00
-                    </td>
-                    
-                    
-
-                </tr>
+               
 
                 
             </table>
@@ -255,59 +245,27 @@
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約者
-                    </td>
-                    <td class="table-title">
-                        預約考試
-                    </td>
-                    <td class="table-title">
-                        預約時間
-                    </td>
-                    
-                    <td class="table-title">
-                        狀態    
-                    </td>
-                </tr>   
-                <tr>
-                    <td class="row">
-                        林曉婷
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/02 &ensp; 20:00
-                    </td>
-                    
-                    <td class="row">
-                        <input type="button" value="確認預約" class="row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        <input type="button" value="回絕預約" class="d-4-row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            預約者
+                        </td>
+                        <td class="table-title">
+                            預約考試
+                        </td>
+                        <td class="table-title">
+                            預約時間
+                        </td>
                         
-                    </td>
+                        <td class="table-title">
+                            狀態    
+                        </td>
+                    </tr>   
+                </thead>
+                <tbody id="post1">
 
-                </tr>
-
-                <tr>
-                    <td class="row">
-                        徐小心
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/04 &ensp; 18:00
-                    </td>
-                    
-                    <td class="row">
-                        <input type="button" value="確認預約" class="row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        <input type="button" value="回絕預約" class="d-4-row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        
-                    </td>
-
-                </tr>
-
+                </tbody>
+                
                 
             </table>
 
@@ -328,8 +286,10 @@
     <footer>
 
     </footer>
-    <script src="./js/Test.js"></script>
-    <script src="./js/Admin-Test-IsReservedtList.js"></script>
+    
+    
 </body>
-
+<script src="./js/Test.js"></script>
+    <script src="./js/Admin-Test-IsReservedtList.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

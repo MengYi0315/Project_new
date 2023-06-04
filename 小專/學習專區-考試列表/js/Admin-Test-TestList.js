@@ -69,42 +69,44 @@ window.onload = function () {
                 console.log("name", name);
                 if (item.name === name) {
                     testlist.innerHTML +=
-                        `
-                <tr>
-                    <td class="row">
-                        ${item.test_title}
-                    </td>
-                    <td class="row">
-                        ${item.test_content}
-                    </td>
-                    <td class="row">
-                        ${start_formattedDate} ~ ${end_formattedDate}
-                        
-                    </td>
-                    <td class="row">
-                        <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
-                        <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
-                    </td>
-                </tr>
-                `;
-                } else {
+                    `
+                    <tr>
+                        <td class="row">
+                            ${item.test_title}
+                        </td>
+                        <td class="row">
+                            ${item.test_content}
+                        </td>
+                        <td class="row">
+                            ${start_formattedDate} ~ ${end_formattedDate}
+                            
+                        </td>
+                        <td class="row">
+                            <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
+                            <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/Test/DeleteData?id=', '${item.test_id}') ">
+                        </td>
+                    </tr>
+                    `;
+                }
+                else
+                {
                     testlist.innerHTML +=
-                        `
-                <tr>
-                    <td class="row">
-                        ${item.test_title}
-                    </td>
-                    <td class="row">
-                        ${item.test_content}
-                    </td>
-                    <td class="row">
-                        ${start_formattedDate} ~ ${end_formattedDate}
-                    </td>
-                    <td class="row">
-                        <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
-                    </td>
-                </tr>
-                `;
+                    `
+                    <tr>
+                        <td class="row">
+                            ${item.test_title}
+                        </td>
+                        <td class="row">
+                            ${item.test_content}
+                        </td>
+                        <td class="row">
+                            ${start_formattedDate} ~ ${end_formattedDate}
+                        </td>
+                        <td class="row">
+                            <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}';">
+                        </td>
+                    </tr>
+                    `;
                 }
                 // if(s === false){
 
@@ -147,76 +149,76 @@ function reserve() {
                 if (item.tester_name === name) {
                     if (item.is_success === true) {
                         reservelist.innerHTML +=
-                            `
-                    <tr>
-                        <td class="row">
-                            ${item.test_title}
-                        </td>
-                        <td class="row">
-                            ${item.proctor_name}
-                        </td>
-                        <td class="row">
-                            ${datetime}
-                        </td>
-                        <td class="row">
-                            ${reservetime}
-                        </td>
-                        <td class="row">
-                            <span class="reject-text">您已預約成功</span>
-                        </td>
+                        `
+                        <tr>
+                            <td class="row" style="width:20%;">
+                                ${item.test_title}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${item.proctor_name}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${datetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${reservetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                <span class="reject-text">您已預約成功</span>
+                            </td>
 
-                    </tr>
-                `;
+                        </tr>
+                        `;
                     }
                     if (item.is_fail === true) {
                         reservelist.innerHTML +=
-                            `
-                    <tr>
-                        <td class="row">
-                            ${item.test_title}
-                        </td>
-                        <td class="row">
-                            ${item.proctor_name}
-                        </td>
-                        <td class="row">
-                            ${datetime}
-                        </td>
-                        <td class="row">
-                            ${reservetime}
-                        </td>
-                        <td class="row">
-                            <span class="reject-text">您的預約已被回絕!請</span>
-                            <input type="button" value="重新預約" class="row-button" onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}'">
-                            
-                        </td>
+                        `
+                        <tr>
+                            <td class="row" style="width:20%;">
+                                ${item.test_title}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${item.proctor_name}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${datetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${reservetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                <span class="reject-text">您的預約已被回絕!請</span>
+                                <input type="button" value="重新預約" class="row-button" onclick="location.href='./Admin-Test-ReserveTest.html?id=${item.test_id}'">
+                                
+                            </td>
 
-                    </tr>
-                `;
+                        </tr>
+                        `;
                     }
                     if ((item.is_fail === false) && (item.is_success === false)) {
                         reservelist.innerHTML +=
-                            `
-                    <tr>
-                        <td class="row">
-                            ${item.test_title}
-                        </td>
-                        <td class="row">
-                            ${item.proctor_name}
-                        </td>
-                        <td class="row">
-                            ${datetime}
-                        </td>
-                        <td class="row">
-                            ${reservetime}
-                        </td>
-                        <td class="row">
-                        <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditReserveTest.html?id=${item.reservetime_id}';">
-                        <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/TestReserve/DeleteData?id=', '${item.reservetime_id}') ">
-                            
-                        </td>
+                        `
+                        <tr>
+                            <td class="row" style="width:20%;">
+                                ${item.test_title}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${item.proctor_name}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${datetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                                ${reservetime}
+                            </td>
+                            <td class="row" style="width:20%;">
+                            <input type="submit" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditReserveTest.html?id=${item.reservetime_id}';">
+                            <input type="button" value="刪除" class="delete-row-button"  onclick="deleteData('https://localhost:7275/api/TestReserve/DeleteData?id=', '${item.reservetime_id}') ">
+                                
+                            </td>
 
-                    </tr>
-                `;
+                        </tr>
+                        `;
                     }
                 }
 
