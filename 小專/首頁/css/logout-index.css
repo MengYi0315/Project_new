@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 225px 50px 60px;
+    margin: 30px 40px 50px 40px;
 }
 /*最新公告區塊*/
 
@@ -727,32 +727,8 @@ a{
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1007.5px) {
     
-
-}
-
-
-@media screen and (max-width: 992px) {
-    .left-content{
-        display: none;
-
-    }
-    .right-content{
-
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin: 100px 80px 0 80px;
-    text-align: center;
-    align-items: center;
-
-
-
-
-    }
-
-
     .phoneheader{
         display: flex;
     }
@@ -780,6 +756,41 @@ a{
 
     }
 
+    .title{
+        padding-left: 0px;
+    }
+    
+}
+
+
+@media screen and (max-width: 992px) {
+    .left-content{
+        display: none;
+
+    }
+    .right-content{
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 100px 80px 0 80px;
+    text-align: center;
+    align-items: center;
+
+
+
+
+    }
+
+
+    .carousel-set{
+        height: 300px;
+    }
+
+    .prev, .next{
+        top:300px;
+        padding: 60px 20px;
+    }
 
 
 }
@@ -798,11 +809,13 @@ a{
     
     
     }
+    
     .title{
         font-size: 22px;
     }
-    .table-title{
+    .a1{
         font-size: 14px;
+        font-weight: bold;
     }
     .row{
         font-size: 13px;
@@ -813,6 +826,30 @@ a{
         margin-top: 0px;
     }
 
+    .carousel-set{
+        height: 250px;
+    }
+
+    .prev, .next{
+        top:275px;
+        padding: 60px 15px;
+    }
+
+    .icon1{
+        width: 30px;
+        height: 30px;
+    }
+
+    .m-left-60{
+        margin-left: 40px;
+    }
+    .content-index{
+        margin: 30px 40px 50px 40px;
+
+    }
+    .ee{
+        flex-direction: column;
+    }
 
 }
 
@@ -833,6 +870,7 @@ a{
     }
     .title{
         font-size: 22px;
+        
     }
     .table-title{
         font-size: 14px;
@@ -846,6 +884,14 @@ a{
         margin-top: 0px;
     }
 
-
-
+    .prev, .next{
+        top:275px;
+        padding: 60px 5px;
+    }
+    .m-left-60{
+        margin-left: 20px;
+    }
+    .content-index{
+        margin: 30px 20px 50px 20px;
+    }
 }

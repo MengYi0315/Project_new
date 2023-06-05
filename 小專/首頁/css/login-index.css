@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 225px 50px 60px;
+    margin: 30px 40px 50px 40px;
 }
 /*最新公告區塊*/
 
@@ -282,6 +282,16 @@ a{
     font-size:20px;
     margin-top:110px;
     padding-right:20px;
+}
+.back-1
+{
+    display: none;
+    /* justify-content: right; */
+    /* text-align: right; */
+    font-size:20px;
+    margin-bottom: 20px;
+    /* margin-top:110px; */
+    /* padding-right:20px; */
 }
 .a2
 {
@@ -727,7 +737,7 @@ a{
 
 }
 
-@media screen and (max-width: 1127.5px) {
+@media screen and (max-width: 1007.5px) {
     
     .phoneheader{
         display: flex;
@@ -756,6 +766,10 @@ a{
 
     }
 
+    .title{
+        padding-left: 0px;
+    }
+    
 }
 
 
@@ -779,12 +793,27 @@ a{
     }
 
 
+    .carousel-set{
+        height: 300px;
+    }
 
+    .prev, .next{
+        top:300px;
+        padding: 60px 20px;
+    }
 
 
 }
 
 @media screen and (max-width: 768.5px) {
+    .back{
+        display: none;
+    }
+    .back-1{
+        display: block;
+    }
+
+
     .right-content{
 
         display: flex;
@@ -798,11 +827,13 @@ a{
     
     
     }
+    
     .title{
         font-size: 22px;
     }
-    .table-title{
+    .a1{
         font-size: 14px;
+        font-weight: bold;
     }
     .row{
         font-size: 13px;
@@ -813,6 +844,30 @@ a{
         margin-top: 0px;
     }
 
+    .carousel-set{
+        height: 250px;
+    }
+
+    .prev, .next{
+        top:275px;
+        padding: 60px 15px;
+    }
+
+    .icon1{
+        width: 30px;
+        height: 30px;
+    }
+
+    .m-left-60{
+        margin-left: 40px;
+    }
+    .content-index{
+        margin: 30px 40px 50px 40px;
+
+    }
+    .ee{
+        flex-direction: column;
+    }
 
 }
 
@@ -833,6 +888,7 @@ a{
     }
     .title{
         font-size: 22px;
+        
     }
     .table-title{
         font-size: 14px;
@@ -846,6 +902,15 @@ a{
         margin-top: 0px;
     }
 
-
-
+    .prev, .next{
+        top:275px;
+        padding: 60px 5px;
+    }
+    .m-left-60{
+        margin-left: 20px;
+    }
+    .content-index{
+        margin: 30px 20px 50px 20px;
+    }
 }
+

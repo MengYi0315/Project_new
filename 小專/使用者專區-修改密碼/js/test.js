@@ -30,6 +30,21 @@ let navhover = document.getElementById('nav-a-hover');
         downbar1.style.display = 'none';
     })
 
+    let navhover2 = document.getElementById('nav-a-hover-2');
+    let downbar2 = document.getElementById('down-bar-2');
+    
+
+    
+    navhover2.addEventListener('mouseover', function () {
+    downbar2.style.display = 'block';
+    })
+
+    
+    navhover2.addEventListener('mouseout', function () {
+        downbar2.style.display = 'none';
+    })
+
+
 
 
     let navbox = document.getElementById('nav-box');

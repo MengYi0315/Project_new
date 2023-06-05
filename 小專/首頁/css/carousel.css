@@ -283,6 +283,16 @@ a{
     margin-top:110px;
     padding-right:20px;
 }
+.back-1
+{
+    display: none;
+    /* justify-content: right; */
+    /* text-align: right; */
+    font-size:20px;
+    margin-bottom: 20px;
+    /* margin-top:110px; */
+    /* padding-right:20px; */
+}
 .a2
 {
     background-color: rgb(255, 204, 108);
@@ -810,16 +820,16 @@ a{
     }
     
 
-    .row-button{
+    .create-button{
         font-size: 13px;
         height: 30px;
         width: 70px;
     }
 
-    .d-4-row-button{
+    .a2{
         font-size: 13px;
-        height: 30px;
-        width: 70px;
+        /* height: 30px;
+        width: 70px; */
 
     }
     .reserve-botton{
@@ -837,14 +847,9 @@ a{
         display: none;
 
     }
-    .right-content{
+    .create{
 
-    display: flex;
-    width: 100%;
-    flex-direction: column;
     margin: 100px 80px 0 80px;
-    text-align: center;
-    align-items: center;
 
 
 
@@ -858,6 +863,14 @@ a{
 }
 
 @media screen and (max-width: 768.5px) {
+    .back{
+        display: none;
+    }
+    .back-1{
+        display: block;
+    }
+
+
     .right-content{
 
         display: flex;
@@ -885,7 +898,13 @@ a{
         margin-right: 25px;
         margin-top: 0px;
     }
+    .create{
+        margin: 100px 30px 0px 30px;
+    }
 
+    .div-button{
+        width: 200px;
+    }
 
 }
 
