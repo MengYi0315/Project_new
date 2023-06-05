@@ -187,24 +187,27 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Senior-Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
-                <a href="./Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-
-                <a href="./Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/Senior-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/Senior-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/Senior-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Senior_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Senior_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業專區/Senior_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <a href="/小專/留言板/Senior-msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
-            </a>
+            </a> -->
+            
         </div>
         <div class="right-content">
             <div class="right-content-div flex">
@@ -218,7 +221,7 @@
                             考試名稱：
                         </td>
                         <td class="text-top field">
-                            <input class="text">
+                            <input class="text" id="test_title">
                         </td>
 
                     </tr>
@@ -227,7 +230,7 @@
                             考試內容：
                         </td>
                         <td class="text-top field-textarea">
-                            <textarea class="textarea"></textarea>
+                            <textarea class="textarea" id="test_content"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -235,9 +238,9 @@
                             考試期限：
                         </td>
                         <td class="text-top field">
-                            <input type="date" class="text-date">
+                            <input type="date" class="text-date" id="start_date">
                             <span>&nbsp;~&nbsp;</span>
-                            <input type="date" class="text-date">
+                            <input type="date" class="text-date" id="end_date">
                         </td>
                         
                     </tr>
@@ -245,32 +248,18 @@
                 </table>
 
                 <div class="flex">
-                    <input type="button" value="發布考試" class="reserve-botton" onclick="location.href='./Senior-Test-TestList.html';">
-                    <input type="button" value="取消" class="reserve-botton" onclick="location.href='./Senior-Test-TestList.html';">
+                    <input type="button" value="發布考試" class="reserve-botton" onclick="submit()">
+                    <input type="button" value="取消" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html';">
                 </div>
-
-
             </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
     <footer>
 
     </footer>
-
-</body>
 <script src="./js/senior-test.js"></script>
+<script src="./js/Senior-Test-CreateTest.js"></script>
+</body>
+
 </html>

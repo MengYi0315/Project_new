@@ -190,26 +190,32 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
-                <a href="./Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Login_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Login_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <!-- <a href="/小專/作業專區/Login_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a> -->
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <a href="/小專/留言板/msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
-            </a>
+            </a> -->
 
+            
+            
         </div>
         <div class="right-content">
-            <div class="right-content-div flex">
-                <div class="title">
+            <div class="right-content-div flex" id="post">
+                <!-- <div class="title">
                     修改考試預約
                 </div>
                 <br>
@@ -269,28 +275,10 @@
                 </table>
 
                 <div class="flex">
-                    <input type="button" value="修改預約" class="reserve-botton" onclick="location.href='./Test-TestList.html'">
-                    <input type="button" value="取消" class="reserve-botton" onclick="location.href='./Test-TestList.html'">
-                </div>
-            
-
-
-
-
+                    <input type="button" value="修改預約" class="reserve-botton">
+                    <input type="button" value="取消" class="reserve-botton"  onclick="location.href='./Admin-Test-TestList.html'">
+                </div> -->
             </div>
-            
-            
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </div>
@@ -301,4 +289,5 @@
 
 </body>
 <script src="./js/student-test.js"></script>
+<script src="./js/Test-EditReserveTest.js"></script>
 </html>

@@ -184,24 +184,27 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Senior-Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
-                <a href="./Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-
-                <a href="./Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/Senior-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/Senior-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/Senior-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Senior_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Senior_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業專區/Senior_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <a href="/小專/留言板/Senior-msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
-            </a>
+            </a> -->
+            
         </div>
         
         
@@ -212,12 +215,7 @@
                     考試列表
                 </div>
                 <div>
-
-                    <input type="button" value="新增考試" class="reserve-botton add-icon" onclick="location.href='./Senior-Test-CreateTest.html'">
-                    <!-- <a href="./Admin-Test-CreateTest.html">
-                        <img src="./img/plus.PNG" class="add-icon">
-                    </a> -->
-                    
+                    <input type="button" value="新增考試" class="reserve-botton add-icon" onclick="location.href='./Admin-Test-CreateTest.html'">    
                 </div>
 
                 
@@ -226,41 +224,48 @@
             
             <br>
             <table class="test-list-table">
-                <tr>
-                    <td class="table-title">
-                        考試內容
-                    </td>
-                    <td class="table-title">
-                        考試期限
-                    </td>
-                    <td class="table-title">
-                        狀態    
-                    </td>
-                    <td class="table-title">
-                        操作    
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title" style="width:20%">
+                            考試標題
+                        </td>
+                        <td class="table-title">
+                            考試內容
+                        </td>
+                        <td class="table-title" style="width:30%">
+                            考試期限    
+                        </td>
+                        <td class="table-title">
+                            操作    
+                        </td>
+                    </tr>
+                </thead>
                 
-                <tr>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        4/1 - 4/8
-                    </td>
-                    <td class="row">
-                        <span>已預約</span>
-                        
-                    </td>
-                    <td class="row">
-                        <button type="button"  class="edit-row-button"><a href="./Senior-Test-EditTest.html">修改</a></button>
-                        <button type="button"  class="delete-row-button"><a href="#">刪除</a></button>
-                        
-                    </td>
+                <tbody  id="testlist">
+                    <!-- <tr>
+                        <td class="row">
+                            第八章口試
+                        </td>
+                        <td class="row">
+                            4/1 - 4/8
+                        </td>
+                        <td class="row">
+                            <span>已預約</span>
+                            
+                        </td>
+                        <td class="row">
+                            <button type="button"  class="edit-row-button"><a href="./Admin-Test-EditTest.html">修改</a></button>
+                            <button type="button"  class="delete-row-button"><a href="#">刪除</a></button>
+                            
+                        </td>
+    
+                    </tr> -->
+    
+                </tbody>
+                <!-- <input type="button" value="修改" class="edit-row-button"  onclick="location.href='./Admin-Test-EditTest.html?id=${item.test_id}';">
+                <input type="button" value="刪除" class="delete-row-button"  onclick=" "> -->
 
-                </tr>
-
-                <tr>
+                <!-- <tr>
                     <td class="row">
                         第八章筆試
                     </td>
@@ -269,17 +274,16 @@
                     </td>
                     <td class="row">
                         <span>未考試，還未預約</span>
-                        <!-- <br> -->
-                        <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Senior-Test-ReserveTest.html';">
+                        <input type="button" value="前往預約" class="row-button"  onclick="location.href='./Admin-Test-ReserveTest.html';">
                     </td>
                     <td class="row">
-                        <button type="button"  class="edit-row-button"><a href="./Senior-Test-EditTest.html">修改</a></button>
+                        <button type="button"  class="edit-row-button"><a href="./Admin-Test-EditTest.html">修改</a></button>
                         <button type="button"  class="delete-row-button">刪除</button>
                         
                     </td>
 
                 </tr>
-
+ -->
             </table>
             <br>
             <div class="title">
@@ -287,84 +291,50 @@
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約考試內容
-                    </td>
-                    <td class="table-title">
-                        考核者
-                    </td>
-                    <td class="table-title">
-                        預約日期
-                    </td>
-                    <td class="table-title">
-                        預約時段
-                    </td>
-                    <td class="table-title">
-                        狀態    
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title" style="width:20%;">
+                            預約考試標題
+                        </td>
+                        <td class="table-title" style="width:20%;">
+                            考核者
+                        </td>
+                        <td class="table-title" style="width:20%;">
+                            預約日期
+                        </td>
+                        <td class="table-title" style="width:20%;">
+                            預約時段
+                        </td>
+                        <td class="table-title" style="width:20%;">
+                            狀態    
+                        </td>
+                    </tr>
+                </thead>
                 
-                <tr>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        王曉明
-                    </td>
-                    <td class="row">
-                        2023/04/06
-                    </td>
-                    <td class="row">
-                        20：00
-                    </td>
-                    <td class="row">
-                        <input type="button" value="修改預約" class="row-button" onclick="location.href='./Senior-Test-EditReserveTest.html'">
-                        <input type="button" value="取消預約" class="d-4-row-button">
-                        
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td class="row">
-                        第八章筆試
-                    </td>
-                    <td class="row">
-                        王曉明
-                    </td>
-                    <td class="row">
-                        2023/04/14
-                    </td>
-                    <td class="row">
-                        20：00
-                    </td>
-                    <td class="row">
-                        <input type="button" value="修改預約" class="row-button" onclick="location.href='./Senior-Test-EditReserveTest.html'">
-                        <input type="button" value="取消預約" class="d-4-row-button">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="row">
-                        第九章口試
-                    </td>
-                    <td class="row">
-                        楊大明
-                    </td>
-                    <td class="row">
-                        2023/04/20
-                    </td>
-                    <td class="row">
-                        20：00
-                    </td>
-                    <td class="row">
-                        <span class="reject-text">您的預約已被回絕!請</span>
-                        <input type="button" value="重新預約" class="row-button" onclick="location.href='./Admin-Test-ReserveTest.html'">
-                        
-                    </td>
-
-                </tr>
+                <tbody id="reservelist">
+                    <!-- <tr>
+                        <td class="row">
+                            第九章口試
+                        </td>
+                        <td class="row">
+                            楊大明
+                        </td>
+                        <td class="row">
+                            2023/04/20
+                        </td>
+                        <td class="row">
+                            20：00
+                        </td>
+                        <td class="row">
+                            <span class="reject-text">您的預約已被回絕!請</span>
+                            <input type="button" value="重新預約" class="row-button" onclick="location.href='./Admin-Test-ReserveTest.html'">
+                            
+                        </td>
+    
+                    </tr> -->
+                </tbody>
+                
+                
 
 
             </table>
@@ -378,5 +348,11 @@
     </footer>
 
 </body>
+<!-- <script src="./js/qq.js"></script>    <script src="./js/qq.js"></script>
+
+
+<script src="./js/qq.js"></script> -->
 <script src="./js/senior-test.js"></script>
+<script src="./js/Senior-Test-TestList.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

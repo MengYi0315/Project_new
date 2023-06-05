@@ -183,28 +183,31 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Senior-Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
-                <a href="./Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-
-                <a href="./Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/Senior-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/Senior-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/Senior-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Senior_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Senior_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業專區/Senior_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <a href="/小專/留言板/Senior-msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
-            </a>
+            </a> -->
+            
         </div>
         <div class="right-content">
-            <div class="right-content-div flex">
-                <div class="title">
+            <div class="right-content-div flex" id="post">
+                <!-- <div class="title">
                     考試預約
                 </div>
                 <br>
@@ -213,8 +216,10 @@
                         <td class="normal-word text-top field">
                             預約考試：
                         </td>
-                        <td class="text-top field">
-                            <select class="text">
+                        <td class="text-top field" style="float: left;" id="post">
+
+                            <span id="post"></span> -->
+                            <!-- <select class="text" id="testlist">
                                 <option>第八章口試</option>
                                 <option>第八章筆試</option>
                                 <option>第九章口試</option>
@@ -227,14 +232,14 @@
                             考核者：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
+                            <select class="text" id="member">
                                 <option>王曉明</option>
                                 <option>王大明</option>
                                 <option>王一明</option>
                                 <option>王二明</option>
                                 <option>王三明</option>
                                 <option>王四明</option>
-                                <option>王五明</option>
+                                <option>王五明</option> 
                             </select>
                         </td>
                     </tr>
@@ -243,7 +248,7 @@
                             預約日期：
                         </td>
                         <td class="text-top field">
-                            <input type="date" class="text">
+                            <input type="date" class="text" id="date">
                         </td>
                     </tr>
                     <tr>
@@ -251,7 +256,7 @@
                             預約時段：
                         </td>
                         <td class="text-top field">
-                            <select class="text">
+                            <select class="text" id="time">
                                 <option>18:00</option>
                                 <option>19:00</option>
                                 <option>20:00</option>
@@ -261,21 +266,14 @@
                     </tr>
                 </table>
 
-                <div class="flex">
-                    <input type="button" value="提交預約" class="reserve-botton" onclick="location.href='./Senior-Test-ReservetList.html'">
-                    <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Senior-Test-ReservetList.html'">
-                </div>
+                <div class="flex" id="button">
+                    <input type="submit" value="提交預約" class="reserve-botton" onclick=" submit(id)">
+                    <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
+                </div> -->
+
 
             </div>
             
-
-
-
-
-
-
-
-
 
         </div>
     </div>
@@ -286,4 +284,5 @@
 
 </body>
 <script src="./js/senior-test.js"></script>
+<script src="./js/Senior-Test-ReserveTest.js"></script>
 </html>
