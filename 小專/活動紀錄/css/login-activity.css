@@ -594,7 +594,7 @@ textarea
         align-items: center;
     }
 }
-@media screen and (max-width: 1007.5px) {
+@media screen and (max-width: 1090.5px) {
     
     .phoneheader{
         display: flex;

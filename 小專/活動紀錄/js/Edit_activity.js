@@ -21,7 +21,7 @@ function previewFile() {
     }
 
     // 設定圖片大小
-    preview.style.width = "300px";
+    // preview.style.width = "300px";
 }
 
 function submit(id) {
@@ -45,13 +45,16 @@ function submit(id) {
         <div class="create-text">名稱：<input type="text" id="title"class="create-input" maxlength="50" value="${data.activity_title}"></div>
         <div class="create-text flex"><div class="flex"style="justify-content: flex-start;">描述：</div><textarea id="content" maxlength="200" style="font-size: 20px;">${data.activity_content}</textarea></div>
         <div class="create-text">圖片：<input type="file" value="${data.first_image}"id="image"onchange="previewFile()"style="justify-content: right;"class="create-input"></div>
-        <div style="margin-left:10px;margin-bottom:20px;">
-            <img class="img" src="${data.first_image}" style="width:300px;">
-            <p class="file-name" style="font-size:20px;font-weight: bold;"></p>
+        <div class="img-put">
+            <img class="img" src="${data.first_image}" >
+            <p class="file-name"></p>
+        </div> 
+
+        <div class="zz flex">
+            <input type="submit" onclick="update('${id}') , validateForm()" value="修改" class="create-button">
+            <a href="./Admin_Login_activity.html"><input type="button" value="返回" class="create-button"></a>
+
         </div>
-        
-        <input type="submit" onclick="update('${id}') , validateForm()" value="修改" class="create-button">
-        <a href="./Admin_Login_activity.html"><input type="button" value="返回" class="create-button"></a>
             
         `;
         console.log(data);

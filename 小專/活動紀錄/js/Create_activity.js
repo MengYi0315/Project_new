@@ -74,6 +74,6 @@ function previewFile() {
     }
 
     // 設定圖片大小
-    preview.style.width = "300px";
+    // preview.style.width = "300px";
 }
 
