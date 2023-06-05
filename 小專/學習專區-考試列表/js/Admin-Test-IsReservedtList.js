@@ -88,8 +88,8 @@ function reserve() {
                             ${datetime} ${reservetime}
                         </td>
                         <td class="row">
-                            <input type="button" value="確認預約" class="row-button" onclick="update('${item.reservetime_id}')">
-                            <input type="button" value="回絕預約" class="d-4-row-button" onclick="updateno('${item.reservetime_id}')">
+                            <input type="button" value="確認預約" class="row-button" onclick="update('${item.tester_id}')">
+                            <input type="button" value="回絕預約" class="d-4-row-button" onclick="updateno('${item.tester_id}')">
                         </td>
                     </tr>
                     `;
@@ -128,7 +128,7 @@ function reserve() {
                         <td class="row">
                             ${datetime} ${reservetime}
                         </td>
-                        <td class="row">
+                        <td class="row" style="color:yellow;font-weight:bolder;">
                             已回絕預約
                         </td>
                     </tr>
@@ -146,26 +146,35 @@ function reserve() {
 }
 
 function update(id) {
+    const data={
+        is_success:true
+    }
 
-    fetch(`https://localhost:7275/api/TestReserve/TesterSuccessReserve?id=${id}`, {
+    fetch(`https://localhost:7275/api/TestReserve/TesterSuccessReserve?Id=${id}`, {
         method: 'PUT',
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${LoginToken}`,
         },
+        body:JSON.stringify(data)
 
         
     })
 
     .then(data => {
         console.log(data);
+        
+        window.onload();
         // window.location.href="./Admin-Test-IsReservedtList.html";
     });
 
 }
 function updateno(id) {
 
+    const data={
+        is_fail:true
+    }
     fetch(`https://localhost:7275/api/TestReserve/TesterFailReserve?id=${id}`, {
         method: 'PUT',
         mode: 'cors',
@@ -173,12 +182,13 @@ function updateno(id) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${LoginToken}`,
         },
-
+        body:JSON.stringify(data)
         
     })
 
     .then(data => {
         console.log(data);
+        window.onload();
         // window.location.href="./Admin-Test-IsReservedtList.html";
     });
 
