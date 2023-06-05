@@ -271,7 +271,8 @@ a
     justify-content: left;
     flex-direction: column;
     margin-top:100px;
-    margin-right:60px;
+    margin-right:20px;
+    margin-left: 40px;
 }
 
 .img
@@ -286,6 +287,7 @@ a
     background-color:#FFF;
     font-weight: bold;
     z-index: 2;
+    left: 5%;
 }
 .absolute-x
 {
@@ -314,6 +316,7 @@ a
     color:#000000;
     font-weight: bolder;
     margin-bottom: 30px;
+    word-wrap: break-word;
 }
 .activity-detail
 {
@@ -322,6 +325,8 @@ a
 
     text-align: justify;
     line-height: 40px;
+    word-wrap: break-word;
+
 }
 
 /*新增活動*/
@@ -548,10 +553,24 @@ textarea
 @media screen and (min-width: 1400px) {
 
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
 
+    .reveal{
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        height: 800px;
+    }
+    .reveal-left{
+        padding: 0px;
+        margin-top: 40px;
+    }
+    .reveal-right{
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 }
-
 @media screen and (max-width: 1007.5px) {
     
     .phoneheader{
