@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 60px 50px 60px;
+    margin: 30px 225px 50px 60px;
 }
 /*最新公告區塊*/
 
@@ -155,7 +155,6 @@ a{
     padding-left: 30px;
     font-size: 34px;
     font-weight: bold;
-    align-items: center;
 }
 
 .space-between
@@ -283,16 +282,6 @@ a{
     font-size:20px;
     margin-top:110px;
     padding-right:20px;
-}
-.back-1
-{
-    display: none;
-    /* justify-content: right; */
-    /* text-align: right; */
-    font-size:20px;
-    margin-bottom: 20px;
-    /* margin-top:110px; */
-    /* padding-right:20px; */
 }
 .a2
 {
@@ -726,26 +715,74 @@ a{
 
 }
 
-.icon1{
-    width: 45px;
-    height:40px;
+#buttonContainer{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap:nowrap;
 }
 
-.m-left-60{
-    margin-left: 60px;
-}
-.input1{
-    line-height: 25px;
-    width:475px;
-    margin: 20px 0px;
-    font-size: 16px;
-}
-.input2{
-    font-size: 16px;
-    width:475px;
-    height: 200px;
+#Middle{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#Inbutton{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#GoFront{
+    width: 35px;
+    margin-right: 35px;
+}
+
+#GoFront button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+}
+
+#GoBack{
+    width: 35px;
+    margin-left: 25px;
+}
+
+#GoBack button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+}
+
+.paging{
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    margin: 0 5px;
+
+    background-color: #61AFB3;
+
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.paging:hover{
+    background-color: #2B8282;
+    font-weight: bold;
+}
+.button-active {
+
+    font-weight: bold;
+    }
 /* ================rwd================ */
 
 
@@ -753,11 +790,7 @@ a{
 @media screen and (min-width: 1400px) {
 
 }
-@media screen and (max-width: 1024px) {
-    .input1, .input2{
-        width:400px;
-    }
-    
+@media screen and (max-width: 1200px) {
 
 }
 
@@ -790,10 +823,6 @@ a{
 
     }
 
-    .title{
-        padding-left: 0px;
-    }
-    
 }
 
 
@@ -815,33 +844,14 @@ a{
 
 
     }
-     .create{
 
-    margin: 100px 80px 0 80px;
 
-     }
-    .carousel-set{
-        height: 300px;
-    }
 
-    .prev, .next{
-        top:300px;
-        padding: 60px 20px;
-    }
 
 
 }
 
 @media screen and (max-width: 768.5px) {
-    .create{
-        margin: 100px 30px 0px 30px;
-    }
-    .back{
-        display: none;
-    }
-    .back-1{
-        display: block;
-    }
     .right-content{
 
         display: flex;
@@ -855,13 +865,11 @@ a{
     
     
     }
-    
     .title{
         font-size: 22px;
     }
-    .a1{
+    .table-title{
         font-size: 14px;
-        font-weight: bold;
     }
     .row{
         font-size: 13px;
@@ -872,37 +880,6 @@ a{
         margin-top: 0px;
     }
 
-    .carousel-set{
-        height: 250px;
-    }
-
-    .prev, .next{
-        top:275px;
-        padding: 60px 15px;
-    }
-
-    .icon1{
-        width: 30px;
-        height: 30px;
-    }
-
-    .m-left-60{
-        margin-left: 40px;
-    }
-    .content-index{
-        margin: 30px 40px 50px 40px;
-
-    }
-    .ee{
-        flex-direction: column;
-    }
-
-    .create-content{
-        width: auto;
-    }
-    .input1, .input2{
-        width:275px;
-    }
 
 }
 
@@ -923,7 +900,6 @@ a{
     }
     .title{
         font-size: 22px;
-        
     }
     .table-title{
         font-size: 14px;
@@ -937,19 +913,7 @@ a{
         margin-top: 0px;
     }
 
-    .prev, .next{
-        top:275px;
-        padding: 60px 5px;
-    }
-    .m-left-60{
-        margin-left: 20px;
-    }
-    .content-index{
-        margin: 30px 20px 50px 20px;
-    }
-    .input1, .input2{
-        width:200px;
-    }
-}
 
+
+}
 
