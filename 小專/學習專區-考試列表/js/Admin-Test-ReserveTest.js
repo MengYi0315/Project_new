@@ -154,11 +154,32 @@ function submit(id) {
         "Accept": "application/json",
     };
     postData('https://localhost:7275/api/TestReserve/CreateData', data, headers)
-        .then(({data}) => {
-            
-            console.log(data);
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.reservedate != null && data.reservetime != null) {
+            window.alert("預約考試成功，返回頁面查看預約狀況");
+            location.href = './Admin-Test-TestList.html';
+        }
+        else 
+        {
+            window.alert("預約失敗，請重新嘗試");
+        }
 
-        })
+        
+        console.log(data);
+
+    })
+    .catch((error) => {
+        if (data.reservedate != null && data.reservetime != null) {
+            window.alert("預約考試成功，返回頁面查看預約狀況");
+            location.href = './Admin-Test-TestList.html';
+        }
+        else 
+        {
+            window.alert("預約失敗，請重新嘗試");
+        }
+        console.error(error);
+    });
 
 }
 

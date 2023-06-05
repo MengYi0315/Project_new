@@ -117,10 +117,32 @@ function update(id)
         },
         body: JSON.stringify(data) // 加入要傳送的公告內容
     })
-    .then(data => {
-        console.log(data);
-    
-    });
+    .then((response) => response.json())
+        .then((data) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("預約考試修改成功，返回頁面查看預約狀況");
+                location.href = './Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("預約考試修改失敗，請重新嘗試");
+            }
+
+            
+            console.log(data);
+
+        })
+        .catch((error) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("預約考試修改成功，返回頁面查看預約狀況");
+                location.href = './Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("預約考試修改失敗，請重新嘗試");
+            }
+            console.error(error);
+        });
 }
 
 

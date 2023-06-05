@@ -117,10 +117,33 @@ function update(id) {
         
     })
 
-    .then(data => {
-        console.log(data);
-        window.location.href="./Admin-Test-TestList.html";
-    });
+
+    .then((response) => response.json())
+        .then((data) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("考試修改成功，返回頁面查看內容");
+                location.href = './Admin-Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("考試修改失敗，請重新嘗試");
+            }
+
+            
+            console.log(data);
+
+        })
+        .catch((error) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("考試修改成功，返回頁面查看內容");
+                location.href = './Admin-Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("考試修改失敗，請重新嘗試");
+            }
+            console.error(error);
+        });
 
 }
 
