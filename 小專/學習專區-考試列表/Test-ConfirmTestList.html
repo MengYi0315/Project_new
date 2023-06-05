@@ -190,23 +190,28 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
-                <a href="./Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
 
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Login_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Login_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <!-- <a href="/小專/作業專區/Login_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a> -->
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <!-- <a href="/小專/留言板/msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
             </a> -->
 
+            
+            
         </div>
         <div class="right-content">
             <div class="title">
@@ -214,85 +219,32 @@
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約考試內容
-                    </td>
-                    <td class="table-title">
-                        考核者
-                    </td>
-                    <td class="table-title">
-                        預約時間
-                    </td>
-                    
-                    
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            預約考試內容
+                        </td>
+                        <td class="table-title">
+                            考核者
+                        </td>
+                        <td class="table-title">
+                            預約時間
+                        </td>
+                    </tr>
+                </thead>
                 
-                <tr>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        王曉明
-                    </td>
-                    <td class="row">
-                        2023/04/06 &ensp; 20：00
-                    </td>
+                <tbody id="post">
                     
-                    
-
-                </tr>
-
-                <tr>
-                    <td class="row">
-                        第八章筆試
-                    </td>
-                    <td class="row">
-                        王曉明
-                    </td>
-                    <td class="row">
-                        2023/04/14 &ensp; 20：00
-                    
-                    
-
-                </tr>
-                <tr>
-                    <td class="row">
-                        第九章口試
-                    </td>
-                    <td class="row">
-                        楊大明
-                    </td>
-                    <td class="row">
-                        2023/04/20 &ensp; 20：00
-                    </td>
-                    
-                    
-
-                </tr>
-
-
+                </tbody>
             </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
     <footer>
 
     </footer>
-
+    <script src="./js/Test-ConfirmTestList.js"></script>
+    <script src="./js/student-test.js"></script>
 </body>
-<script src="./js/student-test.js"></script>
+
 </html>

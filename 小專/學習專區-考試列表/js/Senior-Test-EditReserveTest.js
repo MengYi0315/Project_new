@@ -73,7 +73,7 @@ function readdata(id) {
 
         <div class="flex" id="button">
             <input type="submit" value="修改預約" class="reserve-botton" onclick=" update('${data.data.reservetime_id}')">
-            <input type="button" value="取消修改" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
+            <input type="button" value="取消修改" class="reserve-botton" onclick="location.href='./Senior-Test-TestList.html'">
         </div>
         `;
         var member = document.querySelector("#member");
@@ -117,11 +117,11 @@ function update(id)
         },
         body: JSON.stringify(data) // 加入要傳送的公告內容
     })
-        .then((response) => response.json())
+    .then((response) => response.json())
         .then((data) => {
             if (data.reservedate != null && data.reservetime != null) {
                 window.alert("預約考試修改成功，返回頁面查看內容");
-                location.href = './Admin-Test-TestList.html';
+                location.href = './Senior-Test-TestList.html';
             }
             else 
             {
@@ -135,7 +135,7 @@ function update(id)
         .catch((error) => {
             if (data.reservedate != null && data.reservetime != null) {
                 window.alert("預約考試修改成功，返回頁面查看內容");
-                location.href = './Admin-Test-TestList.html';
+                location.href = './Senior-Test-TestList.html';
             }
             else 
             {

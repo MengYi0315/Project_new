@@ -1,3 +1,23 @@
+function ToggleMenu(number){
+    let menu = document.getElementById("menu-"+number);
+    if(menu.style.display == "none" || menu.style.display == ""){
+        menu.style.display = "block";
+    }else{
+        menu.style.display = "none";
+    }
+}
+
+function ToggleNav(number){
+    let nav = document.getElementById("nav-"+number);
+    if(nav.style.display == "none" || nav.style.display == ""){
+        nav.style.display = "block";
+    }else{
+        nav.style.display = "none";
+    }
+
+}
+
+
 let navhover1 = document.getElementById('nav-a-hover-1');
     let downbar1 = document.getElementById('down-bar-1');
     

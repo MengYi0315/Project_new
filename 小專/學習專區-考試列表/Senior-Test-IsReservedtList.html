@@ -184,71 +184,66 @@
                 <div class="menu">考試專區</div>
             </div>
             <ul id="menu-1" class="ul-win menu-list">
-                <a href="./Senior-Test-TestList.html" class="a-win"><li class="li-win">考試預約列表</li></a>
-                <a href="./Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
-
-                <a href="./Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">已確認預定時段</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-TestList.html" class="a-win"><li class="li-win">考試列表</li></a>
+                <!-- <a href="./Admin-Test-ReservetList.html" class="a-win"><li class="li-win">預約列表</li></a> -->
+                <a href="/小專/學習專區-考試列表/Senior-Test-ConfirmTestList.html" class="a-win"><li class="li-win">已確認預約列表</li></a>
+                <a href="/小專/學習專區-考試列表/Senior-Test-IsReservedtList.html" class="a-win"><li class="li-win">考核列表</li></a>
+                <!-- <a href="./Admin-Test-TBA-IsReservedtList.html" class="a-win"><li class="li-win">未確認預定時段</li></a> -->
             </ul>
             <div onclick="ToggleMenu(2);" class="ul-win" style="cursor: pointer;">
                 <div class="menu">作業專區</div>
             </div>
             <ul id="menu-2" class="ul-win menu-list">
-                <a href="/小專/作業/Senior-workupload.html" class="a-win"><li class="li-win">作業繳交</li></a>
-                <a href="/小專/作業/Senior-workcheck.html" class="a-win"><li class="li-win">作業檢查</li></a>
-                <a href="/小專/作業/Senior-workrelease-list.html" class="a-win"><li class="li-win">作業發布</li></a>
+                <a href="/小專/作業專區/Senior_release_List.html" class="a-win"><li class="li-win">作業列表</li></a>
+                <a href="/小專/作業專區/Senior_do_homework.html" class="a-win"><li class="li-win">作業繳交</li></a>
+                <a href="/小專/作業專區/Senior_check_homework.html" class="a-win"><li class="li-win">作業檢查</li></a>
+                
                 <!-- <a href="" class="a-win"><li class="li-win"></li></a>
                 <a href="" class="a-win"><li class="li-win"></li></a> -->
             </ul>
-            <a href="/小專/留言板/Senior-msgboard.html" class="ul-win" >
+            <!-- <a href="/小專/留言板/admin-msgboard.html" class="ul-win" >
                 <div class="menu">討論留言板</div>
-            </a>
+            </a> -->
+            
         </div>
         <div class="right-content">
             <div class="title">
-                已確認預定時段列表
+                考核列表
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約者
-                    </td>
-                    <td class="table-title">
-                        預約考試
-                    </td>
-                    <td class="table-title">
-                        預約時間
-                    </td>
-                    
-                </tr>   
-                <tr>
-                    <td class="row">
-                        大聰明
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/03 &ensp; 20:00
-                    </td>
-                    
-                    
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            預約者
+                        </td>
+                        <td class="table-title">
+                            預約考試
+                        </td>
+                        <td class="table-title">
+                            預約時間
+                        </td>
+                    </tr>   
+                </thead>
+                
+                <tbody id="post">
+                    <!-- <tr>
+                        <td class="row">
+                            大聰明
+                        </td>
+                        <td class="row">
+                            第八章口試
+                        </td>
+                        <td class="row">
+                            2023/04/03 &ensp; 20:00
+                        </td>
+                        
+                        
+                    </tr> -->
+                </tbody>
+                
 
-                <tr>
-                    <td class="row">
-                        小聰明
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/05 &ensp; 18:00
-                    </td>
-                    
-                    
-
-                </tr>
+               
 
                 
             </table>
@@ -258,73 +253,28 @@
             </div>
             <br>
             <table class="reserve-list-table">
-                <tr>
-                    <td class="table-title">
-                        預約者
-                    </td>
-                    <td class="table-title">
-                        預約考試
-                    </td>
-                    <td class="table-title">
-                        預約時間
-                    </td>
-                    
-                    <td class="table-title">
-                        狀態    
-                    </td>
-                </tr>   
-                <tr>
-                    <td class="row">
-                        林曉婷
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/02 &ensp; 20:00
-                    </td>
-                    
-                    <td class="row">
-                        <input type="button" value="確認預約" class="row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        <input type="button" value="回絕預約" class="d-4-row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
+                <thead>
+                    <tr>
+                        <td class="table-title">
+                            預約者
+                        </td>
+                        <td class="table-title">
+                            預約考試
+                        </td>
+                        <td class="table-title">
+                            預約時間
+                        </td>
                         
-                    </td>
+                        <td class="table-title">
+                            狀態    
+                        </td>
+                    </tr>   
+                </thead>
+                <tbody id="post1">
 
-                </tr>
-
-                <tr>
-                    <td class="row">
-                        徐小心
-                    </td>
-                    <td class="row">
-                        第八章口試
-                    </td>
-                    <td class="row">
-                        2023/04/04 &ensp; 18:00
-                    </td>
-                    
-                    <td class="row">
-                        <input type="button" value="確認預約" class="row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        <input type="button" value="回絕預約" class="d-4-row-button" onclick="location.href='./Admin-Test-IsReservedtList.html'">
-                        
-                    </td>
-
-                </tr>
-
-                
+                </tbody>
+  
             </table>
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
@@ -333,5 +283,7 @@
     </footer>
 
 </body>
-<script src="./js/senior-test.js"></script>
+    <script src="./js/senior-test.js"></script>
+    <script src="./js/Senior-Test-IsReservedtList.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

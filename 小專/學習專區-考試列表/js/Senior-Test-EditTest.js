@@ -117,12 +117,11 @@ function update(id) {
         
     })
 
-
     .then((response) => response.json())
         .then((data) => {
-            if(((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null))) {
+            if(((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null))){
                 window.alert("考試修改成功，返回頁面查看內容");
-                location.href = './Admin-Test-TestList.html';
+                location.href = './Senior-Test-TestList.html';
             }
             else 
             {
@@ -134,9 +133,9 @@ function update(id) {
 
         })
         .catch((error) => {
-            if (((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null))) {
+            if (((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null))){
                 window.alert("考試修改成功，返回頁面查看內容");
-                location.href = './Admin-Test-TestList.html';
+                location.href = './Senior-Test-TestList.html';
             }
             else 
             {
@@ -144,6 +143,7 @@ function update(id) {
             }
             console.error(error);
         });
+
 
 }
 

@@ -93,7 +93,7 @@ function readdata(id) {
 
         <div class="flex" id="button">
             <input type="submit" value="提交預約" class="reserve-botton" onclick=" submit('${data.testData.test_id}')">
-            <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Admin-Test-TestList.html'">
+            <input type="button" value="取消預約" class="reserve-botton" onclick="location.href='./Test-TestList.html'">
         </div>
         `;
         var member = document.querySelector("#member");
@@ -154,33 +154,32 @@ function submit(id) {
         "Accept": "application/json",
     };
     postData('https://localhost:7275/api/TestReserve/CreateData', data, headers)
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.reservedate != null && data.reservetime != null) {
-            window.alert("預約考試成功，返回頁面查看預約狀況");
-            location.href = './Admin-Test-TestList.html';
-        }
-        else 
-        {
-            window.alert("預約失敗，請重新嘗試");
-        }
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("預約考試成功，返回頁面查看預約狀況");
+                location.href = './Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("預約失敗，請重新嘗試");
+            }
 
-        
-        console.log(data);
+            
+            console.log(data);
 
-    })
-    .catch((error) => {
-        if (data.reservedate != null && data.reservetime != null) {
-            window.alert("預約考試成功，返回頁面查看預約狀況");
-            location.href = './Admin-Test-TestList.html';
-        }
-        else 
-        {
-            window.alert("預約失敗，請重新嘗試");
-        }
-        console.error(error);
-    });
-
+        })
+        .catch((error) => {
+            if (data.reservedate != null && data.reservetime != null) {
+                window.alert("預約考試成功，返回頁面查看預約狀況");
+                location.href = './Test-TestList.html';
+            }
+            else 
+            {
+                window.alert("預約失敗，請重新嘗試");
+            }
+            console.error(error);
+        });
 }
 
 window.onload = function() {

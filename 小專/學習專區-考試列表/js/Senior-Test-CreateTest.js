@@ -38,7 +38,7 @@ function submit() {
     .then((data) => {
         if (((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null))) {
             window.alert("新增考試成功，返回頁面查看考試內容");
-            location.href = './Admin-Test-TestList.html';
+            location.href = './Senior-Test-TestList.html';
         }
         else 
         {
@@ -52,7 +52,7 @@ function submit() {
     .catch((error) => {
         if (((test_title != null) && (test_content != null)) && ((start_date != null) && (data.end_date != null)))  {
             window.alert("新增考試成功，返回頁面查看考試內容");
-            location.href = './Admin-Test-TestList.html';
+            location.href = './Senior-Test-TestList.html';
         }
         else 
         {
@@ -60,5 +60,4 @@ function submit() {
         }
         console.error(error);
     });
-
 }
