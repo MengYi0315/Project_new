@@ -779,6 +779,7 @@ a{
 }
 
 .button-active {
+    background-color: #2B8282;
     font-weight: bold;
     }
     
