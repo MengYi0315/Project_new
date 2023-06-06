@@ -20,7 +20,7 @@ console.log("token",LoginToken)
             post.innerHTML +=
             `
             <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+                <a href="/小專/首頁/Logout_Index_detail.html?id=${item.announce_id}" 
                 
                 class="a1 flex">
                     <div class="space-between flex">
@@ -77,7 +77,7 @@ function goToPage(page)
             post.innerHTML +=
             `
             <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+                <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
                 class="a1 flex">
                     <div class="space-between flex">
@@ -140,7 +140,7 @@ function goToFront()
             post.innerHTML +=
             `
             <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+                <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
                 class="a1 flex">
                     <div class="space-between flex">
@@ -200,7 +200,7 @@ function goToBack()
             post.innerHTML +=
             `
             <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+                <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
                 class="a1 flex">
                     <div class="space-between flex">

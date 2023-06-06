@@ -79,17 +79,22 @@ console.log("token",LoginToken)
             
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+            <div class="flex">
+                <div style="width:100%;">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" class="a1 flex">
+                        <div class="space-between flex ee">
+                            <div> 標題： ${item.announce_title}</div>
+                            <div> 更新時間： ${update_time}</div>
+                        </div>
+                    </a>
+                </div>
                 
-                class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
-                </a>
+                <div class="flex">
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit" class="edit-row-button" value="修改"></a>
+                    <input type="submit" onclick="deleteData('https://localhost:7275/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
+                </div>
             </div>
-            `
+            `;
         });
         
         for (let i = currentPage-2; i <= currentPage+2; i++) {
@@ -136,17 +141,22 @@ function goToPage(page)
             
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+            <div class="flex">
+                <div style="width:100%;">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" class="a1 flex">
+                        <div class="space-between flex ee">
+                            <div> 標題： ${item.announce_title}</div>
+                            <div> 更新時間： ${update_time}</div>
+                        </div>
+                    </a>
+                </div>
                 
-                class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
-                </a>
+                <div class="flex">
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit" class="edit-row-button" value="修改"></a>
+                    <input type="submit" onclick="deleteData('https://localhost:7275/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
+                </div>
             </div>
-            `
+            `;
         });
 
         currentPage = page;
@@ -199,17 +209,22 @@ function goToFront()
             
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+            <div class="flex">
+                <div style="width:100%;">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" class="a1 flex">
+                        <div class="space-between flex ee">
+                            <div> 標題： ${item.announce_title}</div>
+                            <div> 更新時間： ${update_time}</div>
+                        </div>
+                    </a>
+                </div>
                 
-                class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
-                </a>
+                <div class="flex">
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit" class="edit-row-button" value="修改"></a>
+                    <input type="submit" onclick="deleteData('https://localhost:7275/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
+                </div>
             </div>
-            `
+            `;
         });
 
         for (let i = currentPage-2; i <= currentPage+2; i++) {
@@ -259,17 +274,22 @@ function goToBack()
             
             post.innerHTML +=
             `
-            <div>
-                <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" 
+            <div class="flex">
+                <div style="width:100%;">
+                    <a href="/小專/首頁/Admin_Login_Index_detail.html?id=${item.announce_id}" class="a1 flex">
+                        <div class="space-between flex ee">
+                            <div> 標題： ${item.announce_title}</div>
+                            <div> 更新時間： ${update_time}</div>
+                        </div>
+                    </a>
+                </div>
                 
-                class="a1 flex">
-                    <div class="space-between flex">
-                        <div> 標題： ${item.announce_title}</div>
-                        <div> 更新時間： ${update_time}</div>
-                    </div>
-                </a>
+                <div class="flex">
+                    <a href="./Edit_Login_Index.html?id=${item.announce_id}"  style="color:#FFF;"><input type="submit" class="edit-row-button" value="修改"></a>
+                    <input type="submit" onclick="deleteData('https://localhost:7275/api/Announcement/DeleteData?id=', '${item.announce_id}')" class="delete-row-button" value="刪除">
+                </div>
             </div>
-            `
+            `;
         });
 
         for (let i = currentPage-2; i <= currentPage+2; i++) {
@@ -297,9 +317,6 @@ function goToBack()
         });
     })
 }
-
-
-
 
 
 // function postData(url,data,headers){
