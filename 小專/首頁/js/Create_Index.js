@@ -70,6 +70,7 @@ console.log("token",LoginToken)
     .then(response => response.json())
     .then(data => {
         // data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
+        poo.innerHTML = "";
         post.innerHTML = "";
         const arr = Array.from(data.data)
         const maxpage = data.maxPage;
