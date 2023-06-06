@@ -22,12 +22,12 @@ console.log("token",LoginToken)
             <div>
                 <a href="/小專/首頁/Logout_Index_detail.html?id=${item.announce_id}" 
                 
-                class="a1 flex">
-                    <div class="space-between flex">
+                <div class="a1 flex">
+                    <div class="space-between flex zz">
                         <div> 標題： ${item.announce_title}</div>
                         <div> 更新時間： ${update_time}</div>
                     </div>
-                </a>
+                    </div>
             </div>
             `
         });
@@ -79,10 +79,11 @@ function goToPage(page)
             <div>
                 <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
-                class="a1 flex">
-                    <div class="space-between flex">
+                <div class="a1 flex">
+                    <div class="space-between flex zz">
                         <div> 標題： ${item.announce_title}</div>
                         <div> 更新時間： ${update_time}</div>
+                    </div>
                     </div>
                 </a>
             </div>
@@ -142,12 +143,12 @@ function goToFront()
             <div>
                 <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
-                class="a1 flex">
-                    <div class="space-between flex">
+                <div class="a1 flex">
+                    <div class="space-between flex zz">
                         <div> 標題： ${item.announce_title}</div>
                         <div> 更新時間： ${update_time}</div>
                     </div>
-                </a>
+                    </div>
             </div>
             `
         });
@@ -202,12 +203,12 @@ function goToBack()
             <div>
                 <a href="/小專/首頁/Logout_Login_Index_detail.html?id=${item.announce_id}" 
                 
-                class="a1 flex">
-                    <div class="space-between flex">
+                <div class="a1 flex">
+                    <div class="space-between flex zz">
                         <div> 標題： ${item.announce_title}</div>
                         <div> 更新時間： ${update_time}</div>
                     </div>
-                </a>
+                    </div>
             </div>
             `
         });

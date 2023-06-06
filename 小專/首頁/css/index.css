@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 225px 50px 60px;
+    margin: 30px 60px 50px 60px;
 }
 /*最新公告區塊*/
 
@@ -283,6 +283,9 @@ a{
     margin-top:110px;
     padding-right:20px;
 }
+.back-1{
+    display: none;
+}
 .a2
 {
     background-color: rgb(255, 204, 108);
@@ -306,7 +309,7 @@ a{
 }
 .create-content
 {
-    width:100%;
+    /* width:100%; */
     padding-left:30px;
     font-size: 20px;
     font-weight: bold;
@@ -783,6 +786,21 @@ a{
     background-color: #2B8282;
     font-weight: bold;
     }
+
+
+
+
+
+
+.input1{
+    width: 600px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.input2{
+    width: 600px;
+    height: 200px;
+}
 /* ================rwd================ */
 
 
@@ -790,8 +808,13 @@ a{
 @media screen and (min-width: 1400px) {
 
 }
-@media screen and (max-width: 1200px) {
-
+@media screen and (max-width: 1100px) {
+    .zz{
+        flex-direction: column;
+    }
+    .ee{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 1007.5px) {
@@ -800,6 +823,12 @@ a{
         display: flex;
     }
     .pcheader{
+        display: none;
+    }
+    .back-1{
+        display: block;
+    }
+    .back{
         display: none;
     }
     
@@ -822,6 +851,13 @@ a{
         width: 70px;
 
     }
+    .input1{
+        width: 400px;
+    }
+    .input2{
+        width: 400px;
+    }
+    
 
 }
 
@@ -879,6 +915,10 @@ a{
         margin-right: 25px;
         margin-top: 0px;
     }
+    .create{
+        margin: 100px 20px 0px 20px;
+        
+    }
 
 
 }
@@ -901,7 +941,7 @@ a{
     .title{
         font-size: 22px;
     }
-    .table-title{
+    .table-title, .create-content{
         font-size: 14px;
     }
     .row{
@@ -912,6 +952,13 @@ a{
         margin-right: 5px;
         margin-top: 0px;
     }
+    .input1{
+        width: 270px;
+    }
+    .input2{
+        width: 270px;
+    }
+
 
 
 

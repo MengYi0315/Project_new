@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 225px 50px 60px;
+    margin: 30px 60px 50px 60px;
 }
 /*最新公告區塊*/
 
@@ -792,7 +792,9 @@ a{
 
 }
 @media screen and (max-width: 1200px) {
-
+    .zz{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 1000px) {

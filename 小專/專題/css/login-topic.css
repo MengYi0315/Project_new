@@ -719,7 +719,7 @@ a{
 
 }
 
-@media screen and (max-width: 1007.5px) {
+@media screen and (max-width: 1100.5px) {
     
     .phoneheader{
         display: flex;
@@ -806,9 +806,6 @@ a{
     .title-win{
         font-size: 22px;
     }
-    .title-win{
-        font-size: 22px;
-    }
     .table-title, .topic-name{
         font-size: 14px;
     }
@@ -877,7 +874,7 @@ a{
     .title{
         font-size: 22px;
     }
-    .table-title, .topic-name{
+    .table-title{
         font-size: 14px;
     }
     .row{

@@ -207,6 +207,7 @@ fetch("https://localhost:7275/api/Carousel/GetAllDataList")
     const imgHeight = 125;
     const div = document.createElement("div");
     div.id = 'ForReadImg';
+    
 
     data.map((item) => {
         return {

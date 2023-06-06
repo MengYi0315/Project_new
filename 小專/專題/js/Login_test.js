@@ -1,16 +1,15 @@
-let navhover1 = document.getElementById('nav-a-hover-1');
-    let downbar1 = document.getElementById('down-bar-1');
+// let navhover1 = document.getElementById('nav-a-hover-1');
+//     let downbar1 = document.getElementById('down-bar-1');
     
 
     
-    navhover1.addEventListener('mouseover', function () {
-    downbar1.style.display = 'block';
-    })
+//     navhover1.addEventListener('mouseover', function () {
+//     downbar1.style.display = 'block';
+//     })
 
     
-    navhover1.addEventListener('mouseout', function () {
-        downbar1.style.display = 'none';
-    })
+//     navhover1.addEventListener('mouseout', function () {
+//     })
 
     
     let navhover2 = document.getElementById('nav-a-hover-2');
@@ -84,17 +83,17 @@ let navhover1 = document.getElementById('nav-a-hover-1');
 
 
 
-    let persons = document.getElementById('person');
-    let person_list = document.getElementById('person-list');
+    // let persons = document.getElementById('person');
+    // let person_list = document.getElementById('person-list');
 
-    persons.onclick = function(){
-        if(person_list.style.display == 'none' || person_list.style.display == ''){
-            person_list.style.display = 'block';
-        }
-        else{
-            person_list.style.display = 'none';
-        }
-    }
+    // persons.onclick = function(){
+    //     if(person_list.style.display == 'none' || person_list.style.display == ''){
+    //         person_list.style.display = 'block';
+    //     }
+    //     else{
+    //         person_list.style.display = 'none';
+    //     }
+    // }
 
     let edit = document.getElementById('edit');
     let edit_list = document.getElementById('edit-list');

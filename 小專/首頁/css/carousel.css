@@ -797,6 +797,10 @@ a{
     width: 100%;
 
 }
+#ForReadImg{
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 
 /* ================rwd================ */
