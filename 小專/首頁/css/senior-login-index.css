@@ -133,7 +133,7 @@ a{
 }
 .content-index
 {
-    margin: 30px 40px 50px 40px;
+    margin: 30px 225px 50px 60px;
 }
 /*最新公告區塊*/
 
@@ -715,7 +715,74 @@ a{
 
 }
 
+#buttonContainer{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap:nowrap;
+}
 
+#Middle{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Inbutton{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#GoFront{
+    width: 35px;
+    margin-right: 35px;
+}
+
+#GoFront button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+}
+
+#GoBack{
+    width: 35px;
+    margin-left: 25px;
+}
+
+#GoBack button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+}
+
+.paging{
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    margin: 0 5px;
+
+    background-color: #61AFB3;
+
+    border-radius: 5px;
+    border-width: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.paging:hover{
+    background-color: #2B8282;
+    font-weight: bold;
+}
+.button-active {
+
+    font-weight: bold;
+    }
 /* ================rwd================ */
 
 
@@ -727,7 +794,7 @@ a{
 
 }
 
-@media screen and (max-width: 1007.5px) {
+@media screen and (max-width: 1127.5px) {
     
     .phoneheader{
         display: flex;
@@ -756,10 +823,6 @@ a{
 
     }
 
-    .title{
-        padding-left: 0px;
-    }
-    
 }
 
 
@@ -783,14 +846,7 @@ a{
     }
 
 
-    .carousel-set{
-        height: 300px;
-    }
 
-    .prev, .next{
-        top:300px;
-        padding: 60px 20px;
-    }
 
 
 }
@@ -809,13 +865,11 @@ a{
     
     
     }
-    
     .title{
         font-size: 22px;
     }
-    .a1{
+    .table-title{
         font-size: 14px;
-        font-weight: bold;
     }
     .row{
         font-size: 13px;
@@ -826,30 +880,6 @@ a{
         margin-top: 0px;
     }
 
-    .carousel-set{
-        height: 250px;
-    }
-
-    .prev, .next{
-        top:275px;
-        padding: 60px 15px;
-    }
-
-    .icon1{
-        width: 30px;
-        height: 30px;
-    }
-
-    .m-left-60{
-        margin-left: 40px;
-    }
-    .content-index{
-        margin: 30px 40px 50px 40px;
-
-    }
-    .ee{
-        flex-direction: column;
-    }
 
 }
 
@@ -870,7 +900,6 @@ a{
     }
     .title{
         font-size: 22px;
-        
     }
     .table-title{
         font-size: 14px;
@@ -884,14 +913,6 @@ a{
         margin-top: 0px;
     }
 
-    .prev, .next{
-        top:275px;
-        padding: 60px 5px;
-    }
-    .m-left-60{
-        margin-left: 20px;
-    }
-    .content-index{
-        margin: 30px 20px 50px 20px;
-    }
+
+
 }

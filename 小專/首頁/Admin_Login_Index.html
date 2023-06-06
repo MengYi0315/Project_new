@@ -187,9 +187,9 @@
     <div class="content column flex">
         
         <div class="carousel">
-            <div class="title flex m-left-60" >
+            <div class="title flex" style="margin-left: 60px;">
                 輪播圖
-                <div style="margin-top:5px;"><a href="./CarouselImg_Login_Index.html"><img src="./img/edit.png" class="icon1"/></a></div>
+                <div style="margin-top:5px;"><a href="./CarouselImg_Login_Index.html"><img src="./img/edit.png" style="width: 45px;height:40px;"/></a></div>
             </div>
             <div>
                 <div class="slideshow-container" id="slideshow">
@@ -205,12 +205,13 @@
         <div class="content-index">
             <div class="title flex">
                 最新公告
-                <div style="margin-top:5px;"><a href="./Create_Login_Index.html"><img src="./img/edit.png" class="icon1"/></a></div>
+                <div style="margin-top:5px;"><a href="./Create_Login_Index.html"><img src="./img/edit.png" style="width: 45px;height:40px;"/></a></div>
             </div>
             <div class="content-margin">
                 <div id="post">
                     
                 </div>
+                
                 <!-- <a href="/小專/首頁/Admin_Login_Index_detail.html" class="a1 flex">
                     <div class="space-between flex">
                         <div>🔺多益公開考2023年6月11日中科大師生優惠專案｜3/29-5/17 報名</div>
@@ -271,7 +272,19 @@
                     <a href="" class="a-page">5</a>
                     <a href="" class="a-page">下一頁</a>
                 </div> -->
+                <div id="buttonContainer">
+                    <div id="GoFront">
+                        <button class=paging onclick="goToFront()"><</button>
+                    </div>
+                    <div id="Middle">
+
+                    </div>
+                    <div id="GoBack">
+                        <button class=paging onclick="goToBack()">></button>
+                    </div>
+                </div>
             </div>
+            
         </div>
         <!-- <div class="a-add">
             <a href="./Create_Login_Index.html"><img src="./img/plus.PNG" width="70px;height:65px;"></a>

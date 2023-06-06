@@ -149,7 +149,7 @@ function update(id) {
     const data={
         is_success:true
     }
-
+    if (confirm("確定是否回絕預約?")) {
     fetch(`https://localhost:7275/api/TestReserve/TesterSuccessReserve?Id=${id}`, {
         method: 'PUT',
         mode: 'cors',
@@ -164,32 +164,34 @@ function update(id) {
 
     .then(data => {
         console.log(data);
-        
+        window.alert("確認成功");
         window.onload();
         // window.location.href="./Admin-Test-IsReservedtList.html";
     });
+    }
 
 }
 function updateno(id) {
+    const data = {
+        is_fail: true
+    };
 
-    const data={
-        is_fail:true
+    if (confirm("確定是否回絕預約?")) {
+        fetch(`https://localhost:7275/api/TestReserve/TesterFailReserve?id=${id}`, {
+            method: 'PUT',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${LoginToken}`,
+            },
+            body: JSON.stringify(data)
+        })
+        // .then((response) => response.json())
+        .then((data) => {
+            window.alert("回絕成功");
+            console.log(data);
+            location.reload(); // 重新載入頁面
+        })
+
     }
-    fetch(`https://localhost:7275/api/TestReserve/TesterFailReserve?id=${id}`, {
-        method: 'PUT',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${LoginToken}`,
-        },
-        body:JSON.stringify(data)
-        
-    })
-
-    .then(data => {
-        console.log(data);
-        window.onload();
-        // window.location.href="./Admin-Test-IsReservedtList.html";
-    });
-
 }

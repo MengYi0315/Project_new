@@ -64,9 +64,9 @@ window.onload = function() {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
+        // data.sort((a, b) => new Date(b.update_time) - new Date(a.update_time));
         post.innerHTML = "";
-        data.forEach((item) => {
+        data.data.forEach((item) => {
             const date = new Date(item.update_time);
             const update_time = date.toLocaleString();
 
