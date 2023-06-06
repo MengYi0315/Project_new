@@ -9,6 +9,7 @@ window.onload = function() {
     .then(response => response.json())
     .then(data => {
         post.innerHTML = "";
+        data.sort((a, b) => new Date(b.contest_year) - new Date(a.contest_year));
         data.forEach((item) => {
             post.innerHTML +=
             `

@@ -83,9 +83,19 @@ function update(id)
         },
         body: JSON.stringify(data) // 加入要傳送的公告內容
     })
+    .then(response => response.json())
     .then(data => {
         console.log(data);
-    
+        window.alert("修改得獎紀錄失敗，請重新嘗試");
+        
+
+
+    })
+    .catch(error => {
+
+        window.alert("修改得獎紀錄成功，返回頁面查看內容");
+        location.href="./Admin_Login_Award.html";
+        console.log(error);
     });
 }
 

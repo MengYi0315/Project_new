@@ -30,9 +30,19 @@ function submit() {
         "Accept": "application/json",
     };
     postData('https://localhost:7275/api/ContestAward/CreateData', data, headers)
-        .then(({data}) => {
+        .then(response => response.json())
+        .then(data => {
             console.log(data);
-
+            window.alert("新增得獎紀錄失敗，請重新嘗試");
+            
+    
+    
         })
+        .catch(error => {
+    
+            window.alert("新增得獎紀錄成功，返回頁面查看內容");
+            location.href="./Admin_Login_Award.html";
+            console.log(error);
+        });
 
 }
