@@ -647,6 +647,12 @@ cursor: pointer;
         width: 70px;
 
     }
+    .edit-row-button, .delete-row-button{
+        font-size: 13px;
+        height: 30px;
+        width: 70px;
+
+    }   
 
 }
 
