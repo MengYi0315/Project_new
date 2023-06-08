@@ -163,7 +163,7 @@ window.onload = function (){
 // </div> 
     
 // `;
-// window.location.href="http://127.0.0.1:5555/小專/首頁/Admin_Login_Index.html";
+// window.location.href="http://127.0.0.1:5500/小專/首頁/Admin_Login_Index.html";
 
 
 // function submit() {

@@ -36,7 +36,7 @@ window.onload = function () {
             console.log('data1', data);
             var testlist = document.querySelector("#testlist");
 
-            data.sort((a, b) => new Date(b.end_date) - new Date(a.end_date));
+            data.sort((a, b) => new Date(a.end_date) - new Date(b.end_date));
             testlist.innerHTML = "";
 
             data.forEach((item) => {

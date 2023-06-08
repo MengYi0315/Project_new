@@ -90,9 +90,9 @@ window.onload = function (){
 // };
         // popup.innerHTML +=
         //     `
-        //         <div class="absolute-x "><a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>
+        //         <div class="absolute-x "><a href="http://127.0.0.1:5500/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_activity.html">X</a></div>
         //         <div class="reveal-left flex">
-        //             <a href="http://127.0.0.1:5555/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=${item.activity_id}"><img src="${item.first_image}" class="b-25"></a>
+        //             <a href="http://127.0.0.1:5500/%E5%B0%8F%E5%B0%88/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/Admin_Login_detail_activity.html?id=${item.activity_id}"><img src="${item.first_image}" class="b-25"></a>
         //         </div>
         //         <div class="reveal-right flex">
         //             <div class="title-detail">${item.activity_title}</div>

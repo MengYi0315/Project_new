@@ -149,7 +149,7 @@ function update(id) {
     const data={
         is_success:true
     }
-    if (confirm("確定是否回絕預約?")) {
+    if (confirm("確定是否確認預約?")) {
     fetch(`https://localhost:7275/api/TestReserve/TesterSuccessReserve?Id=${id}`, {
         method: 'PUT',
         mode: 'cors',
